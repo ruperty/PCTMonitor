@@ -22,7 +22,7 @@ public class ODGConfig007Test {
      */
     @Test
     public void testMain() {
-        String[] args = {"C:\\Versioning\\PCTSoftware\\Controllers\\Models\\PRGUI\\", "GUITest007"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest007"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);

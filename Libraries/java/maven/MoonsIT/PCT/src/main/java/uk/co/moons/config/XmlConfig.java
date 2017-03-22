@@ -75,9 +75,10 @@ public class XmlConfig extends BaseControlConfig {
 
         InputStream xml;
 
-        if (config.startsWith(".")) {
-            xml = this.getClass().getClassLoader().getResourceAsStream(config);
-        } else if (config.startsWith("<")) {
+        //if (config.startsWith(".")) {
+          //  xml = this.getClass().getClassLoader().getResourceAsStream(config);
+        //} else 
+        if (config.startsWith("<")) {
             xml = new ByteArrayInputStream(config.getBytes(Charset.defaultCharset()));
         } else {
             xml = new FileInputStream(config);

@@ -19,7 +19,7 @@ public class ODGConfig004Test {
 
     @Test
     public void testMain()  {
-        String[] args = {"C:\\Versioning\\PCTSoftware\\Controllers\\Models\\PRGUI\\", "GUITest004"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest004"};
         System.out.println(args[0] + args[1]);
 
 

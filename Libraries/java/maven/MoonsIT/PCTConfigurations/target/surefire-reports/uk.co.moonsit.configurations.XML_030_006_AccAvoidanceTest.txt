@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: uk.co.moonsit.configurations.XML_030_006_AccAvoidanceTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 sec

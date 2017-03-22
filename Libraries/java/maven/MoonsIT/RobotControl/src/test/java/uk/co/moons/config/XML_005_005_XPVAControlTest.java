@@ -23,7 +23,7 @@ public class XML_005_005_XPVAControlTest {
      */
     @Test
     public void testMain() throws Exception {
-        String[] args = {"C:\\Versioning\\PCTSoftware\\Controllers\\Models\\QuantumMoves\\", "005-005-XPVAControl"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-005-XPVAControl"};
         System.out.println(args[0]+args[1]);
 
 
