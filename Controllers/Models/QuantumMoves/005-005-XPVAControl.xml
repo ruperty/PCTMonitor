@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Layers xmlns="http://uk.co.moons.pct/schema/Layers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uk.co.moons.pct/schema/Layers ../Layers.xsd">
+    <Type>Model</Type>
+    <Layer>
+        <Name>Interface</Name>
+        <Controller>
+            <Name>Env</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>EnvInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Pause</Type>
+                            <Parameters>
+<Name>ConstantRate</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Pause</Name>
+<Value>50</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>LaserXAccel</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>LaserXAccelInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>QMSensor</Type>
+                            <Parameters>
+<Name>TargetPercentage</Name>
+<Value>1</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Level</Name>
+<Value>1</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>TimeLimit</Name>
+<Value>0.3</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+</Layers>

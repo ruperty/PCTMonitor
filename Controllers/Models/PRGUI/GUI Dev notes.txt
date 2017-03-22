@@ -1,0 +1,7 @@
+
+
+A function config is defined a group of two or three groups.
+
+If three groups then 
+
+The first group is 

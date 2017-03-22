@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Layers xmlns="http://uk.co.moons.pct/schema/Layers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uk.co.moons.pct/schema/Layers ../Layers.xsd">
+    <Type>Model</Type>
+    <Layer>
+        <Name>Interface</Name>
+        <Controller>
+            <Name>Two</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>TwoInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Proportional</Type>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>120</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>PassT</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>PassT</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>PassThrough</Type>
+<Links>
+    <Index>0</Index>
+    <Name>OneError</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </InputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>One</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>OneInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Pause</Type>
+                            <Parameters>
+<Name>ConstantRate</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Pause</Name>
+<Value>50</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>OneReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Constant</Type>
+                            <Parameters>
+<Name>Constant</Name>
+<Value>100</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>OneError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+<Index>0</Index>
+<Name>OneReference</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>OneInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+</Layers>
