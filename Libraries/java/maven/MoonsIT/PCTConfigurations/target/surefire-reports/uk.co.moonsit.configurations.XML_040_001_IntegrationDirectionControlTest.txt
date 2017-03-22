@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: uk.co.moonsit.configurations.XML_040_001_IntegrationDirectionControlTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 sec

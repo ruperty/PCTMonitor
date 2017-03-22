@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+  This software is the property of Moon's Information Technology Ltd.
+ 
+  All rights reserved.
+ 
+  The software is only to be used for development and research purposes.
+  Commercial use is only permitted under license or agreement.
+ 
+  Copyright (C)  Moon's Information Technology Ltd.
+  
+  Author: rupert@moonsit.co.uk
+ 
+ 
+-->
+
+<ns1:Layers  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns:ns1='http://uk.co.moons.pct/schema/Layers'
+   xsi:schemaLocation='http://uk.co.moons.pct/schema/Layers ../../../../../../../../PCT/src/uk/co/moons/xml/layers/Layers.xsd'>
+    <ns1:Layer>
+        <ns1:Type>Motors</ns1:Type>
+        <ns1:Name>Robot Motors</ns1:Name>
+        <ns1:Controller>
+            <ns1:Type>Motor</ns1:Type>
+            <ns1:Name>Motor B</ns1:Name>
+            <ns1:Functions>
+                <ns1:Input>
+                    <ns1:Type>MotorInput</ns1:Type>
+                    <ns1:Name>MotorBInput</ns1:Name>
+                    <ns1:NeuralFunction>
+                        <ns1:Type>MotorRead</ns1:Type>
+                        <ns1:Name>Motor B</ns1:Name>
+                        <ns1:Parameters>
+                            <ns1:Name>MotorIndex</ns1:Name>
+                            <ns1:Value>B</ns1:Value>
+                            <ns1:DataType>Motor</ns1:DataType>
+                        </ns1:Parameters>
+                        <ns1:Parameters>
+                            <ns1:Name>Smoothness</ns1:Name>
+                            <ns1:Value>0.1</ns1:Value>
+                            <ns1:DataType>Double</ns1:DataType>
+                        </ns1:Parameters>
+                    </ns1:NeuralFunction>
+                </ns1:Input>
+                <ns1:Reference>
+                    <ns1:Type>Constant</ns1:Type>
+                    <ns1:Name>SpeedReferenceB</ns1:Name>
+                    <ns1:NeuralFunction>
+                        <ns1:Type>Constant</ns1:Type>
+                        <ns1:Name>Speed</ns1:Name>
+                        <ns1:Parameters>
+                            <ns1:Name>Constant</ns1:Name>
+                            <ns1:Value>900</ns1:Value>
+                            <ns1:DataType>Double</ns1:DataType>
+                        </ns1:Parameters>
+                    </ns1:NeuralFunction>
+                </ns1:Reference>
+                <ns1:Error>
+                    <ns1:Type>Error</ns1:Type>
+                    <ns1:Name>MotorBError</ns1:Name>
+                    <ns1:NeuralFunction>
+                        <ns1:Type>Subtract</ns1:Type>
+                        <ns1:Name>MotorBError</ns1:Name>
+                    </ns1:NeuralFunction>
+                </ns1:Error>
+                <ns1:Output>
+                    <ns1:Type>MotorOutput</ns1:Type>
+                    <ns1:Name>MotorBOutput</ns1:Name>
+                    <ns1:NeuralFunction>
+                        <ns1:Type>MotorWrite</ns1:Type>
+                        <ns1:Name></ns1:Name>
+                        <ns1:Parameters>
+                            <ns1:Name>Gain</ns1:Name>
+                            <ns1:Value>10</ns1:Value>
+                            <ns1:DataType>Double</ns1:DataType>
+                        </ns1:Parameters>
+                        <ns1:Parameters>
+                            <ns1:Name>Slow</ns1:Name>
+                            <ns1:Value>0.01</ns1:Value>
+                            <ns1:DataType>Double</ns1:DataType>
+                        </ns1:Parameters>
+                        <ns1:Parameters>
+                            <ns1:Name>MotorIndex</ns1:Name>
+                            <ns1:Value>B</ns1:Value>
+                            <ns1:DataType>Motor</ns1:DataType>
+                        </ns1:Parameters>
+                    </ns1:NeuralFunction>
+                </ns1:Output>
+            </ns1:Functions>
+        </ns1:Controller>      
+    </ns1:Layer>
+</ns1:Layers>

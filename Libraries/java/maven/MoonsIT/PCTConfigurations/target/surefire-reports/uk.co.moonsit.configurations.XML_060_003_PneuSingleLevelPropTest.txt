@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: uk.co.moonsit.configurations.XML_060_003_PneuSingleLevelPropTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.218 sec

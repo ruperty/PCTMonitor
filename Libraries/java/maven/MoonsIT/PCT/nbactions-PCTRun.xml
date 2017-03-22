@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath uk.co.moons.control.run.PCTRun -xml c:/Versioning/PCTSoftware/Controllers/Models/Sequences/006-001-SequenceControl.xml   c:/Versioning/PCTSoftware/Controllers/Models/PRGUI/DesignTest.odg  GUITest001.odg  002-002-ReorganisationSimulationInt.xml 002-003-ReorganisationSimulationEcoli.xml  c:/Versioning/PCTSoftware/Controllers/Models/MountainCar/004-001-MountainCarModel.xml  /home/rupert/Versioning/PCTSoftware/Controllers/Robot/001-018-Memory.xml  /home/rupert/Versioning/PCTSoftware/Controllers/Models/000-000-Sine.xml Robot\024-008-SepwayEV3GyroBasic-BBCC-Reorg.xml   Models\001-005-VelocityAccelerationControlIntegration.xml -print -xrunTime 1000 -xrunIter 20000 -out c:/tmp/out.csv</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath uk.co.moons.control.run.PCTRun -xml c:/Versioning/PCTSoftware/Controllers/Models/Sequences/006-001-SequenceControl.xml   c:/Versioning/PCTSoftware/Controllers/Models/PRGUI/DesignTest.odg  GUITest001.odg  002-002-ReorganisationSimulationInt.xml 002-003-ReorganisationSimulationEcoli.xml  c:/Versioning/PCTSoftware/Controllers/Models/MountainCar/004-001-MountainCarModel.xml  /home/rupert/Versioning/PCTSoftware/Controllers/Robot/001-018-Memory.xml  /home/rupert/Versioning/PCTSoftware/Controllers/Models/000-000-Sine.xml Robot\024-008-SepwayEV3GyroBasic-BBCC-Reorg.xml   Models\001-005-VelocityAccelerationControlIntegration.xml -print -xrunTime 1000 -xrunIter 20000 -out c:/tmp/out.csv</exec.args>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath uk.co.moons.control.run.PCTRun -xml c:/Versioning/PCTSoftware/Controllers/Models/Sequences/006-001-SequenceControl.xml   c:/Versioning/PCTSoftware/Controllers/Models/PRGUI/DesignTest.odg  GUITest001.odg  002-002-ReorganisationSimulationInt.xml 002-003-ReorganisationSimulationEcoli.xml  c:/Versioning/PCTSoftware/Controllers/Models/MountainCar/004-001-MountainCarModel.xml  /home/rupert/Versioning/PCTSoftware/Controllers/Robot/001-018-Memory.xml  /home/rupert/Versioning/PCTSoftware/Controllers/Models/000-000-Sine.xml Robot\024-008-SepwayEV3GyroBasic-BBCC-Reorg.xml   Models\001-005-VelocityAccelerationControlIntegration.xml -print -xrunTime 1000 -xrunIter 20000 -out c:/tmp/out.csv</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+    </actions>

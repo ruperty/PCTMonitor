@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This software is the property of Moon's Information Technology Ltd.
+ 
+  All rights reserved.
+ 
+  The software is only to be used for development and research purposes.
+  Commercial use is only permitted under license or agreement.
+ 
+  Copyright (C)  Moon's Information Technology Ltd.
+  
+  Author: rupert@moonsit.co.uk
+ 
+ 
+-->
+<mode version="2.4">
+    <module name="org.netbeans.core.ui/1" spec="1.2"/>
+    <name unique="leftSlidingSide"/>
+  <kind type="sliding"/>
+  <slidingSide side="left"/>
+  <state type="joined"/>
+  <bounds x="0" y="0" width="0" height="0"/>
+  <frame state="0"/>
+    <empty-behavior permanent="true"/>
+</mode>

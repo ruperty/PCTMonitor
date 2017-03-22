@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+  This software is the property of Moon's Information Technology Ltd.
+ 
+  All rights reserved.
+ 
+  The software is only to be used for development and research purposes.
+  Commercial use is only permitted under license or agreement.
+ 
+  Copyright (C)  Moon's Information Technology Ltd.
+  
+  Author: rupert@moonsit.co.uk
+ 
+ 
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://uk.co.moons.pct/schema/Layers"
+    xmlns:tns="http://uk.co.moons.pct/schema/Layers"
+    elementFormDefault="qualified">
+    <xsd:element name="Layers">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="OrderedControllers" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Controller" type="xsd:string" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Type" type="xsd:string" ></xsd:element>
+                <xsd:element name="Description" type="xsd:string" maxOccurs="1" minOccurs="0" ></xsd:element>
+                <xsd:element name="Layer" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <!--<xsd:element name="Type" type="xsd:string"></xsd:element>-->
+                            <xsd:element name="Name" type="xsd:string"></xsd:element>
+                            <xsd:element name="Controller" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <!--<xsd:element name="Type" type="xsd:string"></xsd:element>-->
+                                        <xsd:element name="Name" type="xsd:string"></xsd:element>
+                                        <xsd:element name="Activation" type="tns:Activation" minOccurs="0"></xsd:element>
+
+                                        <xsd:element name="Functions">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="InputFunctions" minOccurs="0" maxOccurs="1">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="Input" type="tns:ControlFunction"></xsd:element>
+                                                                <xsd:element name="Transfers" maxOccurs="1" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="Transfer"  type="tns:ControlFunction"  minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="ReferenceFunctions" minOccurs="0" maxOccurs="1">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="Reference" type="tns:ControlFunction"></xsd:element>
+                                                                <xsd:element name="Transfers" maxOccurs="1" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="Transfer"  type="tns:ControlFunction" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="ErrorFunctions" minOccurs="0" maxOccurs="1">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="Error" type="tns:ControlFunction"></xsd:element>
+                                                                <xsd:element name="Transfers" maxOccurs="1" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="Transfer"  type="tns:ControlFunction"  minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                    <xsd:element name="OutputFunctions" minOccurs="0" maxOccurs="1">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="Output" type="tns:ControlFunction"></xsd:element>
+                                                                <xsd:element name="Transfers" maxOccurs="1" minOccurs="0">
+                                                                    <xsd:complexType>
+                                                                        <xsd:sequence>
+                                                                            <xsd:element name="Transfer"  type="tns:ControlFunction" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                                                                        </xsd:sequence>
+                                                                    </xsd:complexType>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+    <xsd:complexType  name="ControlFunction">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"></xsd:element>
+            <xsd:element name="Description" type="xsd:string"></xsd:element>
+            <xsd:element name="NeuralFunction" type="tns:NeuralFunction" ></xsd:element>
+
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Parameters" >
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"></xsd:element>
+            <xsd:element name="Value" type="xsd:string"></xsd:element>
+            <xsd:element name="DataType" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="NeuralFunction">
+        <xsd:sequence>
+            <xsd:element name="Type" type="xsd:string"></xsd:element>
+            <xsd:element name="Parameters" type="tns:Parameters" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            <xsd:element name="Links" type="tns:Link" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Link">
+        <xsd:sequence>
+            <xsd:element name="Index"  type="xsd:string"/>
+            <xsd:element name="Name"  type="xsd:string"/>
+            <xsd:element name="Type"  type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Activation">
+        <xsd:sequence>
+            <xsd:element name="DeactivateLink" type="tns:Link"></xsd:element>
+            <xsd:element name="Functions" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="List">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="FunctionType" minOccurs="1" maxOccurs="unbounded" type="xsd:string"></xsd:element>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
+
+
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="uk_co_moonsit_gui_controlpanel_core">
+                <file name="ControlPanel" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//uk.co.moonsit.gui.controlpanel.core//ControlPanel//EN"/>
+                </file>
+                <file name="PlotPanel" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//uk.co.moonsit.gui.controlpanel.core//PlotPanel//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="uk">
+                <folder name="co">
+                    <folder name="moonsit">
+                        <folder name="gui">
+                            <folder name="controlpanel">
+                                <folder name="core">
+                                    <file name="ControlPanelTopComponent">
+                                    <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent-->
+                                    <attr
+                                    name="settings.providerPath" stringvalue="xml/lookups//uk_co_moonsit_gui_controlpanel_core/ControlPanel.instance"/>
+                                    </file>
+                                    <file name="PlotPanelTopComponent">
+                                    <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent-->
+                                    <attr
+                                    name="settings.providerPath" stringvalue="xml/lookups//uk_co_moonsit_gui_controlpanel_core/PlotPanel.instance"/>
+                                    </file>
+                                </folder>
+                            </folder>
+                        </folder>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="uk_co_moonsit_gui_controlpanel_core">
+                <file name="ControlPanel.instance">
+                    <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PlotPanel.instance">
+                    <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="uk-co-moonsit-gui-controlpanel-core-ControlPanelTopComponent.shadow">
+                <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/uk-co-moonsit-gui-controlpanel-core-ControlPanelTopComponent.instance"/>
+            </file>
+            <file name="uk-co-moonsit-gui-controlpanel-core-PlotPanelTopComponent.shadow">
+                <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/uk-co-moonsit-gui-controlpanel-core-PlotPanelTopComponent.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="ControlPanelTopComponent.settings">
+                <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent"/>
+</settings>
+]]></file>
+            <file name="PlotPanelTopComponent.settings">
+                <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent"/>
+</settings>
+]]></file>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="ControlPanelTopComponent.wstcref">
+                    <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="ControlPanelTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+            </folder>
+            <folder name="output">
+                <file name="PlotPanelTopComponent.wstcref">
+                    <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PlotPanelTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="uk-co-moonsit-gui-controlpanel-core-ControlPanelTopComponent.instance">
+                <!--uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent"/>
+                <attr name="preferredID" stringvalue="ControlPanelTopComponent"/>
+                <attr
+                    bundlevalue="uk.co.moonsit.gui.controlpanel.core.Bundle#CTL_ControlPanelAction" name="displayName"/>
+            </file>
+            <file name="uk-co-moonsit-gui-controlpanel-core-PlotPanelTopComponent.instance">
+                <!--uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent"/>
+                <attr name="preferredID" stringvalue="PlotPanelTopComponent"/>
+                <attr
+                    bundlevalue="uk.co.moonsit.gui.controlpanel.core.Bundle#CTL_PlotPanelAction" name="displayName"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

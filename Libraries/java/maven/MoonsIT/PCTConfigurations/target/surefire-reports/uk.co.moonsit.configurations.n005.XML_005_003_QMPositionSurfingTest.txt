@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: uk.co.moonsit.configurations.n005.XML_005_003_QMPositionSurfingTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.268 sec

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: uk.co.moonsit.gui.controlpanel.core
+OpenIDE-Module-Layer: uk/co/moonsit/gui/controlpanel/core/layer.xml
+OpenIDE-Module-Localizing-Bundle: uk/co/moonsit/gui/controlpanel/core/Bundle.properties
+OpenIDE-Module-Requires: org.openide.windows.WindowManager
+OpenIDE-Module-Specification-Version: 1.0
+

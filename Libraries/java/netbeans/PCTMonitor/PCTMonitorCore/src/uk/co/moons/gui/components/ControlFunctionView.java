@@ -1,0 +1,176 @@
+/* 
+  *  This software is the property of Moon's Information Technology Ltd.
+  * 
+  *  All rights reserved.
+  * 
+  *  The software is only to be used for development and research purposes.
+  *  Commercial use is only permitted under license or agreement.
+  * 
+  *  Copyright (C)  Moon's Information Technology Ltd.
+  *  
+  *  Author: rupert@moonsit.co.uk
+  * 
+  * 
+ */
+package uk.co.moons.gui.components;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.beans.IndexedPropertyChangeEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.logging.Logger;
+import uk.co.moons.gui.controlpanel.display.ControlDisplayTypes;
+import uk.co.moonsit.utils.Environment;
+
+/**
+ *
+ * @author ReStart
+ */
+public class ControlFunctionView extends javax.swing.JPanel {
+    
+    private static final Logger LOG = Logger.getLogger(ControlFunctionView.class.getName());
+    
+    private int index;
+
+    
+    private ControlHierarchyEventMonitor monitor;
+    private ControlDisplayTypes controlDisplayTypes;
+    private boolean transfer = false;
+    private BooleanFlag display;
+
+    /**
+     * Creates new form ControlFunctionView
+     */
+    public ControlFunctionView() {
+        initComponents();
+    }
+
+    /*public BooleanFlag getVisible() {
+        return display;
+    }
+
+    public void setVisible(BooleanFlag visible) {
+        this.display = visible;
+    }*/
+    public void setControlFunction(ControlHierarchyEventMonitor monitor, int ind, String name, boolean transfer, BooleanFlag display) {
+        this.monitor = monitor;
+        this.index = ind;
+        this.transfer = transfer;
+        this.display = display;
+        this.setName(name);
+        //if (transfer) {
+        //  fontSize = 14;
+        //}
+        //this.name = name;
+        setToolTipText(name);
+        // add listener to listen and react to changes in to value's state
+        monitor.addPropertyChangeListener(new ControlFunctionListener());
+    }
+    
+    public ControlDisplayTypes getControlDisplayTypes() {
+        return controlDisplayTypes;
+    }
+    
+    public void setControlDisplayTypes(ControlDisplayTypes controlDisplayTypes) {
+        this.controlDisplayTypes = controlDisplayTypes;
+    }
+    
+    private class ControlFunctionListener implements PropertyChangeListener {
+        
+        @Override
+        public void propertyChange(PropertyChangeEvent evt) {
+            if (ControlHierarchyEventMonitor.UPDATE.equals(evt.getPropertyName())) {
+                int ind = ((IndexedPropertyChangeEvent) evt).getIndex();
+                if (ind == index) {
+                    if (display.isFlag()) {
+                        setLabel2Text((Double) evt.getNewValue());
+                    }
+                }
+            }
+        }
+    }
+    
+    public void setLabel2Text(double value) {
+        //String text = String.valueOf(String.format("%5.2f", value));
+        String text = controlDisplayTypes.getText(value);
+        //LOG.info(this.getName() + " " + text);
+        int fontSize = Environment.getInstance().getFontSize(transfer);
+        Font font = new Font("Courier", Font.BOLD, fontSize);
+        jLabel1.setFont(font);
+        jLabel1.setText(text);
+        //System.out.println("label " + jLabel1.getSize());
+        double width = jPanelControlFunction.getSize().getWidth();
+        double height = jPanelControlFunction.getSize().getHeight();
+        double labelWidth = jLabel1.getSize().getWidth();
+        double labelHeight = jLabel1.getSize().getHeight();
+        if (labelWidth > width) {
+            width = labelWidth;
+        }
+        if (labelHeight > height) {
+            height = labelHeight;
+        }
+        //System.out.println("TEXT " + text);
+
+        jPanelControlFunction.setBackground(controlDisplayTypes.getColor(value));
+        jPanelControlFunction.setForeground(value < 0 ? Color.yellow : Color.black);
+        jPanelControlFunction.setPreferredSize(new Dimension((int) width, (int) height));
+        //this.revalidate();
+        //this.repaint();
+        //System.out.println("panel " + jPanelControlFunction.getSize());
+    }
+
+    /*
+    @Override
+    public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    if (function != null) {
+    String text = controlDisplayTypes.getText(function.getValue());
+    //System.out.println("TEXT " + text);
+    Rectangle r = g.getClipBounds();
+    g.setColor(new Color(240, 240, 240));
+    g.fillRect(r.x, r.y, r.width, r.height);
+    //jLabelValue.setBackground(Color.GRAY);
+    //jLabelValue.setText(text);
+    jLabel1.setText(text);
+    this.jPanelControlFunction.setBackground(controlDisplayTypes.getColor(function.getValue()));
+    }
+    }*/
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanelControlFunction = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+
+        setMinimumSize(new java.awt.Dimension(20, 10));
+        setName("Form"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(20, 10));
+        setLayout(new java.awt.BorderLayout());
+
+        jPanelControlFunction.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelControlFunction.setMinimumSize(new java.awt.Dimension(20, 10));
+        jPanelControlFunction.setName("jPanelControlFunction"); // NOI18N
+        jPanelControlFunction.setPreferredSize(new java.awt.Dimension(20, 10));
+        jPanelControlFunction.setLayout(new java.awt.BorderLayout());
+
+        //org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(uk.co.moons.gui.controlpanel.ControlPanelApp.class).getContext().getResourceMap(ControlFunctionView.class);
+        //jLabel1.setFont(resourceMap.getFont("jLabel1.font")); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        //jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
+        jLabel1.setName("jLabel1"); // NOI18N
+        jPanelControlFunction.add(jLabel1, java.awt.BorderLayout.CENTER);
+
+        add(jPanelControlFunction, java.awt.BorderLayout.CENTER);
+    }// </editor-fold>//GEN-END:initComponents
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanelControlFunction;
+    // End of variables declaration//GEN-END:variables
+}

@@ -1,0 +1,946 @@
+Mar 11, 2017 2:48:17 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 11, 2017 2:48:22 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 11, 2017 2:48:22 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\DesignTest.odg.
+Mar 11, 2017 2:48:38 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\DesignTest.xml
+Mar 11, 2017 2:48:40 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 1344
+Mar 11, 2017 2:48:41 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\DesignTest.xml
+Mar 11, 2017 2:48:41 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 245
+Mar 11, 2017 2:48:41 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 11, 2017 2:57:30 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 11, 2017 2:57:36 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 11, 2017 2:57:36 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\DesignTest.odg.
+Mar 11, 2017 2:57:36 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\DesignTest.xml
+Mar 11, 2017 2:57:36 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 576
+Mar 11, 2017 2:57:37 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\DesignTest.xml
+Mar 11, 2017 2:57:37 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 85
+Mar 11, 2017 2:57:37 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 11, 2017 2:58:08 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\DesignTest\DesignTest-plots.properties (The system cannot find the path specified)
+Mar 11, 2017 2:58:39 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked AtomOffset
+Mar 11, 2017 2:58:43 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 11, 2017 2:58:43 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 11, 2017 2:58:43 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: +++ 1
+Mar 11, 2017 2:58:45 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 11, 2017 2:58:45 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 11, 2017 2:58:56 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Interface
+Mar 11, 2017 2:58:56 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 1 0 AtomOffset
+Mar 11, 2017 2:59:02 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 2 name AtomOffsetInput
+Mar 11, 2017 2:59:02 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 2
+Mar 11, 2017 2:59:02 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values AtomOffsetInput Gain 2
+Mar 11, 2017 2:59:02 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 11, 2017 2:59:39 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 1,1 name Sum
+Mar 11, 2017 2:59:39 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Sum Weights 1,1
+Mar 11, 2017 2:59:39 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 11, 2017 2:59:39 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 11, 2017 2:59:39 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 11, 2017 2:59:39 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 11, 2017 2:59:57 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 11, 2017 2:59:57 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 0
+Mar 11, 2017 3:00:03 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 11, 2017 3:00:03 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest002.odg.
+Mar 11, 2017 3:00:03 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest002.xml
+Mar 11, 2017 3:00:03 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 94
+Mar 11, 2017 3:00:03 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest002.xml
+Mar 11, 2017 3:00:03 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 70
+Mar 11, 2017 3:00:03 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC PlotPanel Window
+Mar 11, 2017 3:00:03 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 11, 2017 3:00:03 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 11, 2017 3:00:20 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest002\GUITest002-plots.properties (The system cannot find the path specified)
+Mar 11, 2017 3:00:27 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 1,1 name Sum
+Mar 11, 2017 3:00:27 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Sum Weights 1,1
+Mar 11, 2017 3:00:27 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 11, 2017 3:00:29 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Atom
+Mar 11, 2017 3:00:34 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 11, 2017 3:00:34 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 11, 2017 3:00:34 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: +++ 1
+Mar 11, 2017 3:00:37 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 11, 2017 3:00:37 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 11, 2017 3:00:52 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 11, 2017 3:00:52 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 11, 2017 3:00:52 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 11, 2017 3:02:16 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent
+Mar 17, 2017 2:57:02 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 17, 2017 2:57:09 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ Sequences
+Mar 17, 2017 2:57:09 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\Sequences\006-001-SequenceControl.xml.
+Mar 17, 2017 2:57:09 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\Sequences\006-001-SequenceControl.xml
+Mar 17, 2017 2:57:09 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 566
+Mar 17, 2017 2:57:09 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\Sequences\006-001-SequenceControl.xml
+Mar 17, 2017 2:57:09 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 45
+Mar 17, 2017 2:57:09 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 17, 2017 2:57:10 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\Sequences\properties\006-001\006-001-SequenceControl-plots.properties (The system cannot find the path specified)
+Mar 17, 2017 2:57:17 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked OneControl
+Mar 17, 2017 2:57:18 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked SequenceControl
+Mar 17, 2017 2:57:21 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 17, 2017 2:57:21 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 17, 2017 2:57:28 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked TwoControl
+Mar 17, 2017 2:57:30 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked ThreeControl
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 1 Sequence
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 1 0 SequenceControl
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Env
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 0 Env
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 1 OneControl
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 2 TwoControl
+Mar 17, 2017 2:57:41 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 3 ThreeControl
+Mar 17, 2017 2:57:44 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 0.01,0.001,0.112, name SequenceControlInput
+Mar 17, 2017 2:57:44 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values SequenceControlInput Tolerances 0.01,0.001,0.112,
+Mar 17, 2017 2:57:44 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:57:46 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type int value 1 name Reset
+Mar 17, 2017 2:57:46 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Reset Pulse 1
+Mar 17, 2017 2:57:46 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:58:10 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 1000 name OneControlOutput
+Mar 17, 2017 2:58:10 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 1000
+Mar 17, 2017 2:58:10 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneControlOutput Gain 1000
+Mar 17, 2017 2:58:10 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:58:11 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 2 name SequenceControlReference
+Mar 17, 2017 2:58:11 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 2
+Mar 17, 2017 2:58:11 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values SequenceControlReference Constant 2
+Mar 17, 2017 2:58:11 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:58:14 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 10 name OneReference
+Mar 17, 2017 2:58:14 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 10
+Mar 17, 2017 2:58:14 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneReference Constant 10
+Mar 17, 2017 2:58:14 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:58:15 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type int value 1 name Reset
+Mar 17, 2017 2:58:15 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Reset Pulse 1
+Mar 17, 2017 2:58:15 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:58:34 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 1000 name OneControlOutput
+Mar 17, 2017 2:58:34 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 1000
+Mar 17, 2017 2:58:34 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneControlOutput Gain 1000
+Mar 17, 2017 2:58:34 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 17, 2017 2:58:35 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 17, 2017 2:58:35 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 17, 2017 2:58:35 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 17, 2017 2:58:43 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent
+Mar 17, 2017 6:57:21 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 17, 2017 6:57:30 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 17, 2017 6:57:30 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.odg.
+Mar 17, 2017 6:57:31 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 17, 2017 6:57:32 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 1228
+Mar 17, 2017 6:57:32 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 17, 2017 6:57:32 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 217
+Mar 17, 2017 6:57:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 17, 2017 6:57:32 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 17, 2017 6:57:37 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked DummySequence
+Mar 17, 2017 6:57:38 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked One
+Mar 17, 2017 6:57:40 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+SEVERE: null
+java.lang.Exception: Reset must be last link in SequenceNeuralFunction
+	at uk.co.moons.control.neural.SequenceNeuralFunction.init(SequenceNeuralFunction.java:78)
+	at uk.co.moons.control.ControlHierarchy.initNeuralFunction(ControlHierarchy.java:191)
+	at uk.co.moons.control.ControlHierarchy.init(ControlHierarchy.java:181)
+	at uk.co.moons.gui.controlpanel.helper.ControlPanelHelper.init(ControlPanelHelper.java:530)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent.jButtonStartActionPerformed(ControlPanelTopComponent.java:499)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent.access$200(ControlPanelTopComponent.java:55)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent$2.actionPerformed(ControlPanelTopComponent.java:179)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at org.netbeans.core.TimableEventQueue.dispatchEvent(TimableEventQueue.java:159)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Mar 17, 2017 6:57:40 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+WARNING: System exitint
+Mar 17, 2017 6:58:02 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent
+Mar 18, 2017 1:19:01 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:19:09 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:19:09 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.odg.
+Mar 18, 2017 1:19:09 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:19:11 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 1432
+Mar 18, 2017 1:19:11 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:19:11 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 306
+Mar 18, 2017 1:19:11 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 18, 2017 1:19:12 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 18, 2017 1:19:17 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked DummySequence
+Mar 18, 2017 1:19:19 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+SEVERE: null
+java.lang.Exception: Key link type missing for ValueActivateNeuralFunction
+	at uk.co.moons.control.neural.ValueActivateNeuralFunction.init(ValueActivateNeuralFunction.java:64)
+	at uk.co.moons.control.ControlHierarchy.initNeuralFunction(ControlHierarchy.java:191)
+	at uk.co.moons.control.ControlHierarchy.init(ControlHierarchy.java:181)
+	at uk.co.moons.gui.controlpanel.helper.ControlPanelHelper.init(ControlPanelHelper.java:530)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent.jButtonStartActionPerformed(ControlPanelTopComponent.java:499)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent.access$200(ControlPanelTopComponent.java:55)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent$2.actionPerformed(ControlPanelTopComponent.java:179)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at org.netbeans.core.TimableEventQueue.dispatchEvent(TimableEventQueue.java:159)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Mar 18, 2017 1:19:19 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+WARNING: System exitint
+Mar 18, 2017 1:19:28 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:19:28 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 0
+Mar 18, 2017 1:19:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:19:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Open command cancelled by user.
+Mar 18, 2017 1:21:28 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:21:28 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 0
+Mar 18, 2017 1:21:30 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:21:30 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.odg.
+Mar 18, 2017 1:21:30 PM uk.co.moons.config.ODGConfig <init>
+INFO: +++ ODGConfig constructor
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: OneInput OneOutput 10.014
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput OneError 21.693
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: OneReferenceActive DummySequenceOutput 11.571
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followForwardLinks
+WARNING: DummySequenceOutput OneReferenceActive 11.571
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: TwoInput TwoOutput 10.014
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: TwoReferenceActive DummySequenceOutput 20.882
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput TwoError 32.501
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followForwardLinks
+WARNING: DummySequenceOutput TwoReferenceActive 20.882
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: ThreeInput ThreeOutput 10.014
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: ThreeReferenceActive DummySequenceOutput 33.964
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput ThreeError 45.415
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followForwardLinks
+WARNING: DummySequenceOutput ThreeReferenceActive 33.964
+Mar 18, 2017 1:21:34 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput Reset 21.66
+Mar 18, 2017 1:21:34 PM uk.co.moons.config.ODGConfig processDocument
+INFO: ODG processing time 3,861
+Mar 18, 2017 1:21:34 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:21:34 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 283
+Mar 18, 2017 1:21:34 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:21:35 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 488
+Mar 18, 2017 1:21:35 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:21:35 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 225
+Mar 18, 2017 1:21:35 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 18, 2017 1:21:35 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC PlotPanel Window
+Mar 18, 2017 1:21:35 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 18, 2017 1:21:40 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+SEVERE: null
+java.lang.Exception: Key link type missing for ValueActivateNeuralFunction
+	at uk.co.moons.control.neural.ValueActivateNeuralFunction.init(ValueActivateNeuralFunction.java:64)
+	at uk.co.moons.control.ControlHierarchy.initNeuralFunction(ControlHierarchy.java:191)
+	at uk.co.moons.control.ControlHierarchy.init(ControlHierarchy.java:181)
+	at uk.co.moons.gui.controlpanel.helper.ControlPanelHelper.init(ControlPanelHelper.java:530)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent.jButtonStartActionPerformed(ControlPanelTopComponent.java:499)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent.access$200(ControlPanelTopComponent.java:55)
+	at uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent$2.actionPerformed(ControlPanelTopComponent.java:179)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at org.netbeans.core.TimableEventQueue.dispatchEvent(TimableEventQueue.java:159)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Mar 18, 2017 1:21:40 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+WARNING: System exitint
+Mar 18, 2017 1:22:15 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent
+Mar 18, 2017 1:32:13 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:32:21 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:32:21 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.odg.
+Mar 18, 2017 1:32:21 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:32:21 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 446
+Mar 18, 2017 1:32:21 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:32:22 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 49
+Mar 18, 2017 1:32:22 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 18, 2017 1:32:22 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 18, 2017 1:32:25 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked DummySequence
+Mar 18, 2017 1:32:26 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 18, 2017 1:32:26 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 18, 2017 1:32:38 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked One
+Mar 18, 2017 1:32:40 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Two
+Mar 18, 2017 1:32:41 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Three
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 1 Sequence
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 1 0 DummySequence
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Interface
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 0 Env
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 1 One
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 2 Two
+Mar 18, 2017 1:32:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 3 Three
+Mar 18, 2017 1:32:46 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 0.01,0.001,0.112, name DummySequenceInput
+Mar 18, 2017 1:32:46 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceInput Tolerances 0.01,0.001,0.112,
+Mar 18, 2017 1:32:46 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:32:47 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 3 name DummySequenceReference
+Mar 18, 2017 1:32:47 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 3
+Mar 18, 2017 1:32:47 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceReference Constant 3
+Mar 18, 2017 1:32:47 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:33:08 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type boolean value true name EnvInput
+Mar 18, 2017 1:33:08 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values EnvInput ConstantRate true
+Mar 18, 2017 1:33:08 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:33:11 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type boolean value true name EnvInput
+Mar 18, 2017 1:33:11 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values EnvInput ConstantRate true
+Mar 18, 2017 1:33:11 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:33:12 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type int value 1 name Reset
+Mar 18, 2017 1:33:12 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Reset Pulse 1
+Mar 18, 2017 1:33:12 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:33:51 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 10 name OneRef
+Mar 18, 2017 1:33:51 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 10
+Mar 18, 2017 1:33:51 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneRef Constant 10
+Mar 18, 2017 1:33:51 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:33:54 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type int value 1 name Reset
+Mar 18, 2017 1:33:54 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Reset Pulse 1
+Mar 18, 2017 1:33:54 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:34:27 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 10 name OneRef
+Mar 18, 2017 1:34:27 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 10
+Mar 18, 2017 1:34:27 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneRef Constant 10
+Mar 18, 2017 1:34:27 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:35:35 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 10 name OneRef
+Mar 18, 2017 1:35:35 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 10
+Mar 18, 2017 1:35:35 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneRef Constant 10
+Mar 18, 2017 1:35:35 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:36:01 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 18, 2017 1:36:01 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:36:01 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:36:03 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:36:03 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 0
+Mar 18, 2017 1:36:05 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:36:05 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.odg.
+Mar 18, 2017 1:36:05 PM uk.co.moons.config.ODGConfig <init>
+INFO: +++ ODGConfig constructor
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** Key
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** Key
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** Key
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** 
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGConnector <init>
+INFO: ***** Reset
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: OneInput OneOutput 10.014
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput OneError 21.693
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: OneReferenceActive DummySequenceOutput 11.571
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followForwardLinks
+WARNING: DummySequenceOutput OneReferenceActive 11.571
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: TwoInput TwoOutput 10.014
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: TwoReferenceActive DummySequenceOutput 20.882
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput TwoError 32.501
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followForwardLinks
+WARNING: DummySequenceOutput TwoReferenceActive 20.882
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: ThreeInput ThreeOutput 10.014
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: ThreeReferenceActive DummySequenceOutput 33.964
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput ThreeError 45.415
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followForwardLinks
+WARNING: DummySequenceOutput ThreeReferenceActive 33.964
+Mar 18, 2017 1:36:09 PM uk.co.moonsit.config.odg.ODGProcessing followReverseLinks
+WARNING: DummySequenceInput Reset 21.66
+Mar 18, 2017 1:36:09 PM uk.co.moons.config.ODGConfig processDocument
+INFO: ODG processing time 3,747
+Mar 18, 2017 1:36:09 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:36:10 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 207
+Mar 18, 2017 1:36:10 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:36:10 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 259
+Mar 18, 2017 1:36:10 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:36:10 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 257
+Mar 18, 2017 1:36:10 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC PlotPanel Window
+Mar 18, 2017 1:36:10 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 18, 2017 1:36:10 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 18, 2017 1:36:14 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked DummySequence
+Mar 18, 2017 1:36:15 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 18, 2017 1:36:15 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 18, 2017 1:36:21 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked One
+Mar 18, 2017 1:36:32 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Two
+Mar 18, 2017 1:36:33 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Three
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 1 Sequence
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 1 0 DummySequence
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Interface
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 0 Env
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 1 One
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 2 Two
+Mar 18, 2017 1:36:42 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 3 Three
+Mar 18, 2017 1:36:44 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 0.01,0.001,0.112, name DummySequenceInput
+Mar 18, 2017 1:36:44 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceInput Tolerances 0.01,0.001,0.112,
+Mar 18, 2017 1:36:44 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:36:45 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 2 name DummySequenceReference
+Mar 18, 2017 1:36:45 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 2
+Mar 18, 2017 1:36:45 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceReference Constant 2
+Mar 18, 2017 1:36:45 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:36:48 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type boolean value true name EnvInput
+Mar 18, 2017 1:36:48 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values EnvInput ConstantRate true
+Mar 18, 2017 1:36:48 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:36:50 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type int value 1 name Reset
+Mar 18, 2017 1:36:50 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values Reset Pulse 1
+Mar 18, 2017 1:36:50 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:36:59 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper$1 mouseReleased
+INFO: mouse clicked Interface
+Mar 18, 2017 1:36:59 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper saveParameters
+INFO: Saved parameters to C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\parameters\GUITest006.pars
+Mar 18, 2017 1:37:06 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 10 name OneRef
+Mar 18, 2017 1:37:06 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 10
+Mar 18, 2017 1:37:06 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneRef Constant 10
+Mar 18, 2017 1:37:06 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:37:06 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 18, 2017 1:37:06 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:37:06 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:37:07 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.Double value 10 name OneRef
+Mar 18, 2017 1:37:07 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ Double set to 10
+Mar 18, 2017 1:37:07 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values OneRef Constant 10
+Mar 18, 2017 1:37:07 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:37:11 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:37:11 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 0
+Mar 18, 2017 1:37:13 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:37:13 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.odg.
+Mar 18, 2017 1:37:13 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:37:13 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 188
+Mar 18, 2017 1:37:13 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:37:13 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 205
+Mar 18, 2017 1:37:13 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC PlotPanel Window
+Mar 18, 2017 1:37:13 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 18, 2017 1:37:13 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 1 Sequence
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 1 0 DummySequence
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Interface
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 0 Env
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 1 One
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 2 Two
+Mar 18, 2017 1:37:16 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 3 Three
+Mar 18, 2017 1:37:20 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 0.01,0.001,0.112, name DummySequenceInput
+Mar 18, 2017 1:37:20 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceInput Tolerances 0.01,0.001,0.112,
+Mar 18, 2017 1:37:20 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:37:22 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked DummySequence
+Mar 18, 2017 1:37:29 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 18, 2017 1:37:29 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 0
+Mar 18, 2017 1:37:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 18, 2017 1:37:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml.
+Mar 18, 2017 1:37:32 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:37:32 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 181
+Mar 18, 2017 1:37:32 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest006.xml
+Mar 18, 2017 1:37:32 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 153
+Mar 18, 2017 1:37:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC PlotPanel Window
+Mar 18, 2017 1:37:32 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 18, 2017 1:37:32 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest006\GUITest006-plots.properties (The system cannot find the path specified)
+Mar 18, 2017 1:37:35 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked DummySequence
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 1 Sequence
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 1 0 DummySequence
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Interface
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 0 Env
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 1 One
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 2 Two
+Mar 18, 2017 1:37:37 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 3 Three
+Mar 18, 2017 1:37:42 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 0.01,0.001,0.112, name DummySequenceInput
+Mar 18, 2017 1:37:42 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceInput Tolerances 0.01,0.001,0.112,
+Mar 18, 2017 1:37:42 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:37:50 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type java.lang.String value 0.01,0.001,0.112, name DummySequenceInput
+Mar 18, 2017 1:37:50 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values DummySequenceInput Tolerances 0.01,0.001,0.112,
+Mar 18, 2017 1:37:50 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 18, 2017 1:37:52 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Two
+Mar 18, 2017 1:37:53 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 18, 2017 1:37:53 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 18, 2017 1:38:37 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Three
+Mar 18, 2017 1:38:43 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 18, 2017 1:38:43 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:38:43 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:47:25 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 18, 2017 1:47:25 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 18, 2017 1:47:27 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 18, 2017 1:47:27 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:47:27 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 18, 2017 1:47:29 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent
+Mar 22, 2017 2:31:30 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 22, 2017 2:31:38 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ PRGUI
+Mar 22, 2017 2:31:38 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest001.xml.
+Mar 22, 2017 2:31:38 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest001.xml
+Mar 22, 2017 2:31:41 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 3298
+Mar 22, 2017 2:31:42 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\GUITest001.xml
+Mar 22, 2017 2:31:42 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 88
+Mar 22, 2017 2:31:42 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC Output
+Mar 22, 2017 2:31:42 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 22, 2017 2:31:43 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTSoftware\Controllers\Models\PRGUI\properties\GUITest001\GUITest001-plots.properties (The system cannot find the path specified)
+Mar 22, 2017 2:33:13 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked Atom
+Mar 22, 2017 2:58:50 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent
