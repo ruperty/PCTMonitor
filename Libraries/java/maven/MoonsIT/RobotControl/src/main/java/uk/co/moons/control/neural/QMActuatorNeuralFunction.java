@@ -53,6 +53,11 @@ public class QMActuatorNeuralFunction extends NeuralFunction {
 
     }
 
+   
+
+    
+    
+
     @Override
     public void init() throws Exception {
         actuator = new QMActuator();

@@ -624,9 +624,12 @@ public class ODGProcessing {
         }
 
         controllerFunction.addTransfer(transferID);
-        String start = connector.getStartConnectorPoint().getName();
-        linkFunction.addLink(start, connector.getType());
-
+        //String start = connector.getStartConnectorPoint().getName();
+        //linkFunction.addLink(start, connector.getType());
+        for (ODGConnector linkConnector : getNextReverseFunctionConnectors(linkFunction.getName())) {
+            linkFunction.addLink(linkConnector.getStartConnectorPoint().getName(), connector.getType());
+        }
+        
         for (ODGConnector nextConnector : getNextForwardFunctionConnectors(linkFunction.getName())) {
             followForwardLinks(nextConnector, linkFunction, controllerFunction);
         }

@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class ODGConfig007Test {
+public class ODGConfig007_ControllerOrderTest {
 
-    public ODGConfig007Test() {
+    public ODGConfig007_ControllerOrderTest() {
     }
 
     /**
@@ -22,7 +22,7 @@ public class ODGConfig007Test {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest007"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest007_ControllerOrder"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);

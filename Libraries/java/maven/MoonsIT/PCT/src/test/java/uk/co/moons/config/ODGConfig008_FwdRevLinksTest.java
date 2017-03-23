@@ -5,28 +5,26 @@
  */
 package uk.co.moons.config;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author ReStart
+ * @author Rupert Young
  */
-public class ODGConfig002_ErrorLinkTest {
-
-    public ODGConfig002_ErrorLinkTest() {
+public class ODGConfig008_FwdRevLinksTest {
+    
+    public ODGConfig008_FwdRevLinksTest() {
     }
+
+  
 
     /**
      * Test of main method, of class ODGConfig.
      */
     @Test
     public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest002_ErrorLink"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest008_FwdRevLinks"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);
@@ -35,5 +33,5 @@ public class ODGConfig002_ErrorLinkTest {
             fail(ex.toString());
         }
     }
-
+    
 }

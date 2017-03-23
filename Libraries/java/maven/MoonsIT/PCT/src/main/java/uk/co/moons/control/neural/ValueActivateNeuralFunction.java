@@ -52,7 +52,7 @@ public class ValueActivateNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public void checkLinks() throws Exception {
+    public void verifyConfiguration() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
 
         for (int i = 0; i < controls.size(); i++) {

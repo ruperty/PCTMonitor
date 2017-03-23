@@ -36,7 +36,6 @@ public class QMSensorNeuralFunction extends NeuralFunction {
     public Integer timeout = 30000;
     public double targetpercentage = 10;
     public Double timelimit = null;
-    public int level = 0;
 
     private QMSensor sensor;
     private boolean first = true;
@@ -58,13 +57,14 @@ public class QMSensorNeuralFunction extends NeuralFunction {
     public double qmreset = 0.0;
 
     private String exe = "C:\\packages\\Perceptual learning-20170103T142628Z\\Perceptual learning\\Builds\\2017-01-03\\Server\\Quantum Moves.exe";
-    private int x=400;
-    private int y=0;
-    private int width=1024;
-    private int height=750;
+    private int x = 400;
+    private int y = 0;
+    private int width = 1024;
+    private int height = 750;
+    private int level = 0;
 
-    private int qmResetIndex = 0;
-    private int qmLevelIndex = 0;
+    private Integer qmResetIndex = null;
+    private Integer qmLevelIndex = null;
     private boolean connected = true;
 
     public QMSensorNeuralFunction(List<Parameters> ps) throws Exception {
@@ -91,9 +91,9 @@ public class QMSensorNeuralFunction extends NeuralFunction {
                 subscribe = Boolean.parseBoolean(param.getValue());
             }
 
-            if (param.getName().equals("Level")) {
-                level = Integer.parseInt(param.getValue());
-            }
+            //if (param.getName().equals("Level")) {
+              //  level = Integer.parseInt(param.getValue());
+            //}
             if (param.getName().equals("Host")) {
                 host = param.getValue();
             }
@@ -110,26 +110,16 @@ public class QMSensorNeuralFunction extends NeuralFunction {
                 timelimit = Double.parseDouble(param.getValue());
             }
         }
-        /*if (variable == null) {
-            throw new Exception("Null configuration value for variable");
-        }*/
-        if (host != null) {
+        /*if (host != null) {
             if (level == 0) {
                 throw new Exception("Missing configuration value for level");
             }
-        }
+        }*/
 
     }
 
     @Override
-    public void init() throws Exception {
-        //super.init();
-        if (host == null) {
-            sensor = new QMSensor();
-        } else {
-            sensor = new QMSensor(host, port, timeout, level, x, y, width, height, exe);
-        }
-
+    public void verifyConfiguration() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
         for (int i = 0; i < controls.size(); i++) {
             String linkType = links.getType(i);
@@ -142,8 +132,28 @@ public class QMSensorNeuralFunction extends NeuralFunction {
             }
             if (linkType.equals("QMLevel")) {
                 qmLevelIndex = i;
+                level = (int) controls.get(qmLevelIndex).getNeural().getOutput();
             }
         }
+
+        if (qmResetIndex == null) {
+            throw new Exception("Reset link of type QMReset has not been configured");
+        }
+        if (qmLevelIndex == null) {
+            throw new Exception("Level link of type QMLevel has not been configured");
+        }
+    }
+
+    @Override
+    public void init() throws Exception {
+        //super.init();
+        if (host == null) {
+            sensor = new QMSensor();
+        } else {
+
+            sensor = new QMSensor(host, port, timeout, level, x, y, width, height, exe);
+        }
+
         setStaticSubscribedValues();
         setDynamicSubscribedValues();
     }

@@ -13,14 +13,14 @@
                         <NeuralFunction>
                             <Type>Pause</Type>
                             <Parameters>
-<Name>ConstantRate</Name>
-<Value>true</Value>
-<DataType>Boolean</DataType>
+                                <Name>ConstantRate</Name>
+                                <Value>true</Value>
+                                <DataType>Boolean</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Pause</Name>
-<Value>50</Value>
-<DataType>Double</DataType>
+                                <Name>Pause</Name>
+                                <Value>50</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                         </NeuralFunction>
                     </Input>
@@ -35,25 +35,202 @@
                         <Name>LaserXAccelInput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>QMSensor</Type>
-                            <Parameters>
-<Name>TargetPercentage</Name>
-<Value>1</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Parameters>
-<Name>Level</Name>
-<Value>1</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Parameters>
-<Name>TimeLimit</Name>
-<Value>0.3</Value>
-<DataType>Double</DataType>
-                            </Parameters>
+                            <Type>Change</Type>
+                            <Links>
+                                <Index>0</Index>
+                                <Name>SimTime</Name>
+                            </Links>
                         </NeuralFunction>
                     </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>Reset</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>BinaryPulse</Type>
+                                <Parameters>
+                                    <Name>Pulse</Name>
+                                    <Value>0</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Level</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>Constant</Type>
+                                <Parameters>
+                                    <Name>Constant</Name>
+                                    <Value>13</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>SimTime</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>QMSensor</Type>
+                                <Parameters>
+                                    <Name>TargetPercentage</Name>
+                                    <Value>1</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                                <Parameters>
+                                    <Name>TimeLimit</Name>
+                                    <Value>0</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                                <Links>
+                                    <Index>0</Index>
+                                    <Name>Level</Name>
+                                    <Type>QMLevel</Type>
+                                </Links>
+                                <Links>
+                                    <Index>1</Index>
+                                    <Name>Reset</Name>
+                                    <Type>QMReset</Type>
+                                </Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>LaserXAccelReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Constant</Type>
+                            <Parameters>
+                                <Name>Constant</Name>
+                                <Value>0</Value>
+                                <DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>LaserXAccelError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+                                <Index>0</Index>
+                                <Name>LaserXAccelReference</Name>
+                            </Links>
+                            <Links>
+                                <Index>1</Index>
+                                <Name>LaserXAccelInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>LaserXAccelOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Integration</Type>
+                            <Parameters>
+                                <Name>Slow</Name>
+                                <Value>1000</Value>
+                                <DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+                                <Name>Gain</Name>
+                                <Value>100</Value>
+                                <DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+                                <Index>0</Index>
+                                <Name>Reset</Name>
+                                <Type>Reset</Type>
+                            </Links>
+                            <Links>
+                                <Index>1</Index>
+                                <Name>LaserXAccelError</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>LaserOutputIntegrateY</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>ProportionalIntegration</Type>
+                                <Parameters>
+                                    <Name>Gain</Name>
+                                    <Value>1</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                                <Links>
+                                    <Index>0</Index>
+                                    <Name>LaserXAccelOutput</Name>
+                                </Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>LaserOutputY</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>QMActuator</Type>
+                                <Parameters>
+                                    <Name>Publish</Name>
+                                    <Value>false</Value>
+                                    <DataType>Boolean</DataType>
+                                </Parameters>
+                                <Parameters>
+                                    <Name>Variable</Name>
+                                    <Value>LaserOutputY</Value>
+                                    <DataType></DataType>
+                                </Parameters>
+                                <Links>
+                                    <Index>0</Index>
+                                    <Name>LaserOutputIntegrateY</Name>
+                                </Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>LaserOutputIntegrateX</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>ProportionalIntegration</Type>
+                                <Parameters>
+                                    <Name>Gain</Name>
+                                    <Value>1</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                                <Links>
+                                    <Index>0</Index>
+                                    <Name>LaserXAccelOutput</Name>
+                                </Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>LaserOutputX</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+                                <Type>QMActuator</Type>
+                                <Parameters>
+                                    <Name>Publish</Name>
+                                    <Value>true</Value>
+                                    <DataType>Boolean</DataType>
+                                </Parameters>
+                                <Parameters>
+                                    <Name>Variable</Name>
+                                    <Value>LaserOutputX</Value>
+                                    <DataType></DataType>
+                                </Parameters>
+                                <Links>
+                                    <Index>0</Index>
+                                    <Name>LaserOutputIntegrateX</Name>
+                                </Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </OutputFunctions>
             </Functions>
         </Controller>
     </Layer>

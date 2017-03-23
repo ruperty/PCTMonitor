@@ -67,8 +67,13 @@ public class QMState {
 
     private boolean reset = true;
 
-    public String setCursor() {
-
+    public String setCursor() throws Exception {
+        if (outputx == null) {
+            throw new Exception("outputx is null, has LaserOutputX been configured in a QMActuator");
+        }
+        if (outputy == null) {
+            throw new Exception("outputy is null, has LaserOutputY been configured in a QMActuator");
+        }
         JsonObject json = Json.createObjectBuilder()
                 .add(type, cursorCmd)
                 .add("x", outputx)
@@ -190,7 +195,7 @@ public class QMState {
     }
 
     private double applyXlimit(double value) {
-        
+
         if (value > maxx) {
             return maxx;
         }
@@ -200,9 +205,8 @@ public class QMState {
         return value;
     }
 
-    
     private double applyYlimit(double value) {
-        
+
         if (value > maxy) {
             return maxy;
         }

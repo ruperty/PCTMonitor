@@ -82,7 +82,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
 
     
      @Override
-    public void checkLinks() throws Exception {
+    public void verifyConfiguration() throws Exception {
         if (links.getControlList().size() == 0) {
             throw new Exception("IntegrationNeuralFunction requires at least one link");
         }

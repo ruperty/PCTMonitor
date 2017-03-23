@@ -70,7 +70,7 @@ public class SequenceNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public void checkLinks() throws Exception {
+    public void verifyConfiguration() throws Exception {
 
         List<BaseControlFunction> controls = links.getControlList();
         int i = controls.size() - 1;

@@ -351,7 +351,7 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
         }
 
         if (configLinks.isEmpty()) {
-            checkLinks();
+            verifyConfiguration();
 
             return;
         }
@@ -365,17 +365,17 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
 
             BaseControlFunction control = hmControls.get(lname);
             if (control == null) {
-                throw new Exception("Function " + link.getName() + " indicated by link is missing");
+                throw new Exception("Function " + link.getName() + " indicated by link is missing. If function exists in ODG drawing ensure it is less than 3cm from linked function.");
             }
             //control.setLinkType(link.getType());
             links.addControl(control);
             links.addType(link.getType());
         }
-        checkLinks();
+        verifyConfiguration();
         //addLink(signalLink);
     }
 
-    public void checkLinks() throws Exception {
+    public void verifyConfiguration() throws Exception {
     }
 
     public void setLink(BaseControlFunction control) throws Exception {

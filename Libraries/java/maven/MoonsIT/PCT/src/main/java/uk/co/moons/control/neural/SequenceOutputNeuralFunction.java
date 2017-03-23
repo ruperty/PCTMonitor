@@ -30,7 +30,7 @@ public class SequenceOutputNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public void checkLinks() throws Exception {
+    public void verifyConfiguration() throws Exception {
         String tname = this.getName();
         String rname = tname.replace("Output", "Reference");
 

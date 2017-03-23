@@ -17,7 +17,6 @@ package uk.co.moons.run;
 //import x. .*;
 import java.io.File;
 import java.util.logging.Level;
-import uk.co.moons.handlers.MotorHandler;
 import java.util.logging.Logger;
 import uk.co.moons.control.RobotControlHierarchy;
 import uk.co.moons.sensors.states.BaseSensorState;

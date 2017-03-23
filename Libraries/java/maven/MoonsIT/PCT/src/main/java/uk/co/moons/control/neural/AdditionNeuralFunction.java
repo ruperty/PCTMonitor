@@ -40,7 +40,7 @@ public class AdditionNeuralFunction extends NeuralFunction {
 
     
     @Override
-    public void checkLinks() throws Exception {
+    public void verifyConfiguration() throws Exception {
         if (links.getControlList().size() != 2) {
             throw new Exception("AdditionNeuralFunction requires two links, has " + links.getControlList().size());
         }

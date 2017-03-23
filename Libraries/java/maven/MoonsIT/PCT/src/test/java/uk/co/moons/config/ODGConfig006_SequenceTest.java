@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class ODGConfig006Test {
+public class ODGConfig006_SequenceTest {
     
-    public ODGConfig006Test() {
+    public ODGConfig006_SequenceTest() {
     }
 
     
@@ -23,7 +23,7 @@ public class ODGConfig006Test {
      */
     @Test
     public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest006"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest006_Sequence"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);

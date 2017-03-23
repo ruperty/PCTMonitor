@@ -7,19 +7,20 @@ package uk.co.moons.config;
 
 import org.junit.Test;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.fail;
 
 /**
  *
  * @author ReStart
  */
-public class ODGConfig004Test {
+public class ODGConfig004_TransferOrderTest {
 
-    public ODGConfig004Test() {
+    public ODGConfig004_TransferOrderTest() {
     }
 
     @Test
     public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest004"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest004_TransferOrder"};
         System.out.println(args[0] + args[1]);
 
 

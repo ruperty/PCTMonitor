@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class ODGConfig001Test {
+public class ODGConfig001_HelloWorldTest {
 
-    public ODGConfig001Test() {
+    public ODGConfig001_HelloWorldTest() {
     }
 
     /**
@@ -24,7 +24,7 @@ public class ODGConfig001Test {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest001"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest001_HelloWorld"};
         System.out.println(args[0] + args[1]);
 
         try {

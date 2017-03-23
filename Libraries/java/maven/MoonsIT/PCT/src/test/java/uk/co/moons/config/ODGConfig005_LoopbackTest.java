@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class ODGConfig005Test {
+public class ODGConfig005_LoopbackTest {
     
-    public ODGConfig005Test() {
+    public ODGConfig005_LoopbackTest() {
     }
 
    
@@ -24,7 +24,7 @@ public class ODGConfig005Test {
      */
     @Test
     public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest005"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest005_Loopback"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);
