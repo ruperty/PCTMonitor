@@ -10,30 +10,26 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author ReStart
+ * @author Rupert Young
  */
-public class XML_005_001_QMBasicTest {
-    
-    public XML_005_001_QMBasicTest() {
+public class ODGConfig009_OverrideOutputTest {
+
+    public ODGConfig009_OverrideOutputTest() {
     }
 
     /**
-     * Test of main method, of class TestMain.
+     * Test of main method, of class ODGConfig.
      */
     @Test
-    public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-001-QMBasic"};
-        System.out.println(args[0]+args[1]);
-
-
+    public void testMain() {
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest009_OverrideOutput"};
+        System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
-            ex.printStackTrace();
-            System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());
         }
     }
-    
+
 }

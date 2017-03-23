@@ -83,7 +83,7 @@ public class ODGController {
     }
 
     public boolean isDefaultError() {
-        return reference.getConfigID() != null && input.getConfigID() != null;
+        return reference.getConfigID() != null && input.getConfigID() != null && output.getLinks().length ==0;
     }
 
     public ODGFunction isIn(Point2D p) {
