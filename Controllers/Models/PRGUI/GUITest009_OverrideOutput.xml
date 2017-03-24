@@ -13,38 +13,38 @@
                         <NeuralFunction>
                             <Type>SineGenerator</Type>
                             <Parameters>
-<Name>Amplitude</Name>
-<Value>1</Value>
-<DataType>Double</DataType>
+                                <Name>Amplitude</Name>
+                                <Value>1</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Frequency</Name>
-<Value>1</Value>
-<DataType>Double</DataType>
+                                <Name>Frequency</Name>
+                                <Value>1</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Phase</Name>
-<Value>0</Value>
-<DataType>Double</DataType>
+                                <Name>Phase</Name>
+                                <Value>0</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>XShift</Name>
-<Value>0</Value>
-<DataType>Double</DataType>
+                                <Name>XShift</Name>
+                                <Value>0</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>YShift</Name>
-<Value>0</Value>
-<DataType>Double</DataType>
+                                <Name>YShift</Name>
+                                <Value>0</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Step</Name>
-<Value>1</Value>
-<DataType>Double</DataType>
+                                <Name>Step</Name>
+                                <Value>1</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Links>
-<Index>0</Index>
-<Name>Pause</Name>
+                                <Index>0</Index>
+                                <Name>Pause</Name>
                             </Links>
                         </NeuralFunction>
                     </Input>
@@ -53,17 +53,17 @@
                             <Name>Pause</Name>
                             <Description>...</Description>
                             <NeuralFunction>
-<Type>Pause</Type>
-<Parameters>
-    <Name>ConstantRate</Name>
-    <Value>true</Value>
-    <DataType>Boolean</DataType>
-</Parameters>
-<Parameters>
-    <Name>Pause</Name>
-    <Value>50</Value>
-    <DataType>Double</DataType>
-</Parameters>
+                                <Type>Pause</Type>
+                                <Parameters>
+                                    <Name>ConstantRate</Name>
+                                    <Value>true</Value>
+                                    <DataType>Boolean</DataType>
+                                </Parameters>
+                                <Parameters>
+                                    <Name>Pause</Name>
+                                    <Value>50</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
                             </NeuralFunction>
                         </Transfer>
                     </Transfers>
@@ -75,9 +75,9 @@
                         <NeuralFunction>
                             <Type>Constant</Type>
                             <Parameters>
-<Name>Constant</Name>
-<Value>20</Value>
-<DataType>Double</DataType>
+                                <Name>Constant</Name>
+                                <Value>20</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                         </NeuralFunction>
                     </Reference>
@@ -89,13 +89,13 @@
                         <NeuralFunction>
                             <Type>Constant</Type>
                             <Parameters>
-<Name>Constant</Name>
-<Value>20</Value>
-<DataType>Double</DataType>
+                                <Name>Constant</Name>
+                                <Value>20</Value>
+                                <DataType>Double</DataType>
                             </Parameters>
                             <Links>
-<Index>0</Index>
-<Name>AtomReference</Name>
+                                <Index>0</Index>
+                                <Name>AtomReference</Name>
                             </Links>
                         </NeuralFunction>
                     </Output>
@@ -104,20 +104,20 @@
                             <Name>TwoConstant</Name>
                             <Description>...</Description>
                             <NeuralFunction>
-<Type>Constant</Type>
-<Parameters>
-    <Name>Constant</Name>
-    <Value>20</Value>
-    <DataType>Double</DataType>
-</Parameters>
-<Links>
-    <Index>0</Index>
-    <Name>AtomOutput</Name>
-</Links>
-<Links>
-    <Index>1</Index>
-    <Name>Pause</Name>
-</Links>
+                                <Type>Constant</Type>
+                                <Parameters>
+                                    <Name>Constant</Name>
+                                    <Value>20</Value>
+                                    <DataType>Double</DataType>
+                                </Parameters>
+                                <Links>
+                                    <Index>0</Index>
+                                    <Name>AtomOutput</Name>
+                                </Links>
+                                <Links>
+                                    <Index>1</Index>
+                                    <Name>Pause</Name>
+                                </Links>
                             </NeuralFunction>
                         </Transfer>
                     </Transfers>
