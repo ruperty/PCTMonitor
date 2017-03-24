@@ -13,24 +13,24 @@ import static org.junit.Assert.*;
  * @author ReStart
  */
 public class ODGConfig006_SequenceTest {
-    
+
     public ODGConfig006_SequenceTest() {
     }
 
-    
     /**
      * Test of main method, of class ODGConfig.
      */
     @Test
-    public void testMain()  {
+    public void testMain() {
         String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest006_Sequence"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
+            System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());
         }
     }
-    
+
 }

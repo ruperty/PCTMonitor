@@ -13,25 +13,24 @@ import static org.junit.Assert.*;
  * @author Rupert Young
  */
 public class ODGConfig008_FwdRevLinksTest {
-    
+
     public ODGConfig008_FwdRevLinksTest() {
     }
-
-  
 
     /**
      * Test of main method, of class ODGConfig.
      */
     @Test
-    public void testMain()  {
+    public void testMain() {
         String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest008_FwdRevLinks"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
+            System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());
         }
     }
-    
+
 }

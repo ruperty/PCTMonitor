@@ -29,6 +29,7 @@ public class ODGConfig003_MultipleLinksTest {
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
+            System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());
         }

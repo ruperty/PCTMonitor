@@ -14,6 +14,18 @@
  */
 package uk.co.moons.config;
 
+import difflib.Delta;
+import difflib.DiffUtils;
+import difflib.Patch;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Layers;
@@ -61,11 +73,39 @@ public class ODGConfig {
 
         String config = dir + prefix + ".odg";
         String out = dir + prefix + ".xml";
+        String valid = dir + prefix + ".valid.xml";
 
         ODGConfig odg = new ODGConfig();
         odg.processDocument(config);
         odg.saveConfig(out);
 
-        //File file = new File("DesignTest1.odg");
+        List<String> original = odg.fileToLines(valid);
+        List<String> revised = odg.fileToLines(out);
+
+        // Compute diff. Get the Patch object. Patch is the container for computed deltas.
+        Patch patch = DiffUtils.diff(original, revised);
+
+        StringBuilder sb = new StringBuilder();
+        for (Object delta : patch.getDeltas()) {
+            sb.append(delta).append("\n");
+        }
+        if (sb.length() > 0) {
+            throw new Exception(sb.toString());
+        }
+    }
+
+    // Helper method for get the file content
+    private List<String> fileToLines(String filename) {
+        List<String> lines = new LinkedList<>();
+        String line = "";
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filename));
+            while ((line = in.readLine()) != null) {
+                lines.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return lines;
     }
 }

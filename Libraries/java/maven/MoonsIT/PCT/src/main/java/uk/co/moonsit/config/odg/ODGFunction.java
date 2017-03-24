@@ -29,6 +29,7 @@ public class ODGFunction {
 
     private Point2D location = null;
     private String name = null;
+    private String overrideName = null;
     private Integer configID = null;
     private final List<String[]> linkList;
     private final List<Integer> transferList;
@@ -59,6 +60,14 @@ public class ODGFunction {
         double x = Utils.convertCmCoordinate(custom.getSvgXAttribute())+ ODGProcessing.FUNCTION_SIZE/2;
         double y = Utils.convertCmCoordinate(custom.getSvgYAttribute())+ ODGProcessing.FUNCTION_SIZE/2;
         location = new Point2D.Double(x, y);
+    }
+
+    public String getOverrideName() {
+        return overrideName;
+    }
+
+    public void setOverrideName(String overrideName) {
+        this.overrideName = overrideName;
     }
 
     public void addLink(String link) {

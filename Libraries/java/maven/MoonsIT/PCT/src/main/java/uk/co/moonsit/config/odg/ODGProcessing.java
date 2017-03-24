@@ -236,7 +236,8 @@ public class ODGProcessing {
                 if (error != null && error.getConfigID() == null) {
                     if (odgcontroller.isDefaultError()) {
                         String name = controller.getName();
-                        ControlFunction function = Utils.configureControlFunction(name + "Error", "...", "Subtract", null, new String[][]{{odgcontroller.getReference().getName()}, {odgcontroller.getInput().getName()}});
+                        ControlFunction function = Utils.configureControlFunction(name + "Error", "...", "Subtract", null, 
+                                new String[][]{{getLinkName( odgcontroller.getReference().getName())}, {getLinkName(odgcontroller.getInput().getName())}});
                         Utils.addFunction(controller, function, Utils.ERROR, false);
                     }
                 } else {
@@ -266,13 +267,15 @@ public class ODGProcessing {
         String name = function.getName();
         int index = function.getConfigID();
         ODGFunctionConfig config = configList.get(index);
+        if(function.getOverrideName()!=null)
+            name = function.getOverrideName();
 
         ControlFunction controlFunction = Utils.configureControlFunction(name, "...", config.getType(), config.getParameters(), function.getLinks());
 
         return controlFunction;
     }
 
-    public void parseDocument(String config) throws Exception  {
+    public void parseDocument(String config) throws Exception {
         //long start = System.currentTimeMillis();
         GraphicsDocument gd;
         try {
@@ -280,7 +283,7 @@ public class ODGProcessing {
             //LOG.log(Level.INFO, "processing time {0}", (System.currentTimeMillis() - start));
         } catch (Exception ex) {
             Logger.getLogger(ODGProcessing.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Path "+ config + " is incorrect");
+            throw new Exception("Path " + config + " is incorrect");
         }
 
         OfficeDrawingElement odfEl = gd.getContentRoot();
@@ -430,8 +433,14 @@ public class ODGProcessing {
         for (ODGConnector connector : connectorList) {
             if (connector.isFunctionConfig()) {
                 if (connector.isEndController()) {
+                    String fname = connector.getEndConnectorPoint().getName();
                     ODGFunction function = controllerList.get(connector.getEndConnectorPoint().getControllerId())
-                            .getFunction(connector.getEndConnectorPoint().getName());
+                            .getFunction(fname);
+                    String configName = connector.getStartConnectorPoint().getName();
+                    if (configName != null) {
+                        function.setOverrideName(configName);
+                    }
+
                     function.setConfigID(connector.getStartConnectorPoint().getId());
                 } else {
                     ODGFunction function = functionList.get(connector.getEndConnectorPoint().getId());
@@ -532,10 +541,24 @@ public class ODGProcessing {
                     ODGFunction function = controllerList.get(connector.getEndConnectorPoint().getControllerId())
                             .getFunction(connector.getEndConnectorPoint().getName());
 
-                    function.addLink(connector.getStartConnectorPoint().getName(), connector.getType());
+                    function.addLink(getLinkName(connector.getStartConnectorPoint().getName()), connector.getType());
                 }
             }
         }
+    }
+
+    private String getLinkName(String lname) {
+
+        for (ODGController controller : controllerList) {
+            ODGFunction function = controller.getFunction(lname);
+            if (function != null) {
+                if (function.getOverrideName() != null) {
+                    return function.getOverrideName();
+                }
+            }
+        }
+
+        return lname;
     }
 
     // for connectors that are links between a controller function and another function
@@ -597,7 +620,7 @@ public class ODGProcessing {
 
         String start = connector.getStartConnectorPoint().getName();
         if (thisFunction != controllerFunction) {
-            thisFunction.addLink(start, connector.getType());
+            thisFunction.addLink(getLinkName(start), connector.getType());
         }
 
         if (!thisFunction.isNear(linkFunction)) {
@@ -627,9 +650,9 @@ public class ODGProcessing {
         //String start = connector.getStartConnectorPoint().getName();
         //linkFunction.addLink(start, connector.getType());
         for (ODGConnector linkConnector : getNextReverseFunctionConnectors(linkFunction.getName())) {
-            linkFunction.addLink(linkConnector.getStartConnectorPoint().getName(), connector.getType());
+            linkFunction.addLink(getLinkName(linkConnector.getStartConnectorPoint().getName()), linkConnector.getType());
         }
-        
+
         for (ODGConnector nextConnector : getNextForwardFunctionConnectors(linkFunction.getName())) {
             followForwardLinks(nextConnector, linkFunction, controllerFunction);
         }

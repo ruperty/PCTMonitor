@@ -27,6 +27,7 @@ public class ODGConfig007_ControllerOrderTest {
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
+            System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());
         }

@@ -7,7 +7,6 @@ package uk.co.moons.config;
 
 import org.junit.Test;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.fail;
 
 /**
  *
@@ -19,14 +18,14 @@ public class ODGConfig004_TransferOrderTest {
     }
 
     @Test
-    public void testMain()  {
+    public void testMain() {
         String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest004_TransferOrder"};
         System.out.println(args[0] + args[1]);
-
 
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
+            System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());
         }

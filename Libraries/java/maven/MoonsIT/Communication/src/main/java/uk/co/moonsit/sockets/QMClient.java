@@ -120,7 +120,7 @@ public class QMClient extends SocketClient {
         }
     }
 
-    public void sendMove() throws SocketException, IOException {
+    public void sendMove() throws SocketException, IOException, Exception {
         String msg = qmstate.setCursor();
         if (debug) {
             LOG.log(Level.INFO, "Move:{0}", msg);
@@ -221,6 +221,8 @@ public class QMClient extends SocketClient {
                         Logger.getLogger(QMClient.class.getName()).log(Level.SEVERE, null, ex1);
                     }
                 } catch (IOException ex) {
+                    Logger.getLogger(QMClient.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
                     Logger.getLogger(QMClient.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 //LOG.log(Level.INFO, "Fidelity {0} {1}", new Object[]{i, client.getValue(QMState.FIDELITY)});

@@ -68,61 +68,6 @@
                         </Transfer>
                     </Transfers>
                 </InputFunctions>
-                <ReferenceFunctions>
-                    <Reference>
-                        <Name>ThreeConstant</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>Constant</Type>
-                            <Parameters>
-<Name>Constant</Name>
-<Value>20</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                        </NeuralFunction>
-                    </Reference>
-                </ReferenceFunctions>
-                <OutputFunctions>
-                    <Output>
-                        <Name>OneConstant</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>Constant</Type>
-                            <Parameters>
-<Name>Constant</Name>
-<Value>20</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Links>
-<Index>0</Index>
-<Name>ThreeConstant</Name>
-                            </Links>
-                        </NeuralFunction>
-                    </Output>
-                    <Transfers>
-                        <Transfer>
-                            <Name>TwoConstant</Name>
-                            <Description>...</Description>
-                            <NeuralFunction>
-<Type>Constant</Type>
-<Parameters>
-    <Name>Constant</Name>
-    <Value>20</Value>
-    <DataType>Double</DataType>
-</Parameters>
-<Links>
-    <Index>0</Index>
-    <Name>OneConstant</Name>
-</Links>
-<Links>
-    <Index>1</Index>
-    <Name>Pause</Name>
-    <Type>Reset</Type>
-</Links>
-                            </NeuralFunction>
-                        </Transfer>
-                    </Transfers>
-                </OutputFunctions>
             </Functions>
         </Controller>
     </Layer>
