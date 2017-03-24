@@ -25,11 +25,9 @@ public class XML_005_001_QMBasicTest {
         String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-001-QMBasic"};
         System.out.println(args[0]+args[1]);
 
-
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
-            ex.printStackTrace();
             System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());

@@ -432,6 +432,7 @@ public class ODGProcessing {
     private void fillInFunctionsConnectedToConfig() {
         for (ODGConnector connector : connectorList) {
             if (connector.isFunctionConfig()) {
+                //LOG.info(connector.toString());
                 if (connector.isEndController()) {
                     String fname = connector.getEndConnectorPoint().getName();
                     ODGFunction function = controllerList.get(connector.getEndConnectorPoint().getControllerId())

@@ -45,8 +45,8 @@ public class ODGFunction {
         transferList = new ArrayList<>();
         DrawCustomShapeElement custom = (DrawCustomShapeElement) elem;
 
-        double x = Utils.convertCmCoordinate(custom.getSvgXAttribute()) + ODGProcessing.FUNCTION_SIZE/2;
-        double y = Utils.convertCmCoordinate(custom.getSvgYAttribute())+ ODGProcessing.FUNCTION_SIZE/2;
+        double x = Utils.convertCmCoordinate(custom.getSvgXAttribute()) + ODGProcessing.FUNCTION_SIZE / 2;
+        double y = Utils.convertCmCoordinate(custom.getSvgYAttribute()) + ODGProcessing.FUNCTION_SIZE / 2;
         location = new Point2D.Double(x, y);
     }
 
@@ -57,8 +57,8 @@ public class ODGFunction {
         DrawCustomShapeElement custom = (DrawCustomShapeElement) elem;
         //LOG.info("Nname " + custom.getLocalName());
 
-        double x = Utils.convertCmCoordinate(custom.getSvgXAttribute())+ ODGProcessing.FUNCTION_SIZE/2;
-        double y = Utils.convertCmCoordinate(custom.getSvgYAttribute())+ ODGProcessing.FUNCTION_SIZE/2;
+        double x = Utils.convertCmCoordinate(custom.getSvgXAttribute()) + ODGProcessing.FUNCTION_SIZE / 2;
+        double y = Utils.convertCmCoordinate(custom.getSvgYAttribute()) + ODGProcessing.FUNCTION_SIZE / 2;
         location = new Point2D.Double(x, y);
     }
 
@@ -80,16 +80,20 @@ public class ODGFunction {
     }
 
     public void addLink(String link, String type) {
-        if(type==null || type.length()==0){
+        if (type == null || type.length() == 0) {
             addLink(link);
             return;
         }
+        if (type.equalsIgnoreCase("transfer")) {
+            return;
+        }
+
         String[] llink = new String[2];
         llink[0] = link;
         llink[1] = type;
         linkList.add(llink);
     }
-    
+
     public void addTransfer(Integer id) {
         transferList.add(id);
     }
@@ -133,7 +137,7 @@ public class ODGFunction {
     }
 
     public boolean isIn(Point2D p) {
-        if (p.distance(location) < ODGProcessing.FUNCTION_SIZE/1.9) { // bit more than half
+        if (p.distance(location) < ODGProcessing.FUNCTION_SIZE / 1.9) { // bit more than half
             return true;
         }
         return false;
@@ -147,7 +151,7 @@ public class ODGFunction {
         return false;
     }
 
-     public double distance(ODGFunction other) {
+    public double distance(ODGFunction other) {
         return other.getLocation().distance(location);
     }
 }

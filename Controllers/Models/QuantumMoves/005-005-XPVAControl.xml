@@ -110,23 +110,6 @@
                         </NeuralFunction>
                     </Reference>
                 </ReferenceFunctions>
-                <ErrorFunctions>
-                    <Error>
-                        <Name>LaserXAccelError</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>Subtract</Type>
-                            <Links>
-<Index>0</Index>
-<Name>LaserXAccelReference</Name>
-                            </Links>
-                            <Links>
-<Index>1</Index>
-<Name>LaserXAccelInput</Name>
-                            </Links>
-                        </NeuralFunction>
-                    </Error>
-                </ErrorFunctions>
                 <OutputFunctions>
                     <Output>
                         <Name>LaserXAccelOutput</Name>
@@ -147,10 +130,6 @@
 <Index>0</Index>
 <Name>Reset</Name>
 <Type>Reset</Type>
-                            </Links>
-                            <Links>
-<Index>1</Index>
-<Name>LaserXAccelError</Name>
                             </Links>
                         </NeuralFunction>
                     </Output>
