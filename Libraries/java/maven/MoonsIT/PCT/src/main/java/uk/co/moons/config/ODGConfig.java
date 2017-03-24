@@ -73,7 +73,7 @@ public class ODGConfig {
 
         String config = dir + prefix + ".odg";
         String out = dir + prefix + ".xml";
-        String valid = dir + prefix + ".valid.xml";
+        String valid = dir + prefix + ".valid";
 
         ODGConfig odg = new ODGConfig();
         odg.processDocument(config);
