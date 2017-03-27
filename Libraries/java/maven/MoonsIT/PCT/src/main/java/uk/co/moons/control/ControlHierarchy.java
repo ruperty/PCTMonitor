@@ -72,7 +72,6 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
-    
     public ControlHierarchy(String config) throws Exception {
         super();
 
@@ -101,7 +100,6 @@ public class ControlHierarchy extends BaseControlHierarchy {
         this.layers = controlBuild.getLayers();
     }
 
-    
     private String processODG(String config) throws Exception {
         if (config.contains(".odg")) {
             String xml = config.replace(".odg", ".xml");
@@ -118,7 +116,6 @@ public class ControlHierarchy extends BaseControlHierarchy {
         return config;
     }
 
-    
     public void setListOutputFunctions(List<String> listOutputFunctions) {
         this.listOutputFunctions = listOutputFunctions;
     }
@@ -183,9 +180,10 @@ public class ControlHierarchy extends BaseControlHierarchy {
         if (orderedControllers != null && orderedControllers.size() > 0) {
             orderedInit();
         } else {
-            for (String name : hmControls.keySet()) {
-                initNeuralFunction(name);
-            }
+            layeredInit();
+            //for (String name : hmControls.keySet()) {
+              //  initNeuralFunction(name);
+            //}
         }
     }
 
@@ -911,6 +909,17 @@ public class ControlHierarchy extends BaseControlHierarchy {
         //    closeNeuralFunction(name);
         //}
         logger.log(Level.INFO, "---> Stopping {0}", (System.currentTimeMillis() - start));
+    }
+
+    private void layeredInit() throws Exception {
+
+        for (ControlLayer layer : layers) {
+            ListIterator<Controller> li = layer.listIterator();
+            while (li.hasNext()) {
+                Controller con = li.next();
+                con.init();
+            }
+        }
     }
 
     private void layeredClose() throws Exception {

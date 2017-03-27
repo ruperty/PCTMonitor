@@ -47,6 +47,7 @@ public class ProportionalIntegrationNeuralFunction extends NeuralFunction {
 
     private Integer resetIndex = null;
     private Integer resetValueIndex = null;
+    private Integer dataIndex = null;
 
     /**
      *
@@ -94,6 +95,7 @@ public class ProportionalIntegrationNeuralFunction extends NeuralFunction {
         for (int i = 0; i < controls.size(); i++) {
             String linkType = links.getType(i);// controls.get(i).getLinkType();
             if (linkType == null) {
+                dataIndex=i;
                 continue;
             }
             //LOG.log(Level.INFO, "LinkType {0}", linkType);
@@ -144,7 +146,7 @@ public class ProportionalIntegrationNeuralFunction extends NeuralFunction {
     @Override
     public double compute() {
         List<BaseControlFunction> controls = links.getControlList();
-        Double input = controls.get(0).getValue();
+        Double input = controls.get(dataIndex).getValue();
 
         reset();
         if (Math.abs(input) != Double.POSITIVE_INFINITY) {

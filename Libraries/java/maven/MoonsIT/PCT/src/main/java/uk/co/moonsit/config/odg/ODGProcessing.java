@@ -16,6 +16,7 @@ package uk.co.moonsit.config.odg;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -167,6 +168,7 @@ public class ODGProcessing {
         if (order != null && order.length > 0) {
             Utils.setOrderedControllers(layers, order);
         }
+        sortLayers();
 
         for (ODGLayer odglayer : layerList) {
             Layer layer = Utils.emptyLayer(odglayer.getName());
@@ -178,6 +180,26 @@ public class ODGProcessing {
             //  LOG.info(controllers.get(0).getFunctions().getInputFunctions().getInput().getNeuralFunction().getType());
             //}
         }
+
+    }
+
+    public void sortLayers() {
+        Collections.sort(layerList, new Comparator<ODGLayer>() {
+
+            @Override
+            public int compare(ODGLayer l1, ODGLayer l2) {
+
+                if (l1.getLevel() < l2.getLevel()) {
+                    return -1;
+                }
+
+                if (l2.getLevel() < l1.getLevel()) {
+                    return 1;
+                }
+
+                return 0;
+            }
+        });
 
     }
 
@@ -236,8 +258,8 @@ public class ODGProcessing {
                 if (error != null && error.getConfigID() == null) {
                     if (odgcontroller.isDefaultError()) {
                         String name = controller.getName();
-                        ControlFunction function = Utils.configureControlFunction(name + "Error", "...", "Subtract", null, 
-                                new String[][]{{getLinkName( odgcontroller.getReference().getName())}, {getLinkName(odgcontroller.getInput().getName())}});
+                        ControlFunction function = Utils.configureControlFunction(name + "Error", "...", "Subtract", null,
+                                new String[][]{{getLinkName(odgcontroller.getReference().getName())}, {getLinkName(odgcontroller.getInput().getName())}});
                         Utils.addFunction(controller, function, Utils.ERROR, false);
                     }
                 } else {
@@ -267,8 +289,9 @@ public class ODGProcessing {
         String name = function.getName();
         int index = function.getConfigID();
         ODGFunctionConfig config = configList.get(index);
-        if(function.getOverrideName()!=null)
+        if (function.getOverrideName() != null) {
             name = function.getOverrideName();
+        }
 
         ControlFunction controlFunction = Utils.configureControlFunction(name, "...", config.getType(), config.getParameters(), function.getLinks());
 
@@ -571,6 +594,7 @@ public class ODGProcessing {
                     if (connector.isEndController()) {
                         ODGController controller = controllerList.get(connector.getEndConnectorPoint().getControllerId());
                         ODGFunction controllerFunction = controller.getFunction(connector.getEndConnectorPoint().getName());
+
                         followReverseLinks(connector, controllerFunction, controllerFunction);
                     }
                     if (connector.isStartController()) {
@@ -625,7 +649,7 @@ public class ODGProcessing {
         }
 
         if (!thisFunction.isNear(linkFunction)) {
-            LOG.log(Level.WARNING, "{0} {1} {2}", new Object[]{thisFunction.getName(), linkFunction.getName(), thisFunction.distance(linkFunction)});
+            //LOG.log(Level.WARNING, "{0} {1} {2}", new Object[]{thisFunction.getName(), linkFunction.getName(), thisFunction.distance(linkFunction)});
             return;
         }
 
@@ -640,10 +664,13 @@ public class ODGProcessing {
     }
 
     private void followForwardLinks(ODGConnector connector, ODGFunction thisFunction, ODGFunction controllerFunction) {
-        int transferID = connector.getEndConnectorPoint().getId();
+        Integer transferID = connector.getEndConnectorPoint().getId();
+        if (transferID == null) {
+            return;
+        }
         ODGFunction linkFunction = functionList.get(transferID);
         if (!thisFunction.isNear(linkFunction)) {
-            LOG.log(Level.WARNING, "{0} {1} {2}", new Object[]{thisFunction.getName(), linkFunction.getName(), thisFunction.distance(linkFunction)});
+            //LOG.log(Level.WARNING, "{0} {1} {2}", new Object[]{thisFunction.getName(), linkFunction.getName(), thisFunction.distance(linkFunction)});
             return;
         }
 

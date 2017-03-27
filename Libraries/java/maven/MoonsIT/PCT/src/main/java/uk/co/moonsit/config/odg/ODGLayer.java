@@ -14,8 +14,6 @@
  */
 package uk.co.moonsit.config.odg;
 
-import java.awt.Point;
-import java.awt.Rectangle;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;

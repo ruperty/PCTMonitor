@@ -12,18 +12,18 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class XML_005_001_QMBasicTest {
-    
-    public XML_005_001_QMBasicTest() {
+public class XML_005_000_QMTemplateTest {
+
+    public XML_005_000_QMTemplateTest() {
     }
 
     /**
      * Test of main method, of class TestMain.
      */
     @Test
-    public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-001-QMBasic"};
-        System.out.println(args[0]+args[1]);
+    public void testMain() {
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-000-QMTemplate"};
+        System.out.println(args[0] + args[1]);
 
         try {
             ODGConfig.main(args);
@@ -33,5 +33,5 @@ public class XML_005_001_QMBasicTest {
             fail(ex.toString());
         }
     }
-    
+
 }

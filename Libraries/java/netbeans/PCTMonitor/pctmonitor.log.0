@@ -944,3 +944,157 @@ Mar 22, 2017 2:33:13 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1
 INFO: mouse clicked Atom
 Mar 22, 2017 2:58:50 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
 INFO: +++ Closing PlotPanelTopComponent
+Mar 27, 2017 12:27:31 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 27, 2017 12:28:02 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ QuantumMoves
+Mar 27, 2017 12:28:02 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-001-QMBasic.odg.
+Mar 27, 2017 12:28:02 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-001-QMBasic.xml
+Mar 27, 2017 12:28:03 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 590
+Mar 27, 2017 12:28:03 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-001-QMBasic.xml
+Mar 27, 2017 12:28:03 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 68
+Mar 27, 2017 12:28:03 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 27, 2017 12:28:03 PM uk.co.moons.gui.controlpanel.helper.PlotPanelHelper getProperties
+WARNING: java.io.FileNotFoundException: C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\properties\005-001\005-001-QMBasic-plots.properties (The system cannot find the file specified)
+Mar 27, 2017 12:28:14 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked QMActuator
+Mar 27, 2017 12:28:20 PM uk.co.moonsit.windows.WindowsComms getSystemMetrics
+INFO: w h 1,680 1,050
+Mar 27, 2017 12:28:20 PM uk.co.moonsit.windows.WindowsComms findWindow
+INFO: WindowInfo 78 100 392 312 314 212
+Mar 27, 2017 12:28:20 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Connecting to localhost on port 30000
+Mar 27, 2017 12:28:21 PM uk.co.moonsit.sockets.SocketClient makeConnection
+INFO: Connection failed java.net.ConnectException: Connection refused: connect
+Mar 27, 2017 12:28:26 PM uk.co.moonsit.sockets.SocketClient makeConnection
+INFO: Finished false
+Mar 27, 2017 12:28:26 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Connecting to localhost on port 30000
+Mar 27, 2017 12:28:26 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Just connected to localhost/127.0.0.1:30000
+Mar 27, 2017 12:28:26 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Socket[addr=localhost/127.0.0.1,port=30000,localport=52134]
+Mar 27, 2017 12:28:26 PM uk.co.moonsit.sockets.SocketClient makeConnection
+INFO: Finished false
+Mar 27, 2017 12:28:28 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 27, 2017 12:28:28 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 27, 2017 12:29:14 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addLayersPanels
+INFO: Layer 0 Interface
+Mar 27, 2017 12:29:14 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 0 Env
+Mar 27, 2017 12:29:14 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 1 QMSensor
+Mar 27, 2017 12:29:14 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 2 QMVariables
+Mar 27, 2017 12:29:14 PM uk.co.moons.gui.controlpanel.helper.ParameterslPanelHelper addControllersPanels
+INFO: +++ 4 3 QMActuator
+Mar 27, 2017 12:30:10 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type boolean value true name EnvInput
+Mar 27, 2017 12:30:10 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values EnvInput ConstantRate true
+Mar 27, 2017 12:30:10 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 27, 2017 12:30:38 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:30:39 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:30:39 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: +++ 1
+Mar 27, 2017 12:30:53 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:30:55 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:30:55 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:30:55 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: +++ 1
+Mar 27, 2017 12:32:45 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 27, 2017 12:32:45 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 1
+Mar 27, 2017 12:32:46 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 27, 2017 12:32:47 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ openFileAction
+Mar 27, 2017 12:32:47 PM uk.co.moonsit.sockets.SocketClient close
+INFO: client not null
+Mar 27, 2017 12:32:47 PM uk.co.moonsit.sockets.SocketClient close
+INFO: 30000 isClosed false
+Mar 27, 2017 12:32:47 PM uk.co.moonsit.sockets.SocketClient close
+INFO: Closed 30000 isConnected  true isClosed true
+Mar 27, 2017 12:32:47 PM uk.co.moonsit.sockets.SocketClient close
+INFO: Closed streams
+Mar 27, 2017 12:32:47 PM uk.co.moonsit.sockets.QMClient close
+INFO: Closing QM
+Mar 27, 2017 12:32:47 PM uk.co.moons.control.ControlHierarchy close
+INFO: ---> Close 80
+Mar 27, 2017 12:32:53 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ QuantumMoves
+Mar 27, 2017 12:32:53 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: Opening: C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-001-QuantumMovesBasic.xml.
+Mar 27, 2017 12:32:53 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-001-QuantumMovesBasic.xml
+Mar 27, 2017 12:32:54 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 333
+Mar 27, 2017 12:32:54 PM uk.co.moons.config.XmlConfig config
+INFO: +++ Xml file C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-001-QuantumMovesBasic.xml
+Mar 27, 2017 12:32:54 PM uk.co.moons.config.ControlConfigFactory getControlConfigFunction
+INFO: ---> load 248
+Mar 27, 2017 12:32:54 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC PlotPanel Window
+Mar 27, 2017 12:32:54 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonOpenFileActionPerformed
+INFO: +++ TC ControlPanel Window
+Mar 27, 2017 12:32:54 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:33:01 PM uk.co.moons.control.neural.BaseNeuralFunction setField
+INFO: +++ type boolean value true name EnvInput
+Mar 27, 2017 12:33:01 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ values EnvInput ConstantRate true
+Mar 27, 2017 12:33:01 PM uk.co.moons.control.neural.BaseNeuralFunction setParameter
+INFO: +++ parameters is not null
+Mar 27, 2017 12:33:06 PM uk.co.moonsit.windows.WindowsComms getSystemMetrics
+INFO: w h 1,680 1,050
+Mar 27, 2017 12:33:06 PM uk.co.moonsit.windows.WindowsComms findWindow
+INFO: WindowInfo 103 125 417 337 314 212
+Mar 27, 2017 12:33:06 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Connecting to localhost on port 30000
+Mar 27, 2017 12:33:07 PM uk.co.moonsit.sockets.SocketClient makeConnection
+INFO: Connection failed java.net.ConnectException: Connection refused: connect
+Mar 27, 2017 12:33:12 PM uk.co.moonsit.sockets.SocketClient makeConnection
+INFO: Finished false
+Mar 27, 2017 12:33:12 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Connecting to localhost on port 30000
+Mar 27, 2017 12:33:12 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Just connected to localhost/127.0.0.1:30000
+Mar 27, 2017 12:33:12 PM uk.co.moonsit.sockets.SocketClient connect
+INFO: Socket[addr=localhost/127.0.0.1,port=30000,localport=52205]
+Mar 27, 2017 12:33:12 PM uk.co.moonsit.sockets.SocketClient makeConnection
+INFO: Finished false
+Mar 27, 2017 12:33:14 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ start 
+Mar 27, 2017 12:33:14 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ started thread 
+Mar 27, 2017 12:33:53 PM uk.co.moons.gui.controlpanel.helper.ControlPanelHelper$1 mouseReleased
+INFO: mouse clicked QMActuator
+Mar 27, 2017 12:35:24 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:35:24 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: jListFunctionsValueChanged 
+Mar 27, 2017 12:35:24 PM uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent jListFunctionsValueChanged
+INFO: +++ 1
+Mar 27, 2017 12:36:00 PM uk.co.moonsit.gui.controlpanel.core.ControlPanelTopComponent jButtonStartActionPerformed
+INFO: +++ stop 
+Mar 27, 2017 12:36:00 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 1
+Mar 27, 2017 12:36:00 PM uk.co.moons.control.ControlHierarchy stop
+INFO: ---> Stopping 0
+Mar 27, 2017 12:39:51 PM uk.co.moonsit.gui.controlpanel.core.MyLifeCycleManager exit
+INFO: +++ Closing PlotPanelTopComponent

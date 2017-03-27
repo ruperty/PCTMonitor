@@ -150,7 +150,6 @@ public class QMSensorNeuralFunction extends NeuralFunction {
         if (host == null) {
             sensor = new QMSensor();
         } else {
-
             sensor = new QMSensor(host, port, timeout, level, x, y, width, height, exe);
         }
 

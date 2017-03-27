@@ -43,7 +43,7 @@
                             </Parameters>
                             <Parameters>
 <Name>TimeLimit</Name>
-<Value>0</Value>
+<Value>0.4</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -97,6 +97,10 @@
     <Value>0</Value>
     <DataType>Double</DataType>
 </Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>AutoReset</Name>
+</Links>
                             </NeuralFunction>
                         </Transfer>
                     </Transfers>
@@ -528,7 +532,7 @@
 <Type>Constant</Type>
 <Parameters>
     <Name>Constant</Name>
-    <Value>0.05</Value>
+    <Value>0.01</Value>
     <DataType>Double</DataType>
 </Parameters>
                             </NeuralFunction>
@@ -555,6 +559,11 @@
 <Index>1</Index>
 <Name>DiffYSum</Name>
                             </Links>
+                            <Links>
+<Index>2</Index>
+<Name>StartY</Name>
+<Type>ResetValue</Type>
+                            </Links>
                         </NeuralFunction>
                     </Output>
                     <Transfers>
@@ -570,16 +579,17 @@
 </Parameters>
 <Links>
     <Index>0</Index>
-    <Name>LaserOutputIntegrateY</Name>
-</Links>
-<Links>
-    <Index>1</Index>
     <Name>Reset</Name>
     <Type>Reset</Type>
 </Links>
 <Links>
-    <Index>2</Index>
+    <Index>1</Index>
     <Name>DiffXSum</Name>
+</Links>
+<Links>
+    <Index>2</Index>
+    <Name>StartX</Name>
+    <Type>ResetValue</Type>
 </Links>
                             </NeuralFunction>
                         </Transfer>

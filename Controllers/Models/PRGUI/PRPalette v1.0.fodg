@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.graphics">
- <office:meta><meta:creation-date>2017-02-23T16:39:10.252000000</meta:creation-date><meta:generator>LibreOffice/5.1.4.2$Windows_x86 LibreOffice_project/f99d75f39f1c57ebdd7ffc5f42867c12031db97a</meta:generator><dc:date>2017-03-24T18:54:50.283000000</dc:date><meta:editing-duration>PT21H17M41S</meta:editing-duration><meta:editing-cycles>74</meta:editing-cycles><meta:document-statistic meta:object-count="828"/></office:meta>
+ <office:meta><meta:creation-date>2017-02-23T16:39:10.252000000</meta:creation-date><meta:generator>LibreOffice/5.1.4.2$Windows_x86 LibreOffice_project/f99d75f39f1c57ebdd7ffc5f42867c12031db97a</meta:generator><dc:date>2017-03-27T16:54:56.388000000</dc:date><meta:editing-duration>PT22H54M12S</meta:editing-duration><meta:editing-cycles>76</meta:editing-cycles><meta:document-statistic meta:object-count="930"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="VisibleAreaTop" config:type="int">59459</config:config-item>
-   <config:config-item config:name="VisibleAreaLeft" config:type="int">4089</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">38244</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">19339</config:config-item>
+   <config:config-item config:name="VisibleAreaTop" config:type="int">-8334</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">-21365</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">105172</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">53181</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
@@ -35,10 +35,10 @@
      <config:config-item config:name="IsClickChangeRotation" config:type="boolean">true</config:config-item>
      <config:config-item config:name="SlidesPerRow" config:type="short">4</config:config-item>
      <config:config-item config:name="EditMode" config:type="int">0</config:config-item>
-     <config:config-item config:name="VisibleAreaTop" config:type="int">59459</config:config-item>
-     <config:config-item config:name="VisibleAreaLeft" config:type="int">4089</config:config-item>
-     <config:config-item config:name="VisibleAreaWidth" config:type="int">38245</config:config-item>
-     <config:config-item config:name="VisibleAreaHeight" config:type="int">19340</config:config-item>
+     <config:config-item config:name="VisibleAreaTop" config:type="int">-8334</config:config-item>
+     <config:config-item config:name="VisibleAreaLeft" config:type="int">-21365</config:config-item>
+     <config:config-item config:name="VisibleAreaWidth" config:type="int">105173</config:config-item>
+     <config:config-item config:name="VisibleAreaHeight" config:type="int">53182</config:config-item>
      <config:config-item config:name="GridCoarseWidth" config:type="int">1000</config:config-item>
      <config:config-item config:name="GridCoarseHeight" config:type="int">1000</config:config-item>
      <config:config-item config:name="GridFineWidth" config:type="int">100</config:config-item>
@@ -327,16 +327,28 @@
    <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="0.6cm"/>
   </style:style>
   <style:style style:name="gr29" style:family="graphic" style:parent-style-name="standard">
-   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="0.2cm"/>
+   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="0cm"/>
   </style:style>
   <style:style style:name="gr30" style:family="graphic" style:parent-style-name="standard">
-   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="1.7cm"/>
+   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="0.2cm"/>
   </style:style>
   <style:style style:name="gr31" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="1.7cm"/>
+  </style:style>
+  <style:style style:name="gr32" style:family="graphic" style:parent-style-name="standard">
    <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="1.9cm"/>
   </style:style>
-  <style:style style:name="gr32" style:family="graphic" style:parent-style-name="objectwithoutfill">
+  <style:style style:name="gr33" style:family="graphic" style:parent-style-name="objectwithoutfill">
    <style:graphic-properties svg:stroke-width="0cm" draw:marker-start-width="0.215cm" draw:marker-end="Arrow_20_concave" draw:marker-end-width="0.315cm" draw:fill="none" draw:textarea-vertical-align="middle" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm"/>
+  </style:style>
+  <style:style style:name="gr34" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="2.895cm"/>
+  </style:style>
+  <style:style style:name="gr35" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="10.105cm"/>
+  </style:style>
+  <style:style style:name="gr36" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties svg:stroke-color="#000000" draw:fill="none" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:min-height="0.05cm" fo:min-width="13.5cm"/>
   </style:style>
   <style:style style:name="P1" style:family="paragraph">
    <style:paragraph-properties fo:text-align="start"/>
@@ -400,11 +412,11 @@
    <style:text-properties fo:font-size="5pt" style:font-size-asian="5pt" style:font-size-complex="5pt"/>
   </style:style>
   <style:style style:name="P16" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
    <style:paragraph-properties fo:text-align="center"/>
    <style:text-properties fo:font-size="4pt" style:font-size-asian="4pt" style:font-size-complex="4pt"/>
   </style:style>
   <style:style style:name="P17" style:family="paragraph">
-   <loext:graphic-properties draw:fill="none"/>
    <style:paragraph-properties fo:text-align="center"/>
    <style:text-properties fo:font-size="4pt" style:font-size-asian="4pt" style:font-size-complex="4pt"/>
   </style:style>
@@ -548,40 +560,40 @@
     </draw:frame>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="17.5cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="18.3cm" svg:y="48.902cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="18.4cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="17.5cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="18.3cm" svg:y="49.202cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="18.4cm" svg:y="49.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Proportional</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="17.5cm" svg:y="49.504cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="49.604cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="19.7cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="19.8cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="17.5cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Gain</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="18.6cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="18.7cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">120</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -696,40 +708,40 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="50.1cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="60.7cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="50.9cm" svg:y="48.902cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="61.5cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="50.1cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="60.7cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="50.9cm" svg:y="49.202cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="61.5cm" svg:y="49.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">WeightedSum</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="50.1cm" svg:y="49.504cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="60.7cm" svg:y="49.604cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="52.3cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="62.9cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="50.1cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="60.7cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Weights</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="51.2cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="61.8cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1,1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -754,44 +766,44 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="28.7cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="43.102cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="43.2cm" svg:y="28.698cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="36.2cm" svg:y="43.1cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Pause</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="29cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="43.402cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.6cm" svg:y="29.6cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="37.6cm" svg:y="44.002cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Boolean</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="29.6cm">
+       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="44.002cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">ConstantRate</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="43.8cm" svg:y="29.6cm">
+       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="36.8cm" svg:y="44.002cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">true</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.6cm" svg:y="29.3cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="37.6cm" svg:y="43.702cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="29.3cm">
+       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="43.702cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Pause</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="43.8cm" svg:y="29.3cm">
+       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="36.8cm" svg:y="43.702cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">50</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -800,110 +812,110 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="48.802cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="34.2cm" svg:y="48.8cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="44.9cm" svg:y="49cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="49.102cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="49.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="34.2cm" svg:y="49.1cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="44.9cm" svg:y="49.3cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">SineGenerator</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="49.402cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="49.602cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="50.002cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="50.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="50.002cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="50.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Amplitude</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="50.002cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="50.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="49.702cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="49.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="49.702cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="49.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Frequency</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="49.702cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="49.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="50.302cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="50.502cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="50.302cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="50.502cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Phase</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="50.302cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="50.502cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="50.602cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="50.802cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="50.602cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="50.802cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">XShift</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="50.602cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="50.802cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="50.902cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="51.102cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="50.902cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="51.102cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">YShift</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="50.902cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="51.102cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="51.202cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="51.402cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="51.202cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="51.402cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Step</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="51.202cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="51.402cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -916,160 +928,160 @@
     </draw:custom-shape>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="52.102cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="52.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="34.2cm" svg:y="52.1cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="44.9cm" svg:y="52.3cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">SineGenerator</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="52.402cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="52.602cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="53.002cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="53.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="53.002cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="53.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Amplitude</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="53.002cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="53.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="52.702cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="52.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="52.702cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="52.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Frequency</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="52.702cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="52.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="53.302cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="53.502cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="53.302cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="53.502cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Phase</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="53.302cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="53.502cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="53.602cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="53.802cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="53.602cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="53.802cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">XShift</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="53.602cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="53.802cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="53.902cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="54.102cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="53.902cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="54.102cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">YShift</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="53.902cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="54.102cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.6cm" svg:y="54.202cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46.3cm" svg:y="54.402cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.4cm" svg:y="54.202cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.1cm" svg:y="54.402cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Step</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.5cm" svg:y="54.202cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="45.2cm" svg:y="54.402cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
      </draw:g>
-     <draw:custom-shape draw:style-name="gr15" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="2.4cm" svg:x="33.4cm" svg:y="52.102cm">
+     <draw:custom-shape draw:style-name="gr15" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="2.4cm" svg:x="44.1cm" svg:y="52.302cm">
       <text:p/>
       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
      </draw:custom-shape>
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="26.6cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="41.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="43.2cm" svg:y="26.598cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="36.2cm" svg:y="41cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="26.9cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="41.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="43.2cm" svg:y="26.898cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="36.2cm" svg:y="41.3cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Pause</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="27.2cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="41.602cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.6cm" svg:y="27.8cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="37.6cm" svg:y="42.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Boolean</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="27.8cm">
+       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="42.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">ConstantRate</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="43.8cm" svg:y="27.8cm">
+       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="36.8cm" svg:y="42.202cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">true</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="44.6cm" svg:y="27.5cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="37.6cm" svg:y="41.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="42.4cm" svg:y="27.5cm">
+       <draw:custom-shape draw:style-name="gr14" draw:text-style-name="P10" draw:layer="layout" svg:width="1.4cm" svg:height="0.3cm" svg:x="35.4cm" svg:y="41.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Pause</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="43.8cm" svg:y="27.5cm">
+       <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="36.8cm" svg:y="41.902cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">50</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -1078,21 +1090,21 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="46.4cm" svg:y="26.6cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="39.4cm" svg:y="41.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="47.2cm" svg:y="26.598cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="40.2cm" svg:y="41cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="46.4cm" svg:y="26.9cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="39.4cm" svg:y="41.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="47.2cm" svg:y="26.898cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="40.2cm" svg:y="41.3cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">PassThrough</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
@@ -1100,16 +1112,16 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="46.4cm" svg:y="27.6cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="39.4cm" svg:y="42.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="47.2cm" svg:y="27.598cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="40.2cm" svg:y="42cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">PassThrough</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
-     <draw:custom-shape draw:style-name="gr13" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="46.4cm" svg:y="27.598cm">
+     <draw:custom-shape draw:style-name="gr13" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="39.4cm" svg:y="42cm">
       <text:p/>
       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
      </draw:custom-shape>
@@ -2096,40 +2108,40 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="49cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="38cm" svg:y="48.902cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="34.1cm" svg:y="48.998cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="49.3cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="38cm" svg:y="49.202cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="34.1cm" svg:y="49.298cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Sequence</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="49.504cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="49.6cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="39.4cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.5cm" svg:y="49.9cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="49.9cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Tolerances</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P14" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="38.3cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P14" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.4cm" svg:y="49.9cm">
         <text:p text:style-name="P9"><text:span text:style-name="T6">0.01,0.001,0.112,</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2138,30 +2150,30 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="50.804cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="50.9cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="38cm" svg:y="50.802cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="34.1cm" svg:y="50.898cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Sequence</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="51.104cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="51.2cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="39.4cm" svg:y="51.404cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="35.5cm" svg:y="51.5cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="51.404cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="33.3cm" svg:y="51.5cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Tolerances</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="38.3cm" svg:y="51.404cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="34.4cm" svg:y="51.5cm">
         <text:p text:style-name="P9"><text:span text:style-name="T6">0.01,0.001,0.112,</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2170,40 +2182,40 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="46cm" svg:y="48.906cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="49.006cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="46.8cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="57.4cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="46cm" svg:y="49.206cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="49.306cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="46.8cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="57.4cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">ValueActivate</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="46cm" svg:y="49.506cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="49.606cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="48.2cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="58.8cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Key</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="47.1cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="57.7cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2212,30 +2224,30 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="46cm" svg:y="50.806cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="50.906cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="46.8cm" svg:y="50.804cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="57.4cm" svg:y="50.904cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">ValueActivate</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="46cm" svg:y="51.106cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="51.206cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="48.2cm" svg:y="51.406cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="58.8cm" svg:y="51.506cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="46cm" svg:y="51.406cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="56.6cm" svg:y="51.506cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Key</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="47.1cm" svg:y="51.406cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="57.7cm" svg:y="51.506cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2244,40 +2256,40 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="48.906cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="49.006cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="42.3cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="52.9cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="49.206cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="49.306cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="42.3cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="52.9cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Subtract</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="49.506cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="49.606cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="43.7cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="54.3cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Sign</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.6cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="53.2cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2286,30 +2298,30 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="50.806cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="50.906cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="42.3cm" svg:y="50.804cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="52.9cm" svg:y="50.904cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Subtract</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="51.106cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="51.206cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="43.7cm" svg:y="51.406cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="54.3cm" svg:y="51.506cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.5cm" svg:y="51.406cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="52.1cm" svg:y="51.506cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Sign</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.6cm" svg:y="51.406cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="53.2cm" svg:y="51.506cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2359,16 +2371,16 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="52.404cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="37.1cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="38cm" svg:y="52.402cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="37.9cm" svg:y="49cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">SequenceOutput</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
-     <draw:custom-shape draw:style-name="gr13" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="37.2cm" svg:y="52.402cm">
+     <draw:custom-shape draw:style-name="gr13" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="37.1cm" svg:y="49cm">
       <text:p/>
       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
      </draw:custom-shape>
@@ -2470,68 +2482,68 @@
     </draw:frame>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="52.404cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="52.604cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="52.402cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="52.602cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="52.704cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="52.904cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="52.702cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="52.902cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">QMSensor</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.004cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.204cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="53.604cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="53.804cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr26" draw:text-style-name="P10" draw:layer="layout" svg:width="1.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.604cm">
+       <draw:custom-shape draw:style-name="gr26" draw:text-style-name="P10" draw:layer="layout" svg:width="1.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.804cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">TargetPercentage</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="31.2cm" svg:y="53.604cm">
+       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="31.2cm" svg:y="53.804cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="53.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="53.504cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.504cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Level</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="53.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="53.504cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="53.904cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="54.104cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="53.904cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="54.104cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">TimeLimit</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="53.904cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="54.104cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2540,64 +2552,64 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="54.704cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="54.904cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="54.702cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="54.902cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">QMSensor</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.004cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.204cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="55.604cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="55.804cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr26" draw:text-style-name="P10" draw:layer="layout" svg:width="1.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.604cm">
+       <draw:custom-shape draw:style-name="gr26" draw:text-style-name="P10" draw:layer="layout" svg:width="1.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.804cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">TargetPercentage</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="31.2cm" svg:y="55.604cm">
+       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="31.2cm" svg:y="55.804cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="55.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="55.504cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.504cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Level</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="55.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="55.504cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="55.904cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="56.104cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="55.904cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="56.104cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">TimeLimit</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="55.904cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="56.104cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
      </draw:g>
-     <draw:custom-shape draw:style-name="gr23" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="1.498cm" svg:x="29.4cm" svg:y="54.704cm">
+     <draw:custom-shape draw:style-name="gr23" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="1.498cm" svg:x="29.4cm" svg:y="54.904cm">
       <text:p/>
       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-vertical="false" draw:mirror-horizontal="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
      </draw:custom-shape>
@@ -2642,54 +2654,54 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="48.804cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="48.802cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.104cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="49.102cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="30.2cm" svg:y="49.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">QMSensor</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.404cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.604cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="49.704cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr26" draw:text-style-name="P10" draw:layer="layout" svg:width="1.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.704cm">
+       <draw:custom-shape draw:style-name="gr26" draw:text-style-name="P10" draw:layer="layout" svg:width="1.8cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">TargetPercentage</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="31.2cm" svg:y="49.704cm">
+       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="31.2cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="50.004cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="31.6cm" svg:y="50.204cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="50.004cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="29.4cm" svg:y="50.204cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">TimeLimit</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="50.004cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="30.5cm" svg:y="50.204cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2744,40 +2756,40 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="22.1cm" svg:y="48.902cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="22.1cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="22.1cm" svg:y="49.202cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="22.1cm" svg:y="49.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">ProportionalIntegration</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.504cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.604cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="23.5cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="23.5cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Gain</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="22.4cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="22.4cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2786,30 +2798,30 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="50.704cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="50.804cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="22.1cm" svg:y="50.702cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="22.1cm" svg:y="50.802cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">ProportionalIntegration</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="51.004cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="51.104cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="23.5cm" svg:y="51.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="23.5cm" svg:y="51.404cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="51.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="21.3cm" svg:y="51.404cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Gain</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="22.4cm" svg:y="51.304cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="22.4cm" svg:y="51.404cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2818,54 +2830,54 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="48.906cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.006cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="26.1cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="26.1cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.206cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.306cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="26.1cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="26.1cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">QMActuator</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.506cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.606cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.5cm" svg:y="50.106cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.5cm" svg:y="50.206cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Boolean</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="50.106cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="50.206cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Publish</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="50.106cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="50.206cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">true</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.5cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.5cm" svg:y="49.906cm">
         <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.3cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Variable</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P15" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="49.806cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P15" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="49.906cm">
         <text:p text:style-name="P9"><text:span text:style-name="T7">LaserOutputY</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2874,40 +2886,40 @@
     </draw:g>
     <draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="14cm" svg:y="48.904cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.004cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="14.8cm" svg:y="48.902cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="14.8cm" svg:y="49.002cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.204cm">
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.304cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
-      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="14.8cm" svg:y="49.202cm">
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="14.8cm" svg:y="49.302cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameter</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
      </draw:g>
      <draw:g>
-      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.504cm">
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.604cm">
        <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="16.2cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="16.2cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">String</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="14cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Parameter</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="15.1cm" svg:y="49.804cm">
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="15.1cm" svg:y="49.904cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
@@ -2973,8 +2985,8 @@
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="34.702cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="34.702cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.2cm" svg:y="34.702cm">
@@ -2987,8 +2999,8 @@
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="34.402cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="34.402cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.2cm" svg:y="34.402cm">
@@ -3001,8 +3013,8 @@
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.002cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.002cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.2cm" svg:y="35.002cm">
@@ -3015,8 +3027,8 @@
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.302cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.302cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.2cm" svg:y="35.302cm">
@@ -3029,8 +3041,8 @@
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.602cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.602cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.2cm" svg:y="35.602cm">
@@ -3043,8 +3055,8 @@
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.902cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr28" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="27.4cm" svg:y="35.902cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="25.2cm" svg:y="35.902cm">
@@ -3191,16 +3203,16 @@
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="28.6cm" svg:y="42.2cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr29" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="28.6cm" svg:y="42.2cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr29" draw:text-style-name="P10" draw:layer="layout" svg:width="0.7cm" svg:height="0.3cm" svg:x="25.7cm" svg:y="42.2cm">
+       <draw:custom-shape draw:style-name="gr30" draw:text-style-name="P10" draw:layer="layout" svg:width="0.7cm" svg:height="0.3cm" svg:x="25.7cm" svg:y="42.2cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Model</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr30" draw:text-style-name="P17" draw:layer="layout" svg:width="2.2cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="42.2cm">
-        <text:p text:style-name="P16"><text:span text:style-name="T8">005-001-QuantumMovesBasic</text:span></text:p>
+       <draw:custom-shape draw:style-name="gr31" draw:text-style-name="P16" draw:layer="layout" svg:width="2.2cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="42.2cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T8">005-001-QuantumMovesBasic</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
@@ -3237,38 +3249,378 @@
        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
       </draw:custom-shape>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="28.6cm" svg:y="44cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr29" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="28.6cm" svg:y="44cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr29" draw:text-style-name="P10" draw:layer="layout" svg:width="0.7cm" svg:height="0.3cm" svg:x="25.7cm" svg:y="44cm">
+       <draw:custom-shape draw:style-name="gr30" draw:text-style-name="P10" draw:layer="layout" svg:width="0.7cm" svg:height="0.3cm" svg:x="25.7cm" svg:y="44cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Model</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr30" draw:text-style-name="P17" draw:layer="layout" svg:width="2.2cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="44cm">
-        <text:p text:style-name="P16"><text:span text:style-name="T8">005-001-QuantumMovesBasic1000</text:span></text:p>
+       <draw:custom-shape draw:style-name="gr31" draw:text-style-name="P16" draw:layer="layout" svg:width="2.2cm" svg:height="0.3cm" svg:x="26.4cm" svg:y="44cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T8">005-001-QuantumMovesBasic1000</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
       <draw:g>
-       <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="28.6cm" svg:y="43.7cm">
-        <text:p text:style-name="P9"><text:span text:style-name="T3"/></text:p>
+       <draw:custom-shape draw:style-name="gr29" draw:text-style-name="P10" draw:layer="layout" svg:width="0.4cm" svg:height="0.3cm" svg:x="28.6cm" svg:y="43.7cm">
+        <text:p/>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
        <draw:custom-shape draw:style-name="gr27" draw:text-style-name="P10" draw:layer="layout" svg:width="0.5cm" svg:height="0.3cm" svg:x="25.7cm" svg:y="43.7cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Key</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
-       <draw:custom-shape draw:style-name="gr31" draw:text-style-name="P10" draw:layer="layout" svg:width="2.4cm" svg:height="0.3cm" svg:x="26.2cm" svg:y="43.7cm">
+       <draw:custom-shape draw:style-name="gr32" draw:text-style-name="P10" draw:layer="layout" svg:width="2.4cm" svg:height="0.3cm" svg:x="26.2cm" svg:y="43.7cm">
         <text:p text:style-name="P9"><text:span text:style-name="T3">Score</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape>
       </draw:g>
      </draw:g>
     </draw:g>
-    <draw:connector draw:style-name="gr32" draw:text-style-name="P11" draw:layer="layout" draw:type="curve" svg:x1="65.281cm" svg:y1="20.812cm" svg:x2="67.692cm" svg:y2="26.788cm" svg:d="M65281 20812c0 4482 2411 1494 2411 5976" svg:viewBox="0 0 2412 5977">
+    <draw:connector draw:style-name="gr33" draw:text-style-name="P11" draw:layer="layout" draw:type="curve" svg:x1="65.281cm" svg:y1="20.812cm" svg:x2="67.692cm" svg:y2="26.788cm" svg:d="M65281 20812c0 4482 2411 1494 2411 5976" svg:viewBox="0 0 2412 5977">
      <text:p text:style-name="P9"><text:span text:style-name="T4">Curve</text:span></text:p>
     </draw:connector>
+    <draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="49.006cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="48.9cm" svg:y="49.004cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="49.306cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="48.9cm" svg:y="49.304cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Smooth</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="49.606cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="50.3cm" svg:y="49.906cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="49.906cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Smoothness</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="49.2cm" svg:y="49.906cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0.1</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+     </draw:g>
+    </draw:g>
+    <draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="50.906cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="48.9cm" svg:y="50.904cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Smooth</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="51.206cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="50.3cm" svg:y="51.506cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="48.1cm" svg:y="51.506cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Smoothness</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="49.2cm" svg:y="51.506cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0.1</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+     </draw:g>
+    </draw:g>
+    <draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="50.804cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="18.4cm" svg:y="50.802cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Proportional</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="51.104cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="19.8cm" svg:y="51.404cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="17.6cm" svg:y="51.404cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Gain</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="18.7cm" svg:y="51.404cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">1</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+     </draw:g>
+    </draw:g>
+    <draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="49.002cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Name</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="41.4cm" svg:y="49cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">&lt;Name&gt;</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="49.302cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="41.4cm" svg:y="49.3cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Sigmoid</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="49.602cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="50.202cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="50.202cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">OutScale</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="50.202cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0.02</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="49.902cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="49.902cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">InScale</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="49.902cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">2.5</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="50.502cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P16" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="50.502cm">
+        <text:p text:style-name="P17"><text:span text:style-name="T8">InputTolerance</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="50.502cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="50.802cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="50.802cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">XShift</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="50.802cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="51.102cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="51.102cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">YShift</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="51.102cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="51.402cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Boolean</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="51.402cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Absolute</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="51.402cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">false</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+     </draw:g>
+    </draw:g>
+    <draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr8" draw:text-style-name="P10" draw:layer="layout" svg:width="0.8cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="52.302cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Type</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="2.5cm" svg:height="0.3cm" svg:x="41.4cm" svg:y="52.3cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Sigmoid</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr10" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="52.602cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Parameters</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="53.202cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="53.202cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">OutScale</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="53.202cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0.02</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="52.902cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="52.902cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">InScale</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="52.902cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">2.5</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="53.502cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P16" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="53.502cm">
+        <text:p text:style-name="P17"><text:span text:style-name="T8">InputTolerance</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="53.502cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="53.802cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="53.802cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">XShift</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="53.802cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="54.102cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Double</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="54.102cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">YShift</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="54.102cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">0</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+      <draw:g>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="42.8cm" svg:y="54.402cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Boolean</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="40.6cm" svg:y="54.402cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">Absolute</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+       <draw:custom-shape draw:style-name="gr11" draw:text-style-name="P10" draw:layer="layout" svg:width="1.1cm" svg:height="0.3cm" svg:x="41.7cm" svg:y="54.402cm">
+        <text:p text:style-name="P9"><text:span text:style-name="T3">false</text:span></text:p>
+        <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+       </draw:custom-shape>
+      </draw:g>
+     </draw:g>
+     <draw:custom-shape draw:style-name="gr15" draw:text-style-name="P10" draw:layer="layout" svg:width="3.3cm" svg:height="2.4cm" svg:x="40.6cm" svg:y="52.302cm">
+      <text:p/>
+      <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+     </draw:custom-shape>
+    </draw:g>
+    <draw:g>
+     <draw:g>
+      <draw:custom-shape draw:style-name="gr34" draw:text-style-name="P10" draw:layer="layout" svg:width="3.395cm" svg:height="0.3cm" svg:x="28.7cm" svg:y="76.302cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Order</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+      <draw:custom-shape draw:style-name="gr35" draw:text-style-name="P10" draw:layer="layout" svg:width="10.605cm" svg:height="0.3cm" svg:x="32.095cm" svg:y="76.3cm">
+       <text:p text:style-name="P9"><text:span text:style-name="T3">Env,QMSensor,QMVariables,LaserXPositionControl,LaserXVelocityControl,LaserXAccelerationControl</text:span></text:p>
+       <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+      </draw:custom-shape>
+     </draw:g>
+     <draw:custom-shape draw:style-name="gr36" draw:text-style-name="P10" draw:layer="layout" svg:width="14cm" svg:height="0.3cm" svg:x="28.7cm" svg:y="76.3cm">
+      <text:p/>
+      <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
+     </draw:custom-shape>
+    </draw:g>
    </draw:page>
   </office:drawing>
  </office:body>

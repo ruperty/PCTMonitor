@@ -17,7 +17,6 @@ package uk.co.moonsit.sockets;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.SocketException;
-import java.util.logging.Logger;
 
 /**
  *
@@ -84,7 +83,7 @@ public class QMCommsSingleton {
     private void sendReset() throws IOException {
         qmclient.sendReset(level);
     }*/
-    public void sendMove() throws IOException {
+    public void sendMove() throws IOException, Exception {
         qmclient.sendMove();//outputx, outputy);
     }
 
