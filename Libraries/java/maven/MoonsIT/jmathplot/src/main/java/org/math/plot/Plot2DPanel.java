@@ -71,8 +71,6 @@ public class Plot2DPanel extends PlotPanel {
      * @see #addLinePlot(String,Color,double[]...)
      * @see #addBarPlot(String, Color, double[]...)
      * @see #addBoxPlot(String, Color, double[][], double[][])
-     * @see #addHistogramPlot(String, Color, double[][], double[])
-     * @see #addStaircasePlot(String, Color, double[]...)
      */
     public int addScatterPlot(String name, Color color, double[][] XY) {
         return ((Plot2DCanvas) plotCanvas).addScatterPlot(name, color, XY);

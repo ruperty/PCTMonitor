@@ -188,8 +188,7 @@ public abstract class AbstractDrawer {
 	 * Returns the screen coordinates coresponding to plot coordinates Used to
 	 * test if mouse is pointing on a plot.
 	 * 
-	 * @param pC
-	 *            plot ccordinates to project in screen
+     * @param rC
 	 * @return scrren coordinates
 	 */
 	public abstract int[] projectBase(double... rC);

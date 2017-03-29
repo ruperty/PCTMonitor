@@ -249,12 +249,10 @@ public class BinaryOutputStream extends OutputStream {
     /**
      * Write a text in a binary File
      * 
-     * @param b
-     *            byte
-     * @param append
-     *            boolean
+     * @param i
      */
 
+    @Override
     public void write(int i) {
         writeInt(i, false);
     }
