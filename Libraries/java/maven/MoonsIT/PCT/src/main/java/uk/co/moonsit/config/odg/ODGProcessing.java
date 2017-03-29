@@ -168,7 +168,7 @@ public class ODGProcessing {
         if (order != null && order.length > 0) {
             Utils.setOrderedControllers(layers, order);
         }
-        sortLayers();
+        //sortLayers();
 
         for (ODGLayer odglayer : layerList) {
             Layer layer = Utils.emptyLayer(odglayer.getName());
@@ -314,6 +314,7 @@ public class ODGProcessing {
         NodeList nodeList = pageEl.getChildNodes();
 
         processLayers(nodeList);
+        sortLayers();
         processElements(nodeList);
         //LOG.log(Level.INFO, "processing time {0}", (System.currentTimeMillis() - start));
         processConnectors();
