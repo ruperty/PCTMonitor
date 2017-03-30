@@ -14,6 +14,7 @@
  */
 package uk.co.moonsit.config.odg;
 
+import com.sun.tools.javac.util.StringUtils;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +71,15 @@ public class ODGFunction {
         this.overrideName = overrideName;
     }
 
+    public boolean linkExists(String lname) {
+        for (String[] link : linkList) {
+            if (link[0].equals(lname)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addLink(String link) {
         if (link == null) {
             link = "TMP";
@@ -79,18 +89,43 @@ public class ODGFunction {
         linkList.add(llink);
     }
 
-    public void addLink(String link, String type) {
-        if (type == null || type.length() == 0) {
+    public void addLink(String link, String inType) {
+        if (inType == null || inType.length() == 0) {
             addLink(link);
             return;
         }
-        if (type.equalsIgnoreCase("transfer")) {
+
+        String type = null;
+        String order = null;
+        String[] linkDetails = inType.split(" ");
+        if (linkDetails.length > 1) {
+            type = linkDetails[0];
+            order = linkDetails[1];
+        }
+
+        if (linkDetails.length == 1) {
+            if (Character.isDigit(linkDetails[0].charAt(0))) {
+                order = linkDetails[0];
+            } else {
+                type = linkDetails[0];
+            }
+        }
+        /*
+        if (order == null) {
+            if (type == null || type.length() == 0) {
+                addLink(link);
+                return;
+            }
+        }*/
+
+        if (type != null && type.equalsIgnoreCase("transfer")) {
             return;
         }
 
-        String[] llink = new String[2];
+        String[] llink = new String[3];
         llink[0] = link;
         llink[1] = type;
+        llink[2] = order;
         linkList.add(llink);
     }
 

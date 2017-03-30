@@ -28,6 +28,8 @@ import uk.co.moonsit.config.functions.Utils;
  */
 public class ODGController {
 
+    private final int DEFAULT_ERROR_CONFIG = 0;
+    private final int SPECIFIC_ERROR_CONFIG = 1;
     private String name;
     private int layer;
     private ODGFunction input;
@@ -35,6 +37,7 @@ public class ODGController {
     private ODGFunction error;
     private ODGFunction output;
     private Point2D location;
+    private int configType = DEFAULT_ERROR_CONFIG;
 
     public ODGController(Element elem) {
         int functions = 0;
@@ -70,6 +73,7 @@ public class ODGController {
                             break;
                         case 3:
                             error = new ODGFunction(name + "Error", child);
+                            configType = SPECIFIC_ERROR_CONFIG;
                             break;
                     }
                     functions++;
@@ -83,7 +87,17 @@ public class ODGController {
     }
 
     public boolean isDefaultError() {
-        return reference.getConfigID() != null && input.getConfigID() != null && output.getLinks().length ==0;
+        if (configType == SPECIFIC_ERROR_CONFIG) {
+            if (reference.getConfigID() != null && input.getConfigID() != null) {
+                for (String[] link : output.getLinks()) {
+                    if (link[0].equals(error.getName())) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return reference.getConfigID() != null && input.getConfigID() != null && output.getLinks().length == 0;
     }
 
     public ODGFunction isIn(Point2D p) {

@@ -12,24 +12,23 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class XML_005_005_XPVAControlTest {
+public class XML_005_004_QMXAtomSurfIntTest {
     
-    public XML_005_005_XPVAControlTest() {
+    public XML_005_004_QMXAtomSurfIntTest() {
     }
 
     /**
      * Test of main method, of class TestMain.
      */
     @Test
-    public void testMain() throws Exception {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-005-XPVAControl"};
+    public void testMain()  {
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-004-QMXAtomSurfInt"};
         System.out.println(args[0]+args[1]);
 
 
         try {
             ODGConfig.main(args);
         } catch (Exception ex) {
-            ex.printStackTrace();
             System.out.println(ex.toString());
             System.out.println(ex.getCause());
             fail(ex.toString());

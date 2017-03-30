@@ -203,6 +203,42 @@ public class ODGProcessing {
 
     }
 
+    public String[][] sortLinks(String[][] slist) {
+        List<String[]> list = new ArrayList<>();
+        for (String[] link : slist) {
+            list.add(link);
+        }
+
+        Collections.sort(list, new Comparator<String[]>() {
+
+            @Override
+            public int compare(String[] l1, String[] l2) {
+
+                if (l1.length < 2 || l2.length < 2 || l1[2] == null || l2[2] == null) {
+                    return 0;
+                }
+
+                if (Integer.parseInt(l1[2]) < Integer.parseInt(l2[2])) {
+                    return -1;
+                }
+
+                if (Integer.parseInt(l2[2]) < Integer.parseInt(l1[2])) {
+                    return 1;
+                }
+
+                return 0;
+            }
+        });
+
+        String[][] outList = new String[list.size()][];
+        int index = 0;
+        for (String[] outLink : list) {
+            outList[index++] = outLink;
+        }
+
+        return outList;
+    }
+
     public boolean layerExists(ODGLayer odglayer1) throws Exception {
         for (ODGLayer odglayer : layerList) {
             if (odglayer.getName().equalsIgnoreCase(odglayer1.getName())) {
@@ -271,7 +307,9 @@ public class ODGProcessing {
                 ODGFunction output;
                 if ((output = odgcontroller.getOutput()) != null && output.getConfigID() != null) {
                     if (odgcontroller.isDefaultError()) {
-                        output.addLink(odgcontroller.getError().getName());
+                        if (!output.linkExists(odgcontroller.getError().getName())) {
+                            output.addLink(odgcontroller.getError().getName());
+                        }
                     }
                     Utils.addFunction(controller, constructFunction(output), Utils.OUTPUT, false);
                     for (Integer transferID : output.getTransferList()) {
@@ -293,7 +331,7 @@ public class ODGProcessing {
             name = function.getOverrideName();
         }
 
-        ControlFunction controlFunction = Utils.configureControlFunction(name, "...", config.getType(), config.getParameters(), function.getLinks());
+        ControlFunction controlFunction = Utils.configureControlFunction(name, "...", config.getType(), config.getParameters(), sortLinks(function.getLinks()));
 
         return controlFunction;
     }

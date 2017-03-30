@@ -239,6 +239,7 @@ public class QMSensorNeuralFunction extends NeuralFunction {
     @Override
     public String getParametersString() {
         StringBuilder sb = new StringBuilder();
+        
 
         sb.append("TargetPercentage").append(":");
         sb.append(targetpercentage);

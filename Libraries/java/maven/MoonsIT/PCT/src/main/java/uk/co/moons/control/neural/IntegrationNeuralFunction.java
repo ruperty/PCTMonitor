@@ -36,6 +36,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
     private Integer resetIndex = null;
     private Integer rateIndex = null;
     private Integer resetValueIndex = null;
+    private Integer dataIndex = null;
 
     public IntegrationNeuralFunction(int g) {
         super();
@@ -80,14 +81,13 @@ public class IntegrationNeuralFunction extends NeuralFunction {
 
     }
 
-    
-     @Override
+    @Override
     public void verifyConfiguration() throws Exception {
         if (links.getControlList().size() == 0) {
             throw new Exception("IntegrationNeuralFunction requires at least one link");
         }
     }
-    
+
     @Override
     public void init() throws Exception {
         super.init();
@@ -96,6 +96,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
         for (int i = 0; i < controls.size(); i++) {
             String linkType = links.getType(i);// controls.get(i).getLinkType();
             if (linkType == null) {
+                dataIndex = i;
                 continue;
             }
             //LOG.log(Level.INFO, "LinkType {0}", linkType);
@@ -147,7 +148,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
     @Override
     public double compute() {
         List<BaseControlFunction> controls = links.getControlList();
-        Double input = controls.get(0).getValue();
+        Double input = controls.get(dataIndex).getValue();
         reset();
         if (Math.abs(input) != Double.POSITIVE_INFINITY) {
             if (output == Double.POSITIVE_INFINITY) {

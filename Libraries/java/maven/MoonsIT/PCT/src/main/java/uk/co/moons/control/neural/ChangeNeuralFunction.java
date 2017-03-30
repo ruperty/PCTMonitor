@@ -75,8 +75,8 @@ public class ChangeNeuralFunction extends NeuralFunction {
             }
             //LOG.log(Level.INFO, "LinkType {0}", linkType);
             if (linkinitial && linkType.equals("Initial")) {
-                setInitial(controls);
                 inputIndex = i;
+                setInitial(controls);
                 continue;
             }
 
@@ -91,7 +91,7 @@ public class ChangeNeuralFunction extends NeuralFunction {
 
     private void setInitial(List<BaseControlFunction> controls) {
         if (linkinitial) {
-            oldValue = controls.get(0).getNeural().getOutput();
+            oldValue = controls.get(inputIndex).getNeural().getOutput();
         } else {
             oldValue = 0;
         }
