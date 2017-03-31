@@ -21,6 +21,7 @@ package uk.co.moons.control.neural;
  */
 import java.lang.reflect.Field;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
@@ -85,6 +86,14 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
             output = initial;
         }
     }
+
+    protected Comparator linkAlphaComparator = new Comparator<BaseControlFunction>() {
+
+        @Override
+        public int compare(BaseControlFunction l1, BaseControlFunction l2) {
+            return l1.getName().compareTo(l2.getName());
+        }
+    };
 
     public Boolean isDisabled() {
         return disabled;
@@ -321,7 +330,6 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
         }
 
         //LOG.log(Level.INFO, "+++ values {0} {1} {2}", new Object[]{this.getName(), arr[0], arr[1]});
-
         if (parameters == null) {
             //LOG.info("+++ parameters is null");
         } else {

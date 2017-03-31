@@ -117,7 +117,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>QMReset</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -133,7 +133,7 @@
 <Parameters>
     <Name>Pulse</Name>
     <Value>0</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -171,7 +171,7 @@
                             <Parameters>
 <Name>Gain</Name>
 <Value>1</Value>
-<DataType>Double</DataType>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -198,7 +198,7 @@
 <Parameters>
     <Name>Gain</Name>
     <Value>1</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -434,27 +434,27 @@
 <Links>
     <Index>0</Index>
     <Name>SimTime</Name>
-    <Type>FidelityScore:0</Type>
+    <Type>Fidelity:4</Type>
 </Links>
 <Links>
     <Index>1</Index>
     <Name>SimTime</Name>
-    <Type>TimeScore:0</Type>
+    <Type>SimulatedTime:3</Type>
 </Links>
 <Links>
     <Index>2</Index>
     <Name>SimTime</Name>
-    <Type>Score:0</Type>
+    <Type>FidelityScore:0</Type>
 </Links>
 <Links>
     <Index>3</Index>
     <Name>SimTime</Name>
-    <Type>SimulatedTime:3</Type>
+    <Type>TimeScore:0</Type>
 </Links>
 <Links>
     <Index>4</Index>
     <Name>SimTime</Name>
-    <Type>Fidelity:4</Type>
+    <Type>Score:0</Type>
 </Links>
 <Links>
     <Index>5</Index>
@@ -913,7 +913,7 @@
                             <Parameters>
 <Name>Gain</Name>
 <Value>1</Value>
-<DataType>Double</DataType>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -936,7 +936,7 @@
                             <Parameters>
 <Name>Sign</Name>
 <Value>1</Value>
-<DataType>Double</DataType>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
