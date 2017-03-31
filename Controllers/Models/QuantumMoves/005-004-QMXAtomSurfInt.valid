@@ -65,14 +65,24 @@
                         <NeuralFunction>
                             <Type>QMSensor</Type>
                             <Parameters>
+<Name>TimeLimit</Name>
+<Value>0.04</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
 <Name>TargetPercentage</Name>
 <Value>1</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>TimeLimit</Name>
-<Value>0.04</Value>
-<DataType>Double</DataType>
+<Name>Width</Name>
+<Value>640</Value>
+<DataType></DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Height</Name>
+<Value>480</Value>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -597,6 +607,27 @@
                     </Output>
                     <Transfers>
                         <Transfer>
+                            <Name>LaserXVelocitySmooth</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Smooth</Type>
+<Parameters>
+    <Name>Smoothness</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>LaserXVelocity</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Reset</Name>
+    <Type>Reset</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
                             <Name>LaserXAcceleration</Name>
                             <Description>...</Description>
                             <NeuralFunction>
@@ -628,7 +659,7 @@
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>LaserXVelocity</Name>
+    <Name>LaserXVelocitySmooth</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>
@@ -745,20 +776,10 @@
                         <Name>LaserXVelocityInput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>Smooth</Type>
-                            <Parameters>
-<Name>Smoothness</Name>
-<Value>0</Value>
-<DataType>Double</DataType>
-                            </Parameters>
+                            <Type>PassThrough</Type>
                             <Links>
 <Index>0</Index>
-<Name>LaserXVelocity</Name>
-                            </Links>
-                            <Links>
-<Index>1</Index>
-<Name>Reset</Name>
-<Type>Reset</Type>
+<Name>LaserXVelocitySmooth</Name>
                             </Links>
                         </NeuralFunction>
                     </Input>

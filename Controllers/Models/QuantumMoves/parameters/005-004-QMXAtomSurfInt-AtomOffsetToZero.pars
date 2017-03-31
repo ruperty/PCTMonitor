@@ -1,7 +1,7 @@
-LaserXPositionReference_Constant=0.3
+LaserXPositionReference_Constant=-1
 LaserXPositionOutput_Gain=1
 AtomOffsetInput_Sign=1
-AtomOffsetReference_OutScale=0.01
+AtomOffsetReference_OutScale=0.0075
 AtomOffsetReference_InScale=1
 AtomOffsetOutput_Slow=1000
 AtomOffsetOutput_Gain=10
@@ -20,7 +20,8 @@ LaserXVelocityReference_Tolerance=0.00001
 LaserXVelocityOutput_Gain=1
 EnvInput_Pause=50
 Zero_Constant=0
-SimTime_TimeLimit=0.28
+SimTime_TimeLimit=0.126
 SimTime_TargetPercentage=1
 Level_Constant=2
 DiffYSum_Constant=0
+

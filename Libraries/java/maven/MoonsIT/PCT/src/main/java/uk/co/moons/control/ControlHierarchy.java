@@ -16,12 +16,14 @@ package uk.co.moons.control;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Properties;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,7 +40,7 @@ import uk.co.moons.config.XmlConfig;
 
 public class ControlHierarchy extends BaseControlHierarchy {
 
-    private static final Logger logger = Logger.getLogger(ControlHierarchy.class.getName());
+    private static final Logger LOG = Logger.getLogger(ControlHierarchy.class.getName());
     //protected BaseControlConfig controlConfig;
     private List<String> listOutputFunctions = null;
     protected List<String> orderedControllers = null;
@@ -83,12 +85,41 @@ public class ControlHierarchy extends BaseControlHierarchy {
         this.hmControls = controlBuild.getHmControls();
         this.orderedControllers = controlBuild.getOrderedControllers();
 
+        loadPars(config);
+
         List<String> lof = Environment.getInstance().getListOutputFunctions();
         if (lof == null) {
             listOutputFunctions = new ArrayList<>();
         } else {
             listOutputFunctions = lof;
         }
+    }
+
+    public void loadPars(String config) throws Exception {
+
+        String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
+        
+        File file = new File(fname);
+        if (file.exists()) {
+            Properties props;
+            try {
+                props = new Properties();
+                props.load(new FileInputStream(file));
+
+                for (String key : props.stringPropertyNames()) {
+                    String[] arr = key.split("_");
+                    String functionName = arr[0];
+                    String parameter = arr[1];
+                    String value = props.getProperty(key);
+                    BaseControlFunction function = hmControls.get(functionName);
+                    function.getNeural().setParameter(parameter + ":" + value);
+                }
+
+            } catch (IOException ex) {
+                LOG.warning(ex.toString());
+            }
+        }
+
     }
 
     public ControlHierarchy(int num) throws Exception {
@@ -182,7 +213,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         } else {
             layeredInit();
             //for (String name : hmControls.keySet()) {
-              //  initNeuralFunction(name);
+            //  initNeuralFunction(name);
             //}
         }
     }
@@ -224,8 +255,8 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
 
         setRunningFlag(true);
-        logger.log(Level.INFO, "+++ print is {0}", print);
-        logger.log(Level.INFO, "+++ isRunning() is {0}", isRunning());
+        LOG.log(Level.INFO, "+++ print is {0}", print);
+        LOG.log(Level.INFO, "+++ isRunning() is {0}", isRunning());
         Environment.getInstance().setMark(System.currentTimeMillis());
 
         while (run) {
@@ -245,19 +276,19 @@ public class ControlHierarchy extends BaseControlHierarchy {
                 if (System.currentTimeMillis() > end) {
                     run = false;
                     setRunningFlag(false);
-                    logger.info("+++ run time ended");
+                    LOG.info("+++ run time ended");
                 }
             }
             if (iter == runIter) {
                 run = false;
                 setRunningFlag(false);
-                logger.info("+++ run iters ended");
+                LOG.info("+++ run iters ended");
             }
             if (!isRunning()) {
                 run = false;
             }
         }
-        logger.info("+++ run ended");
+        LOG.info("+++ run ended");
 
     }
 
@@ -893,7 +924,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         //for (String name : hmControls.keySet()) {
         //    closeNeuralFunction(name);
         //}
-        logger.log(Level.INFO, "---> Close {0}", (System.currentTimeMillis() - start));
+        LOG.log(Level.INFO, "---> Close {0}", (System.currentTimeMillis() - start));
     }
 
     @Override
@@ -908,7 +939,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         //for (String name : hmControls.keySet()) {
         //    closeNeuralFunction(name);
         //}
-        logger.log(Level.INFO, "---> Stopping {0}", (System.currentTimeMillis() - start));
+        LOG.log(Level.INFO, "---> Stopping {0}", (System.currentTimeMillis() - start));
     }
 
     private void layeredInit() throws Exception {
@@ -973,7 +1004,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         if (bcf != null) {
             BaseNeuralFunction nf = bcf.getNeural();
             if (debug) {
-                logger.log(Level.INFO, "+++ closing {0}", function);
+                LOG.log(Level.INFO, "+++ closing {0}", function);
             }
             nf.close();
         }

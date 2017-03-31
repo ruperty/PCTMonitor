@@ -228,14 +228,14 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
 
         Class myclass = field.getType();
         String type = myclass.getName();
-        LOG.log(Level.INFO, "+++ type {0} value {1} name {2}", new Object[]{type, value, this.getName()});
+        //LOG.log(Level.INFO, "+++ type {0} value {1} name {2}", new Object[]{type, value, this.getName()});
         if (type.equals("java.lang.String")) {
             //logger.log(Level.INFO, "+++ string set to {0}", value);
             field.set(this, value);
         }
 
         if (type.equals("java.lang.Double")) {
-            LOG.log(Level.INFO, "+++ Double set to {0}", value);
+            //LOG.log(Level.INFO, "+++ Double set to {0}", value);
             Double dvalue;
 
             switch (value) {
@@ -320,12 +320,12 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
             System.exit(1);
         }
 
-        LOG.log(Level.INFO, "+++ values {0} {1} {2}", new Object[]{this.getName(), arr[0], arr[1]});
+        //LOG.log(Level.INFO, "+++ values {0} {1} {2}", new Object[]{this.getName(), arr[0], arr[1]});
 
         if (parameters == null) {
-            LOG.info("+++ parameters is null");
+            //LOG.info("+++ parameters is null");
         } else {
-            LOG.info("+++ parameters is not null");
+            //LOG.info("+++ parameters is not null");
             for (Parameters param : parameters) {
                 if (param.getName().equals(arr[0])) {
                     param.setValue(arr[1]);
