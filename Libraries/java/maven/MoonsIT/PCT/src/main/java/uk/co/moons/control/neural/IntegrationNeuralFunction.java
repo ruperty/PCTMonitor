@@ -16,7 +16,6 @@ package uk.co.moons.control.neural;
 
 //import uk.co.moons.math.RMath;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
@@ -83,7 +82,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
 
     @Override
     public void verifyConfiguration() throws Exception {
-        if (links.getControlList().size() == 0) {
+        if (links.getControlList().isEmpty()) {
             throw new Exception("IntegrationNeuralFunction requires at least one link");
         }
     }

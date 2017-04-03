@@ -25,6 +25,8 @@ public class ProportionalNeuralFunction extends NeuralFunction {
     private static final Logger LOG = Logger.getLogger(ProportionalNeuralFunction.class.getName());
 
     public Double gain = null;
+
+    public Boolean enableinfinity = false;
     //public Boolean tuning = false;
     //public Double reorganizationgain = 1.0;
     //public Integer reorgdelay = 10;
@@ -44,6 +46,9 @@ public class ProportionalNeuralFunction extends NeuralFunction {
         for (Parameters param : ps) {
             if (param.getName().equals("Gain")) {
                 gain = Double.valueOf(param.getValue());
+            }
+            if (param.getName().equals("EnableInfinity")) {
+                enableinfinity = Boolean.valueOf(param.getValue());
             }
             /*
             if (param.getName().equals("Tuning")) {
@@ -73,12 +78,16 @@ public class ProportionalNeuralFunction extends NeuralFunction {
         //DebugTimes.getInstance().mark("prop");
         List<BaseControlFunction> controls = links.getControlList();
         double input = controls.get(0).getValue();
-        if (Math.abs(gain) > 0) {
-            output = input * gain;
+
+        if (Math.abs(input) != Double.POSITIVE_INFINITY) {
+            if (Math.abs(gain) > 0) {
+                output = input * gain;
+            }
+        } else if (enableinfinity) {
+            output = Double.POSITIVE_INFINITY;
         } else {
             output = 0;
         }
-
         return output;
     }
 
@@ -91,15 +100,13 @@ public class ProportionalNeuralFunction extends NeuralFunction {
     public void setParameter(double par) {
         gain = par;
     }
-    
-    
-     @Override
+
+    @Override
     public String getParametersString() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("Gain").append(":");
         sb.append(gain);
-
 
         return sb.toString();
     }

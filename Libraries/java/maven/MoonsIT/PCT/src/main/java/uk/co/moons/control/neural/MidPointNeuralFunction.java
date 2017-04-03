@@ -18,22 +18,46 @@ import uk.co.moons.control.functions.BaseControlFunction;
 import java.util.List;
 import pct.moons.co.uk.schema.layers.Parameters;
 
-public class DivisionNeuralFunction extends NeuralFunction {
+public class MidPointNeuralFunction extends NeuralFunction {
 
-    public int sign = 1;
+    public Double ratio = 0.5;
+    private Integer startIndex = 0;
+    private Integer targetIndex = 1;
 
-    public DivisionNeuralFunction() {
+    public MidPointNeuralFunction() {
         super();
     }
 
-    public DivisionNeuralFunction(List<Parameters> ps) throws Exception {
+    public MidPointNeuralFunction(List<Parameters> ps) {
         super(ps);
-
         for (Parameters param : ps) {
             String pname = param.getName();
-            if (pname.equals("Sign")) {
-                sign = Integer.parseInt(param.getValue());
-                break;
+            if (pname.equals("Ratio")) {
+                ratio = Double.parseDouble(param.getValue());
+            }
+        }
+    }
+
+    @Override
+    public void verifyConfiguration() throws Exception {
+        List<BaseControlFunction> controls = links.getControlList();
+        if (controls.size() != 2) {
+            throw new Exception(getName() + " requires two links, has " + controls.size());
+        }
+        
+        for (int i = 0; i < controls.size(); i++) {
+            String linkType = links.getType(i);
+            if (linkType == null) {
+                continue;
+            }
+            //LOG.log(Level.INFO, "LinkType {0}", linkType);
+            if (linkType.equalsIgnoreCase("Start")) {
+                startIndex = i;
+                continue;
+            }
+
+            if (linkType.equals("Target")) {
+                targetIndex = i;
             }
         }
     }
@@ -41,15 +65,11 @@ public class DivisionNeuralFunction extends NeuralFunction {
     @Override
     public double compute() {
         List<BaseControlFunction> controls = links.getControlList();
-        double a = controls.get(0).getValue();
-        double b = controls.get(1).getValue();
+        double start = controls.get(startIndex).getValue();
+        double target = controls.get(targetIndex).getValue();
 
+        output = ((start - target) / ratio) + target;
 
-        if (Math.abs(b) > 0) {
-            output = a / b;
-        } else {
-            output = 0;
-        }
         return output;
     }
 }

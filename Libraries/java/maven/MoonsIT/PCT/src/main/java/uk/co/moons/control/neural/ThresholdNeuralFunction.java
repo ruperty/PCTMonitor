@@ -26,7 +26,7 @@ import uk.co.moons.control.functions.BaseControlFunction;
  * Output limited to by a threshold value.
  *
  * <p>
- * If the input is great than the threshold then input value is 
+ * If the input is greater than the threshold then input value is 
  * returned, otherwise the threshold value (with same sign as the input) 
  * is returned. If the <b>Alternate</b> parameter is set then the value of that is returned.
  * </p>

@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class XML_005_004_QMXAtomSurfIntTest {
+public class XML_005_009_QMXAtomSurfTest {
     
-    public XML_005_004_QMXAtomSurfIntTest() {
+    public XML_005_009_QMXAtomSurfTest() {
     }
 
     /**
@@ -22,9 +22,8 @@ public class XML_005_004_QMXAtomSurfIntTest {
      */
     @Test
     public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-004-QMXAtomSurfInt"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-009-QMXAtomSurf"};
         System.out.println(args[0]+args[1]);
-
 
         try {
             ODGConfig.main(args);

@@ -20,6 +20,12 @@ import pct.moons.co.uk.schema.layers.Parameters;
 
 public class DynamicLimitNeuralFunction extends NeuralFunction {
 
+    public Double limit = null;
+    public Double tolerance = null;
+
+    private Integer limitIndex = null;
+    private Integer dataIndex = null;
+
     public DynamicLimitNeuralFunction() {
         super();
     }
@@ -29,20 +35,56 @@ public class DynamicLimitNeuralFunction extends NeuralFunction {
 
         for (Parameters param : ps) {
             String pname = param.getName();
+            if (pname.equals("Limit")) {
+                limit = Double.parseDouble(param.getValue());
+            }
+            if (pname.equals("Tolerance")) {
+                tolerance = Double.parseDouble(param.getValue());
+            }
+        }
+    }
 
+    @Override
+    public void verifyConfiguration() throws Exception {
+        List<BaseControlFunction> controls = links.getControlList();
+
+        if (limit != null) {
+            dataIndex = 0;
+            return;
+        }
+
+        for (int i = 0; i < controls.size(); i++) {
+            String linkType = links.getType(i);
+            if (linkType == null) {
+                dataIndex = i;
+                continue;
+            }
+            //LOG.log(Level.INFO, "LinkType {0}", linkType);
+            if (linkType.equalsIgnoreCase("Limit")) {
+                limitIndex = i;
+            }
         }
     }
 
     @Override
     public double compute() {
         List<BaseControlFunction> controls = links.getControlList();
-        double a = controls.get(0).getValue();
-        double b = controls.get(1).getValue();
-
-        if (a > b) {
-            output = b;
+        double a = controls.get(dataIndex).getValue();
+        double b;
+        if (limit != null) {
+            b = limit;
         } else {
-            output = a;
+            b = controls.get(limitIndex).getValue();
+        }
+
+        if (tolerance != null && Math.abs(a - b) < tolerance) {
+            output = Double.POSITIVE_INFINITY;
+        } else {
+            if (a > b) {
+                output = b;
+            } else {
+                output = a;
+            }
         }
         return output;
     }
