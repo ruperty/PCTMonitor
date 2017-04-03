@@ -14,7 +14,6 @@
  */
 package uk.co.moonsit.config.odg;
 
-import com.sun.tools.javac.util.StringUtils;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
