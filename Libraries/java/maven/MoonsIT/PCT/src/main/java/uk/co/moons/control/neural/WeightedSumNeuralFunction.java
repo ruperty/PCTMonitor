@@ -32,8 +32,10 @@ import uk.co.moons.control.functions.BaseControlFunction;
  * The configuration parameters to the function are as follows:
  * <br>
  * <b>Weights</b> - a comma-separated string of the weights (mandatory). <br>
- * <b>Absolute</b> - a boolean defining if the absolute value of inputs are
+ * <b>Absolute</b> - a boolean flag defining if the absolute value of inputs are
  * taken. <br>
+ * <b>Infinite</b> - a boolean flag indicating that the output should be
+ * infinite if all the inputs are, otherwise the output will be zero. <br>
  * <b>Max</b> - a limit to the output value. <br>
  *
  * @author Rupert Young <rupert@moonsit.co.uk>
@@ -44,6 +46,7 @@ public class WeightedSumNeuralFunction extends NeuralFunction {
     public String weights = null;
     private List<Double> weightsArray = null;
     public Boolean absolute = false;
+    public Boolean infinite = false;
     public Double max = null;
 
     public WeightedSumNeuralFunction() throws Exception {
@@ -69,6 +72,9 @@ public class WeightedSumNeuralFunction extends NeuralFunction {
             if (pname.equals("Absolute")) {
                 absolute = Boolean.parseBoolean(param.getValue());
             }
+            if (pname.equals("Infinite")) {
+                infinite = Boolean.parseBoolean(param.getValue());
+            }
         }
 
         if (weights == null) {
@@ -89,9 +95,12 @@ public class WeightedSumNeuralFunction extends NeuralFunction {
 
         double sum = 0;
         int ctr = 0;
+        int infinites = 0;
+
         for (BaseControlFunction control : controls) {
             double value = control.getValue();
             if (Math.abs(value) == Double.POSITIVE_INFINITY) {
+                infinites++;
                 ctr++;
                 if (controls.size() == 1) {
                     sum = Double.POSITIVE_INFINITY;
@@ -106,6 +115,11 @@ public class WeightedSumNeuralFunction extends NeuralFunction {
             sum += weight * value;
         }
 
+        if (infinite) {
+            if (infinites == controls.size()) {
+                sum = Double.POSITIVE_INFINITY;
+            }
+        }
         output = sum;
         if (max != null && output > max) {
             output = max;

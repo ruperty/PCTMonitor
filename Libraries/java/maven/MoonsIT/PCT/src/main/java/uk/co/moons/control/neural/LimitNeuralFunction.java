@@ -44,7 +44,7 @@ public class LimitNeuralFunction extends NeuralFunction {
 
     public Double max = null;
     public Double min = null;
-    public boolean infinity = false;
+    public boolean enableinfinity = false;
     private Integer maxIndex = null;
     private Integer minIndex = null;
 
@@ -61,8 +61,11 @@ public class LimitNeuralFunction extends NeuralFunction {
             if (param.getName().equals("Min")) {
                 min = Double.valueOf(param.getValue());
             }
+            if (param.getName().equals("EnableInfinity")) {
+                enableinfinity = Boolean.valueOf(param.getValue());
+            }
             if (param.getName().equals("Infinity")) {
-                infinity = Boolean.valueOf(param.getValue());
+                throw new Exception("Change parameter name to EnableInfinity");
             }
         }
     }
@@ -101,13 +104,17 @@ public class LimitNeuralFunction extends NeuralFunction {
         }
 
         if (max != null && value > max) {
-            if (infinity) {
+            if (enableinfinity) {
                 output = Double.POSITIVE_INFINITY;
             } else {
                 output = max;
             }
         } else if (min != null && value < min) {
-            output = min;
+            if (enableinfinity) {
+                output = Double.POSITIVE_INFINITY;
+            } else {
+                output = min;
+            }
         } else {
             output = value;
         }

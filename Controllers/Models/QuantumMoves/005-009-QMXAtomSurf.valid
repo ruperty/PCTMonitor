@@ -4,7 +4,8 @@
         <Controller>Env</Controller>
         <Controller>QMSensor</Controller>
         <Controller>QMVariables</Controller>
-        <Controller>LaserXPosition</Controller>
+        <Controller>ToMidPosition</Controller>
+        <Controller>ToTargetPosition</Controller>
         <Controller>AtomOffset</Controller>
         <Controller>LaserXAccel</Controller>
         <Controller>LaserXVelocity</Controller>
@@ -66,7 +67,7 @@
                             <Type>QMSensor</Type>
                             <Parameters>
 <Name>TimeLimit</Name>
-<Value>0.04</Value>
+<Value>0.24</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -613,7 +614,7 @@
 <Type>Smooth</Type>
 <Parameters>
     <Name>Smoothness</Name>
-    <Value>0</Value>
+    <Value>0.2</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -678,7 +679,7 @@
                             <Type>Smooth</Type>
                             <Parameters>
 <Name>Smoothness</Name>
-<Value>0</Value>
+<Value>0.2</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -708,6 +709,11 @@
 <Name>Gain</Name>
 <Value>25</Value>
 <DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -753,6 +759,11 @@
 <Name>Gain</Name>
 <Value>500</Value>
 <DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>false</Value>
+<DataType>Boolean</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -804,6 +815,11 @@
 <Name>Tolerance</Name>
 <Value>0.00001</Value>
 <DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>false</Value>
+<DataType>Boolean</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -858,11 +874,11 @@
     <Layer>
         <Name>Control</Name>
         <Controller>
-            <Name>LaserXPosition</Name>
+            <Name>ToMidPosition</Name>
             <Functions>
                 <InputFunctions>
                     <Input>
-                        <Name>LaserXPositionInput</Name>
+                        <Name>ToMidPositionInput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
                             <Type>PassThrough</Type>
@@ -875,13 +891,13 @@
                 </InputFunctions>
                 <ReferenceFunctions>
                     <Reference>
-                        <Name>LaserXPositionReference</Name>
+                        <Name>ToMidPositionReference</Name>
                         <Description>...</Description>
                         <NeuralFunction>
                             <Type>Constant</Type>
                             <Parameters>
 <Name>Constant</Name>
-<Value>-0.4</Value>
+<Value>-0.1</Value>
 <DataType>Double</DataType>
                             </Parameters>
                         </NeuralFunction>
@@ -889,55 +905,40 @@
                 </ReferenceFunctions>
                 <ErrorFunctions>
                     <Error>
-                        <Name>LaserXPositionError</Name>
+                        <Name>ToMidPositionError</Name>
                         <Description>...</Description>
                         <NeuralFunction>
                             <Type>Subtract</Type>
                             <Links>
 <Index>0</Index>
-<Name>LaserXPositionReference</Name>
+<Name>ToMidPositionReference</Name>
                             </Links>
                             <Links>
 <Index>1</Index>
-<Name>LaserXPositionInput</Name>
+<Name>ToMidPositionInput</Name>
                             </Links>
                         </NeuralFunction>
                     </Error>
                 </ErrorFunctions>
                 <OutputFunctions>
                     <Output>
-                        <Name>LaserXPositionOutput</Name>
+                        <Name>ToMidPositionOutput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>LimitBanded</Type>
+                            <Type>DynamicLimit</Type>
                             <Parameters>
-<Name>Upper</Name>
-<Value>1</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Parameters>
-<Name>Threshold</Name>
-<Value>0</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Parameters>
-<Name>Lower</Name>
-<Value>0</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Parameters>
-<Name>BandWidth</Name>
+<Name>Tolerance</Name>
 <Value>0.01</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>BandValue</Name>
-<Value>Infinity</Value>
+<Name>Limit</Name>
+<Value>0</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
-<Name>LaserXPositionError</Name>
+<Name>ToMidPositionError</Name>
                             </Links>
                         </NeuralFunction>
                     </Output>
@@ -1007,10 +1008,32 @@
                             </Parameters>
                             <Links>
 <Index>0</Index>
-<Name>LaserXPositionOutput</Name>
+<Name>OffsetSum</Name>
                             </Links>
                         </NeuralFunction>
                     </Reference>
+                    <Transfers>
+                        <Transfer>
+                            <Name>OffsetSum</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>WeightedSum</Type>
+<Parameters>
+    <Name>Weights</Name>
+    <Value>1,1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>ToMidPositionOutput</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>ToTargetPositionOutput</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </ReferenceFunctions>
                 <ErrorFunctions>
                     <Error>
@@ -1042,8 +1065,13 @@
                             </Parameters>
                             <Parameters>
 <Name>Gain</Name>
-<Value>15</Value>
+<Value>10</Value>
 <DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -1053,6 +1081,78 @@
                             <Links>
 <Index>1</Index>
 <Name>AtomOffsetError</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>ToTargetPosition</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>ToTargetPositionInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>PassThrough</Type>
+                            <Links>
+<Index>0</Index>
+<Name>LaserX</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>ToTargetPositionReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Constant</Type>
+                            <Parameters>
+<Name>Constant</Name>
+<Value>-0.1</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>ToTargetPositionError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+<Index>0</Index>
+<Name>ToTargetPositionReference</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>ToTargetPositionInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>ToTargetPositionOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Limit</Type>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Max</Name>
+<Value>0</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>ToTargetPositionError</Name>
                             </Links>
                         </NeuralFunction>
                     </Output>

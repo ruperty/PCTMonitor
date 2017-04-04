@@ -98,7 +98,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
     public void loadPars(String config) throws Exception {
 
         String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
-        
+
         File file = new File(fname);
         if (file.exists()) {
             Properties props;
@@ -112,6 +112,9 @@ public class ControlHierarchy extends BaseControlHierarchy {
                     String parameter = arr[1];
                     String value = props.getProperty(key);
                     BaseControlFunction function = hmControls.get(functionName);
+                    if (function == null) {
+                        throw new Exception("Function from parameter list not found: " + functionName);
+                    }
                     function.getNeural().setParameter(parameter + ":" + value);
                 }
 

@@ -20,6 +20,33 @@ import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
 
+/**
+ * <b>Integration function.</b>
+ *
+ * <p>
+ * Leaky integrator function.
+ *
+ * <p>
+ * The amplified input is integrated and slowed by a slowing factor. 
+ * 
+ * If the input is infinity then zero is output.
+ * However, if IgnoreInfinity is true, then the previous output is returned.
+ * However, if EnableInfinity is true, then infinity is output.
+ * 
+ * If EnableInfinity is true, output is infinity, and the input returns to a real value
+ * then the output is set to the reset value, which comes from a link, if configured.
+ * 
+ * </p>
+ * The configuration parameters to the function are as follows:
+ * <p>
+ * <b>Gain</b> - the amplification factor (type Double). Mandatory. <br>
+ * <b>Slow</b> - the slowing factor (type Double). <br>
+ * <b>EnableInfinity</b> - true or false (type Boolean).<br>
+ * </p>
+ *
+ * @author Rupert Young <rupert@moonsit.co.uk>
+ * @version 1.0
+ */
 public class IntegrationNeuralFunction extends NeuralFunction {
 
     private static final Logger LOG = Logger.getLogger(IntegrationNeuralFunction.class.getName());
@@ -31,6 +58,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
     public Double tolerance = null;
     public Boolean integrate = true;
     public Boolean enableinfinity = false;
+    public Boolean ignoreinfinity = false;
 
     private Integer resetIndex = null;
     private Integer rateIndex = null;
@@ -68,9 +96,14 @@ public class IntegrationNeuralFunction extends NeuralFunction {
             if (param.getName().equals("EnableInfinity")) {
                 enableinfinity = Boolean.valueOf(param.getValue());
             }
+            if (param.getName().equals("IgnoreInfinity")) {
+                ignoreinfinity = Boolean.valueOf(param.getValue());
+            }
 
         }
-
+        if (enableinfinity && ignoreinfinity) {
+            throw new Exception("EnableInfinity and IgnoreInfinity can not both be true");
+        }
         if (gain == null) {
             throw new Exception("Gain null for IntegrationNeuralFunction");
         }
@@ -169,7 +202,7 @@ public class IntegrationNeuralFunction extends NeuralFunction {
 
         } else if (enableinfinity) {
             output = Double.POSITIVE_INFINITY;
-        } else {
+        } else if (!ignoreinfinity) {
             output = 0;
         }
         return output;
