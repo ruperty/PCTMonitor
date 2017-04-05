@@ -67,7 +67,7 @@
                             <Type>QMSensor</Type>
                             <Parameters>
 <Name>TimeLimit</Name>
-<Value>0.15</Value>
+<Value>0.2</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -713,6 +713,11 @@
                             <Parameters>
 <Name>IgnoreInfinity</Name>
 <Value>true</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>false</Value>
 <DataType>Boolean</DataType>
                             </Parameters>
                             <Links>
@@ -758,6 +763,11 @@
                             <Parameters>
 <Name>Gain</Name>
 <Value>500</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>IgnoreInfinity</Name>
+<Value>true</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -819,7 +829,12 @@
                             <Parameters>
 <Name>IgnoreInfinity</Name>
 <Value>true</Value>
-<DataType>Boolean</DataType>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>false</Value>
+<DataType>Double</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -925,15 +940,15 @@
                         <Name>ToMidPositionOutput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>DynamicLimit</Type>
+                            <Type>Limit</Type>
                             <Parameters>
-<Name>Tolerance</Name>
-<Value>0.001</Value>
-<DataType>Double</DataType>
+<Name>EnableInfinity</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Limit</Name>
-<Value>0</Value>
+<Name>Max</Name>
+<Value>-0.005</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -1074,8 +1089,13 @@
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>EnableInfinity</Name>
+<Name>IgnoreInfinity</Name>
 <Value>false</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>true</Value>
 <DataType>Boolean</DataType>
                             </Parameters>
                             <Links>

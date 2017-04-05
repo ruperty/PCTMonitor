@@ -14,9 +14,11 @@
  */
 package uk.co.moons.control;
 
+import java.lang.reflect.Type;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -95,9 +97,10 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
-    public void loadPars(String config) throws Exception {
+    private void loadPars(String config) throws Exception {
 
         String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
+        String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";
 
         File file = new File(fname);
         if (file.exists()) {
@@ -105,17 +108,62 @@ public class ControlHierarchy extends BaseControlHierarchy {
             try {
                 props = new Properties();
                 props.load(new FileInputStream(file));
+                StringBuilder sb = new StringBuilder();
+                sb.append("Parameter  diagram  saved\n");
+                int initSize = sb.length();
 
                 for (String key : props.stringPropertyNames()) {
                     String[] arr = key.split("_");
                     String functionName = arr[0];
                     String parameter = arr[1];
-                    String value = props.getProperty(key);
+                    String override = props.getProperty(key);
                     BaseControlFunction function = hmControls.get(functionName);
                     if (function == null) {
                         throw new Exception("Function from parameter list not found: " + functionName);
                     }
-                    function.getNeural().setParameter(parameter + ":" + value);
+
+                    Type ptype = function.getNeural().getParameterType(parameter);
+                    //LOG.info(type.getTypeName());
+                    Object obj = function.getNeural().getParameterObject(parameter);
+                    if (obj == null) {
+                        throw new Exception("Parameter "+parameter+" in function " + functionName+" not found in XML");
+                    }
+                    switch (ptype.getTypeName()) {
+                        case "java.lang.Double": {
+                            Double vExisting = (Double) obj;
+                            Double vOverride = Double.valueOf(override);
+                            if (!vExisting.equals(vOverride)) {
+                                sb.append(key).append(" ").append(vExisting).append(" ").append(vOverride).append("\n");
+                            }
+                            break;
+                        }
+                        case "java.lang.Boolean": {
+                            Boolean vExisting = (Boolean) obj;
+                            Boolean vOverride = Boolean.valueOf(override);
+                            if (!vExisting.equals(vOverride)) {
+                                sb.append(key).append(" ").append(vExisting).append(" ").append(vOverride).append("\n");
+                            }
+                            break;
+                        }
+                        case "java.lang.String":
+                            String vExisting = (String) obj;
+                            if (!vExisting.equals(override)) {
+                                sb.append(key).append(" ").append(vExisting).append(" ").append(override).append("\n");
+                            }
+                            break;
+                    }
+
+                    function.getNeural().setParameter(parameter + ":" + override);
+                }
+
+                String soutput = "";
+                if (sb.length() > initSize) {
+                    soutput = sb.toString();
+                    LOG.info(sb.toString());
+                }
+                File dfile = new File(dname);
+                try (FileOutputStream fout = new FileOutputStream(dfile)) {
+                    fout.write(soutput.getBytes());
                 }
 
             } catch (IOException ex) {

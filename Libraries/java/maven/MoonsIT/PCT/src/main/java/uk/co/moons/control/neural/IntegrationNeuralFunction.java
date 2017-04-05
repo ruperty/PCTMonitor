@@ -27,15 +27,16 @@ import uk.co.moons.control.functions.BaseControlFunction;
  * Leaky integrator function.
  *
  * <p>
- * The amplified input is integrated and slowed by a slowing factor. 
- * 
- * If the input is infinity then zero is output.
- * However, if IgnoreInfinity is true, then the previous output is returned.
- * However, if EnableInfinity is true, then infinity is output.
- * 
- * If EnableInfinity is true, output is infinity, and the input returns to a real value
- * then the output is set to the reset value, which comes from a link, if configured.
- * 
+ * The amplified input is integrated and slowed by a slowing factor.
+ *
+ * If the input is infinity then zero is output. However, if IgnoreInfinity is
+ * true, then the previous output is returned. However, if EnableInfinity is
+ * true, then infinity is output.
+ *
+ * If EnableInfinity is true, output is infinity, and the input returns to a
+ * real value then the output is set to the reset value, which comes from a
+ * link, if configured.
+ *
  * </p>
  * The configuration parameters to the function are as follows:
  * <p>

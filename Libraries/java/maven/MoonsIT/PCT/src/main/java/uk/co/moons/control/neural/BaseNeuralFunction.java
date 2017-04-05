@@ -20,6 +20,7 @@ package uk.co.moons.control.neural;
  * @author Rupert Young Copyright Moon's IT 2007-2008
  */
 import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -221,8 +222,38 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
     @Override
     public double getParameter(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException {
         Class<?> c = this.getClass();
-        Field field = c.getField(f);
+        Field field = c.getField(f.toLowerCase());
         return field.getDouble(this);
+    }
+
+    @Override
+    public Double getParameterDouble(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException {
+        Class<?> c = this.getClass();
+        Field field = c.getField(f.toLowerCase());
+        Double d = field.getDouble(this);
+        return d;
+    }
+
+    @Override
+    public Boolean getParameterBoolean(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException {
+        Class<?> c = this.getClass();
+        Field field = c.getField(f.toLowerCase());
+        Boolean x = field.getBoolean(this);
+        return x;
+    }
+
+    @Override
+    public Object getParameterObject(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException {
+        Class<?> c = this.getClass();
+        Field field = c.getField(f.toLowerCase());
+        return field.get(this);
+        }
+    
+    @Override
+    public Type getParameterType(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException {
+        Class<?> c = this.getClass();
+        Field field = c.getField(f.toLowerCase());
+        return field.getGenericType();
     }
 
     /*

@@ -97,7 +97,9 @@ public class ODGConnector {
         return endConnectorPoint;
     }
 
-    public boolean isFunctionConfig() {
+    public boolean isFunctionConfig() throws Exception {
+        if(startConnectorPoint==null)
+            throw new Exception(endConnectorPoint.getName()+ " not connected");
         return startConnectorPoint.getType().equals(ODGProcessing.FUNCTION_CONFIG);
     }
 

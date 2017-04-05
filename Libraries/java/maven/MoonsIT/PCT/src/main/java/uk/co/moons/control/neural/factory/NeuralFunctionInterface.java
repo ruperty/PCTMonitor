@@ -15,6 +15,7 @@
 package uk.co.moons.control.neural.factory;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 
 /**
  *
@@ -41,6 +42,14 @@ public interface NeuralFunctionInterface {
     public String getParameterName(int index);
 
     public double getParameter(String field) throws NoSuchFieldException, SecurityException, IllegalAccessException;
+
+    public Double getParameterDouble(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException;
+
+    public Boolean getParameterBoolean(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException;
+
+    public Object getParameterObject(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException;
+
+    public Type getParameterType(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException;
 
     public String getDataString();
 

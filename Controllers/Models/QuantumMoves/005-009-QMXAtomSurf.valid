@@ -30,7 +30,7 @@
                             </Parameters>
                             <Parameters>
 <Name>Pause</Name>
-<Value>50</Value>
+<Value>100</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -67,7 +67,7 @@
                             <Type>QMSensor</Type>
                             <Parameters>
 <Name>TimeLimit</Name>
-<Value>0.24</Value>
+<Value>0.2</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -711,8 +711,13 @@
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>EnableInfinity</Name>
+<Name>IgnoreInfinity</Name>
 <Value>true</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>EnableInfinity</Name>
+<Value>false</Value>
 <DataType>Boolean</DataType>
                             </Parameters>
                             <Links>
@@ -758,6 +763,11 @@
                             <Parameters>
 <Name>Gain</Name>
 <Value>500</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>IgnoreInfinity</Name>
+<Value>true</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -817,9 +827,14 @@
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
+<Name>IgnoreInfinity</Name>
+<Value>true</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
 <Name>EnableInfinity</Name>
 <Value>false</Value>
-<DataType>Boolean</DataType>
+<DataType>Double</DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -897,7 +912,7 @@
                             <Type>Constant</Type>
                             <Parameters>
 <Name>Constant</Name>
-<Value>-0.1</Value>
+<Value>0.25</Value>
 <DataType>Double</DataType>
                             </Parameters>
                         </NeuralFunction>
@@ -925,15 +940,15 @@
                         <Name>ToMidPositionOutput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>DynamicLimit</Type>
+                            <Type>Limit</Type>
                             <Parameters>
-<Name>Tolerance</Name>
-<Value>0.01</Value>
-<DataType>Double</DataType>
+<Name>EnableInfinity</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Limit</Name>
-<Value>0</Value>
+<Name>Max</Name>
+<Value>-0.005</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -1019,9 +1034,14 @@
                             <NeuralFunction>
 <Type>WeightedSum</Type>
 <Parameters>
+    <Name>Infinite</Name>
+    <Value>true</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
     <Name>Weights</Name>
     <Value>1,1</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1029,7 +1049,7 @@
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>ToTargetPositionOutput</Name>
+    <Name>ToTarget</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>
@@ -1066,6 +1086,11 @@
                             <Parameters>
 <Name>Gain</Name>
 <Value>10</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>IgnoreInfinity</Name>
+<Value>false</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -1111,7 +1136,7 @@
                             <Type>Constant</Type>
                             <Parameters>
 <Name>Constant</Name>
-<Value>-0.1</Value>
+<Value>0.15</Value>
 <DataType>Double</DataType>
                             </Parameters>
                         </NeuralFunction>
@@ -1146,8 +1171,8 @@
 <DataType>Boolean</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Max</Name>
-<Value>0</Value>
+<Name>Min</Name>
+<Value>-0.095</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -1156,6 +1181,19 @@
                             </Links>
                         </NeuralFunction>
                     </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>ToTarget</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ChangeSign</Type>
+<Links>
+    <Index>0</Index>
+    <Name>ToTargetPositionOutput</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </OutputFunctions>
             </Functions>
         </Controller>
