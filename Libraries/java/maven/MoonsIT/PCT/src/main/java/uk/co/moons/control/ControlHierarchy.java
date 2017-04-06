@@ -87,6 +87,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         this.hmControls = controlBuild.getHmControls();
         this.orderedControllers = controlBuild.getOrderedControllers();
 
+        checkOrderedControllers();
         loadPars(config);
 
         List<String> lof = Environment.getInstance().getListOutputFunctions();
@@ -94,6 +95,15 @@ public class ControlHierarchy extends BaseControlHierarchy {
             listOutputFunctions = new ArrayList<>();
         } else {
             listOutputFunctions = lof;
+        }
+    }
+
+    private void checkOrderedControllers() throws Exception {
+        for (String name : orderedControllers) {
+            Controller cont = hmControllers.get(name);
+            if (cont == null) {
+                throw new Exception("Controller " + name + " from ordered list does not exist in configuration.");
+            }
         }
     }
 
@@ -126,7 +136,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
                     //LOG.info(type.getTypeName());
                     Object obj = function.getNeural().getParameterObject(parameter);
                     if (obj == null) {
-                        throw new Exception("Parameter "+parameter+" in function " + functionName+" not found in XML");
+                        throw new Exception("Parameter " + parameter + " in function " + functionName + " not found in XML");
                     }
                     switch (ptype.getTypeName()) {
                         case "java.lang.Double": {

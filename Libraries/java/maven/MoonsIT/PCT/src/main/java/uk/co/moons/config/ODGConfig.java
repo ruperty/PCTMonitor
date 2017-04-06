@@ -54,7 +54,7 @@ public class ODGConfig {
         //LOG.log(Level.INFO, "ODG processing time {0}", ( System.currentTimeMillis()-start));
         odg.constructPCTXML(layers);
         //LOG.log(Level.INFO, "ODG processing time {0}", ( System.currentTimeMillis()-start));
-        odg.verifyDiagram();
+        odg.verifyDiagram(layers);
         LOG.log(Level.INFO, "ODG processing time {0}", (System.currentTimeMillis() - start));
     }
 

@@ -44,6 +44,7 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
     protected List<Parameters> parameters;
     protected String name = null;
     protected int posindex;
+    public String linkslist = null;
     public Double initial = null;
     public Double last = null;
     public Double reset = null;
@@ -62,7 +63,7 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
 
     }
 
-    public BaseNeuralFunction(List<Parameters> ps) {
+    public BaseNeuralFunction(List<Parameters> ps) throws Exception {
         //links = new ArrayList<BaseSignalLink>();
         links = new SignalLink();
         parameters = ps;
@@ -82,9 +83,33 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
             if (param.getName().equals("Disabled")) {
                 disabled = Boolean.valueOf(param.getValue());
             }
+
+            if (param.getName().equals("LinksList")) {
+                linkslist = param.getValue();
+            }
+
         }
+
+        if (linkslist != null) {
+            createLinksFromList();
+        }
+
         if (initial != null) {
             output = initial;
+        }
+    }
+
+    private void createLinksFromList() throws Exception {
+
+        for (String link : linkslist.split(",")) {
+            String[] larr = link.split("^");
+
+            BaseControlFunction control = hmControlFunctions.get(larr[0]);
+            if (control == null) {
+                throw new Exception("Function " + larr[0] + " indicated by link is missing. If function exists in ODG drawing ensure it is less than 3cm from linked function.");
+            }
+            links.addControl(control);
+            links.addType(larr[1]);
         }
     }
 
@@ -247,8 +272,8 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
         Class<?> c = this.getClass();
         Field field = c.getField(f.toLowerCase());
         return field.get(this);
-        }
-    
+    }
+
     @Override
     public Type getParameterType(String f) throws NoSuchFieldException, SecurityException, IllegalAccessException {
         Class<?> c = this.getClass();

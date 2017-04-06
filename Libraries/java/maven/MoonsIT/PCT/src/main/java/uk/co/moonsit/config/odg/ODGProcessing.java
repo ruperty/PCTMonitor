@@ -73,7 +73,7 @@ public class ODGProcessing {
         //bckConnectorMap = new HashMap<>();
     }
 
-    public void verifyDiagram() throws Exception {
+    public void verifyDiagram(Layers layers) throws Exception {
         // check that all configs are connected
         for (ODGFunctionConfig config : configList) {
             boolean found = false;
@@ -104,11 +104,18 @@ public class ODGProcessing {
             }
         }*/
         // check that each function has been connected to a config
+        // and that it is in the XML
         for (ODGFunction function : functionList) {
             if (function.getConfigID() == null) {
                 throw new Exception("Function not connected to configuration at " + MoonsString.formatPlaces(function.getLocation().getX(), 1)
                         + " " + MoonsString.formatPlaces(function.getLocation().getY(), 1));
             }
+
+            String fname = function.getName();
+            if (!Utils.functionExists(layers, fname)) {
+                throw new Exception("Function "+fname +" does not appear in XML configuration, ensure it is less than 3cm from is link");
+            }
+
         }
 
         // for each controller check if each function has a connection to it
@@ -144,7 +151,7 @@ public class ODGProcessing {
 
     }
 
-    private boolean isFunctionConfigured(String name) {
+    private boolean isFunctionConfigured(String name) throws Exception {
         for (ODGConnector connector : connectorList) {
             if (connector.isFunctionConfig() && name.equals(connector.getStartConnectorPoint().getName())) {
                 return true;
@@ -491,7 +498,7 @@ public class ODGProcessing {
     // search for associated function by name
     // set the config ID for that function  
     // for functions that are not controllers set the name of the connector endpoint from the config name    
-    private void fillInFunctionsConnectedToConfig() {
+    private void fillInFunctionsConnectedToConfig() throws Exception {
         for (ODGConnector connector : connectorList) {
             if (connector.isFunctionConfig()) {
                 //LOG.info(connector.toString());
@@ -576,7 +583,7 @@ public class ODGProcessing {
     }
 
     // if config name is null set name from end point
-    private void fillInNullConfigs() {
+    private void fillInNullConfigs() throws Exception {
         for (ODGConnector connector : connectorList) {
             if (connector.isFunctionConfig()) {
                 if (connector.getStartConnectorPoint().getName() == null) {

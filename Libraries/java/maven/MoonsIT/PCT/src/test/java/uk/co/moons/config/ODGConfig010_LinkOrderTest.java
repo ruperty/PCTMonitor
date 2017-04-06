@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author Rupert Young
  */
-public class ODGConfig009_OverrideOutputTest {
+public class ODGConfig010_LinkOrderTest {
 
-    public ODGConfig009_OverrideOutputTest() {
+    public ODGConfig010_LinkOrderTest() {
     }
 
     /**
@@ -22,7 +22,7 @@ public class ODGConfig009_OverrideOutputTest {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest009_OverrideOutput"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest010_LinkOrder"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);

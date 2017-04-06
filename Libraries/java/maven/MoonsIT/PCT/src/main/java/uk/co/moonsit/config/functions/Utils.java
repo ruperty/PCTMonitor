@@ -28,6 +28,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import pct.moons.co.uk.schema.layers.ControlFunction;
 import pct.moons.co.uk.schema.layers.Layers;
+import pct.moons.co.uk.schema.layers.Layers.Layer.Controller;
 import pct.moons.co.uk.schema.layers.Link;
 import pct.moons.co.uk.schema.layers.NeuralFunction;
 import pct.moons.co.uk.schema.layers.Parameters;
@@ -120,10 +121,51 @@ public class Utils {
         }
     }
 
+    static public boolean functionExists(Layers layers, String name) {
+        for (int i = 0; i < layers.getLayer().size(); i++) {
+            for (Controller controller : layers.getLayer().get(i).getController()) {
+
+                if (controller.getFunctions().getInputFunctions() != null && controller.getFunctions().getInputFunctions().getTransfers() != null) {
+                    for (ControlFunction transfer : controller.getFunctions().getInputFunctions().getTransfers().getTransfer()) {
+                        if (transfer.getName().equals(name)) {
+                            return true;
+                        }
+                    }
+                }
+
+                if (controller.getFunctions().getReferenceFunctions() != null && controller.getFunctions().getReferenceFunctions().getTransfers() != null) {
+                    for (ControlFunction transfer : controller.getFunctions().getReferenceFunctions().getTransfers().getTransfer()) {
+                        if (transfer.getName().equals(name)) {
+                            return true;
+                        }
+                    }
+                }
+
+                if (controller.getFunctions().getErrorFunctions() != null && controller.getFunctions().getErrorFunctions().getTransfers() != null) {
+                    for (ControlFunction transfer : controller.getFunctions().getErrorFunctions().getTransfers().getTransfer()) {
+                        if (transfer.getName().equals(name)) {
+                            return true;
+                        }
+                    }
+                }
+
+                if (controller.getFunctions().getOutputFunctions() != null && controller.getFunctions().getOutputFunctions().getTransfers() != null) {
+                    for (ControlFunction transfer : controller.getFunctions().getOutputFunctions().getTransfers().getTransfer()) {
+                        if (transfer.getName().equals(name)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public static void setOrderedControllers(Layers layers, String[] list) {
 
         Layers.OrderedControllers ordered = new Layers.OrderedControllers();
         List<String> order = ordered.getController();
+
         order.addAll(Arrays.asList(list));
         layers.setOrderedControllers(ordered);
     }

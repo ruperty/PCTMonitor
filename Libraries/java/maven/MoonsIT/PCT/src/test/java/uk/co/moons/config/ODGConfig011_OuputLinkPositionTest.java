@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author Rupert Young
  */
-public class ODGConfig009_OverrideOutputTest {
+public class ODGConfig011_OuputLinkPositionTest {
 
-    public ODGConfig009_OverrideOutputTest() {
+    public ODGConfig011_OuputLinkPositionTest() {
     }
 
     /**
@@ -22,14 +22,19 @@ public class ODGConfig009_OverrideOutputTest {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest009_OverrideOutput"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest011_OuputLinkPosition"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);
+            fail("Config should fail");
         } catch (Exception ex) {
             System.out.println(ex.toString());
-            System.out.println(ex.getCause());
-            fail(ex.toString());
+
+            if (ex.toString().equals("java.lang.Exception: Function IntegrateY does not appear in XML configuration, ensure it is less than 3cm from is link")) {
+                System.out.println("Correct exception");
+            } else {
+                fail(ex.toString());
+            }
         }
     }
 

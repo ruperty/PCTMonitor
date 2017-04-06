@@ -4,14 +4,14 @@
         <Controller>Env</Controller>
         <Controller>QMSensor</Controller>
         <Controller>QMVariables</Controller>
-        <Controller>SequenceControl</Controller>
-        <Controller>MoveLaserControl</Controller>
-        <Controller>CollectControl</Controller>
-        <Controller>LaserXPositionControl</Controller>
-        <Controller>LaserXVelocityControl</Controller>
-        <Controller>LaserXAccelerationControl</Controller>
-        <Controller>AtomOffsetControl</Controller>
-        <Controller>AmplitudeControl</Controller>
+        <Controller>Sequence</Controller>
+        <Controller>Move</Controller>
+        <Controller>Collect</Controller>
+        <Controller>Target</Controller>
+        <Controller>LaserXVelocity</Controller>
+        <Controller>LaserXAccel</Controller>
+        <Controller>AtomOffset</Controller>
+        <Controller>Amplitude</Controller>
         <Controller>QMActuator</Controller>
     </OrderedControllers>
     <Type>Model</Type>
@@ -379,9 +379,35 @@
 <Name>LaserX</Name>
 <Type>Initial</Type>
                             </Links>
+                            <Links>
+<Index>2</Index>
+<Name>VelocityActive</Name>
+<Type>Active</Type>
+                            </Links>
                         </NeuralFunction>
                     </Output>
                     <Transfers>
+                        <Transfer>
+                            <Name>LaserXVelocitySmooth</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Smooth</Type>
+<Parameters>
+    <Name>Smoothness</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>LaserXVelocity</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>VelocityActive</Name>
+    <Type>Active</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
                         <Transfer>
                             <Name>LaserXAcceleration</Name>
                             <Description>...</Description>
@@ -414,7 +440,12 @@
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>LaserXVelocity</Name>
+    <Name>VelocityActive</Name>
+    <Type>Active</Type>
+</Links>
+<Links>
+    <Index>2</Index>
+    <Name>LaserXVelocitySmooth</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>
@@ -452,14 +483,24 @@
                         <NeuralFunction>
                             <Type>QMSensor</Type>
                             <Parameters>
+<Name>TimeLimit</Name>
+<Value>0.4</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
 <Name>TargetPercentage</Name>
 <Value>1</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>TimeLimit</Name>
-<Value>0.4</Value>
-<DataType>Double</DataType>
+<Name>Width</Name>
+<Value>640</Value>
+<DataType></DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Height</Name>
+<Value>480</Value>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -660,6 +701,27 @@
 </Links>
                             </NeuralFunction>
                         </Transfer>
+                        <Transfer>
+                            <Name>LaserOutputY</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>QMActuator</Type>
+<Parameters>
+    <Name>Publish</Name>
+    <Value>true</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>Variable</Name>
+    <Value>LaserOutputY</Value>
+    <DataType></DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>LaserOutputIntegrateY</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
                     </Transfers>
                 </OutputFunctions>
             </Functions>
@@ -675,15 +737,15 @@
                         <Name>LaserXVelocityInput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>Smooth</Type>
-                            <Parameters>
-<Name>Smoothness</Name>
-<Value>0.1</Value>
-<DataType>Double</DataType>
-                            </Parameters>
+                            <Type>PassThrough</Type>
                             <Links>
 <Index>0</Index>
-<Name>LaserXVelocity</Name>
+<Name>LaserXVelocitySmooth</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>VelocityActive</Name>
+<Type>Active</Type>
                             </Links>
                         </NeuralFunction>
                     </Input>
@@ -845,6 +907,23 @@
                         </NeuralFunction>
                     </Reference>
                 </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>LaserXAccelError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+<Index>0</Index>
+<Name>LaserXAccelReference</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>LaserXAccelInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
                 <OutputFunctions>
                     <Output>
                         <Name>LaserXAccelOutput</Name>
@@ -871,6 +950,10 @@
 <Name>Reset</Name>
 <Type>Reset</Type>
                             </Links>
+                            <Links>
+<Index>1</Index>
+<Name>LaserXAccelError</Name>
+                            </Links>
                         </NeuralFunction>
                     </Output>
                 </OutputFunctions>
@@ -884,19 +967,10 @@
                         <Name>AtomOffsetInput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>Subtract</Type>
-                            <Parameters>
-<Name>Sign</Name>
-<Value>1</Value>
-<DataType></DataType>
-                            </Parameters>
+                            <Type>PassThrough</Type>
                             <Links>
 <Index>0</Index>
-<Name>LaserX</Name>
-                            </Links>
-                            <Links>
-<Index>1</Index>
-<Name>AtomX</Name>
+<Name>AtomXOffset</Name>
                             </Links>
                         </NeuralFunction>
                     </Input>
@@ -1096,6 +1170,107 @@
     <Layer>
         <Name>Control</Name>
         <Controller>
+            <Name>Move</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>MoveInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>PassThrough</Type>
+                            <Links>
+<Index>0</Index>
+<Name>LaserX</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>MoveReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>PassThrough</Type>
+                            <Links>
+<Index>0</Index>
+<Name>MoveReferenceActive</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Reference>
+                    <Transfers>
+                        <Transfer>
+                            <Name>MoveRef</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>1.049</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>MoveReferenceActive</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ValueActivate</Type>
+<Parameters>
+    <Name>Key</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>MoveRef</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>SequenceOutput</Name>
+    <Type>Key</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>MoveError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+<Index>0</Index>
+<Name>MoveReference</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>MoveInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>MoveOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Proportional</Type>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>1</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>MoveError</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
             <Name>Sequence</Name>
             <Functions>
                 <InputFunctions>
@@ -1176,112 +1351,6 @@
             </Functions>
         </Controller>
         <Controller>
-            <Name>Move</Name>
-            <Functions>
-                <InputFunctions>
-                    <Input>
-                        <Name>MoveInput</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>PassThrough</Type>
-                            <Links>
-<Index>0</Index>
-<Name>LaserX</Name>
-                            </Links>
-                        </NeuralFunction>
-                    </Input>
-                </InputFunctions>
-                <ReferenceFunctions>
-                    <Reference>
-                        <Name>MoveReference</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>PassThrough</Type>
-                            <Links>
-<Index>0</Index>
-<Name>MoveReferenceActive</Name>
-                            </Links>
-                        </NeuralFunction>
-                    </Reference>
-                    <Transfers>
-                        <Transfer>
-                            <Name>MoveRef</Name>
-                            <Description>...</Description>
-                            <NeuralFunction>
-<Type>Constant</Type>
-<Parameters>
-    <Name>Constant</Name>
-    <Value>10</Value>
-    <DataType>Double</DataType>
-</Parameters>
-                            </NeuralFunction>
-                        </Transfer>
-                        <Transfer>
-                            <Name>MoveReferenceActive</Name>
-                            <Description>...</Description>
-                            <NeuralFunction>
-<Type>ValueActivate</Type>
-<Parameters>
-    <Name>Key</Name>
-    <Value>1</Value>
-    <DataType>Double</DataType>
-</Parameters>
-<Links>
-    <Index>0</Index>
-    <Name>MoveRef</Name>
-</Links>
-<Links>
-    <Index>1</Index>
-    <Name>SequenceOutput</Name>
-    <Type>Key</Type>
-</Links>
-                            </NeuralFunction>
-                        </Transfer>
-                    </Transfers>
-                </ReferenceFunctions>
-                <ErrorFunctions>
-                    <Error>
-                        <Name>MoveError</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>Subtract</Type>
-                            <Links>
-<Index>0</Index>
-<Name>MoveReference</Name>
-                            </Links>
-                            <Links>
-<Index>1</Index>
-<Name>MoveInput</Name>
-                            </Links>
-                        </NeuralFunction>
-                    </Error>
-                </ErrorFunctions>
-                <OutputFunctions>
-                    <Output>
-                        <Name>MoveOutput</Name>
-                        <Description>...</Description>
-                        <NeuralFunction>
-                            <Type>Integration</Type>
-                            <Parameters>
-<Name>Slow</Name>
-<Value>10000</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Parameters>
-<Name>Gain</Name>
-<Value>1000</Value>
-<DataType>Double</DataType>
-                            </Parameters>
-                            <Links>
-<Index>0</Index>
-<Name>MoveError</Name>
-                            </Links>
-                        </NeuralFunction>
-                    </Output>
-                </OutputFunctions>
-            </Functions>
-        </Controller>
-        <Controller>
             <Name>Collect</Name>
             <Functions>
                 <InputFunctions>
@@ -1305,25 +1374,25 @@
                             <Type>PassThrough</Type>
                             <Links>
 <Index>0</Index>
-<Name>TwoReferenceActive</Name>
+<Name>CollectReferenceActive</Name>
                             </Links>
                         </NeuralFunction>
                     </Reference>
                     <Transfers>
                         <Transfer>
-                            <Name>TwoRef</Name>
+                            <Name>CollectRef</Name>
                             <Description>...</Description>
                             <NeuralFunction>
 <Type>Constant</Type>
 <Parameters>
     <Name>Constant</Name>
-    <Value>100</Value>
+    <Value>0</Value>
     <DataType>Double</DataType>
 </Parameters>
                             </NeuralFunction>
                         </Transfer>
                         <Transfer>
-                            <Name>TwoReferenceActive</Name>
+                            <Name>CollectReferenceActive</Name>
                             <Description>...</Description>
                             <NeuralFunction>
 <Type>ValueActivate</Type>
@@ -1334,7 +1403,7 @@
 </Parameters>
 <Links>
     <Index>0</Index>
-    <Name>TwoRef</Name>
+    <Name>CollectRef</Name>
 </Links>
 <Links>
     <Index>1</Index>
@@ -1367,16 +1436,36 @@
                         <Name>CollectOutput</Name>
                         <Description>...</Description>
                         <NeuralFunction>
-                            <Type>Integration</Type>
+                            <Type>Sigmoid</Type>
                             <Parameters>
-<Name>Slow</Name>
-<Value>1000000</Value>
+<Name>OutScale</Name>
+<Value>0.019</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
-<Name>Gain</Name>
-<Value>100000</Value>
+<Name>InScale</Name>
+<Value>1000</Value>
 <DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>InputTolerance</Name>
+<Value>0</Value>
+<DataType></DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>XShift</Name>
+<Value>0</Value>
+<DataType></DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>YShift</Name>
+<Value>0</Value>
+<DataType></DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Absolute</Name>
+<Value>false</Value>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -1411,25 +1500,13 @@
                             <Type>PassThrough</Type>
                             <Links>
 <Index>0</Index>
-<Name>ThreeReferenceActive</Name>
+<Name>TargetActive</Name>
                             </Links>
                         </NeuralFunction>
                     </Reference>
                     <Transfers>
                         <Transfer>
-                            <Name>ThreeRef</Name>
-                            <Description>...</Description>
-                            <NeuralFunction>
-<Type>Constant</Type>
-<Parameters>
-    <Name>Constant</Name>
-    <Value>1000</Value>
-    <DataType>Double</DataType>
-</Parameters>
-                            </NeuralFunction>
-                        </Transfer>
-                        <Transfer>
-                            <Name>ThreeReferenceActive</Name>
+                            <Name>TargetActive</Name>
                             <Description>...</Description>
                             <NeuralFunction>
 <Type>ValueActivate</Type>
@@ -1440,12 +1517,12 @@
 </Parameters>
 <Links>
     <Index>0</Index>
-    <Name>ThreeRef</Name>
+    <Name>SequenceOutput</Name>
+    <Type>Key</Type>
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>SequenceOutput</Name>
-    <Type>Key</Type>
+    <Name>TargetX</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>
@@ -1476,12 +1553,12 @@
                             <Type>Sigmoid</Type>
                             <Parameters>
 <Name>OutScale</Name>
-<Value>0.02</Value>
+<Value>0.01</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
 <Name>InScale</Name>
-<Value>2.5</Value>
+<Value>6</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
