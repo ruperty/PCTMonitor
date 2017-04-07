@@ -14,6 +14,7 @@
  */
 package uk.co.moonsit.gui.controlpanel.core;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -25,6 +26,7 @@ import javax.swing.JRadioButton;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.util.Exceptions;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import uk.co.moons.gui.controlpanel.helper.ControlPanelHelper;
@@ -58,6 +60,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     private PlotPanelHelper plotPanelHelper = null;
 
     public PlotPanelTopComponent() {
+        configMap = new HashMap<>();
         initComponents();
         setName(Bundle.CTL_PlotPanelTopComponent());
         setToolTipText(Bundle.HINT_PlotPanelTopComponent());
@@ -67,6 +70,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     public PlotPanelTopComponent(ControlPanelHelper cph) {
         this.cph = cph;
         plotPanelHelper = new PlotPanelHelper();
+        configMap = new HashMap<>();
         initComponents();
         setName(Bundle.CTL_PlotPanelTopComponent());
         setToolTipText(Bundle.HINT_PlotPanelTopComponent());
@@ -108,20 +112,20 @@ public final class PlotPanelTopComponent extends TopComponent {
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListControllers = new javax.swing.JList<String>();
+        jListControllers = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jListFunctions = new javax.swing.JList<String>();
+        jListFunctions = new javax.swing.JList<>();
         jPanelRadio = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         jButtonRemoveGraph = new javax.swing.JButton();
         jButtonClearData = new javax.swing.JButton();
+        jButtonSave = new javax.swing.JButton();
         jButtonAddGraph = new javax.swing.JButton();
         jPanelPlot = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setPreferredSize(null);
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jPanel3.setLayout(new java.awt.BorderLayout());
@@ -178,6 +182,14 @@ public final class PlotPanelTopComponent extends TopComponent {
         });
         jPanel4.add(jButtonClearData);
 
+        org.openide.awt.Mnemonics.setLocalizedText(jButtonSave, org.openide.util.NbBundle.getMessage(PlotPanelTopComponent.class, "PlotPanelTopComponent.jButtonSave.text")); // NOI18N
+        jButtonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaveActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButtonSave);
+
         org.openide.awt.Mnemonics.setLocalizedText(jButtonAddGraph, org.openide.util.NbBundle.getMessage(PlotPanelTopComponent.class, "PlotPanelTopComponent.jButtonAddGraph.text")); // NOI18N
         jButtonAddGraph.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,12 +213,18 @@ public final class PlotPanelTopComponent extends TopComponent {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jListControllersValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListControllersValueChanged
-        functionsListModel = new DefaultListModel<String>();
-        hmFunctions = new HashMap<String, String>();
+        functionsListModel = new DefaultListModel<>();
+        hmFunctions = new HashMap<>();
+        
+        if(plotPanelHelper.isClearConfig()){
+            configMap.clear();
+            plotPanelHelper.setClearConfig(false);
+        }
 
         Object[] selectedController = jListControllers.getSelectedValuesList().toArray();
         for (int i = 0; i < selectedController.length; i++) {
             String cont = (String) selectedController[i];
+            currentController = cont;
             List<String> list = cph.getControllerFunctions(cont);
             for (String func : list) {
                 functionsListModel.addElement(func);
@@ -217,12 +235,13 @@ public final class PlotPanelTopComponent extends TopComponent {
         jListFunctions.setModel(functionsListModel);
     }//GEN-LAST:event_jListControllersValueChanged
 
+
     private void jListFunctionsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListFunctionsValueChanged
 
         logger.info("jListFunctionsValueChanged ");
 
         if (evt.getValueIsAdjusting() == false) {
-            selectedFunctions = new ArrayList<String>();
+            selectedFunctions = new ArrayList<>();
             Object[] values = jListFunctions.getSelectedValuesList().toArray();
             for (Object v : values) {
                 String function = (String) v;
@@ -230,9 +249,19 @@ public final class PlotPanelTopComponent extends TopComponent {
                 String bm = buttonGroupPlotNumber.getSelection().getActionCommand();
                 logger.info("+++ " + bm);
                 cph.add2dDataSet(hmFunctions.get(function), function, Integer.parseInt(bm));
+                addToConfig(bm, currentController + ":" + function);
             }
         }
     }//GEN-LAST:event_jListFunctionsValueChanged
+
+    private void addToConfig(String num, String function) {
+        List<String> list = configMap.get(num);
+        if (list == null) {
+            list = new ArrayList<>();
+            configMap.put(num, list);
+        }
+        list.add(function);
+    }
 
     private void jButtonRemoveGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveGraphActionPerformed
 
@@ -273,11 +302,21 @@ public final class PlotPanelTopComponent extends TopComponent {
         revalidate();
         repaint();
     }//GEN-LAST:event_jButtonAddGraphActionPerformed
+
+    private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
+        try {
+            plotPanelHelper.saveConfig(configMap);
+        } catch (IOException ex) {
+            Exceptions.printStackTrace(ex);
+        }
+    }//GEN-LAST:event_jButtonSaveActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupPlotNumber;
     private javax.swing.JButton jButtonAddGraph;
     private javax.swing.JButton jButtonClearData;
     private javax.swing.JButton jButtonRemoveGraph;
+    private javax.swing.JButton jButtonSave;
     private javax.swing.JList<String> jListControllers;
     private javax.swing.JList<String> jListFunctions;
     private javax.swing.JPanel jPanel1;
@@ -294,6 +333,8 @@ public final class PlotPanelTopComponent extends TopComponent {
     private HashMap<String, String> hmFunctions;
     private List<String> selectedFunctions = null;
     private ControlPanelHelper cph;
+    private String currentController = null;
+    private HashMap<String, List<String>> configMap = null;
 
     @Override
     public void componentOpened() {

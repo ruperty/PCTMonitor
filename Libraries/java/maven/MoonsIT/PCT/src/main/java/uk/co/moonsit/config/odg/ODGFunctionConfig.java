@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.odftoolkit.odfdom.dom.element.draw.DrawCustomShapeElement;
 import org.odftoolkit.odfdom.dom.element.draw.DrawGElement;
+import org.odftoolkit.odfdom.dom.element.text.TextPElement;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -156,9 +157,17 @@ public class ODGFunctionConfig {
         tmpRectangle = new Rectangle2D.Double(Utils.convertCmCoordinate(custom.getSvgXAttribute()), Utils.convertCmCoordinate(custom.getSvgYAttribute()),
                 Utils.convertCmDimension(custom.getSvgWidthAttribute()), Utils.convertCmDimension(custom.getSvgHeightAttribute()));
         rectangle = rectangle.createUnion(tmpRectangle);
-        String pvalue = custom.getFirstChild().getTextContent();
+
+        StringBuilder pvalue = new StringBuilder();
+
+        NodeList tNodeList = custom.getChildNodes();
+        for (int i = 0; i < tNodeList.getLength(); i++) {
+            Node tnode = tNodeList.item(i);
+            pvalue.append(tnode.getTextContent().trim());
+        }
+
         parameter[0] = pname;
-        parameter[1] = pvalue;
+        parameter[1] = pvalue.toString();
         parameter[2] = pdatatype;
         parametersList.add(parameter);
     }

@@ -199,7 +199,7 @@
 <Type>MaxSeries</Type>
 <Parameters>
     <Name>Model</Name>
-    <Value>005-010-QMBHWShovelling</Value>
+    <Value>005-011-QMBHWTunneling</Value>
     <DataType></DataType>
 </Parameters>
 <Parameters>
@@ -493,6 +493,27 @@
 <Links>
     <Index>1</Index>
     <Name>AtomX</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>AtomXOffsetLimited</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Limit</Type>
+<Parameters>
+    <Name>Max</Name>
+    <Value>0.1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Min</Name>
+    <Value>-0.3</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>AtomXOffset</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>

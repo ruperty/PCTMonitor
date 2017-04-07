@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 import org.odftoolkit.odfdom.dom.element.draw.DrawConnectorElement;
 import org.w3c.dom.Element;
 import uk.co.moonsit.config.functions.Utils;
+import uk.co.moonsit.utils.MoonsString;
 
 /**
  *
@@ -98,8 +99,13 @@ public class ODGConnector {
     }
 
     public boolean isFunctionConfig() throws Exception {
-        if(startConnectorPoint==null)
-            throw new Exception(endConnectorPoint.getName()+ " not connected");
+        if (startConnectorPoint == null) {
+            throw new Exception(endConnectorPoint.getName() +  " not connected at "
+                    + MoonsString.formatPlaces(startPoint.getX(), 1) + " "
+                    + MoonsString.formatPlaces(startPoint.getY(), 1) + " "
+                    + MoonsString.formatPlaces(endPoint.getX(), 1) + " "
+                    + MoonsString.formatPlaces(endPoint.getY(), 1));
+        }
         return startConnectorPoint.getType().equals(ODGProcessing.FUNCTION_CONFIG);
     }
 

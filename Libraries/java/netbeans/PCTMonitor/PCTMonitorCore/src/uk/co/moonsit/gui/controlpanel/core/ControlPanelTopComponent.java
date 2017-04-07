@@ -572,6 +572,7 @@ public final class ControlPanelTopComponent extends TopComponent {
 
         LOG.info("+++ openFileAction");
         monitor.clear();
+        plotPanelHelper.setClearConfig(true);
 
         jButtonStart.setText("Start");
         if (cph != null) {

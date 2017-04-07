@@ -3,11 +3,13 @@
 --SELECT	* FROM QUANTUM.SCORES ;
 
 
+
 SELECT	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Model FROM QUANTUM.SCORES 
+--SELECT	* FROM QUANTUM.SCORES 
 where level=13  --and model = '005-002-QMPositionSingleIntegrator'
 order by level, score desc;
 
-SELECT * FROM QUANTUM.PARAMETERS where ID = '20170222-17-26-24.304' 
+SELECT * FROM QUANTUM.PARAMETERS where ID = '20170313-09-54-13.637' 
 
 order by functionname, parameter;
 --and value != 0 order by functionname, parameter;

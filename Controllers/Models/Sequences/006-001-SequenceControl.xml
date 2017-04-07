@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Layers xmlns="http://uk.co.moons.pct/schema/Layers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uk.co.moons.pct/schema/Layers ../../Layers.xsd">
+    <OrderedControllers>
+        <Controller>Env</Controller>
+        <Controller>SequenceControl</Controller>
+        <Controller>OneControl</Controller>
+        <Controller>TwoControl</Controller>
+        <Controller>ThreeControl</Controller>
+    </OrderedControllers>
+    <Type>Model</Type>
+    <Description>Sequence test</Description>
+    <Layer>
+        <Name>Env</Name>
+        <Controller>
+            <Name>Env</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>Rate</Name>
+                        <Description>Iteration rate</Description>
+                        <NeuralFunction>
+                            <Type>Rate</Type>
+                        </NeuralFunction>
+                    </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>Pause</Name>
+                            <Description>Function for pausing processing to maintain constant iteration rate</Description>
+                            <NeuralFunction>
+<Type>Pause</Type>
+<Parameters>
+    <Name>Pause</Name>
+    <Value>20</Value>
+    <DataType>Long</DataType>
+</Parameters>
+<Parameters>
+    <Name>ConstantRate</Name>
+    <Value>true</Value>
+    <DataType></DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Zero</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>0</Value>
+    <DataType></DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Reset</Name>
+                            <Description></Description>
+                            <NeuralFunction>
+<Type>BinaryPulse</Type>
+<Parameters>
+    <Name>Pulse</Name>
+    <Value>0</Value>
+    <DataType>Integer</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </InputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>OneControl</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>OneControlInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type></Type>
+                            <Links>
+<Index>0</Index>
+<Name>OneControlOutput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>OneControlReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type></Type>
+                            <Links>
+<Index>0</Index>
+<Name>OneReferenceActive</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>OneControlError</Name>
+                        <Description>error</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>OneControlOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Integration</Type>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>1000</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Slow</Name>
+<Value>10000</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Integrate</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>TwoControl</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>TwoControlInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type></Type>
+                            <Links>
+<Index>0</Index>
+<Name>TwoControlOutput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>TwoControlReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type></Type>
+                            <Links>
+<Index>0</Index>
+<Name>TwoReferenceActive</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>TwoControlError</Name>
+                        <Description>error</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>TwoControlOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Integration</Type>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>100000</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Slow</Name>
+<Value>1000000</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Integrate</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>ThreeControl</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>ThreeControlInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type></Type>
+                            <Links>
+<Index>0</Index>
+<Name>ThreeControlOutput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>ThreeControlReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type></Type>
+                            <Links>
+<Index>0</Index>
+<Name>ThreeReferenceActive</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>ThreeControlError</Name>
+                        <Description>error</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>ThreeControlOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Integration</Type>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>9000</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Slow</Name>
+<Value>100000</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Integrate</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+    <Layer>
+        <Name>Sequence</Name>
+        <Controller>
+            <Name>SequenceControl</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>SequenceControlInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Sequence</Type>
+                            <Parameters>
+<Name>Tolerances</Name>
+<Value>0.01,0.001,0.112,</Value>
+<DataType>String</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>OneControlError</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>TwoControlError</Name>
+                            </Links>
+                            <Links>
+<Index>2</Index>
+<Name>ThreeControlError</Name>
+                            </Links>
+                            <Links>
+<Index>3</Index>
+<Name>Reset</Name>
+<Type>Reset</Type>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>SequenceControlReference</Name>
+                        <Description>Constant</Description>
+                        <NeuralFunction>
+                            <Type>Constant</Type>
+                            <Parameters>
+<Name>Constant</Name>
+<Value>3</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Reference>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>SequenceControlError</Name>
+                        <Description>error</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>SequenceControlOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>SequenceOutput</Type>
+                        </NeuralFunction>
+                    </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>OneReference</Name>
+                            <Description>Constant</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>10</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>OneReferenceActive</Name>
+                            <Description></Description>
+                            <NeuralFunction>
+<Type>ValueActivate</Type>
+<Parameters>
+    <Name>Key</Name>
+    <Value>1</Value>
+    <DataType></DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>OneReference</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>SequenceControlOutput</Name>
+    <Type>Key</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>TwoReference</Name>
+                            <Description>Constant</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>100</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>TwoReferenceActive</Name>
+                            <Description></Description>
+                            <NeuralFunction>
+<Type>ValueActivate</Type>
+<Parameters>
+    <Name>Key</Name>
+    <Value>2</Value>
+    <DataType></DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>TwoReference</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>SequenceControlOutput</Name>
+    <Type>Key</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>ThreeReference</Name>
+                            <Description>Constant</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>1000</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>ThreeReferenceActive</Name>
+                            <Description></Description>
+                            <NeuralFunction>
+<Type>ValueActivate</Type>
+<Parameters>
+    <Name>Key</Name>
+    <Value>3</Value>
+    <DataType></DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>ThreeReference</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>SequenceControlOutput</Name>
+    <Type>Key</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+</Layers>

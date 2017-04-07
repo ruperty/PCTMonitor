@@ -76,6 +76,7 @@ public class RecordQMNode extends NeuralFunction {
             String lname = links.getType(i);
             if (lname.equalsIgnoreCase("keydata")) {
                 dataIndex = i;
+                continue;
             }
             if (lname.equalsIgnoreCase("reset")) {
                 resetIndex = i;
@@ -188,12 +189,16 @@ public class RecordQMNode extends NeuralFunction {
         }
     }
 
-    private void addDataToStrings(String data, StringBuilder names, StringBuilder values, StringBuilder update) {
+    private String addDataToStrings(String data, StringBuilder names, StringBuilder values, StringBuilder update) {
         //String id = null;
+        String model = null;
         String[] arr = data.split("_");
         for (String arr1 : arr) {
             String[] vals = arr1.split(":");
             String value;
+            if (vals[0].equalsIgnoreCase("model")) {
+                model = vals[1];
+            }
             if (vals[0].equalsIgnoreCase("id")) {
                 value = formatValue(vals[0].toLowerCase(), id);
             } else {
@@ -203,7 +208,7 @@ public class RecordQMNode extends NeuralFunction {
             values.append(value);
             update.append(vals[0]).append("=").append(value);
         }
-        //return id;
+        return model;
     }
 
     private String getID(List<BaseControlFunction> controls) throws SQLException {
@@ -253,7 +258,7 @@ public class RecordQMNode extends NeuralFunction {
         StringBuilder update = new StringBuilder();
         StringBuilder names = new StringBuilder();
         StringBuilder values = new StringBuilder();
-        //String id = null;
+        String model = null;
 
         insert.append("insert into scores (");
         update.append("update scores set ");
@@ -262,7 +267,7 @@ public class RecordQMNode extends NeuralFunction {
             String lname = links.getType(i);
             if (lname.toLowerCase().startsWith("keydata")) {
                 String data = controls.get(i).getNeural().getDataString();
-                addDataToStrings(data, names, values, update);
+                model = addDataToStrings(data, names, values, update);
             }
             if (lname.toLowerCase().startsWith("data")) {
                 String data = controls.get(i).getNeural().getDataString();
@@ -297,7 +302,7 @@ public class RecordQMNode extends NeuralFunction {
         insert.append(") values ( ");
         insert.append(values.toString());
 
-        update.append(" where ConstraintKey='").append(constraintKey).append("'");
+        update.append(" where ConstraintKey='").append(constraintKey).append("' and model='").append(model).append("'");
 
         insert.append(")");
         LOG.info(insert.toString());
@@ -306,7 +311,7 @@ public class RecordQMNode extends NeuralFunction {
         } catch (SQLIntegrityConstraintViolationException ex) {
             LOG.info(ex.toString());
             LOG.info(update.toString());
-            String oldId = getOldID();
+            String oldId = getOldID(model);
             removeOldParameters(oldId);
             db.executeUpdate(update.toString());
             //id = null;
@@ -319,9 +324,9 @@ public class RecordQMNode extends NeuralFunction {
         db.executeUpdate(sql);
     }
 
-    private String getOldID() throws SQLException {
+    private String getOldID(String model) throws SQLException {
         String oldId = null;
-        ResultSet rs = db.getResultSet("select id from scores where ConstraintKey='" + constraintKey + "'");
+        ResultSet rs = db.getResultSet("select id from scores where ConstraintKey='" + constraintKey + "' and Model='" + model + "'");
         if (rs.next()) {
             oldId = rs.getString("ID");
         }

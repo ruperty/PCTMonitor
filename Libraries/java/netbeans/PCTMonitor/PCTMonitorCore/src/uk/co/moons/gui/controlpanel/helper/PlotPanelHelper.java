@@ -17,13 +17,14 @@ package uk.co.moons.gui.controlpanel.helper;
 import java.awt.Component;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -44,13 +45,22 @@ public class PlotPanelHelper {
     private static final Logger logger = Logger.getLogger(PlotPanelHelper.class.getName());
     private List<GridPlot2d> gp2ds = null;
     private PlotPanelTopComponent plotJPanel = null;
+    private boolean clearConfig = true;
 
     public PlotPanelHelper() {
-        gp2ds = new ArrayList<GridPlot2d>();
+        gp2ds = new ArrayList<>();
+    }
+
+    public boolean isClearConfig() {
+        return clearConfig;
+    }
+
+    public void setClearConfig(boolean clearConfig) {
+        this.clearConfig = clearConfig;
     }
 
     private List<String> sortKeys(Properties props) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         Set<Object> set = props.keySet();
         for (Object name : set) {
             list.add((String) name);
@@ -86,12 +96,66 @@ public class PlotPanelHelper {
 
     }
 
-    public static Properties getProperties() {
+    public void saveConfig(HashMap<String, List<String>> configMap) throws IOException {
+        File pdir = new File(getPropertiesDir());
+        if (!pdir.exists()) {
+            pdir.mkdir();
+        }
 
+        File dir = new File(getPropertiesSubDir());
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("# Controller:function,Controller:function \n\n");
+
+        for (String key : configMap.keySet()) {
+            sb.append(key).append("=");
+            int ctr = 0;
+            List<String> list = configMap.get(key);
+            for (String function : list) {
+                sb.append(function);
+                if (ctr++ < list.size()) {
+                    sb.append(",");
+                }
+            }
+            sb.append("\n");
+        }
+
+        File file = new File(getPropertiesFileName());
+        try (FileOutputStream fout = new FileOutputStream(file)) {
+            fout.write(sb.toString().getBytes());
+        }
+
+        logger.info("Saved properties to " + file);
+        logger.info(sb.toString());
+    }
+
+    private String getPropertiesDir() {
+        String path = Environment.getInstance().getFilePath() + File.separator + "properties";
+
+        return path;
+    }
+
+    private String getPropertiesSubDir() {
         String path = Environment.getInstance().getFilePath() + File.separator + "properties" + File.separator
-                + (Environment.getInstance().getFileRoot().charAt(0) <63 ? Environment.getInstance().getFileRoot().substring(0, 7): Environment.getInstance().getFileRoot())
+                + (Environment.getInstance().getFileRoot().charAt(0) < 63 ? Environment.getInstance().getFileRoot().substring(0, 7) : Environment.getInstance().getFileRoot())
                 + File.separator;
+
+        return path;
+    }
+
+    private String getPropertiesFileName() {
+        String path = getPropertiesSubDir();
         String fname = path + Environment.getInstance().getFileRoot() + "-plots.properties";
+
+        return fname;
+    }
+
+    public Properties getProperties() {
+
+        String fname = getPropertiesFileName();
         Properties props = null;
         try {
             props = new Properties();

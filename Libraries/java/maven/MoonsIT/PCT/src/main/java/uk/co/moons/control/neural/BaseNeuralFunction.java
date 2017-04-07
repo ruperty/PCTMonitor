@@ -90,10 +90,6 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
 
         }
 
-        if (linkslist != null) {
-            createLinksFromList();
-        }
-
         if (initial != null) {
             output = initial;
         }
@@ -102,7 +98,7 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
     private void createLinksFromList() throws Exception {
 
         for (String link : linkslist.split(",")) {
-            String[] larr = link.split("^");
+            String[] larr = link.split("\\^");
 
             BaseControlFunction control = hmControlFunctions.get(larr[0]);
             if (control == null) {
@@ -435,6 +431,10 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
             links.addControl(control);
             links.addType(link.getType());
         }
+        if (linkslist != null) {
+            createLinksFromList();
+        }
+
         verifyConfiguration();
         //addLink(signalLink);
     }

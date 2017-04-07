@@ -541,7 +541,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
      }
      */
     public List<String> getControllerFunctions(String controller) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
 
         Controller cont = hmControllers.get(controller);
 

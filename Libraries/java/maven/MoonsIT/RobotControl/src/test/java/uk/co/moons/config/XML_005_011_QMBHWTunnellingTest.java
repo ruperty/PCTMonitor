@@ -12,18 +12,18 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class XML_005_010_QMBHWShovellingTest {
-    
-    public XML_005_010_QMBHWShovellingTest() {
+public class XML_005_011_QMBHWTunnellingTest {
+
+    public XML_005_011_QMBHWTunnellingTest() {
     }
 
     /**
      * Test of main method, of class TestMain.
      */
     @Test
-    public void testMain()  {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-010-QMBHWShovelling"};
-        System.out.println(args[0]+args[1]);
+    public void testMain() {
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-011-QMBHWTunneling"};
+        System.out.println(args[0] + args[1]);
 
         try {
             ODGConfig.main(args);
@@ -33,5 +33,5 @@ public class XML_005_010_QMBHWShovellingTest {
             fail(ex.toString());
         }
     }
-    
+
 }
