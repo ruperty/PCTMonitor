@@ -557,7 +557,7 @@ public final class ControlPanelTopComponent extends TopComponent {
             }
 
         }
-        
+
         String outputFile = dir + File.separator + file + ".csv";
         LOG.log(Level.INFO, "Output file path {0}", outputFile);
         File f = new File(outputFile);
@@ -572,7 +572,9 @@ public final class ControlPanelTopComponent extends TopComponent {
 
         LOG.info("+++ openFileAction");
         monitor.clear();
-        plotPanelHelper.setClearConfig(true);
+        if (plotPanelHelper != null) {
+            plotPanelHelper.setClearConfig(true);
+        }
 
         jButtonStart.setText("Start");
         if (cph != null) {
