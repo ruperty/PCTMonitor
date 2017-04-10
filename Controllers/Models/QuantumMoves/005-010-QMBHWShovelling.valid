@@ -669,15 +669,15 @@
 </Parameters>
 <Links>
     <Index>0</Index>
-    <Name>MoveOutput</Name>
+    <Name>LaserXAccelOutput</Name>
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>AtomOffsetOutput</Name>
+    <Name>MoveOutput</Name>
 </Links>
 <Links>
     <Index>2</Index>
-    <Name>LaserXAccelOutput</Name>
+    <Name>AtomOffsetOutput</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>

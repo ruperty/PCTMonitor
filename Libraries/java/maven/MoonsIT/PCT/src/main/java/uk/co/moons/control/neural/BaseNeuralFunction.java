@@ -365,7 +365,7 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
     }
 
     @Override
-    public void setParameter(String par) {
+    public void setParameter(String par) throws Exception {
         //logger.info("+++ " + par);
         String[] arr = par.split(":");
         addParameterToHashMap(arr[0], par);

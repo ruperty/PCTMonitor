@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+    Document   : BasicMotorConfig.xml
+    Created on : 05 March 2011, 22:42
+    Author     : ReStart
+    Description:
+        Purpose of the document follows.
+-->
+<ns1:Layers  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+             xmlns:ns1='http://uk.co.moons.pct/schema/Layers'
+             xsi:schemaLocation='http://uk.co.moons.pct/schema/Layers  ../Layers.xsd'>
+    <ns1:Type>Model</ns1:Type>
+    <ns1:Description>...</ns1:Description>
+    <ns1:Layer>
+        <ns1:Name>Int</ns1:Name>    
+        <ns1:Controller>
+            <ns1:Name>Sources</ns1:Name>
+            <ns1:Functions>
+                  
+                  
+                <ns1:InputFunctions>
+                    <ns1:Input>
+                        <ns1:Name>SineSensor</ns1:Name>
+                        <ns1:Description></ns1:Description>
+                        <ns1:NeuralFunction>
+                            <ns1:Type>SineGenerator</ns1:Type>
+                            <ns1:Parameters>
+                                <ns1:Name>Amplitude</ns1:Name>
+                                <!-- <ns1:Value>100</ns1:Value> -->
+                                <ns1:Value>.2</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                            <ns1:Parameters>
+                                <ns1:Name>Frequency</ns1:Name>
+                                <ns1:Value>2</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                            <ns1:Parameters>
+                                <ns1:Name>Phase</ns1:Name>
+                                <ns1:Value>0</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                            <ns1:Parameters>
+                                <ns1:Name>XShift</ns1:Name>
+                                <ns1:Value>0</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                            <ns1:Parameters>
+                                <ns1:Name>YShift</ns1:Name>
+                                <!-- <ns1:Value>0</ns1:Value> -->
+                                <ns1:Value>-0.5</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                            <ns1:Parameters>
+                                <ns1:Name>Step</ns1:Name>
+                                <ns1:Value>1</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                        </ns1:NeuralFunction>
+                    </ns1:Input>
+                    <ns1:Transfers>                    
+                        <ns1:Transfer>
+                            <ns1:Name>SensorChange</ns1:Name>
+                            <ns1:Description>...</ns1:Description>
+                            <ns1:NeuralFunction>
+                                <ns1:Type>Change</ns1:Type>
+                                <ns1:Links>
+                                    <ns1:Index>0</ns1:Index>
+                                    <ns1:Name>SineSensor</ns1:Name>
+                                </ns1:Links>
+                            </ns1:NeuralFunction>
+                        </ns1:Transfer>                    
+
+                    </ns1:Transfers>                    
+                </ns1:InputFunctions>
+                    
+                <ns1:ReferenceFunctions>
+                    <ns1:Reference>
+                        <ns1:Name>Zero</ns1:Name>
+                        <ns1:Description>...</ns1:Description>
+                        <ns1:NeuralFunction>
+                            <ns1:Type>Constant</ns1:Type>
+                            <ns1:Parameters>
+                                <ns1:Name>Constant</ns1:Name>
+                                <ns1:Value>0</ns1:Value>
+                                <ns1:DataType>Double</ns1:DataType>
+                            </ns1:Parameters>
+                        </ns1:NeuralFunction>
+                    </ns1:Reference>
+                    <ns1:Transfers>                    
+                        <ns1:Transfer>
+                            <ns1:Name>Pause</ns1:Name>
+                            <ns1:Description>...</ns1:Description>
+                            <ns1:NeuralFunction>
+                                <ns1:Type>Pause</ns1:Type>
+                                <ns1:Parameters>
+                                    <ns1:Name>Pause</ns1:Name>
+                                    <ns1:Value>25</ns1:Value>
+                                    <ns1:DataType></ns1:DataType>
+                                </ns1:Parameters>
+                                <ns1:Parameters>
+                                    <ns1:Name>ConstantRate</ns1:Name>
+                                    <ns1:Value>true</ns1:Value>
+                                    <ns1:DataType>Boolean</ns1:DataType>
+                                </ns1:Parameters>
+                            </ns1:NeuralFunction>
+                        </ns1:Transfer>                    
+                    </ns1:Transfers>                    
+                </ns1:ReferenceFunctions>
+               
+                
+                <ns1:OutputFunctions>
+                    <ns1:Output>
+                        <ns1:Name>One</ns1:Name>
+                        <ns1:Description>...</ns1:Description>
+                        <ns1:NeuralFunction>
+                            <ns1:Type>Constant</ns1:Type>
+                            <ns1:Parameters>
+                                <ns1:Name>Constant</ns1:Name>
+                                <ns1:Value>1</ns1:Value>
+                                <ns1:DataType></ns1:DataType>
+                            </ns1:Parameters>
+                        </ns1:NeuralFunction>
+                    </ns1:Output>
+                    <ns1:Transfers>                    
+                        <ns1:Transfer>
+                            <ns1:Name>Two</ns1:Name>
+                            <ns1:Description>...</ns1:Description>
+                            <ns1:NeuralFunction>
+                                <ns1:Type>Constant</ns1:Type>
+                                <ns1:Parameters>
+                                    <ns1:Name>Constant</ns1:Name>
+                                    <ns1:Value>2</ns1:Value>
+                                    <ns1:DataType>Double</ns1:DataType>
+                                </ns1:Parameters>
+                            </ns1:NeuralFunction>
+                        </ns1:Transfer>                    
+                    </ns1:Transfers>                    
+                </ns1:OutputFunctions>
+            </ns1:Functions>
+        </ns1:Controller>  
+        
+    
+        
+      
+      
+        
+    
+    </ns1:Layer>
+   
+
+   
+  
+   
+</ns1:Layers>

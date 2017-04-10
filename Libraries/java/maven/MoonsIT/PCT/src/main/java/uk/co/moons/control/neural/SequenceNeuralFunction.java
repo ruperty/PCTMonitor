@@ -16,6 +16,7 @@ package uk.co.moons.control.neural;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
@@ -56,32 +57,30 @@ public class SequenceNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public String getParametersString() {
-        StringBuilder sb = new StringBuilder();
-        double prod = 1;
-        sb.append("Tolerances").append(":");
-        String[] arr = tolerances.split(",");
-        for (String s : arr) {
-            prod *= Double.parseDouble(s);
-        }
-        sb.append(prod);
-
-        return sb.toString();
-    }
-
-    @Override
     public void verifyConfiguration() throws Exception {
 
+        BaseControlFunction bcfReset = null;
         List<BaseControlFunction> controls = links.getControlList();
-        int i = controls.size() - 1;
-        String linkType = links.getType(i);
-        if (linkType != null && linkType.equals("Reset")) {
-            resetIndex = i;
-        } else {
-            throw new Exception("Reset must be last link in SequenceNeuralFunction");
+        for (int i = 0; i < controls.size(); i++) {
+            String linkType = links.getType(i);
+            if (linkType == null) {
+                continue;
+            }
+            if (linkType.equals("Reset")) {
+                bcfReset = controls.remove(i);
+                links.removeType(i);
+                break;
+            }
         }
+
+        if (bcfReset == null) {
+            throw new Exception("There must be a Reset link in SequenceNeuralFunction");
+        }
+
+        controls.add(bcfReset);
+        links.addType("Reset");
     }
-    
+
     @Override
     public void init() throws Exception {
         super.init();
@@ -98,7 +97,7 @@ public class SequenceNeuralFunction extends NeuralFunction {
         }
     }
 
-    private void reset() {
+    private void reset() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
         Double resetLink = null;
         if (resetIndex != null) {
@@ -115,7 +114,7 @@ public class SequenceNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public double compute() {
+    public double compute() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
         reset();
         int sum = 0;
@@ -137,20 +136,23 @@ public class SequenceNeuralFunction extends NeuralFunction {
         return output;
     }
 
-    private void setTolerances() {
+    private void setTolerances() throws Exception {
         if (tolerancesList == null) {
             tolerancesList = new ArrayList<>();
         }
 
         tolerancesList.clear();
         String[] arr = tolerances.split(",");
+        if (arr.length < links.getControlList().size() - 1) {
+            throw new Exception("Tolerances size in SequenceNeuralFunction is not equal number of links");
+        }
         for (String tol : arr) {
             tolerancesList.add(Double.parseDouble(tol));
         }
     }
 
     @Override
-    public void setParameter(String par) {
+    public void setParameter(String par) throws Exception {
         super.setParameter(par);
         String[] arr = par.split(":");
         if (arr[0].equals("Tolerances")) {
@@ -158,4 +160,19 @@ public class SequenceNeuralFunction extends NeuralFunction {
             setTolerances();
         }
     }
+
+    @Override
+    public String getParametersString() {
+        StringBuilder sb = new StringBuilder();
+        double prod = 1;
+        sb.append("Tolerances").append(":");
+        String[] arr = tolerances.split(",");
+        for (String s : arr) {
+            prod *= Double.parseDouble(s);
+        }
+        sb.append(prod);
+
+        return sb.toString();
+    }
+
 }

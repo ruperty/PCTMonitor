@@ -1,0 +1,8 @@
+Parameter  diagram  saved
+SequenceReference_Constant 4.0 3.0
+AtomOffsetActive_Key 4.0 3.0
+MoveRef_Constant 0.0 -0.03
+LaserXVelocityOutput_Gain 0.5 0.75
+TargetActive_Key 4.0 3.0
+AtomOffsetRef_Constant -0.05 -0.1
+ShiftRef_Constant 1.049 0.35

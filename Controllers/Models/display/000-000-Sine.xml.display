@@ -1,0 +1,25 @@
+#Mon Apr 10 10:43:10 BST 2017
+SensorChange_format=0.000000
+One_min=1.0
+Two_min=2.0
+SineSensor_max=0.2
+Two_max=2.0
+One_max=1.0
+Pause_min=1.0
+Two_format=0.000
+Pause_max=25.0
+One_color=StockColorScheme
+Zero_min=0.0
+Pause_color=StockColorScheme
+Zero_max=0.0
+One_format=0.000
+SensorChange_color=StockColorScheme
+Pause_format=0.000000
+SineSensor_format=0.000000
+Two_color=StockColorScheme
+Zero_color=StockColorScheme
+SineSensor_color=StockColorScheme
+Zero_format=0.000000
+SensorChange_min=-0.5
+SensorChange_max=0.4941452721524908
+SineSensor_min=-0.7

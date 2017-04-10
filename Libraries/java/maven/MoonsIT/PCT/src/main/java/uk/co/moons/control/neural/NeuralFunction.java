@@ -21,13 +21,13 @@ import uk.co.moons.control.functions.BaseControlFunction;
 
 public class NeuralFunction extends BaseNeuralFunction {
 
-    private static final Logger logger = Logger.getLogger(NeuralFunction.class.getName());
+    private static final Logger LOG = Logger.getLogger(NeuralFunction.class.getName());
 
     public NeuralFunction() {
         super();
     }
 
-    public NeuralFunction(List<Parameters> ps) {
+    public NeuralFunction(List<Parameters> ps) throws Exception {
         super(ps);
     }
 

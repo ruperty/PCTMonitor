@@ -56,7 +56,7 @@ public interface NeuralFunctionInterface {
     public String getParametersString();
 
     //public int getParameter(int index, boolean b) throws Exception;
-    public void setParameter(String par);
+    public void setParameter(String par) throws Exception;
 
     public void setParameter(double par);
 

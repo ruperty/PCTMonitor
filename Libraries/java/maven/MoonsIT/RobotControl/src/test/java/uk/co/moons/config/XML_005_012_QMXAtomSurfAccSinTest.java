@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class XML_005_011_QMBHWTunnellingTest {
+public class XML_005_012_QMXAtomSurfAccSinTest {
 
-    public XML_005_011_QMBHWTunnellingTest() {
+    public XML_005_012_QMXAtomSurfAccSinTest() {
     }
 
     /**
@@ -22,7 +22,7 @@ public class XML_005_011_QMBHWTunnellingTest {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-011-QMBHWTunneling"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-012-QMXAtomSurfAccSin"};
         System.out.println(args[0] + args[1]);
 
         try {

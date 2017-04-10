@@ -21,8 +21,7 @@ import uk.co.moons.control.functions.BaseControlFunction;
 /**
  * BaseNeuralFunction
  *
- * @author Rupert Young
- * Copyright Moon's IT 2007-2008
+ * @author Rupert Young Copyright Moon's IT 2007-2008
  */
 public abstract class BaseSignalLink implements SignalLinkInterface {
 
@@ -31,30 +30,38 @@ public abstract class BaseSignalLink implements SignalLinkInterface {
     protected List<String> types;
 
     public BaseSignalLink() {
-        controls = new ArrayList<BaseControlFunction>();
-        types = new ArrayList<String>();
+        controls = new ArrayList<>();
+        types = new ArrayList<>();
     }
 
+    @Override
     public void addControl(BaseControlFunction control) throws Exception {
         controls.add(control);
         if (control == null) {
-            throw new Exception("Link is null" );
+            throw new Exception("Link is null");
         }
     }
 
-    public String getType(int index){
-        if(index>types.size()-1)
+    public String getType(int index) {
+        if (index > types.size() - 1) {
             return null;
+        }
 
         return types.get(index);
     }
+
+    public void removeType(int index) {
+        types.remove(index);
+    }
+
     public void addType(String type) throws Exception {
         //if (type == null) {
-          //  return;
+        //  return;
         //}
         types.add(type);
     }
 
+    @Override
     public List<BaseControlFunction> getControlList() {
         return controls;
     }

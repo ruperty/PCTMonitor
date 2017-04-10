@@ -6,15 +6,16 @@
 
 SELECT	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Model FROM QUANTUM.SCORES 
 --SELECT	* FROM QUANTUM.SCORES 
-where level=13  --and model = '005-002-QMPositionSingleIntegrator'
+where level=2  
+--and model = '005-002-QMPositionSingleIntegrator'
+and model = '005-012-QMXAtomSurfAccSin'
 order by level, score desc;
-
-SELECT * FROM QUANTUM.PARAMETERS where ID = '20170313-09-54-13.637' 
+SELECT * FROM QUANTUM.PARAMETERS where ID = '20170410-12-45-13.906' 
 
 order by functionname, parameter;
 --and value != 0 order by functionname, parameter;
 
--- DELETE FROM PARAMETERS  WHERE id='20170222-15-06-04.171'
+--DELETE FROM PARAMETERS  WHERE id='20170410-12-39-18.991'
 -- 20170222-15-06-27.070
 -- 20170222-15-06-04.171
 -- 1
