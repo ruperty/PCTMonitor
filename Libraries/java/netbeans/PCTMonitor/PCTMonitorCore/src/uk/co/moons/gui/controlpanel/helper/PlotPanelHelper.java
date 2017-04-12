@@ -97,6 +97,11 @@ public class PlotPanelHelper {
     }
 
     public void saveConfig(HashMap<String, List<String>> configMap) throws IOException {
+        File fdir = new File(getFilesDir());
+        if (!fdir.exists()) {
+            fdir.mkdir();
+        }
+        
         File pdir = new File(getPropertiesDir());
         if (!pdir.exists()) {
             pdir.mkdir();
@@ -132,14 +137,20 @@ public class PlotPanelHelper {
         logger.info(sb.toString());
     }
 
+    private String getFilesDir() {
+        String path = Environment.getInstance().getFilePath() + File.separator + "files";
+
+        return path;
+    }
+
     private String getPropertiesDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "properties";
+        String path = Environment.getInstance().getFilePath() + File.separator + "files"+ File.separator + "properties";
 
         return path;
     }
 
     private String getPropertiesSubDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "properties" + File.separator
+        String path = Environment.getInstance().getFilePath() + File.separator + "files"+ File.separator + "properties" + File.separator
                 + (Environment.getInstance().getFileRoot().charAt(0) < 63 ? Environment.getInstance().getFileRoot().substring(0, 7) : Environment.getInstance().getFileRoot())
                 + File.separator;
 

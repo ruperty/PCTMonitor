@@ -14,16 +14,12 @@
  */
 package uk.co.moons.config;
 
-import difflib.Delta;
 import difflib.DiffUtils;
 import difflib.Patch;
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
@@ -72,8 +68,17 @@ public class ODGConfig {
         String prefix = args[1];
 
         String config = dir + prefix + ".odg";
-        String out = dir + prefix + ".xml";
-        String valid = dir + prefix + ".valid";
+        File filesDir = new File(dir + File.separator + "files");
+        if (!filesDir.exists()) {
+            filesDir.mkdir();
+        }
+        File xmlDir = new File(dir + File.separator + "files" + File.separator + "xml");
+        if (!xmlDir.exists()) {
+            xmlDir.mkdir();
+        }
+        
+        String out = xmlDir + File.separator + prefix + ".xml";
+        String valid = xmlDir + File.separator + prefix + ".valid";
 
         ODGConfig odg = new ODGConfig();
         odg.processDocument(config);

@@ -122,7 +122,7 @@ public class SequenceNeuralFunction extends NeuralFunction {
             first = false;
         } else {
             for (int i = 0; i < controls.size() - 1; i++) {
-                if (sequenceList[i] == 0) {
+                if (sum==i && sequenceList[i] == 0) {
                     if (Math.abs(controls.get(i).getValue()) < tolerancesList.get(i)) {
                         sequenceList[i] = 1;
                     }

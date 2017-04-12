@@ -141,7 +141,7 @@ public class ControlPanelHelper implements Runnable {
         monitor.setControlHierarchy(ch);
     }
 
-     private String processODG(String config) throws Exception {
+    private String processODG(String config) throws Exception {
         if (config.contains(".odg")) {
             String xml = config.replace(".odg", ".xml");
             File fxml = new File(xml);
@@ -156,7 +156,7 @@ public class ControlPanelHelper implements Runnable {
 
         return config;
     }
-     
+
     public void setOutputFile(String outputFile) {
         this.outputFile = outputFile;
     }
@@ -259,7 +259,7 @@ public class ControlPanelHelper implements Runnable {
     private void setOutputFields() {
 
         Properties props = getProperties();
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
 
         if (props != null && !props.isEmpty()) {
             String functionList = props.getProperty("Functions");
@@ -274,7 +274,7 @@ public class ControlPanelHelper implements Runnable {
 
         String path = Environment.getInstance().getFilePath() + File.separator + "properties"
                 + File.separator
-                + (Environment.getInstance().getFileRoot().charAt(0) <63 ? Environment.getInstance().getFileRoot().substring(0, 7): Environment.getInstance().getFileRoot())
+                + (Environment.getInstance().getFileRoot().charAt(0) < 63 ? Environment.getInstance().getFileRoot().substring(0, 7) : Environment.getInstance().getFileRoot())
                 + File.separator;
         String fname = path + Environment.getInstance().getFileRoot() + "-output.properties";
         Properties props = null;
@@ -369,7 +369,7 @@ public class ControlPanelHelper implements Runnable {
         String fname = file.getAbsolutePath();
         String sep = File.separator;
         int index = fname.lastIndexOf(sep);
-        return fname.substring(0, index) + sep + "display" + sep + file.getName() + ".display";
+        return fname.substring(0, index) + sep + "files" + sep + "display" + sep + file.getName() + ".display";
     }
 
     public int getType() {

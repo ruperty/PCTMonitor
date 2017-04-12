@@ -28,7 +28,7 @@ public class MidPointNeuralFunction extends NeuralFunction {
         super();
     }
 
-    public MidPointNeuralFunction(List<Parameters> ps) {
+    public MidPointNeuralFunction(List<Parameters> ps) throws Exception {
         super(ps);
         for (Parameters param : ps) {
             String pname = param.getName();

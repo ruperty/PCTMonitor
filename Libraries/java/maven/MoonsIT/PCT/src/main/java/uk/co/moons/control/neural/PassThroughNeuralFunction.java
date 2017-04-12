@@ -24,7 +24,7 @@ public class PassThroughNeuralFunction extends NeuralFunction {
         super();
     }
 
-    public PassThroughNeuralFunction(List<Parameters> ps) {
+    public PassThroughNeuralFunction(List<Parameters> ps) throws Exception {
         super(ps);
     }
 

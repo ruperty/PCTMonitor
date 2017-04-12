@@ -109,8 +109,8 @@ public class ControlHierarchy extends BaseControlHierarchy {
 
     private void loadPars(String config) throws Exception {
 
-        String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
-        String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";
+        String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
+        String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";
 
         File file = new File(fname);
         if (file.exists()) {
@@ -450,15 +450,15 @@ public class ControlHierarchy extends BaseControlHierarchy {
     }
 
     @Override
-    public void setControllerParameter(String controller, String pars) {
+    public void setControllerParameter(String controller, String pars) throws Exception {
         BaseControlFunction cont = hmControls.get(controller);
         if (cont != null) {
             cont.getNeural().setParameter(pars);
         }
-    }
+    } 
 
     @Override
-    public void setControllerParameter(String controller, String parameter, String value) {
+    public void setControllerParameter(String controller, String parameter, String value) throws Exception {
         BaseControlFunction cont = hmControls.get(controller);
         if (cont != null) {
             cont.getNeural().setParameter(parameter + ":" + value);

@@ -50,9 +50,9 @@ public interface ControlHierarchyInterface {
     public void setValues(String values);
     public void setValues(double[] values);
 
-    public void setControllerParameter(String controller, String parameter, String value);
+    public void setControllerParameter(String controller, String parameter, String value)throws  Exception;
 
-    public void setControllerParameter(String controller, String pars);
+    public void setControllerParameter(String controller, String pars)throws  Exception;
 
     public void orderedIterate() throws Exception;
 

@@ -243,7 +243,13 @@ public class ParameterslPanelHelper implements Runnable {
         String filePath = ch.getConfigPath();
         int index = filePath.lastIndexOf(File.separator);
         String path = filePath.substring(0, index);
-        File dir = new File(path + File.separator + "parameters");
+
+        File filesDir = new File(path + File.separator + "files");
+        if (!filesDir.exists()) {
+            filesDir.mkdir();
+        }
+
+        File dir = new File(path + File.separator + "files" + File.separator + "parameters");
         if (!dir.exists()) {
             dir.mkdir();
         }
