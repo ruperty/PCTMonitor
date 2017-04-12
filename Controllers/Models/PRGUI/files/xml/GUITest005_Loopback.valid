@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Layers xmlns="http://uk.co.moons.pct/schema/Layers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uk.co.moons.pct/schema/Layers ../Layers.xsd">
+    <Type>Model</Type>
+    <Layer>
+        <Name>Interface</Name>
+        <Controller>
+            <Name>One</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>OneInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>PassThrough</Type>
+                            <Links>
+<Index>0</Index>
+<Name>OneOutput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>OneOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Constant</Type>
+                            <Parameters>
+<Name>Constant</Name>
+<Value>100</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+</Layers>

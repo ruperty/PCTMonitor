@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Layers xmlns="http://uk.co.moons.pct/schema/Layers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uk.co.moons.pct/schema/Layers ../Layers.xsd">
+    <Type>Model</Type>
+    <Layer>
+        <Name>Interface</Name>
+        <Controller>
+            <Name>AtomOffset</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>OffsetInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Proportional</Type>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>120</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>Sum</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>Pause</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Pause</Type>
+<Parameters>
+    <Name>ConstantRate</Name>
+    <Value>true</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
+    <Name>Pause</Name>
+    <Value>50</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>TwentyConstant</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>20</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>Pause</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>TenConstant</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>10</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Sum</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>WeightedSum</Type>
+<Parameters>
+    <Name>Weights</Name>
+    <Value>1,1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>TenConstant</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>TwentyConstant</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>AtomOffsetReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Addition</Type>
+                            <Links>
+<Index>0</Index>
+<Name>FiveConstant</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>EightConstant</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Reference>
+                    <Transfers>
+                        <Transfer>
+                            <Name>EightConstant</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>8</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>FiveConstant</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>AtomOffsetError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+<Index>0</Index>
+<Name>AtomOffsetReference</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>OffsetInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>AtomOffsetOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Integration</Type>
+                            <Parameters>
+<Name>Slow</Name>
+<Value>1000</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>100</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>AtomOffsetError</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>CFunction</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Change</Type>
+<Parameters>
+    <Name>Absolute</Name>
+    <Value>false</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
+    <Name>ZeroReset</Name>
+    <Value>false</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
+    <Name>LinkInitial</Name>
+    <Value>false</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
+    <Name>Gain</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>AtomOffsetOutput</Name>
+    <Type>Curve</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>PT</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>PassThrough</Type>
+<Links>
+    <Index>0</Index>
+    <Name>CFunction</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+</Layers>
