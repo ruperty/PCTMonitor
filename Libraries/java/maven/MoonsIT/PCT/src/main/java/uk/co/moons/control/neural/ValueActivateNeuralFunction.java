@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
+import uk.co.moonsit.utils.MoonsString;
 
 /**
  *
@@ -83,5 +84,15 @@ public class ValueActivateNeuralFunction extends NeuralFunction {
         }
 
         return output;
+    }
+
+    @Override
+    public String getParametersString() {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Key").append(":");
+        sb.append(key);
+
+        return sb.toString();
     }
 }
