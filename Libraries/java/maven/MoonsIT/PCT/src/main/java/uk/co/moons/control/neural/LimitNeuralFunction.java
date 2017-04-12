@@ -71,6 +71,13 @@ public class LimitNeuralFunction extends NeuralFunction {
     }
 
     @Override
+    public void verifyConfiguration() throws Exception {
+        if (links.getControlList().isEmpty()) {
+            throw new Exception(getName() + " has no links, requires at least one connection, to data");
+        }
+    }
+
+    @Override
     public void init() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
 
