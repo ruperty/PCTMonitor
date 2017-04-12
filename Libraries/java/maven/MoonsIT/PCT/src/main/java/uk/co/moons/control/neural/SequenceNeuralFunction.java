@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
+import uk.co.moonsit.utils.MoonsString;
 
 /**
  *
@@ -122,7 +123,7 @@ public class SequenceNeuralFunction extends NeuralFunction {
             first = false;
         } else {
             for (int i = 0; i < controls.size() - 1; i++) {
-                if (sum==i && sequenceList[i] == 0) {
+                if (sum == i && sequenceList[i] == 0) {
                     if (Math.abs(controls.get(i).getValue()) < tolerancesList.get(i)) {
                         sequenceList[i] = 1;
                     }
@@ -164,13 +165,17 @@ public class SequenceNeuralFunction extends NeuralFunction {
     @Override
     public String getParametersString() {
         StringBuilder sb = new StringBuilder();
-        double prod = 1;
-        sb.append("Tolerances").append(":");
+        //double prod = 1;
+        int ctr = 0;
         String[] arr = tolerances.split(",");
         for (String s : arr) {
-            prod *= Double.parseDouble(s);
+            sb.append("Tolerances").append(ctr).append(":");
+            sb.append(MoonsString.formatStringPlaces(Double.parseDouble(s), 4));
+            if (ctr <= arr.length - 1) {
+                sb.append("_");
+            }
+            ctr++;
         }
-        sb.append(prod);
 
         return sb.toString();
     }
