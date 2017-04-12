@@ -1,0 +1,9 @@
+SineSensor_Amplitude=.2
+SineSensor_Frequency=2
+SineSensor_Phase=0
+SineSensor_XShift=0
+SineSensor_YShift=-0.5
+SineSensor_Step=1
+Zero_Constant=0
+Pause_ConstantRate=true
+Two_Constant=2
