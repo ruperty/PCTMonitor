@@ -116,7 +116,7 @@ public class PlotPanelHelper {
             List<String> list = configMap.get(key);
             for (String function : list) {
                 sb.append(function);
-                if (ctr++ < list.size()) {
+                if (++ctr < list.size()) {
                     sb.append(",");
                 }
             }
