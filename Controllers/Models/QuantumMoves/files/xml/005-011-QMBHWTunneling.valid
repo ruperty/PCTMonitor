@@ -299,7 +299,7 @@
 </Parameters>
 <Parameters>
     <Name>LinksList</Name>
-    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset</Value>
+    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters</Value>
     <DataType></DataType>
 </Parameters>
 <Links>
@@ -1599,7 +1599,7 @@
                 </InputFunctions>
                 <ReferenceFunctions>
                     <Reference>
-                        <Name>TargetActive</Name>
+                        <Name>TargetReferenceActive</Name>
                         <Description>...</Description>
                         <NeuralFunction>
                             <Type>ValueActivate</Type>
@@ -1628,7 +1628,7 @@
                             <Type>Subtract</Type>
                             <Links>
 <Index>0</Index>
-<Name>TargetActive</Name>
+<Name>TargetReferenceActive</Name>
                             </Links>
                             <Links>
 <Index>1</Index>

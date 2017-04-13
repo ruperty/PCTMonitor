@@ -194,15 +194,17 @@ public class ControlHierarchy extends BaseControlHierarchy {
 
     private String processODG(String config) throws Exception {
         if (config.contains(".odg")) {
-            String xml = config.replace(".odg", ".xml");
-            File fxml = new File(xml);
             File fodg = new File(config);
+            String path = config.substring(0, config.lastIndexOf(File.separator));
+            String fname = fodg.getName();
+            String xml = fname.replace(".odg", ".xml");
+            File fxml = new File(path + File.separator + "files" + File.separator + "xml" + File.separator + xml);
             if (fodg.lastModified() > fxml.lastModified()) {
                 ODGConfig odg = new ODGConfig();
                 odg.processDocument(config);
-                odg.saveConfig(xml);
+                odg.saveConfig(fxml.getAbsolutePath());
             }
-            config = xml;
+            config = fxml.getAbsolutePath();
         }
 
         return config;
@@ -455,7 +457,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         if (cont != null) {
             cont.getNeural().setParameter(pars);
         }
-    } 
+    }
 
     @Override
     public void setControllerParameter(String controller, String parameter, String value) throws Exception {

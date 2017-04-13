@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author Rupert Young
  */
-public class ODGConfig010_LinkOrderTest {
+public class ODGConfig002_002_ReorganisationSimulationTest {
 
-    public ODGConfig010_LinkOrderTest() {
+    public ODGConfig002_002_ReorganisationSimulationTest() {
     }
 
     /**
@@ -22,7 +22,7 @@ public class ODGConfig010_LinkOrderTest {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\PRGUI\\", "GUITest010_LinkOrder"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\Reorganisation\\", "002-002-ReorganisationSimulation"};
         System.out.println(args[0] + args[1]);
         try {
             ODGConfig.main(args);

@@ -62,6 +62,8 @@ public class ODGProcessing {
     public final static String CONNECTOR = "Connector";
     public final static String ORDER = "Order";
 
+    private final boolean debug = false;
+
     public ODGProcessing() {
         layerList = new ArrayList<>();
         connectorList = new ArrayList<>();
@@ -103,20 +105,7 @@ public class ODGProcessing {
                         + MoonsString.formatPlaces(function.getLocation().getX(), 1) + " " + MoonsString.formatPlaces(function.getLocation().getY(), 1));
             }
         }*/
-        // check that each function has been connected to a config
-        // and that it is in the XML
-        for (ODGFunction function : functionList) {
-            if (function.getConfigID() == null) {
-                throw new Exception("Function not connected to configuration at " + MoonsString.formatPlaces(function.getLocation().getX(), 1)
-                        + " " + MoonsString.formatPlaces(function.getLocation().getY(), 1));
-            }
-
-            String fname = function.getName();
-            if (!Utils.functionExists(layers, fname)) {
-                throw new Exception("Function "+fname +" does not appear in XML configuration, ensure it is less than 3cm from is link");
-            }
-
-        }
+      
 
         // for each controller check if each function has a connection to it
         // if so check if there is a config
@@ -141,12 +130,27 @@ public class ODGProcessing {
 
             function = controller.getOutput();
             name = function.getName();
-            if (isFunctionConnected(name)) {
+            if (isFunctionForwardConnected(name)) {
                 if (function.getConfigID() == null) {
                     throw new Exception("Function " + name + " not configured at " + MoonsString.formatPlaces(function.getLocation().getX(), 1)
                             + " " + MoonsString.formatPlaces(function.getLocation().getY(), 1));
                 }
             }
+        }
+        
+          // check that each function has been connected to a config
+        // and that it is in the XML
+        for (ODGFunction function : functionList) {
+            if (function.getConfigID() == null) {
+                throw new Exception("Function not connected to configuration at " + MoonsString.formatPlaces(function.getLocation().getX(), 1)
+                        + " " + MoonsString.formatPlaces(function.getLocation().getY(), 1));
+            }
+
+            String fname = function.getName();
+            if (!Utils.functionExists(layers, fname)) {
+                throw new Exception("Function " + fname + " does not appear in XML configuration, ensure it is less than 3cm from is link");
+            }
+
         }
 
     }
@@ -160,10 +164,19 @@ public class ODGProcessing {
         return false;
     }
 
+    private boolean isFunctionForwardConnected(String name) {
+
+        for (ODGConnector connector : connectorList) {
+            if (name.equals(connector.getStartConnectorPoint().getName()) && connector.isFunctionLink() ) {
+                return true;
+            }
+        }
+        return false;
+    }
     private boolean isFunctionConnected(String name) {
 
         for (ODGConnector connector : connectorList) {
-            if (connector.isFunctionLink() && name.equals(connector.getEndConnectorPoint().getName())) {
+            if (name.equals(connector.getEndConnectorPoint().getName()) && connector.isFunctionLink() ) {
                 return true;
             }
         }
@@ -779,9 +792,10 @@ public class ODGProcessing {
         //LOG.info("done fillInFunctionNames");
 
         fillInNullConfigs();
-        //LOG.info("done fillInNullConfigs");
-        //displayConnectors();
-
+        if (debug) {
+            LOG.info("done fillInNullConfigs");
+            displayConnectors();
+        }
         //setConnectorHashMaps();
         fillInFunctionLinks();
 

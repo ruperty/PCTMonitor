@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Layers xmlns="http://uk.co.moons.pct/schema/Layers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uk.co.moons.pct/schema/Layers ../Layers.xsd">
+    <Type>Model</Type>
+    <Layer>
+        <Name>Interface</Name>
+        <Controller>
+            <Name>Env</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>Pause</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Pause</Type>
+                            <Parameters>
+<Name>ConstantRate</Name>
+<Value>true</Value>
+<DataType>Boolean</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Pause</Name>
+<Value>50</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Input>
+                </InputFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>Random</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Random</Type>
+                            <Parameters>
+<Name>Slow</Name>
+<Value>0.05</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Scale</Name>
+<Value>100</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Initial</Name>
+<Value>100</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Min</Name>
+<Value>0</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Max</Name>
+<Value>200</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>Step</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Step</Type>
+<Parameters>
+    <Name>Upper</Name>
+    <Value>100</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Period</Name>
+    <Value>100</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Lower</Name>
+    <Value>-100</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Sine</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>SineGenerator</Type>
+<Parameters>
+    <Name>Amplitude</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Frequency</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Phase</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>XShift</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>YShift</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Step</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+        <Controller>
+            <Name>Sim</Name>
+            <Functions>
+                <InputFunctions>
+                    <Input>
+                        <Name>SimInput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Addition</Type>
+                            <Links>
+<Index>0</Index>
+<Name>Disturbance</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>World</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>Disturbance</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>WeightedSum</Type>
+<Parameters>
+    <Name>Weights</Name>
+    <Value>0,1,0</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>Random</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Sine</Name>
+</Links>
+<Links>
+    <Index>2</Index>
+    <Name>Step</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </InputFunctions>
+                <ReferenceFunctions>
+                    <Reference>
+                        <Name>SimReference</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Constant</Type>
+                            <Parameters>
+<Name>Constant</Name>
+<Value>0</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                        </NeuralFunction>
+                    </Reference>
+                    <Transfers>
+                        <Transfer>
+                            <Name>RMSErrorResponse</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>RMSErrorResponse</Type>
+<Parameters>
+    <Name>Limit</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Period</Name>
+    <Value>100</Value>
+    <DataType>Integer</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>SimError</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>GainReorganisation</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ParameterReorganisation</Type>
+<Parameters>
+    <Name>LearningRate</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Continuous</Name>
+    <Value>false</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveSmoothUpper</Name>
+    <Value>0.95</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveSmoothLower</Name>
+    <Value>0.9</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveFactor</Name>
+    <Value>0.05</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterSmoothFactor</Name>
+    <Value>0.99</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Type</Name>
+    <Value>HillClimb</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>RMSErrorResponse</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>SimOutput</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </ReferenceFunctions>
+                <ErrorFunctions>
+                    <Error>
+                        <Name>SimError</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Subtract</Type>
+                            <Links>
+<Index>0</Index>
+<Name>SimReference</Name>
+                            </Links>
+                            <Links>
+<Index>1</Index>
+<Name>SimInput</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Error>
+                </ErrorFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>SimOutput</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Integration</Type>
+                            <Parameters>
+<Name>Slow</Name>
+<Value>1000000</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Parameters>
+<Name>Gain</Name>
+<Value>500000</Value>
+<DataType>Double</DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>SimError</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>World</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Proportional</Type>
+<Parameters>
+    <Name>Gain</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>SimOutput</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>LearningRate</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>LearningRate</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>GainReorganisation</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>ShortMA</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>ShortMA</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>GainReorganisation</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>LongMA</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>LongMA</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>GainReorganisation</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>ParameterMA</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>ParameterMA</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>GainReorganisation</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
+                </OutputFunctions>
+            </Functions>
+        </Controller>
+    </Layer>
+</Layers>

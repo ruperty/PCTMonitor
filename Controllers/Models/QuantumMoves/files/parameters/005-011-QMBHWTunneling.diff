@@ -1,10 +1,12 @@
 Parameter  diagram  saved
 SimTime_TimeLimit 0.25 0.4
-SequenceReference_Constant 4.0 5.0
-CollectRef_Constant -0.02 -0.04
+TargetOutput_OutScale 0.01 0.008
+CollectInputLimited_Min -0.3 -0.07
+ShiftRef_Constant 0.2 0.1
+CollectRef_Constant -0.02 -0.06
 MoveOutput_OutScale 0.019 0.01
 LaserXVelocityOutput_Gain 0.75 1.0
-AtomOffsetOutput_OutScale 0.02 0.05
+AtomOffsetOutput_OutScale 0.02 0.1
 MoveOutput_InScale 1000.0 10.0
 LaserXAccelOutput_Gain 6000.0 4000.0
-AtomOffsetRef_Constant -0.1 -0.04
+AtomOffsetRef_Constant -0.1 -0.015

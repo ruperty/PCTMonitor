@@ -402,7 +402,7 @@ public class RecordQMNode extends NeuralFunction {
 
     @Override
     public void close() throws Exception {
-        db.close();
+       if(db!=null) db.close();
     }
 
 }
