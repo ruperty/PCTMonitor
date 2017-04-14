@@ -67,7 +67,7 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
             shortMA = RMath.smooth(response, shortMA, adaptiveSmoothLower);
             longMA = RMath.smooth(response, longMA, adaptiveSmoothUpper);
             if (longMA != 0) {
-                learningRate = Math.min(learningRateMax, 10 * Math.abs((shortMA - longMA) /shortMA ));
+                learningRate = Math.min(learningRateMax, /*10 * */ Math.abs((shortMA - longMA) /shortMA ));
             }
         }
         return learningRate;
