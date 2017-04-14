@@ -50,7 +50,7 @@ public class ControlDataClient extends BaseRMIClient {
         return config;
     }
 
-    public void setResponse(String s) throws RemoteException {
+    public void setResponse(String s) throws RemoteException, Exception {
         rmi.setParameters(s);
 
     }

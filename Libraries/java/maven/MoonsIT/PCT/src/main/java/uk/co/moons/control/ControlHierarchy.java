@@ -107,7 +107,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
-    private void loadPars(String config) throws Exception {
+    private void loadPars(String config) throws Exception  {
 
         String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
         String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";
@@ -132,12 +132,18 @@ public class ControlHierarchy extends BaseControlHierarchy {
                         throw new Exception("Function from parameter list not found: " + functionName);
                     }
 
-                    Type ptype = function.getNeural().getParameterType(parameter);
+                    Type ptype;
+                    try {
+                        ptype = function.getNeural().getParameterType(parameter);
+                    } catch (NoSuchFieldException | SecurityException | IllegalAccessException ex) {
+                        Logger.getLogger(ControlHierarchy.class.getName()).log(Level.SEVERE, null, ex);
+                        throw new Exception("Parameter " + parameter + " in function " + functionName + " is not valid");
+                    }
                     //LOG.info(type.getTypeName());
                     Object obj = function.getNeural().getParameterObject(parameter);
-                    if (obj == null) {
-                        throw new Exception("Parameter " + parameter + " in function " + functionName + " not found in XML");
-                    }
+                    //if (obj == null) {
+                      //  throw new Exception("Parameter " + parameter + " in function " + functionName + " not found in XML");
+                    //}
                     switch (ptype.getTypeName()) {
                         case "java.lang.Double": {
                             Double vExisting = (Double) obj;
@@ -192,7 +198,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         this.layers = controlBuild.getLayers();
     }
 
-    private String processODG(String config) throws Exception {
+    public static String processODG(String config) throws Exception {
         if (config.contains(".odg")) {
             File fodg = new File(config);
             String path = config.substring(0, config.lastIndexOf(File.separator));

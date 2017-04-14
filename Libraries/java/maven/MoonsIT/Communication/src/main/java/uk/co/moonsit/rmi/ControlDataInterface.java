@@ -29,5 +29,5 @@ public interface ControlDataInterface extends BaseRMIInterface {
 
     public String getValues() throws RemoteException;
 
-    public void setParameters(String st) throws RemoteException;
+    public void setParameters(String st) throws RemoteException, Exception;
 }

@@ -158,11 +158,11 @@
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>Sine</Name>
+    <Name>Step</Name>
 </Links>
 <Links>
     <Index>2</Index>
-    <Name>Step</Name>
+    <Name>Sine</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>

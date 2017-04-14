@@ -1,0 +1,6 @@
+Parameter  diagram  saved
+Disturbance_Weights 0,1,0 0,0,1
+LongMA_Parameter longma LongMA
+LearningRate_Parameter learningrate LearningRate
+ShortMA_Parameter shortma ShortMA
+ParameterMA_Parameter parameterma ParameterMA

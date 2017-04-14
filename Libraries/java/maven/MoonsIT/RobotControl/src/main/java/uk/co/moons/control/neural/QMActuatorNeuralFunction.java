@@ -88,7 +88,7 @@ public class QMActuatorNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public double compute() throws IOException {
+    public double compute() throws IOException, Exception {
         if (actuator.isReset()) {
             reset();
         }
@@ -107,7 +107,7 @@ public class QMActuatorNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public void setParameter(String par) {
+    public void setParameter(String par) throws Exception {
         super.setParameter(par);
         if (actuator == null) {
             return;

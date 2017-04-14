@@ -32,11 +32,11 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     public double learningratemax;
     public double shortma;
     public double longma;
-    public double parametersmoothfactor=0;
+    public double parametersmoothfactor = 0;
     public double parameterma;
 
     private double parameter;
-    private String type = null;
+    public String type = null;
     private Integer period;
     private Integer counter;
 
@@ -74,7 +74,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             if (pname.equals("AdaptiveFactor")) {
                 adaptivefactor = Double.parseDouble(param.getValue());
             }
-             if (pname.equals("ParameterSmoothFactor")) {
+            if (pname.equals("ParameterSmoothFactor")) {
                 parametersmoothfactor = Double.parseDouble(param.getValue());
             }
             if (pname.equals("Type")) {
@@ -158,24 +158,42 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         super.setParameter(par);
         String[] arr = par.split(":");
         if (arr[0].equalsIgnoreCase("learningratemax")) {
-            reorganisation.setLearningRate(Double.parseDouble(arr[1]));
+            learningratemax = Double.parseDouble(arr[1]);
+            if (reorganisation != null) {
+                reorganisation.setLearningRate(learningratemax);
+            }
         }
         if (arr[0].equalsIgnoreCase("learningrate")) {
-            reorganisation.setLearningRateMax(Double.parseDouble(arr[1]));
+            learningrate = Double.parseDouble(arr[1]);
+            if (reorganisation != null) {
+                reorganisation.setLearningRateMax(learningrate);
+            }
         }
         if (arr[0].equalsIgnoreCase("adaptivesmoothupper")) {
-            reorganisation.setAdaptiveSmoothUpper(Double.parseDouble(arr[1]));
-            reorganisation.reset();
+            adaptivesmoothupper = Double.parseDouble(arr[1]);
+            if (reorganisation != null) {
+                reorganisation.setAdaptiveSmoothUpper(adaptivesmoothupper);
+                reorganisation.reset();
+            }
         }
         if (arr[0].equalsIgnoreCase("adaptivesmoothlower")) {
-            reorganisation.setAdaptiveSmoothLower(Double.parseDouble(arr[1]));
-            reorganisation.reset();
+            adaptivesmoothlower = Double.parseDouble(arr[1]);
+            if (reorganisation != null) {
+                reorganisation.setAdaptiveSmoothLower(adaptivesmoothlower);
+                reorganisation.reset();
+            }
         }
         if (arr[0].equalsIgnoreCase("adaptivefactor")) {
-            reorganisation.setAdaptiveFactor(Double.parseDouble(arr[1]));
+            adaptivefactor = Double.parseDouble(arr[1]);
+            if (reorganisation != null) {
+                reorganisation.setAdaptiveFactor(adaptivefactor);
+            }
         }
         if (arr[0].equalsIgnoreCase("continuous")) {
-            reorganisation.setContinuous(Boolean.parseBoolean(arr[1]));
+            continuous = Boolean.parseBoolean(arr[1]);
+            if (reorganisation != null) {
+                reorganisation.setContinuous(continuous);
+            }
         }
     }
 }

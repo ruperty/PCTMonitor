@@ -46,7 +46,6 @@ import pct.moons.co.uk.schema.layers.Layers.Layer;
 import pct.moons.co.uk.schema.layers.Layers.Layer.Controller.Functions;
 import uk.co.moons.config.BaseControlBuild;
 import uk.co.moons.config.ControlBuildFactory;
-import uk.co.moons.config.ODGConfig;
 import uk.co.moons.control.ControlHierarchy;
 import uk.co.moons.control.ControlLayer;
 import uk.co.moons.control.ModelControlHierarchy;
@@ -99,9 +98,9 @@ public class ControlPanelHelper implements Runnable {
         //remote = false;
         //logger.info("bools " + print + " " + output);
 
-        cdts = getDisplayTypes();
+        cdts = getDisplayTypes(); 
         String config = file.getAbsolutePath();
-        config = processODG(config);
+        config = ControlHierarchy.processODG(config);
         BaseControlBuild controlBuild = ControlBuildFactory.getControlBuildFunction(config);
 
         type = getType(controlBuild);
@@ -141,7 +140,7 @@ public class ControlPanelHelper implements Runnable {
         monitor.setControlHierarchy(ch);
     }
 
-    private String processODG(String config) throws Exception {
+    /*private String processODG(String config) throws Exception {
         if (config.contains(".odg")) {
             String xml = config.replace(".odg", ".xml");
             File fxml = new File(xml);
@@ -155,7 +154,7 @@ public class ControlPanelHelper implements Runnable {
         }
 
         return config;
-    }
+    }*/
 
     public void setOutputFile(String outputFile) {
         this.outputFile = outputFile;

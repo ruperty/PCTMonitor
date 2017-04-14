@@ -122,7 +122,7 @@ public class MessageServer extends Thread {
 
     }
 
-    private void setParameters(String st) {
+    private void setParameters(String st) throws Exception {
         String[] cons = st.split("\\^");
         for (String con : cons) {
             String[] namePars = con.split("_");

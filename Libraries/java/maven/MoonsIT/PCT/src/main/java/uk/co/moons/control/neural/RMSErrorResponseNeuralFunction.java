@@ -21,8 +21,8 @@ import uk.co.moonsit.learning.error.RMSErrorResponse;
 
 public class RMSErrorResponseNeuralFunction extends NeuralFunction {
 
-    public Integer period;
-    public Double limit = 100.0;
+    public Integer period = null;
+    public Double limit = 0.0;
 
     private int counter = 1;
 
@@ -42,9 +42,6 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
             }
             if (pname.equals("Limit")) {
                 limit = Double.parseDouble(param.getValue());
-                if (limit == 0) {
-                    limit = null;
-                }
             }
         }
         if (period == null) {
@@ -80,10 +77,13 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
     public void setParameter(String par) throws Exception {
         super.setParameter(par);
         String[] arr = par.split(":");
-        if (arr[0].equals("Period") || arr[0].equals("Limit")) {
-            if (limit == 0) {
-                limit = null;
-            }
+        if (arr[0].equals("Period")) {
+            period = Integer.parseInt(arr[1]);
+        }
+        if (arr[0].equals("Limit")) {
+            limit = Double.parseDouble(arr[1]);
+        }
+        if (period != null && response!=null) {
             response.setLimit(limit, period);
         }
     }

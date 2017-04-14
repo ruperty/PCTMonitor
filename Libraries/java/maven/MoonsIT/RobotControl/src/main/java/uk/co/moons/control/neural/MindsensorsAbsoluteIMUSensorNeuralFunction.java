@@ -96,7 +96,7 @@ public class MindsensorsAbsoluteIMUSensorNeuralFunction extends BaseSensorNeural
     }
 
     @Override
-    public void setParameter(String par) {
+    public void setParameter(String par) throws Exception {
         super.setParameter(par);
         if (sensor == null) {
             return;

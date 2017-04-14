@@ -54,7 +54,7 @@ public class QMActuator {
         qmsingelton.unset();
     }
 
-    public void publish() throws IOException {
+    public void publish() throws IOException, Exception {
         try {
             qmsingelton.sendMove();
         } catch (SocketException ex) {

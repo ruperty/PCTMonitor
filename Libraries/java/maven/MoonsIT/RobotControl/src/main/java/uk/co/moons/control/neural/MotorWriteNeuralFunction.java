@@ -140,7 +140,7 @@ public class MotorWriteNeuralFunction extends BaseMotorNeuralFunction {
     }
 
     @Override
-    public void setParameter(String par) {
+    public void setParameter(String par) throws Exception {
         logger.log(Level.INFO, "MotorWriteNeuralFunction{0}", par);
         super.setParameter(par);
         if (motor != null) {

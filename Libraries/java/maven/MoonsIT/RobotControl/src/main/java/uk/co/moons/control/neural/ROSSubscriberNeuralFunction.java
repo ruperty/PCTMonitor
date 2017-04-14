@@ -64,7 +64,7 @@ public class ROSSubscriberNeuralFunction extends
     }
 
     @Override
-    public void setParameter(String par) {
+    public void setParameter(String par) throws Exception {
         super.setParameter(par);
         String[] arr = par.split(":");
         if (arr[0].equals("Index")) {

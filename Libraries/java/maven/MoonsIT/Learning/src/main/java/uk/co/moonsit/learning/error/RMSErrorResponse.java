@@ -37,7 +37,11 @@ public class RMSErrorResponse {
     }
 
     public final void setLimit(Double l, int period) {
-        limit = l * period;
+        if (l == 0) {
+            limit = null;
+        } else {
+            limit = l * period;
+        }
     }
 
     private void init() {
@@ -57,7 +61,7 @@ public class RMSErrorResponse {
         double response;
 
         response = Math.sqrt(errorSum / period);
-       
+
         reset();
         return response;
     }
@@ -65,7 +69,5 @@ public class RMSErrorResponse {
     public void reset() {
         errorSum = 0;
     }
-
-    
 
 }

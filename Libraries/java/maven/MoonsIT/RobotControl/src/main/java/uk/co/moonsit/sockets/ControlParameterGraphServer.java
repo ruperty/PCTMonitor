@@ -101,7 +101,7 @@ public class ControlParameterGraphServer extends Thread {
 
     }
 
-    public void setParameters(String st) {
+    public void setParameters(String st) throws Exception {
         String[] cons = st.split("\\^");
         for (String con : cons) {
             String[] namePars = con.split(";");
