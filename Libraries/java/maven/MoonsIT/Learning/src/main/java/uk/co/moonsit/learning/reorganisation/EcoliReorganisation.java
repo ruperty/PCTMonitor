@@ -22,11 +22,8 @@ public class EcoliReorganisation extends BaseReorganisation {
 
     private double correction = 0;
 
-    public EcoliReorganisation(double lr, double learningRateMax, Double adaptiveSmoothUpper, Double adaptiveSmoothLower, double delta, boolean continuous) {
-        learningRate = lr;
-        this.adaptiveSmoothUpper = adaptiveSmoothUpper;
-        this.adaptiveSmoothLower = adaptiveSmoothLower;
-        this.learningRateMax = learningRateMax;
+    public EcoliReorganisation(String  lrType, double delta, boolean continuous) {
+        super(lrType);
         this.delta = delta;
         this.continuous = continuous;
     }
@@ -35,11 +32,11 @@ public class EcoliReorganisation extends BaseReorganisation {
     public double correct(double errorResponse, int period, int counter, double parameter, double parameterMA) {
 
         if (counter % period == 0) {
-            learningRate = adaptLearningRate(errorResponse);
+            double lrate =learningRate.update(errorResponse);
 
             if (errorResponse >= previousErrorResponse) {
                 double random = (2 * (Math.random() - 0.5));
-                correction = learningRate * delta * parameterMA * Math.abs(errorResponse) * random;
+                correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             }
             if (!continuous) {
                 parameter += correction;

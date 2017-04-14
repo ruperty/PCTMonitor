@@ -29,14 +29,15 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     private static final Logger LOG = Logger.getLogger(ParameterReorganisationNeuralFunction.class.getName());
 
     public double learningrate;
-    public double learningratemax;
+    //public double learningratemax;
     public double shortma;
     public double longma;
     public double parametersmoothfactor = 0;
     public double parameterma;
 
     private double parameter;
-    public String type = null;
+    public String learningtype = null;
+    public String learningratetype = "Smooth";
     private Integer period;
     private Integer counter;
 
@@ -44,8 +45,8 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     private BaseNeuralFunction parameterNeuralFunction;
     private BaseNeuralFunction errorResponseNeuralFunction;
 
-    public Double adaptivesmoothupper = null;
-    public Double adaptivesmoothlower = null;
+    /*public Double adaptivesmoothupper = null;
+    public Double adaptivesmoothlower = null;*/
     public Double adaptivefactor = null;
     public boolean continuous = false;
 
@@ -62,7 +63,10 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             if (pname.equals("LearningRate")) {
                 learningrate = Double.parseDouble(param.getValue());
             }
-            if (pname.equals("LearningRateMax")) {
+            if (pname.equals("LearningRateType")) {
+                learningratetype = param.getValue();
+            }
+            /*if (pname.equals("LearningRateMax")) {
                 learningratemax = Double.parseDouble(param.getValue());
             }
             if (pname.equals("AdaptiveSmoothUpper")) {
@@ -70,23 +74,23 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             }
             if (pname.equals("AdaptiveSmoothLower")) {
                 adaptivesmoothlower = Double.parseDouble(param.getValue());
-            }
+            }*/
             if (pname.equals("AdaptiveFactor")) {
                 adaptivefactor = Double.parseDouble(param.getValue());
             }
             if (pname.equals("ParameterSmoothFactor")) {
                 parametersmoothfactor = Double.parseDouble(param.getValue());
             }
-            if (pname.equals("Type")) {
-                type = param.getValue();
+            if (pname.equals("LearningType")) {
+                learningtype = param.getValue();
             }
             if (pname.equals("Continuous")) {
                 continuous = Boolean.parseBoolean(param.getValue());
             }
         }
 
-        if (type == null) {
-            throw new Exception("Type null for ParameterReorganisationNeuralFunction");
+        if (learningtype == null) {
+            throw new Exception("LearningType null for ParameterReorganisationNeuralFunction");
         }
     }
 
@@ -117,13 +121,13 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         errorResponseNeuralFunction = controls.get(errorIndex).getNeural();
         period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
 
-        switch (type) {
+        switch (learningtype) {
             case "HillClimb":
-                reorganisation = new HillClimbReorganisation(learningrate, learningratemax, adaptivesmoothupper, adaptivesmoothlower, adaptivefactor, continuous);
+                reorganisation = new HillClimbReorganisation(learningratetype,  adaptivefactor, continuous);
                 reorganisation.reset();
                 break;
             case "Ecoli":
-                reorganisation = new EcoliReorganisation(learningrate, learningratemax, adaptivesmoothupper, adaptivesmoothlower, adaptivefactor, continuous);
+                reorganisation = new EcoliReorganisation(learningratetype,  adaptivefactor, continuous);
                 reorganisation.reset();
                 break;
         }
@@ -139,8 +143,8 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         parameter = reorganisation.correct(errorResponse, period, counter, parameter, parameterma);
         { // display parameters
             learningrate = reorganisation.getLearningRate();
-            shortma = reorganisation.getShortMA();
-            longma = reorganisation.getLongMA();
+            //shortma = reorganisation.getShortMA();
+            //longma = reorganisation.getLongMA();
         }/*
         if (previousErrorResponse != errorResponse) {
             //parameter += reorganisation.correction(errorResponse) ;
@@ -157,18 +161,20 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     public void setParameter(String par) throws Exception {
         super.setParameter(par);
         String[] arr = par.split(":");
+        /*
         if (arr[0].equalsIgnoreCase("learningratemax")) {
             learningratemax = Double.parseDouble(arr[1]);
             if (reorganisation != null) {
                 reorganisation.setLearningRate(learningratemax);
             }
-        }
+        }*/
         if (arr[0].equalsIgnoreCase("learningrate")) {
             learningrate = Double.parseDouble(arr[1]);
             if (reorganisation != null) {
-                reorganisation.setLearningRateMax(learningrate);
+                reorganisation.setLearningRate(learningrate);
             }
         }
+        /*
         if (arr[0].equalsIgnoreCase("adaptivesmoothupper")) {
             adaptivesmoothupper = Double.parseDouble(arr[1]);
             if (reorganisation != null) {
@@ -182,7 +188,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 reorganisation.setAdaptiveSmoothLower(adaptivesmoothlower);
                 reorganisation.reset();
             }
-        }
+        }*/
         if (arr[0].equalsIgnoreCase("adaptivefactor")) {
             adaptivefactor = Double.parseDouble(arr[1]);
             if (reorganisation != null) {

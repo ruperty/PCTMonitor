@@ -26,6 +26,7 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
 
     private int counter = 1;
 
+    
     private RMSErrorResponse response;
 
     public RMSErrorResponseNeuralFunction() {

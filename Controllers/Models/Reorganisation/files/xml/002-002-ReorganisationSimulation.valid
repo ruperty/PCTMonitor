@@ -244,7 +244,7 @@
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
-    <Name>Type</Name>
+    <Name>LearningType</Name>
     <Value>HillClimb</Value>
     <DataType>String</DataType>
 </Parameters>

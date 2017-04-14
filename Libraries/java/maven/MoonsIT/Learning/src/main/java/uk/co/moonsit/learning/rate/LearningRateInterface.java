@@ -22,5 +22,6 @@ public interface LearningRateInterface {
     
      public double update(double response);
    
-    
+      public void reset();
+   
 }

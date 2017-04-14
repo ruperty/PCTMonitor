@@ -107,7 +107,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
-    private void loadPars(String config) throws Exception  {
+    private void loadPars(String config) throws Exception {
 
         String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
         String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";
@@ -142,34 +142,36 @@ public class ControlHierarchy extends BaseControlHierarchy {
                     //LOG.info(type.getTypeName());
                     Object obj = function.getNeural().getParameterObject(parameter);
                     //if (obj == null) {
-                      //  throw new Exception("Parameter " + parameter + " in function " + functionName + " not found in XML");
+                    //  throw new Exception("Parameter " + parameter + " in function " + functionName + " not found in XML");
                     //}
-                    switch (ptype.getTypeName()) {
-                        case "java.lang.Double": {
-                            Double vExisting = (Double) obj;
-                            Double vOverride = Double.valueOf(override);
-                            if (!vExisting.equals(vOverride)) {
-                                sb.append(key).append(" ").append(vExisting).append(" ").append(vOverride).append("\n");
+                    if (obj != null) {
+                        switch (ptype.getTypeName()) {
+                            case "java.lang.Double": {
+                                Double vExisting = (Double) obj;
+                                Double vOverride = Double.valueOf(override);
+                                if (!vExisting.equals(vOverride)) {
+                                    sb.append(key).append(" ").append(vExisting).append(" ").append(vOverride).append("\n");
+                                }
+                                break;
                             }
-                            break;
+                            case "java.lang.Boolean": {
+                                Boolean vExisting = (Boolean) obj;
+                                Boolean vOverride = Boolean.valueOf(override);
+                                if (!vExisting.equals(vOverride)) {
+                                    sb.append(key).append(" ").append(vExisting).append(" ").append(vOverride).append("\n");
+                                }
+                                break;
+                            }
+                            case "java.lang.String":
+                                String vExisting = (String) obj;
+                                if (!vExisting.equals(override)) {
+                                    sb.append(key).append(" ").append(vExisting).append(" ").append(override).append("\n");
+                                }
+                                break;
                         }
-                        case "java.lang.Boolean": {
-                            Boolean vExisting = (Boolean) obj;
-                            Boolean vOverride = Boolean.valueOf(override);
-                            if (!vExisting.equals(vOverride)) {
-                                sb.append(key).append(" ").append(vExisting).append(" ").append(vOverride).append("\n");
-                            }
-                            break;
-                        }
-                        case "java.lang.String":
-                            String vExisting = (String) obj;
-                            if (!vExisting.equals(override)) {
-                                sb.append(key).append(" ").append(vExisting).append(" ").append(override).append("\n");
-                            }
-                            break;
-                    }
 
-                    function.getNeural().setParameter(parameter + ":" + override);
+                        function.getNeural().setParameter(parameter + ":" + override);
+                    }
                 }
 
                 String soutput = "";

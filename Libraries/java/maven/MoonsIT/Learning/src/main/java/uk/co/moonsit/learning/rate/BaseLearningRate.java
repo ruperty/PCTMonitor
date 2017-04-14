@@ -18,10 +18,18 @@ package uk.co.moonsit.learning.rate;
  *
  * @author Rupert Young
  */
-public class BaseLearningRate {
+public abstract class BaseLearningRate implements LearningRateInterface {
     
     
      protected double learningRate;
+
+    public void setLearningRate(double learningRate) {
+        this.learningRate = learningRate;
+    }
+
+    public double getLearningRate() {
+        return learningRate;
+    }
     
     
 }
