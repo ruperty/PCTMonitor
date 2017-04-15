@@ -19,10 +19,10 @@ import uk.co.moons.math.RMath;
 /**
  *
  * @author Rupert Young
- * 
- * Increase the rate if the gradient for the weight does not change sign, else decrease
- * Use small additive increasing +0.05 and multiplicative decreases *0.95
- * 
+ *
+ * Increase the rate if the gradient for the weight does not change sign, else
+ * decrease Use small additive increasing +0.05 and multiplicative decreases 0.95
+ *
  */
 public class AdditiveLearningRate extends BaseLearningRate {
 
@@ -32,8 +32,8 @@ public class AdditiveLearningRate extends BaseLearningRate {
     private double mulitplicativeFactor = 0.95;
     protected double learningRateMax = 0.5;
 
-    public AdditiveLearningRate() {
-
+    public AdditiveLearningRate(double learningRate) {
+        this.learningRate = learningRate;
     }
 
     @Override
