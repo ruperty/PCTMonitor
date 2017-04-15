@@ -60,7 +60,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     private PlotPanelHelper plotPanelHelper = null;
 
     public PlotPanelTopComponent() {
-        configMap = new HashMap<>();
+
         initComponents();
         setName(Bundle.CTL_PlotPanelTopComponent());
         setToolTipText(Bundle.HINT_PlotPanelTopComponent());
@@ -70,7 +70,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     public PlotPanelTopComponent(ControlPanelHelper cph) {
         this.cph = cph;
         plotPanelHelper = new PlotPanelHelper();
-        configMap = new HashMap<>();
+        //configMap = new HashMap<>();
         initComponents();
         setName(Bundle.CTL_PlotPanelTopComponent());
         setToolTipText(Bundle.HINT_PlotPanelTopComponent());
@@ -215,9 +215,9 @@ public final class PlotPanelTopComponent extends TopComponent {
     private void jListControllersValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListControllersValueChanged
         functionsListModel = new DefaultListModel<>();
         hmFunctions = new HashMap<>();
-        
-        if(plotPanelHelper.isClearConfig()){
-            configMap.clear();
+
+        if (plotPanelHelper.isClearConfig()) {
+            plotPanelHelper.getConfigMap().clear();
             plotPanelHelper.setClearConfig(false);
         }
 
@@ -255,12 +255,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     }//GEN-LAST:event_jListFunctionsValueChanged
 
     private void addToConfig(String num, String function) {
-        List<String> list = configMap.get(num);
-        if (list == null) {
-            list = new ArrayList<>();
-            configMap.put(num, list);
-        }
-        list.add(function);
+        plotPanelHelper.addToConfig(num, function);
     }
 
     private void jButtonRemoveGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveGraphActionPerformed
@@ -305,7 +300,7 @@ public final class PlotPanelTopComponent extends TopComponent {
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         try {
-            plotPanelHelper.saveConfig(configMap);
+            plotPanelHelper.saveConfig();
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
@@ -334,7 +329,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     private List<String> selectedFunctions = null;
     private ControlPanelHelper cph;
     private String currentController = null;
-    private HashMap<String, List<String>> configMap = null;
+    //private HashMap<String, List<String>> configMap = null;
 
     @Override
     public void componentOpened() {

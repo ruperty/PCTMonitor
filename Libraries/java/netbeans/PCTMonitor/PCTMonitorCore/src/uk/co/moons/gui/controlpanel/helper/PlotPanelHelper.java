@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -42,15 +43,22 @@ import uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent;
 @SuppressWarnings("unchecked")
 public class PlotPanelHelper {
 
-    private static final Logger logger = Logger.getLogger(PlotPanelHelper.class.getName());
+    private static final Logger LOG = Logger.getLogger(PlotPanelHelper.class.getName());
     private List<GridPlot2d> gp2ds = null;
     private PlotPanelTopComponent plotJPanel = null;
     private boolean clearConfig = true;
+    private HashMap<String, List<String>> configMap = null;
 
     public PlotPanelHelper() {
         gp2ds = new ArrayList<>();
+        configMap = new HashMap<>();
     }
 
+    public HashMap<String, List<String>> getConfigMap() {
+        return configMap;
+    }
+
+    
     public boolean isClearConfig() {
         return clearConfig;
     }
@@ -69,7 +77,17 @@ public class PlotPanelHelper {
         return list;
     }
 
+    public void addToConfig(String num, String function) {
+        List<String> list = configMap.get(num);
+        if (list == null) {
+            list = new ArrayList<>();
+            configMap.put(num, list);
+        }
+        list.add(function);
+    }
+
     public void loadPlotsResource() {
+
         Properties props = getProperties();
         if (props != null) {
             List<String> sorted = sortKeys(props);
@@ -81,10 +99,14 @@ public class PlotPanelHelper {
                 }
             }
             for (String key : sorted) {
+                List<String> clist = new ArrayList<>();
+                configMap.put(key, clist);
+
                 int iKey = Integer.parseInt(key);
                 String list = props.getProperty(key);
                 String[] cons = list.split(",");
                 for (String con : cons) {
+                    clist.add(con);
                     String[] funcs = con.split(":");
                     for (int j = 1; j < funcs.length; j++) {
                         add2dDataSet(funcs[0], funcs[j], iKey);
@@ -96,12 +118,12 @@ public class PlotPanelHelper {
 
     }
 
-    public void saveConfig(HashMap<String, List<String>> configMap) throws IOException {
+    public void saveConfig() throws IOException {
         File fdir = new File(getFilesDir());
         if (!fdir.exists()) {
             fdir.mkdir();
         }
-        
+
         File pdir = new File(getPropertiesDir());
         if (!pdir.exists()) {
             pdir.mkdir();
@@ -133,8 +155,8 @@ public class PlotPanelHelper {
             fout.write(sb.toString().getBytes());
         }
 
-        logger.info("Saved properties to " + file);
-        logger.info(sb.toString());
+        LOG.info("Saved properties to " + file);
+        LOG.info(sb.toString());
     }
 
     private String getFilesDir() {
@@ -144,13 +166,13 @@ public class PlotPanelHelper {
     }
 
     private String getPropertiesDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "files"+ File.separator + "properties";
+        String path = Environment.getInstance().getFilePath() + File.separator + "files" + File.separator + "properties";
 
         return path;
     }
 
     private String getPropertiesSubDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "files"+ File.separator + "properties" + File.separator
+        String path = Environment.getInstance().getFilePath() + File.separator + "files" + File.separator + "properties" + File.separator
                 + (Environment.getInstance().getFileRoot().charAt(0) < 63 ? Environment.getInstance().getFileRoot().substring(0, 7) : Environment.getInstance().getFileRoot())
                 + File.separator;
 
@@ -167,12 +189,13 @@ public class PlotPanelHelper {
     public Properties getProperties() {
 
         String fname = getPropertiesFileName();
+        LOG.log(Level.INFO, "Reading properties file {0}", fname);
         Properties props = null;
         try {
             props = new Properties();
             props.load(new FileInputStream(new File(fname)));
         } catch (IOException ex) {
-            logger.warning(ex.toString());
+            LOG.warning(ex.toString());
             //Logger.getLogger(PlotPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
 

@@ -242,14 +242,11 @@ public class ParameterslPanelHelper implements Runnable {
     private void saveParameters(List<Layer> list) throws IOException {
         String filePath = ch.getConfigPath();
         int index = filePath.lastIndexOf(File.separator);
-        String path = filePath.substring(0, index);
+        int xmlindex = filePath.lastIndexOf(File.separator + "xml");
+        //String path = filePath.substring(0, index);
+        String xmlpath = filePath.substring(0, xmlindex);
 
-        File filesDir = new File(path + File.separator + "files");
-        if (!filesDir.exists()) {
-            filesDir.mkdir();
-        }
-
-        File dir = new File(path + File.separator + "files" + File.separator + "parameters");
+        File dir = new File(xmlpath + File.separator + "parameters");
         if (!dir.exists()) {
             dir.mkdir();
         }
