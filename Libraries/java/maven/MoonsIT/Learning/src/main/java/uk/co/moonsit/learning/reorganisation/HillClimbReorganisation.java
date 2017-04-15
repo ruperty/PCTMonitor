@@ -22,8 +22,8 @@ public class HillClimbReorganisation extends BaseReorganisation {
 
     private double correction = 0;
 
-    public HillClimbReorganisation(String  lrType, double delta, boolean continuous) {
-        super(lrType);
+    public HillClimbReorganisation(double lr, String  lrType, double delta, boolean continuous) {
+        super(lr, lrType);
         this.delta = delta;
         this.continuous = continuous;
     }
@@ -32,7 +32,7 @@ public class HillClimbReorganisation extends BaseReorganisation {
     public double correct(double errorResponse, int period, int counter, double parameter, double parameterMA) {
 
         if (counter % period == 0) {
-            double lrate = learningRate.update(errorResponse);
+            double lrate = learningRate.update(parameter, errorResponse);
 
             double errorResponseChange = errorResponse - previousErrorResponse;
 

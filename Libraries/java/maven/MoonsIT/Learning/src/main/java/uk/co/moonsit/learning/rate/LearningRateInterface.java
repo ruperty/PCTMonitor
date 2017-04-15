@@ -19,9 +19,11 @@ package uk.co.moonsit.learning.rate;
  * @author Rupert Young
  */
 public interface LearningRateInterface {
-    
-     public double update(double response);
-   
-      public void reset();
-   
+
+    public double update(double response, double error);
+
+    public void reset();
+
+    public void setLearningRateParameters(String rateparameters);
+
 }

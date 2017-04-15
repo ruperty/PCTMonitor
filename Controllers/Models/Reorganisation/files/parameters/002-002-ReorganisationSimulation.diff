@@ -1,5 +1,6 @@
 Parameter  diagram  saved
-Disturbance_Weights 0,1,0 0,0,1
+GainReorganisation_RateParameters 0.9:0.95 0.05
+GainReorganisation_LearningRateType Smooth Additive
 LongMA_Parameter longma LongMA
 LearningRate_Parameter learningrate LearningRate
 ShortMA_Parameter shortma ShortMA

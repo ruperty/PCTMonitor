@@ -38,6 +38,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     private double parameter;
     public String learningtype = null;
     public String learningratetype = "Smooth";
+    public String rateparameters = "0.9:0.95";
     private Integer period;
     private Integer counter;
 
@@ -66,6 +67,11 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             if (pname.equals("LearningRateType")) {
                 learningratetype = param.getValue();
             }
+            
+            if (pname.equals("RateParameters")) {
+                rateparameters = param.getValue();
+            }
+                        
             /*if (pname.equals("LearningRateMax")) {
                 learningratemax = Double.parseDouble(param.getValue());
             }
@@ -121,18 +127,22 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         errorResponseNeuralFunction = controls.get(errorIndex).getNeural();
         period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
 
+        setLearningType();
+    }
+
+    private void setLearningType(){
         switch (learningtype) {
             case "HillClimb":
-                reorganisation = new HillClimbReorganisation(learningratetype,  adaptivefactor, continuous);
+                reorganisation = new HillClimbReorganisation(learningrate, learningratetype,  adaptivefactor, continuous);
                 reorganisation.reset();
                 break;
             case "Ecoli":
-                reorganisation = new EcoliReorganisation(learningratetype,  adaptivefactor, continuous);
+                reorganisation = new EcoliReorganisation(learningrate, learningratetype,  adaptivefactor, continuous);
                 reorganisation.reset();
                 break;
         }
     }
-
+    
     @Override
     public double compute() throws Exception {
         double errorResponse = errorResponseNeuralFunction.getOutput();
@@ -174,6 +184,18 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 reorganisation.setLearningRate(learningrate);
             }
         }
+        if (arr[0].equalsIgnoreCase("learningratetype")) {
+            learningratetype = arr[1];
+            if (reorganisation != null) {
+                reorganisation.setLearningRateType(learningrate, learningratetype);
+            }
+        }
+        if (arr[0].equalsIgnoreCase("learningtype")) {
+            learningtype = arr[1];
+            if (reorganisation != null) {
+                setLearningType();
+            }
+        }
         /*
         if (arr[0].equalsIgnoreCase("adaptivesmoothupper")) {
             adaptivesmoothupper = Double.parseDouble(arr[1]);
@@ -201,5 +223,15 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 reorganisation.setContinuous(continuous);
             }
         }
+        
+        if (arr[0].equalsIgnoreCase("rateparameters")) {
+            rateparameters = arr[1];
+            if (reorganisation != null) {
+                reorganisation.setLearningRateParameters(rateparameters);
+            }
+        }
+        
+        
+        
     }
 }

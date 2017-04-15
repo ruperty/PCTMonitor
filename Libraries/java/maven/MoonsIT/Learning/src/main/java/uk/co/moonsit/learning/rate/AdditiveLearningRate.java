@@ -21,37 +21,46 @@ import uk.co.moons.math.RMath;
  * @author Rupert Young
  *
  * Increase the rate if the gradient for the weight does not change sign, else
- * decrease Use small additive increasing +0.05 and multiplicative decreases 0.95
+ * decrease Use small additive increasing +0.05 and multiplicative decreases
+ * 0.95
  *
  */
 public class AdditiveLearningRate extends BaseLearningRate {
 
-    protected Double adaptiveSmoothUpper = 0.95;
-    protected Double adaptiveSmoothLower = 0.9;
     private double additiveFactor = 0.05;
     private double mulitplicativeFactor = 0.95;
-    protected double learningRateMax = 0.5;
+    private final double learningRateMax = 0.5;
+    private double previousWeight = 0;
+    private double previousGradient = 0;
 
     public AdditiveLearningRate(double learningRate) {
         this.learningRate = learningRate;
     }
 
     @Override
-    public double update(double response) {
-        if (adaptiveSmoothUpper != 0) {
-            shortMA = RMath.smooth(response, shortMA, adaptiveSmoothLower);
-            longMA = RMath.smooth(response, longMA, adaptiveSmoothUpper);
-            if (longMA != 0) {
-                learningRate = Math.min(learningRateMax, /*10 * */ Math.abs((shortMA - longMA) / shortMA));
-            }
+    public double update(double weight, double error) {
+        double gradient = weight - previousWeight;
+        if (Math.signum(gradient) == Math.signum(previousGradient)) {
+            learningRate = Math.min(learningRateMax, learningRate + additiveFactor);
+        } else {
+            learningRate *= mulitplicativeFactor;
         }
+        previousWeight = weight;
+        previousGradient = gradient;
         return learningRate;
     }
 
     @Override
     public void reset() {
-        shortMA = 0;
-        longMA = 0;
+        previousWeight = 0;
+        previousGradient = 0;
+    }
+
+    @Override
+    public void setLearningRateParameters(String rateparameters) {
+        String[] arr = rateparameters.split("\\^");
+        additiveFactor = Double.parseDouble(arr[0]);
+        mulitplicativeFactor = Double.parseDouble(arr[1]);
     }
 
 }

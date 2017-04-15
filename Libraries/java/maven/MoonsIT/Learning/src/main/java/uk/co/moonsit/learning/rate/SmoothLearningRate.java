@@ -28,15 +28,15 @@ public class SmoothLearningRate extends BaseLearningRate {
     private double longMA = 0;
     protected double learningRateMax = 0.5;
 
-    public SmoothLearningRate() {
-
+    public SmoothLearningRate(double learningRate) {
+        this.learningRate = learningRate;
     }
 
     @Override
-    public double update(double response) {
+    public double update(double weight, double error) {
         if (adaptiveSmoothUpper != 0) {
-            shortMA = RMath.smooth(response, shortMA, adaptiveSmoothLower);
-            longMA = RMath.smooth(response, longMA, adaptiveSmoothUpper);
+            shortMA = RMath.smooth(error, shortMA, adaptiveSmoothLower);
+            longMA = RMath.smooth(error, longMA, adaptiveSmoothUpper);
             if (longMA != 0) {
                 learningRate = Math.min(learningRateMax, /*10 * */ Math.abs((shortMA - longMA) / shortMA));
             }
@@ -50,4 +50,10 @@ public class SmoothLearningRate extends BaseLearningRate {
         longMA = 0;
     }
 
+     @Override
+    public void setLearningRateParameters(String rateparameters) {
+        String[] arr = rateparameters.split("\\^");
+        adaptiveSmoothLower = Double.parseDouble(arr[0]);
+        adaptiveSmoothUpper = Double.parseDouble(arr[1]);
+    }
 }

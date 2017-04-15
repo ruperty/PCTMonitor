@@ -203,6 +203,7 @@ public class PlotPanelHelper {
     }
 
     public void clear() {
+        configMap.clear();
         for (GridPlot2d gpd : gp2ds) {
             gpd.clear();
         }

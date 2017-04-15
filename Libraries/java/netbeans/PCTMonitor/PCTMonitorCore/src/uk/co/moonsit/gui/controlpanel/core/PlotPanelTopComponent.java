@@ -216,10 +216,7 @@ public final class PlotPanelTopComponent extends TopComponent {
         functionsListModel = new DefaultListModel<>();
         hmFunctions = new HashMap<>();
 
-        if (plotPanelHelper.isClearConfig()) {
-            plotPanelHelper.getConfigMap().clear();
-            plotPanelHelper.setClearConfig(false);
-        }
+       
 
         Object[] selectedController = jListControllers.getSelectedValuesList().toArray();
         for (int i = 0; i < selectedController.length; i++) {

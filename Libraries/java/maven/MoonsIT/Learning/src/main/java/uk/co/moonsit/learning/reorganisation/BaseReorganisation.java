@@ -14,7 +14,7 @@
  */
 package uk.co.moonsit.learning.reorganisation;
 
-import uk.co.moons.math.RMath;
+import uk.co.moonsit.learning.rate.AdditiveLearningRate;
 import uk.co.moonsit.learning.rate.BaseLearningRate;
 import uk.co.moonsit.learning.rate.SmoothLearningRate;
 
@@ -47,47 +47,57 @@ import uk.co.moonsit.learning.rate.SmoothLearningRate;
  * @version 1.0
  */
 public abstract class BaseReorganisation implements ReorganisationInterface {
-
+    
     protected double delta = 0.025;
     protected boolean continuous = false;
     protected BaseLearningRate learningRate;
     protected double previousErrorResponse;
-
-    public BaseReorganisation(String type) {
-        setLearningRate(type);
-    }
-
     
+    public BaseReorganisation(double lr, String type) {
+        setLRT(lr, type);
+    }
     
     public void reset() {
-        learningRate.reset();
-
+        learningRate.reset();        
     }
-
+    
     public void setAdaptiveFactor(Double delta) {
         this.delta = delta;
     }
-
+    
     public void setContinuous(boolean continuous) {
         this.continuous = continuous;
     }
-
+    
     @Override
     public void setLearningRate(double rate) {
         learningRate.setLearningRate(rate);
     }
-
+    
     public double getLearningRate() {
         return learningRate.getLearningRate();
     }
-
-    private void setLearningRate(String type) {
+    
+    public void setLearningRateType(double lr, String type) {
+        setLRT(lr, type);
+    }
+    
+    private void setLRT(double lr, String type) {
         switch (type) {
             case "Smooth":
-                learningRate = new SmoothLearningRate();
+                learningRate = new SmoothLearningRate(lr);
+                break;
+            case "Additive":
+                learningRate = new AdditiveLearningRate(lr);
                 break;
         }
-
+        
     }
-
+    
+    
+    public void  setLearningRateParameters(String rateparameters){
+        learningRate.setLearningRateParameters(rateparameters);
+    }
+            
+    
 }

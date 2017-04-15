@@ -210,28 +210,13 @@
 <Type>ParameterReorganisation</Type>
 <Parameters>
     <Name>LearningRate</Name>
-    <Value>0.5</Value>
+    <Value>0.2</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
     <Value>false</Value>
     <DataType>Boolean</DataType>
-</Parameters>
-<Parameters>
-    <Name>LearningRateMax</Name>
-    <Value>0.5</Value>
-    <DataType>Double</DataType>
-</Parameters>
-<Parameters>
-    <Name>AdaptiveSmoothUpper</Name>
-    <Value>0.95</Value>
-    <DataType>Double</DataType>
-</Parameters>
-<Parameters>
-    <Name>AdaptiveSmoothLower</Name>
-    <Value>0.9</Value>
-    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
@@ -246,6 +231,11 @@
 <Parameters>
     <Name>LearningType</Name>
     <Value>HillClimb</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateType</Name>
+    <Value>Additive</Value>
     <DataType>String</DataType>
 </Parameters>
 <Links>
