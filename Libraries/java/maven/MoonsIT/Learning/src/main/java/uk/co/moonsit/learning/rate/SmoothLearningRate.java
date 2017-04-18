@@ -28,8 +28,9 @@ public class SmoothLearningRate extends BaseLearningRate {
     private double longMA = 0;
     protected double learningRateMax = 0.5;
 
-    public SmoothLearningRate(double learningRate) {
+    public SmoothLearningRate(Double learningRate, String rateparameters) {
         this.learningRate = learningRate;
+        setLearningRateParametersPrivate(rateparameters);
     }
 
     @Override
@@ -49,9 +50,14 @@ public class SmoothLearningRate extends BaseLearningRate {
         shortMA = 0;
         longMA = 0;
     }
-
+    
      @Override
-    public void setLearningRateParameters(String rateparameters) {
+    public void setLearningRateParameters(String rateparameters)   {
+        setLearningRateParametersPrivate(rateparameters);
+    }
+
+     
+    private void setLearningRateParametersPrivate(String rateparameters) {
         String[] arr = rateparameters.split("\\^");
         adaptiveSmoothLower = Double.parseDouble(arr[0]);
         adaptiveSmoothUpper = Double.parseDouble(arr[1]);

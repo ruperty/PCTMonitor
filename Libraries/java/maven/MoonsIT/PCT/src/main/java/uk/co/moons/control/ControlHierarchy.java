@@ -107,7 +107,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
-    private void loadPars(String config) throws Exception {
+    private void loadPars(String config) throws Exception {//int xmlIndex = config.indexOf("xml")
 
         String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
         String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";

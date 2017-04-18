@@ -14,8 +14,6 @@
  */
 package uk.co.moonsit.learning.rate;
 
-import uk.co.moons.math.RMath;
-
 /**
  *
  * @author Rupert Young
@@ -33,8 +31,9 @@ public class AdditiveLearningRate extends BaseLearningRate {
     private double previousWeight = 0;
     private double previousGradient = 0;
 
-    public AdditiveLearningRate(double learningRate) {
+    public AdditiveLearningRate(Double learningRate, String rateparameters) {
         this.learningRate = learningRate;
+        setLearningRateParametersPrivate(rateparameters);
     }
 
     @Override
@@ -56,11 +55,15 @@ public class AdditiveLearningRate extends BaseLearningRate {
         previousGradient = 0;
     }
 
-    @Override
-    public void setLearningRateParameters(String rateparameters) {
+    private void setLearningRateParametersPrivate(String rateparameters) {
         String[] arr = rateparameters.split("\\^");
         additiveFactor = Double.parseDouble(arr[0]);
         mulitplicativeFactor = Double.parseDouble(arr[1]);
+    }
+
+    @Override
+    public void setLearningRateParameters(String rateparameters)   {
+        setLearningRateParametersPrivate(rateparameters);
     }
 
 }

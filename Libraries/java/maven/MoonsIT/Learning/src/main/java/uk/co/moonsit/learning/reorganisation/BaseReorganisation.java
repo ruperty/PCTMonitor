@@ -14,6 +14,11 @@
  */
 package uk.co.moonsit.learning.reorganisation;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import uk.co.moonsit.learning.rate.AdditiveLearningRate;
 import uk.co.moonsit.learning.rate.BaseLearningRate;
 import uk.co.moonsit.learning.rate.SmoothLearningRate;
@@ -47,42 +52,70 @@ import uk.co.moonsit.learning.rate.SmoothLearningRate;
  * @version 1.0
  */
 public abstract class BaseReorganisation implements ReorganisationInterface {
-    
+
     protected double delta = 0.025;
     protected boolean continuous = false;
     protected BaseLearningRate learningRate;
     protected double previousErrorResponse;
-    
-    public BaseReorganisation(double lr, String type) {
-        setLRT(lr, type);
+
+    public BaseReorganisation( String type, double lr, String parameters) throws Exception {
+        setLRT(type, lr ,  parameters);
     }
-    
+
     public void reset() {
-        learningRate.reset();        
+        learningRate.reset();
     }
-    
+
     public void setAdaptiveFactor(Double delta) {
         this.delta = delta;
     }
-    
+
     public void setContinuous(boolean continuous) {
         this.continuous = continuous;
     }
-    
+
     @Override
     public void setLearningRate(double rate) {
         learningRate.setLearningRate(rate);
     }
-    
+
     public double getLearningRate() {
         return learningRate.getLearningRate();
     }
-    
-    public void setLearningRateType(double lr, String type) {
-        setLRT(lr, type);
+
+    public void setLearningRateType(String type, double lr, String parameters) throws Exception {
+        setLRT(type, lr, parameters);
     }
-    
-    private void setLRT(double lr, String type) {
+
+    private void setLRT(String type, double lr, String parameters) throws Exception {
+
+        String className = "uk.co.moonsit.learning.rate." + type + "LearningRate";
+        Class theClass = Class.forName(className);
+
+        try {
+            Constructor constructor = theClass.getConstructor(Double.class, String.class);
+            try {
+                learningRate = (BaseLearningRate) constructor.newInstance(lr, parameters);
+            } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+                Logger.getLogger(BaseReorganisation.class.getName()).log(Level.SEVERE, null, ex);
+                throw ex;
+            }
+
+        } catch (NoSuchMethodException | SecurityException ex) {
+            Logger.getLogger(BaseReorganisation.class.getName()).log(Level.SEVERE, null, ex);
+            throw ex;
+        }
+        /*
+        switch (type) {
+        case "Smooth":
+        learningRate = new SmoothLearningRate(lr);
+        break;
+        case "Additive":
+        learningRate = new AdditiveLearningRate(lr);
+        break;
+        }*/
+
+ /*
         switch (type) {
             case "Smooth":
                 learningRate = new SmoothLearningRate(lr);
@@ -90,14 +123,11 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
             case "Additive":
                 learningRate = new AdditiveLearningRate(lr);
                 break;
-        }
-        
+        }*/
     }
-    
-    
-    public void  setLearningRateParameters(String rateparameters){
+
+    public void setLearningRateParameters(String rateparameters) {
         learningRate.setLearningRateParameters(rateparameters);
     }
-            
-    
+
 }

@@ -30,4 +30,8 @@ public abstract class BaseLearningRate implements LearningRateInterface {
         return learningRate;
     }
 
+    
+
+    
+
 }

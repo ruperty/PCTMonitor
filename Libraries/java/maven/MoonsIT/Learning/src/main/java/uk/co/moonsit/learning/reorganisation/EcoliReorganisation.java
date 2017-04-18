@@ -21,31 +21,33 @@ package uk.co.moonsit.learning.reorganisation;
 public class EcoliReorganisation extends BaseReorganisation {
 
     private double correction = 0;
+    private double random = 0;
 
-    public EcoliReorganisation(double lr, String  lrType, double delta, boolean continuous) {
-        super(lr, lrType);
+    public EcoliReorganisation(String lrType, double lr, String parameters, double delta, boolean continuous) throws Exception {
+        super(lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
     }
 
     @Override
-    public double correct(double errorResponse, int period, int counter, double parameter, double parameterMA) {
+    public double correct(double errorResponse, boolean applyCorrection, double parameter, double parameterMA) {
 
-        if (counter % period == 0) {
-            double lrate =learningRate.update(parameter, errorResponse);
+        if (applyCorrection) {
+            double lrate = learningRate.update(parameter, errorResponse);
 
             if (errorResponse >= previousErrorResponse) {
-                double random = (2 * (Math.random() - 0.5));
-                correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
+                random = (2 * (Math.random() - 0.5));
             }
+            correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
                 parameter += correction;
             }
+
             previousErrorResponse = errorResponse;
         }
 
         if (continuous) {
-            parameter += correction;
+            parameter += correction / 100;
         }
 
         return parameter;

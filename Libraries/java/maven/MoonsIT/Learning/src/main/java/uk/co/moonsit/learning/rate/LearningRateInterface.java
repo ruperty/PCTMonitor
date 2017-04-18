@@ -24,6 +24,6 @@ public interface LearningRateInterface {
 
     public void reset();
 
-    public void setLearningRateParameters(String rateparameters);
+    public void setLearningRateParameters(String rateparameters)  ;
 
 }

@@ -22,16 +22,16 @@ public class HillClimbReorganisation extends BaseReorganisation {
 
     private double correction = 0;
 
-    public HillClimbReorganisation(double lr, String  lrType, double delta, boolean continuous) {
-        super(lr, lrType);
+    public HillClimbReorganisation(String lrType, double lr, String parameters, double delta, boolean continuous) throws Exception {
+        super(lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
     }
 
     @Override
-    public double correct(double errorResponse, int period, int counter, double parameter, double parameterMA) {
+    public double correct(double errorResponse, boolean applyCorrection, double parameter, double parameterMA) {
 
-        if (counter % period == 0) {
+        if (applyCorrection) {
             double lrate = learningRate.update(parameter, errorResponse);
 
             double errorResponseChange = errorResponse - previousErrorResponse;

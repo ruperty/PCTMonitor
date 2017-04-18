@@ -18,6 +18,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Link;
 import pct.moons.co.uk.schema.layers.Parameters;
@@ -58,7 +59,7 @@ public class NeuralFunctionFactory {
                 bnf = (BaseNeuralFunction) constructor.newInstance();
                 //logger.info("+++ created " + className);
             } catch (InvocationTargetException ex) {
-                LOG.severe("+++ Cannot create empty constructor " + className);
+                LOG.log(Level.SEVERE, "+++ Cannot create empty constructor {0}", className);
                 throw ex;
             }
         } else {
@@ -66,11 +67,8 @@ public class NeuralFunctionFactory {
             try {
                 bnf = (BaseNeuralFunction) constructor.newInstance(list);
                 //logger.info("+++ created " + className);
-            } catch (InvocationTargetException ex) {
-                LOG.severe("+++ Cannot create parameter constructor " + className);
-                throw ex;
-            } catch (java.lang.InstantiationException ex) {
-                LOG.severe("+++ Cannot create parameter constructor " + className);
+            } catch (InvocationTargetException | java.lang.InstantiationException ex) {
+                LOG.log(Level.SEVERE, "+++ Cannot create parameter constructor {0}", className);
                 throw ex;
             }
         }
@@ -80,7 +78,7 @@ public class NeuralFunctionFactory {
     }
 
     private static List<Parameters> getParameters(String p) {
-        List<Parameters> parameters = new ArrayList<Parameters>();
+        List<Parameters> parameters = new ArrayList<>();
         //logger.info("---> " + p);
         String[] pars = p.split("~");
         if (pars.length > 0 && p.contains("~")) {

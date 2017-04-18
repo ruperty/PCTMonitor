@@ -1,7 +1,7 @@
 Parameter  diagram  saved
-GainReorganisation_RateParameters 0.9:0.95 0.05
+GainReorganisation_RateParameters 0.9^0.95 0.025^0.75
 GainReorganisation_LearningRateType Smooth Additive
-LongMA_Parameter longma LongMA
+GainReorganisation_LearningType HillClimb ecoli
 LearningRate_Parameter learningrate LearningRate
-ShortMA_Parameter shortma ShortMA
+SimOutput_Gain 500000.0 1000000.0
 ParameterMA_Parameter parameterma ParameterMA

@@ -100,8 +100,8 @@ public class ControlPanelHelper implements Runnable {
 
         cdts = getDisplayTypes(); 
         String config = file.getAbsolutePath();
-        config = ControlHierarchy.processODG(config);
-        BaseControlBuild controlBuild = ControlBuildFactory.getControlBuildFunction(config);
+        String xmlconfig = ControlHierarchy.processODG(config);
+        BaseControlBuild controlBuild = ControlBuildFactory.getControlBuildFunction(xmlconfig);
 
         type = getType(controlBuild);
 
