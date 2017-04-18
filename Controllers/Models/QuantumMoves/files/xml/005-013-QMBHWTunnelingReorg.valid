@@ -497,6 +497,22 @@
 </Links>
                             </NeuralFunction>
                         </Transfer>
+                        <Transfer>
+                            <Name>AtomXOffsetSmooth</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Smooth</Type>
+<Parameters>
+    <Name>Smoothness</Name>
+    <Value>0.1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>AtomXOffset</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
                     </Transfers>
                 </OutputFunctions>
             </Functions>
@@ -1302,6 +1318,68 @@
                             </Links>
                         </NeuralFunction>
                     </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>MoveReorg</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ParameterReorganisation</Type>
+<Parameters>
+    <Name>LearningRate</Name>
+    <Value>0.2</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Continuous</Name>
+    <Value>true</Value>
+    <DataType>Boolean</DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveFactor</Name>
+    <Value>0.05</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterSmoothFactor</Name>
+    <Value>0.99</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningType</Name>
+    <Value>HillClimb</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateType</Name>
+    <Value>Additive</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>RateParameters</Name>
+    <Value>0.025^0.75</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>4000000</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>Reset</Name>
+    <Type>Update</Type>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>MoveRef</Name>
+</Links>
+<Links>
+    <Index>2</Index>
+    <Name>AtomXOffsetSmooth</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </InputFunctions>
                 <ReferenceFunctions>
                     <Reference>
@@ -1399,6 +1477,24 @@
                             </Links>
                         </NeuralFunction>
                     </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>LearningRate</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>LearningRate</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>MoveReorg</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </OutputFunctions>
             </Functions>
         </Controller>

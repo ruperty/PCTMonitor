@@ -148,7 +148,7 @@ public class ODGProcessing {
 
             String fname = function.getName();
             if (!Utils.functionExists(layers, fname)) {
-                throw new Exception("Function " + fname + " does not appear in XML configuration, ensure it is less than 3cm from is link");
+                throw new Exception("Function " + fname + " does not appear in XML configuration, ensure it is less than 3cm from its link");
             }
 
         }

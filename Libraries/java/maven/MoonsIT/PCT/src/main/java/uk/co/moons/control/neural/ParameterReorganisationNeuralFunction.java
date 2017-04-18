@@ -34,7 +34,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     //public double longma;
     public double parametersmoothfactor = 0;
     public double parameterma;
-    public Double parametermax=null;
+    public Double parametermax = null;
 
     private double parameter;
     public String learningtype = null;
@@ -124,7 +124,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             if (linkType.equals("Parameter")) {
                 parameterIndex = i;
             }
-            if (linkType.equals("Correct")) {
+            if (linkType.equals("Update")) {
                 correctionIndex = i;
             }
         }
@@ -134,7 +134,9 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         parameterma = parameter;
 
         errorResponseNeuralFunction = controls.get(errorIndex).getNeural();
-        period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
+        if (correctionIndex == null) {
+            period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
+        }
 
         setLearningType();
     }
@@ -175,11 +177,12 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         output = parameter;
         return output;
     }
-    
-    private double applyMax(double par){
-        
-        if(par > parametermax)
+
+    private double applyMax(double par) {
+
+        if (par > parametermax) {
             return parametermax;
+        }
         return par;
     }
 

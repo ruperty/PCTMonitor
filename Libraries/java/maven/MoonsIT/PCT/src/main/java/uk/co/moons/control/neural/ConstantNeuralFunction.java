@@ -56,7 +56,15 @@ public class ConstantNeuralFunction extends NeuralFunction {
         return Double.toString(constant);
     }
 
-    
+    @Override
+    public void setParameter(double par) {
+        constant = par;
+    }
+
+    @Override
+    public double getParameter() {
+        return constant;
+    }
     
     @Override
     public String getParametersString() {
