@@ -1,4 +1,4 @@
 Parameter  diagram  saved
-GainReorganisation_RateParameters 0.025^0.75 0.025^0.5
-GainReorganisation_ParameterMax 4000000.0 3000000.0
-GainReorganisation_Continuous true false
+GainReorganisation_RateParameters 0.025^0.5 0.9^0.95
+GainReorganisation_LearningType Ecoli EcoliSign
+GainReorganisation_AdaptiveFactor 0.05 0.01

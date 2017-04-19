@@ -21,6 +21,7 @@ package uk.co.moonsit.learning.rate;
 public abstract class BaseLearningRate implements LearningRateInterface {
 
     protected double learningRate;
+    protected double learningRateMax = 0.5;
 
     public void setLearningRate(double learningRate) {
         this.learningRate = learningRate;
@@ -28,6 +29,14 @@ public abstract class BaseLearningRate implements LearningRateInterface {
 
     public double getLearningRate() {
         return learningRate;
+    }
+
+    public double getLearningRateMax() {
+        return learningRateMax;
+    }
+
+    public void setLearningRateMax(double learningRateMax) {
+        this.learningRateMax = learningRateMax;
     }
 
     

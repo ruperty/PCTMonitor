@@ -26,7 +26,6 @@ public class SmoothLearningRate extends BaseLearningRate {
     protected Double adaptiveSmoothLower = 0.9;
     private double shortMA = 0;
     private double longMA = 0;
-    protected double learningRateMax = 0.5;
 
     public SmoothLearningRate(Double learningRate, String rateparameters) {
         this.learningRate = learningRate;

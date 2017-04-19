@@ -83,6 +83,10 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
         this.continuous = continuous;
     }
 
+    public void setLearningRateMax(double learningRateMax) {
+        learningRate.setLearningRateMax(learningRateMax);
+    }
+    
     @Override
     public void setLearningRate(double rate) {
         learningRate.setLearningRate(rate);

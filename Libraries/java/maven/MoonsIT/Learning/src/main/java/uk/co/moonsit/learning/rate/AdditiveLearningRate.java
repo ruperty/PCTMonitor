@@ -27,7 +27,6 @@ public class AdditiveLearningRate extends BaseLearningRate {
 
     private double additiveFactor = 0.05;
     private double mulitplicativeFactor = 0.95;
-    private final double learningRateMax = 0.5;
     private double previousWeight = 0;
     private double previousGradient = 0;
 

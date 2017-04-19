@@ -30,7 +30,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     public double learningrate;
     public double correction;
 
-    //public double learningratemax;
+    public double learningratemax;
     //public double shortma;
     //public double longma;
     public double parametersmoothfactor = 0;
@@ -76,10 +76,10 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 rateparameters = param.getValue();
             }
 
-            /*if (pname.equals("LearningRateMax")) {
+            if (pname.equals("LearningRateMax")) {
                 learningratemax = Double.parseDouble(param.getValue());
             }
-            if (pname.equals("AdaptiveSmoothUpper")) {
+            /*if (pname.equals("AdaptiveSmoothUpper")) {
                 adaptivesmoothupper = Double.parseDouble(param.getValue());
             }
             if (pname.equals("AdaptiveSmoothLower")) {
@@ -151,6 +151,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
         reorganisation = (BaseReorganisation) constructor.newInstance(learningratetype, learningrate, rateparameters, adaptivefactor, continuous);
         reorganisation.reset();
+        reorganisation.setLearningRateMax(learningratemax);
 
         /*
         switch (learningtype.toLowerCase()) {
@@ -222,13 +223,13 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     public void setParameter(String par) throws Exception {
         super.setParameter(par);
         String[] arr = par.split(":");
-        /*
+        
         if (arr[0].equalsIgnoreCase("learningratemax")) {
             learningratemax = Double.parseDouble(arr[1]);
             if (reorganisation != null) {
-                reorganisation.setLearningRate(learningratemax);
+                reorganisation.setLearningRateMax(learningratemax);
             }
-        }*/
+        }
         if (arr[0].equalsIgnoreCase("learningrate")) {
             learningrate = Double.parseDouble(arr[1]);
             if (reorganisation != null) {

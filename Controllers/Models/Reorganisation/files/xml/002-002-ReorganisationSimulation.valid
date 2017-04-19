@@ -215,7 +215,7 @@
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
-    <Value>true</Value>
+    <Value>false</Value>
     <DataType>Boolean</DataType>
 </Parameters>
 <Parameters>
@@ -235,17 +235,22 @@
 </Parameters>
 <Parameters>
     <Name>LearningRateType</Name>
-    <Value>Additive</Value>
+    <Value>Smooth</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.025^0.75</Value>
+    <Value>0.025^0.5</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterMax</Name>
-    <Value>4000000</Value>
+    <Value>3000000</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.25</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -342,6 +347,22 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>ParameterMA</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>GainReorganisation</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Correction</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>Correction</Value>
     <DataType>String</DataType>
 </Parameters>
 <Links>
