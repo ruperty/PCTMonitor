@@ -1,2 +1,4 @@
 Parameter  diagram  saved
-GainReorganisation_AdaptiveFactor 0.05 0.01
+GainReorganisation_RateParameters 0.025^0.75 0.025^0.5
+GainReorganisation_ParameterMax 4000000.0 3000000.0
+GainReorganisation_Continuous true false

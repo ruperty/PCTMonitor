@@ -20,7 +20,6 @@ package uk.co.moonsit.learning.reorganisation;
  */
 public class EcoliReorganisation extends BaseReorganisation {
 
-
     private double random = 0;
 
     public EcoliReorganisation(String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
@@ -41,14 +40,15 @@ public class EcoliReorganisation extends BaseReorganisation {
             correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
                 parameter += correction;
+            } else {
+                correction = correction / 100;
             }
 
             previousErrorResponse = errorResponse;
         }
 
         if (continuous) {
-            correction=correction / 100;
-            parameter += correction ;
+            parameter += correction;
         }
 
         return parameter;
