@@ -20,9 +20,9 @@ package uk.co.moonsit.learning.reorganisation;
  */
 public class HillClimbReorganisation extends BaseReorganisation {
 
-    private double correction = 0;
 
-    public HillClimbReorganisation(String lrType, double lr, String parameters, double delta, boolean continuous) throws Exception {
+
+    public HillClimbReorganisation(String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
         super(lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;

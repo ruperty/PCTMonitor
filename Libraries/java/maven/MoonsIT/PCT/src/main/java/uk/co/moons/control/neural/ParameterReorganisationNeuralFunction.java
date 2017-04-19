@@ -14,6 +14,7 @@
  */
 package uk.co.moons.control.neural;
 
+import java.lang.reflect.Constructor;
 import uk.co.moons.control.functions.BaseControlFunction;
 import java.util.List;
 import java.util.logging.Logger;
@@ -21,14 +22,14 @@ import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.math.RMath;
 import uk.co.moonsit.learning.error.RMSErrorResponse;
 import uk.co.moonsit.learning.reorganisation.BaseReorganisation;
-import uk.co.moonsit.learning.reorganisation.EcoliReorganisation;
-import uk.co.moonsit.learning.reorganisation.HillClimbReorganisation;
 
 public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
     private static final Logger LOG = Logger.getLogger(ParameterReorganisationNeuralFunction.class.getName());
 
     public double learningrate;
+    public double correction;
+
     //public double learningratemax;
     //public double shortma;
     //public double longma;
@@ -50,7 +51,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     /*public Double adaptivesmoothupper = null;
     public Double adaptivesmoothlower = null;*/
     public Double adaptivefactor = null;
-    public boolean continuous = false;
+    public Boolean continuous = false;
     private boolean applyCorrection = false;
     private Integer correctionIndex = null;
 
@@ -117,7 +118,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             if (linkType == null) {
                 continue;
             }
-            if (linkType.equals("ErrorResponse")) {
+            if (linkType.equals("Error")) {
                 errorIndex = i;
                 continue;
             }
@@ -142,6 +143,16 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     }
 
     private void setLearningType() throws Exception {
+
+        String className = "uk.co.moonsit.learning.reorganisation." + learningtype + "Reorganisation";
+        Class theClass = Class.forName(className);
+
+        Constructor constructor = theClass.getConstructor(String.class, Double.class, String.class, Double.class, Boolean.class);
+
+        reorganisation = (BaseReorganisation) constructor.newInstance(learningratetype, learningrate, rateparameters, adaptivefactor, continuous);
+        reorganisation.reset();
+
+        /*
         switch (learningtype.toLowerCase()) {
             case "hillclimb":
                 reorganisation = new HillClimbReorganisation(learningratetype, learningrate, rateparameters, adaptivefactor, continuous);
@@ -151,7 +162,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 reorganisation = new EcoliReorganisation(learningratetype, learningrate, rateparameters, adaptivefactor, continuous);
                 reorganisation.reset();
                 break;
-        }
+        }*/
     }
 
     @Override
@@ -161,9 +172,10 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         parameterma = RMath.smooth(parameter, parameterma, parametersmoothfactor);
 
         applyCorrection = applyCorrection();
-        parameter = applyMax(reorganisation.correct(errorResponse, applyCorrection, parameter, parameterma));
+        parameter = applyLimits(reorganisation.correct(errorResponse, applyCorrection, parameter, parameterma));
         { // display parameters
             learningrate = reorganisation.getLearningRate();
+            correction=reorganisation.getCorrection();
             //shortma = reorganisation.getShortMA();
             //longma = reorganisation.getLongMA();
         }/*
@@ -178,10 +190,14 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         return output;
     }
 
-    private double applyMax(double par) {
+    private double applyLimits(double par) {
 
         if (par > parametermax) {
             return parametermax;
+        }
+
+        if (par < -parametermax) {
+            return -parametermax;
         }
         return par;
     }

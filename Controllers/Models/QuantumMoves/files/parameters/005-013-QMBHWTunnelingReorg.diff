@@ -1,5 +1,5 @@
 Parameter  diagram  saved
 SimTime_TimeLimit 0.25 0.4
-LearningRate_Parameter learningrate LearningRate
+CollectRef_Constant -0.02 -0.06
 AtomXOffsetSmooth_Smoothness 0.1 0.5
 AtomOffsetActive_Key 4.0 5.0

@@ -53,17 +53,26 @@ import uk.co.moonsit.learning.rate.SmoothLearningRate;
  */
 public abstract class BaseReorganisation implements ReorganisationInterface {
 
+    protected double correction = 0;
     protected double delta = 0.025;
     protected boolean continuous = false;
     protected BaseLearningRate learningRate;
     protected double previousErrorResponse;
 
-    public BaseReorganisation( String type, double lr, String parameters) throws Exception {
-        setLRT(type, lr ,  parameters);
+    public BaseReorganisation(String type, double lr, String parameters) throws Exception {
+        setLRT(type, lr, parameters);
     }
 
     public void reset() {
         learningRate.reset();
+    }
+
+    public double getCorrection() {
+        return correction;
+    }
+
+    public void setCorrection(double correction) {
+        this.correction = correction;
     }
 
     public void setAdaptiveFactor(Double delta) {

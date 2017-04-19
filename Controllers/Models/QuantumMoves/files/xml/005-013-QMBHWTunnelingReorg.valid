@@ -513,6 +513,17 @@
 </Links>
                             </NeuralFunction>
                         </Transfer>
+                        <Transfer>
+                            <Name>AtomXOffsetSmoothAbs</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Absolute</Type>
+<Links>
+    <Index>0</Index>
+    <Name>AtomXOffsetSmooth</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
                     </Transfers>
                 </OutputFunctions>
             </Functions>
@@ -1331,7 +1342,7 @@
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
-    <Value>true</Value>
+    <Value>false</Value>
     <DataType>Boolean</DataType>
 </Parameters>
 <Parameters>
@@ -1361,7 +1372,7 @@
 </Parameters>
 <Parameters>
     <Name>ParameterMax</Name>
-    <Value>4000000</Value>
+    <Value>10</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -1372,10 +1383,12 @@
 <Links>
     <Index>1</Index>
     <Name>MoveRef</Name>
+    <Type>Parameter</Type>
 </Links>
 <Links>
     <Index>2</Index>
-    <Name>AtomXOffsetSmooth</Name>
+    <Name>AtomXOffsetSmoothAbs</Name>
+    <Type>Error</Type>
 </Links>
                             </NeuralFunction>
                         </Transfer>

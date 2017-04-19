@@ -18,12 +18,11 @@ package uk.co.moonsit.learning.reorganisation;
  *
  * @author Rupert
  */
-public class EcoliReorganisation extends BaseReorganisation {
+public class EcoliSignReorganisation extends BaseReorganisation {
 
-    private double correction = 0;
     private double random = 0;
 
-    public EcoliReorganisation(String lrType, double lr, String parameters, double delta, boolean continuous) throws Exception {
+    public EcoliSignReorganisation(String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
         super(lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
@@ -34,9 +33,8 @@ public class EcoliReorganisation extends BaseReorganisation {
 
         if (applyCorrection) {
             double lrate = learningRate.update(parameter, errorResponse);
-
             if (errorResponse >= previousErrorResponse) {
-                random = (2 * (Math.random() - 0.5));
+                random =Math.signum( Math.random() - 0.5);
             }
             correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
@@ -47,7 +45,8 @@ public class EcoliReorganisation extends BaseReorganisation {
         }
 
         if (continuous) {
-            parameter += correction / 100;
+            correction=correction / 100;
+            parameter += correction ;
         }
 
         return parameter;

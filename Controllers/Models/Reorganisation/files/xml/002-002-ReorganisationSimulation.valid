@@ -243,13 +243,20 @@
     <Value>0.025^0.75</Value>
     <DataType>String</DataType>
 </Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>4000000</Value>
+    <DataType>Double</DataType>
+</Parameters>
 <Links>
     <Index>0</Index>
     <Name>RMSErrorResponse</Name>
+    <Type>Error</Type>
 </Links>
 <Links>
     <Index>1</Index>
     <Name>SimOutput</Name>
+    <Type>Parameter</Type>
 </Links>
                             </NeuralFunction>
                         </Transfer>

@@ -30,7 +30,7 @@ public class ODGConfig011_OuputLinkPositionTest {
         } catch (Exception ex) {
             System.out.println(ex.toString());
 
-            if (ex.toString().equals("java.lang.Exception: Function IntegrateY does not appear in XML configuration, ensure it is less than 3cm from is link")) {
+            if (ex.toString().equals("java.lang.Exception: Function IntegrateY does not appear in XML configuration, ensure it is less than 3cm from its link")) {
                 System.out.println("Correct exception");
             } else {
                 fail(ex.toString());

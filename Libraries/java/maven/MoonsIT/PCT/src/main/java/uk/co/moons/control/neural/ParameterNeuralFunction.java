@@ -42,7 +42,7 @@ public class ParameterNeuralFunction extends NeuralFunction {
         for (Parameters param : ps) {
             String pname = param.getName();
             if (pname.equals("Parameter")) {
-                parameter = param.getValue().toLowerCase();
+                parameter = param.getValue();
             }
         }
         if (parameter == null) {
@@ -57,7 +57,7 @@ public class ParameterNeuralFunction extends NeuralFunction {
 
         parameterNeuralFunction = controls.get(0).getNeural();
         try {
-            output = parameterNeuralFunction.getParameter(parameter);
+            output = parameterNeuralFunction.getParameter(parameter.toLowerCase());
         } catch (IllegalArgumentException|NoSuchFieldException | SecurityException | IllegalAccessException ex) {
             LOG.log(Level.INFO, "Parameter {0}", parameter);
             Logger.getLogger(ParameterNeuralFunction.class.getName()).log(Level.SEVERE, null, ex);
@@ -68,7 +68,7 @@ public class ParameterNeuralFunction extends NeuralFunction {
     @Override
     public double compute() throws Exception {
 
-        output = parameterNeuralFunction.getParameter(parameter);
+        output = parameterNeuralFunction.getParameter(parameter.toLowerCase());
         return output;
     }
 
