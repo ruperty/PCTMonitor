@@ -34,9 +34,10 @@ public class EcoliSignReorganisation extends BaseReorganisation {
         if (applyCorrection) {
             double lrate = learningRate.update(parameter, errorResponse);
             if (errorResponse >= previousErrorResponse) {
-                random =Math.signum( Math.random() - 0.5);
+                random = Math.signum(Math.random() - 0.5);
             }
-            correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
+            correction = computeCorrection(lrate, delta * random, parameterMA);//, Math.abs(errorResponse));
+            //correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
                 parameter += correction;
             }
@@ -45,8 +46,8 @@ public class EcoliSignReorganisation extends BaseReorganisation {
         }
 
         if (continuous) {
-            correction=correction / 100;
-            parameter += correction ;
+            correction = correction / 100;
+            parameter += correction;
         }
 
         return parameter;

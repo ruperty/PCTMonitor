@@ -16,12 +16,9 @@ package uk.co.moonsit.learning.reorganisation;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import uk.co.moonsit.learning.rate.AdditiveLearningRate;
 import uk.co.moonsit.learning.rate.BaseLearningRate;
-import uk.co.moonsit.learning.rate.SmoothLearningRate;
 
 /**
  * <b>Integration function.</b>
@@ -67,6 +64,10 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
         learningRate.reset();
     }
 
+    protected double computeCorrection(double lrate, double delta, double parameterMA/*, double error*/) {
+        return lrate * delta * parameterMA ;//* error;
+    }
+
     public double getCorrection() {
         return correction;
     }
@@ -86,7 +87,7 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
     public void setLearningRateMax(double learningRateMax) {
         learningRate.setLearningRateMax(learningRateMax);
     }
-    
+
     @Override
     public void setLearningRate(double rate) {
         learningRate.setLearningRate(rate);
