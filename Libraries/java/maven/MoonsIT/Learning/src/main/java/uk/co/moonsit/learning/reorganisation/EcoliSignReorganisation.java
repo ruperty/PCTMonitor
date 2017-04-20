@@ -36,7 +36,7 @@ public class EcoliSignReorganisation extends BaseReorganisation {
             if (errorResponse >= previousErrorResponse) {
                 random = Math.signum(Math.random() - 0.5);
             }
-            correction = computeCorrection(lrate, delta * random, parameterMA);//, Math.abs(errorResponse));
+            correction = computeCorrection(lrate, delta * random, parameterMA, Math.abs(errorResponse));
             //correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
                 parameter += correction;

@@ -5,8 +5,9 @@
 SELECT	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Model FROM QUANTUM.SCORES 
 --SELECT	* FROM QUANTUM.SCORES 
 where level=13  
+and model = '005-013-QMBHWTunnelingReorg'
 --and model = '005-002-QMPositionSingleIntegrator'
-and model = '005-011-QMBHWTunneling'
+--and model = '005-011-QMBHWTunneling'
 order by level, score desc;
 
 SELECT * FROM QUANTUM.PARAMETERS where ID = '20170412-19-01-17.575' 

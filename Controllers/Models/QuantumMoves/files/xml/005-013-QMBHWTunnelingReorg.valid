@@ -1385,12 +1385,17 @@
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.025^0.75</Value>
+    <Value>0.025^0.5</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterMax</Name>
     <Value>10</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.5</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>

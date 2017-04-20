@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moonsit.database.DatabaseAccess;
+import uk.co.moonsit.utils.MoonsString;
 
 public class RecordQMNode extends NeuralFunction {
 
@@ -42,6 +43,7 @@ public class RecordQMNode extends NeuralFunction {
     private String level;
     private String oldLevel;
     private String id;
+    private final boolean debug = false;
 
     public RecordQMNode() {
         super();
@@ -305,12 +307,18 @@ public class RecordQMNode extends NeuralFunction {
         update.append(" where ConstraintKey='").append(constraintKey).append("' and model='").append(model).append("'");
 
         insert.append(")");
-        LOG.info(insert.toString());
+        if (debug) {
+            LOG.info(insert.toString());
+        }
         try {
             db.executeUpdate(insert.toString());
         } catch (SQLIntegrityConstraintViolationException ex) {
-            LOG.info(ex.toString());
-            LOG.info(update.toString());
+            if (debug) {
+                LOG.info(ex.toString());
+            }
+            if (debug) {
+                LOG.info(update.toString());
+            }
             String oldId = getOldID(model);
             removeOldParameters(oldId);
             db.executeUpdate(update.toString());
@@ -348,7 +356,7 @@ public class RecordQMNode extends NeuralFunction {
                 String[] arr = data.split("_");
                 for (String arr1 : arr) {
                     String[] vals = arr1.split(":");
-                    constraint.append(vals[1]).append(delimiter);
+                    constraint.append(MoonsString.formatStringPlaces(vals[1], 4)).append(delimiter);
                 }
             }
         }
@@ -402,7 +410,9 @@ public class RecordQMNode extends NeuralFunction {
 
     @Override
     public void close() throws Exception {
-       if(db!=null) db.close();
+        if (db != null) {
+            db.close();
+        }
     }
 
 }

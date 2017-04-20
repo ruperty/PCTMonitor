@@ -78,11 +78,15 @@ public class RCmdControl {
         RCmdControl rc = new RCmdControl();
         LOG.info("+++ Start ");
         boolean print = false;
+        boolean out = false;
         long runTime = 0;
 
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-print")) {
                 print = Boolean.parseBoolean(args[++i]);
+            }
+            if (args[i].equals("-out")) {
+                out = Boolean.parseBoolean(args[++i]);
             }
             if (args[i].equals("-runTime")) {
                 runTime = Long.parseLong(args[++i]);
@@ -96,8 +100,10 @@ public class RCmdControl {
                 ch = new RobotControlHierarchy(config);
                 ch.setPrint(print);
                 ch.setRunTime(runTime);
-                ch.setOutputFile(System.getProperty("user.home") + File.separator + "tmp" + File.separator 
-                        + "PCT" + File.separator + "Controllers" + File.separator  + ch.getFileNamePrefix() + ".csv");
+                if (out) {
+                    ch.setOutputFile(System.getProperty("user.home") + File.separator + "tmp" + File.separator
+                            + "PCT" + File.separator + "Controllers" + File.separator + ch.getFileNamePrefix() + ".csv");
+                }
 
                 /*
                 if (rc.isConnected()) {
