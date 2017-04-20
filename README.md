@@ -1,7 +1,7 @@
 # PCTMonitor
 Robotic control software
 
-To run the application from Netbeans follow these steps
+To run the application from Netbeans IDE follow these steps
 
 1. Open the project Libraries\java\netbeans\PCTMonitor.
 

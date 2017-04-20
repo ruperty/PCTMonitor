@@ -37,8 +37,26 @@
 <Value>50</Value>
 <DataType>Double</DataType>
                             </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>Zero</Name>
+                            </Links>
                         </NeuralFunction>
                     </Input>
+                    <Transfers>
+                        <Transfer>
+                            <Name>Zero</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Constant</Type>
+<Parameters>
+    <Name>Constant</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </InputFunctions>
             </Functions>
         </Controller>
@@ -1499,6 +1517,22 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>LearningRate</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>MoveReorg</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>Correction</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>Correction</Value>
     <DataType>String</DataType>
 </Parameters>
 <Links>

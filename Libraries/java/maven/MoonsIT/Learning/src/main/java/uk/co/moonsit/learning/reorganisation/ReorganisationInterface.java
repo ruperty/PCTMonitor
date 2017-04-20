@@ -20,6 +20,7 @@ package uk.co.moonsit.learning.reorganisation;
  */
 public interface ReorganisationInterface {
 
+
     public double correct(double errorResponse, boolean applyCorrection, double parameter, double parameterMA) ;
 
     public void setLearningRate(double learningRate);

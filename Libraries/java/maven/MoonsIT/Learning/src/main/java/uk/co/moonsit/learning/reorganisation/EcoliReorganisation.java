@@ -37,7 +37,8 @@ public class EcoliReorganisation extends BaseReorganisation {
             if (errorResponse >= previousErrorResponse) {
                 random = (2 * (Math.random() - 0.5));
             }
-            correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
+            correction = computeCorrection(lrate, delta * random, parameterMA);//, Math.abs(errorResponse));
+            //correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
                 parameter += correction;
             } else {
