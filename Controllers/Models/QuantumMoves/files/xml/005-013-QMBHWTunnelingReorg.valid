@@ -218,7 +218,7 @@
 <Type>MaxSeries</Type>
 <Parameters>
     <Name>Model</Name>
-    <Value>005-011-QMBHWTunneling</Value>
+    <Value>005-013-QMBHWTunnelingReorg</Value>
     <DataType></DataType>
 </Parameters>
 <Parameters>
@@ -542,6 +542,22 @@
 </Links>
                             </NeuralFunction>
                         </Transfer>
+                        <Transfer>
+                            <Name>OffsetError</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Marked</Type>
+<Links>
+    <Index>0</Index>
+    <Name>AtomXOffsetSmoothAbs</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Update</Name>
+    <Type>Mark</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
                     </Transfers>
                 </OutputFunctions>
             </Functions>
@@ -634,6 +650,24 @@
                         </Transfer>
                     </Transfers>
                 </InputFunctions>
+                <OutputFunctions>
+                    <Output>
+                        <Name>Update</Name>
+                        <Description>...</Description>
+                        <NeuralFunction>
+                            <Type>Parameter</Type>
+                            <Parameters>
+<Name>Parameter</Name>
+<Value>QMReset</Value>
+<DataType></DataType>
+                            </Parameters>
+                            <Links>
+<Index>0</Index>
+<Name>SimTime</Name>
+                            </Links>
+                        </NeuralFunction>
+                    </Output>
+                </OutputFunctions>
             </Functions>
         </Controller>
         <Controller>
@@ -1400,7 +1434,7 @@
 </Parameters>
 <Links>
     <Index>0</Index>
-    <Name>Reset</Name>
+    <Name>Update</Name>
     <Type>Update</Type>
 </Links>
 <Links>
@@ -1410,7 +1444,7 @@
 </Links>
 <Links>
     <Index>2</Index>
-    <Name>AtomXOffsetSmoothAbs</Name>
+    <Name>OffsetError</Name>
     <Type>Error</Type>
 </Links>
                             </NeuralFunction>
@@ -1538,6 +1572,22 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>Correction</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>MoveReorg</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>ParameterMA</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Parameter</Type>
+<Parameters>
+    <Name>Parameter</Name>
+    <Value>ParameterMA</Value>
     <DataType>String</DataType>
 </Parameters>
 <Links>
