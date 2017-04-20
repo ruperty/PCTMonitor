@@ -1,2 +1,3 @@
 Parameter  diagram  saved
-GainReorganisation_RateParameters 0.025^0.5 0.9^0.95
+GainReorganisation_LearningRateType Smooth Additive
+GainReorganisation_LearningType Ecoli HillClimb
