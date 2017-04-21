@@ -137,7 +137,8 @@ public class RecordQMNode extends NeuralFunction {
                     String[] vals = arr1.split(":");
                     StringBuilder sql = new StringBuilder();
                     sql.append("insert into parameters(id,functionname,parameter,value)values(");
-                    sql.append("'").append("<ID>").append("','").append(lname).append("','").append(vals[0]).append("',").append(vals[1]).append(")");
+                    sql.append("'").append("<ID>").append("','").append(lname).append("','")
+                            .append(vals[0]).append("',").append(MoonsString.formatStringPlaces(vals[1], 6)).append(")");
                     //LOG.info(sql.toString());
                     parametersSql.add(sql.toString());
                 }
@@ -356,7 +357,7 @@ public class RecordQMNode extends NeuralFunction {
                 String[] arr = data.split("_");
                 for (String arr1 : arr) {
                     String[] vals = arr1.split(":");
-                    constraint.append(MoonsString.formatStringPlaces(vals[1], 4)).append(delimiter);
+                    constraint.append(MoonsString.formatStringPlaces(vals[1], 6)).append(delimiter);
                 }
             }
         }

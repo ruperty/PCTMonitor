@@ -61,8 +61,21 @@ public class AdditiveLearningRate extends BaseLearningRate {
     }
 
     @Override
-    public void setLearningRateParameters(String rateparameters)   {
+    public void setLearningRateParameters(String rateparameters) {
         setLearningRateParametersPrivate(rateparameters);
+    }
+
+    @Override
+    public String getParametersString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("AdditiveFactor").append(":");
+        sb.append(additiveFactor).append("_");
+
+        sb.append("MulitplicativeFactor").append(":");
+        sb.append(mulitplicativeFactor);
+
+        return sb.toString();
     }
 
 }

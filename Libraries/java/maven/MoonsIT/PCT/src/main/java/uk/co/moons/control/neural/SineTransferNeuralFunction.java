@@ -58,10 +58,11 @@ public class SineTransferNeuralFunction extends NeuralFunction {
         List<BaseControlFunction> controls = links.getControlList();
         double input = controls.get(0).getValue();
 
-        double sign = Math.signum(input);
-
-        output = sign * (yshift + amplitude + amplitude * Math.sin(Math.toRadians((input + phase) * frequency + xshift)));
-
+        // ???
+        // double sign = Math.signum(input);
+        //output = sign * (yshift + amplitude + amplitude * Math.sin(Math.toRadians((input + phase) * frequency + xshift)));
+        
+        output = yshift + amplitude * Math.sin(Math.toRadians((input + phase) * frequency + xshift));
 
         return output;
     }

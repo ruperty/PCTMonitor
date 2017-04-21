@@ -23,6 +23,8 @@ public abstract class BaseLearningRate implements LearningRateInterface {
     protected double learningRate;
     protected double learningRateMax = 0.5;
 
+    
+
     public void setLearningRate(double learningRate) {
         this.learningRate = learningRate;
     }
@@ -40,7 +42,4 @@ public abstract class BaseLearningRate implements LearningRateInterface {
     }
 
     
-
-    
-
 }

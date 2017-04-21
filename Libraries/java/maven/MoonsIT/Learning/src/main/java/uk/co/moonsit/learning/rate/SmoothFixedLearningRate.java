@@ -20,45 +20,50 @@ import uk.co.moons.math.RMath;
  *
  * @author Rupert Young
  */
-public class SmoothLearningRate extends BaseLearningRate {
+public class SmoothFixedLearningRate extends BaseLearningRate {
 
-    protected Double adaptiveSmoothUpper = 0.95;
-    protected Double adaptiveSmoothLower = 0.9;
+    protected Double smooth = 0.95;
     private double shortMA = 0;
-    private double longMA = 0;
+    private double offset = 0;
 
-    public SmoothLearningRate(Double learningRate, String rateparameters) {
+    public SmoothFixedLearningRate(Double learningRate, String rateparameters) {
         this.learningRate = learningRate;
         setLearningRateParametersPrivate(rateparameters);
     }
 
     @Override
     public double update(double weight, double error) {
-        if (adaptiveSmoothUpper != 0) {
-            shortMA = RMath.smooth(error, shortMA, adaptiveSmoothLower);
-            longMA = RMath.smooth(error, longMA, adaptiveSmoothUpper);
-            if (longMA != 0) {
-                learningRate = Math.min(learningRateMax, /*10 * */ Math.abs((shortMA - longMA) / shortMA));
-            }
-        }
+        shortMA = RMath.smooth(error - offset, shortMA, smooth);
+        learningRate = Math.min(learningRateMax, /*10 * */ shortMA / (shortMA + 1));
         return learningRate;
     }
 
     @Override
     public void reset() {
         shortMA = 0;
-        longMA = 0;
     }
-    
-     @Override
-    public void setLearningRateParameters(String rateparameters)   {
+
+    @Override
+    public void setLearningRateParameters(String rateparameters) {
         setLearningRateParametersPrivate(rateparameters);
     }
 
-     
     private void setLearningRateParametersPrivate(String rateparameters) {
         String[] arr = rateparameters.split("\\^");
-        adaptiveSmoothLower = Double.parseDouble(arr[0]);
-        adaptiveSmoothUpper = Double.parseDouble(arr[1]);
+        smooth = Double.parseDouble(arr[0]);
+        offset = Double.parseDouble(arr[1]);
+    }
+
+    @Override
+    public String getParametersString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Smooth").append(":");
+        sb.append(smooth).append("_");
+
+        sb.append("Offset").append(":");
+        sb.append(offset);
+
+        return sb.toString();
     }
 }

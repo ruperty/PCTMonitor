@@ -10,7 +10,7 @@ and model = '005-013-QMBHWTunnelingReorg'
 --and model = '005-011-QMBHWTunneling'
 order by level, score desc;
 
-SELECT * FROM QUANTUM.PARAMETERS where ID = '20170412-19-01-17.575' 
+SELECT * FROM QUANTUM.PARAMETERS where ID = '20170421-17-20-42.144' 
 order by functionname, parameter;
 --and value != 0 order by functionname, parameter;
 

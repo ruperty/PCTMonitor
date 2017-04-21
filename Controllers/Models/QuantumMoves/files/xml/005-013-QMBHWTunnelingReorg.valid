@@ -114,6 +114,62 @@
                             </NeuralFunction>
                         </Transfer>
                         <Transfer>
+                            <Name>TargetOffset</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Subtract</Type>
+<Parameters>
+    <Name>Sign</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>LaserX</Name>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>TargetX</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>OffsetSine</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>SineTransfer</Type>
+<Parameters>
+    <Name>Amplitude</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Frequency</Name>
+    <Value>75</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Phase</Name>
+    <Value>36000</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>XShift</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>YShift</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>TargetOffset</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
                             <Name>AtomX</Name>
                             <Description>...</Description>
                             <NeuralFunction>
@@ -543,18 +599,33 @@
                             </NeuralFunction>
                         </Transfer>
                         <Transfer>
-                            <Name>OffsetError</Name>
+                            <Name>OffsetSum</Name>
                             <Description>...</Description>
                             <NeuralFunction>
-<Type>Marked</Type>
+<Type>Addition</Type>
 <Links>
     <Index>0</Index>
     <Name>AtomXOffsetSmoothAbs</Name>
 </Links>
 <Links>
     <Index>1</Index>
+    <Name>OffsetSine</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>OffsetError</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Marked</Type>
+<Links>
+    <Index>0</Index>
     <Name>Update</Name>
     <Type>Mark</Type>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>OffsetSum</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>

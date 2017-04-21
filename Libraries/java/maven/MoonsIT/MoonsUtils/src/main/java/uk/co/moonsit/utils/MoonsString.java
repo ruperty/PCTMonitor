@@ -68,19 +68,20 @@ public class MoonsString {
     }
 
     public static String formatStringPlaces(Double d, int places) {
-        String format = "%."+places+"f";
-        
+        String format = "%." + places + "f";
+
         return String.format(format, d);
     }
 
     public static String formatStringPlaces(String s, int places) {
         int index = s.indexOf(".");
-        if(s.length()-index-1 <= places)
+        if (s.length() - index - 1 <= places) {
             return s;
-        
+        }
+
         Double d = Double.parseDouble(s);
-        String format = "%."+places+"f";
-        
+        String format = "%." + places + "f";
+
         return String.format(format, d);
     }
 
@@ -92,7 +93,7 @@ public class MoonsString {
     }
 
     public static void main(String[] args) {
-/*
+        /*
         String[] s = MoonsString.split("&", "&NegativeTransitionControlOutput^0^null~PositiveTransitionControlOutput^1^null~");
         System.out.println(s[0]);
         System.out.println(s[1]);
@@ -100,9 +101,12 @@ public class MoonsString {
         String[] pars = MoonsString.split("~", "");
 
         System.out.println(pars.length);
-        */
-        String s = "10.06";
-        int index = s.indexOf(".");
-        System.out.println(index);        
+         */
+        String s = "HillClimb";
+        int code = s.hashCode();
+        System.out.println(code);
+        s = "Ecoli";
+        code = s.hashCode();
+        System.out.println(code);
     }
 }

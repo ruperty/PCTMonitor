@@ -22,29 +22,15 @@ import uk.co.moonsit.learning.rate.BaseLearningRate;
 import uk.co.moonsit.utils.MoonsString;
 
 /**
- * <b>Integration function.</b>
+ * <b>....</b>
  *
  * <p>
- * Leaky integrator function.
+ * ...
  *
  * <p>
- * The amplified input is integrated and slowed by a slowing factor.
+ * The .
  *
- * If the input is infinity then zero is output. However, if IgnoreInfinity is
- * true, then the previous output is returned. However, if EnableInfinity is
- * true, then infinity is output.
- *
- * If EnableInfinity is true, output is infinity, and the input returns to a
- * real value then the output is set to the reset value, which comes from a
- * link, if configured.
- *
- * </p>
- * The configuration parameters to the function are as follows:
- * <p>
- * <b>Gain</b> - the amplification factor (type Double). Mandatory. <br>
- * <b>Slow</b> - the slowing factor (type Double). <br>
- * <b>EnableInfinity</b> - true or false (type Boolean).<br>
- * </p>
+ * 
  *
  * @author Rupert Young <rupert@moonsit.co.uk>
  * @version 1.0
@@ -151,5 +137,11 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
     public void setLearningRateParameters(String rateparameters) {
         learningRate.setLearningRateParameters(rateparameters);
     }
+    
+       
+    public String getLearningRateParametersString() {
+        return learningRate.getParametersString();
+    }
+    
     
 }

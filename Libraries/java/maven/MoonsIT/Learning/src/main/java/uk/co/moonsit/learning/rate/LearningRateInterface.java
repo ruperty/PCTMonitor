@@ -20,10 +20,13 @@ package uk.co.moonsit.learning.rate;
  */
 public interface LearningRateInterface {
 
-    public double update(double response, double error);
+    public double update(double weight, double error);
 
     public void reset();
 
     public void setLearningRateParameters(String rateparameters)  ;
+    
+    public String getParametersString() ;
+    
 
 }
