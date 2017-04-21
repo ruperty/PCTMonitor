@@ -150,7 +150,7 @@
 </Parameters>
 <Parameters>
     <Name>Phase</Name>
-    <Value>36000</Value>
+    <Value>3.6</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
@@ -373,7 +373,7 @@
 </Parameters>
 <Parameters>
     <Name>LinksList</Name>
-    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters</Value>
+    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters</Value>
     <DataType></DataType>
 </Parameters>
 <Links>
@@ -644,7 +644,7 @@
                             <Type>QMSensor</Type>
                             <Parameters>
 <Name>TimeLimit</Name>
-<Value>0.25</Value>
+<Value>0.6</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -1029,7 +1029,7 @@
                             <Type>Proportional</Type>
                             <Parameters>
 <Name>Gain</Name>
-<Value>0.75</Value>
+<Value>1</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -1115,7 +1115,7 @@
                             </Parameters>
                             <Parameters>
 <Name>Gain</Name>
-<Value>6000</Value>
+<Value>4000</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -1183,7 +1183,7 @@
 <Type>Constant</Type>
 <Parameters>
     <Name>Constant</Name>
-    <Value>-0.1</Value>
+    <Value>0</Value>
     <DataType>Double</DataType>
 </Parameters>
                             </NeuralFunction>
@@ -1215,7 +1215,7 @@
                             <Type>Sigmoid</Type>
                             <Parameters>
 <Name>OutScale</Name>
-<Value>0.02</Value>
+<Value>0.1</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -1393,7 +1393,7 @@
 <Type>Constant</Type>
 <Parameters>
     <Name>Constant</Name>
-    <Value>0.2</Value>
+    <Value>0.1</Value>
     <DataType>Double</DataType>
 </Parameters>
                             </NeuralFunction>
@@ -1470,7 +1470,7 @@
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
-    <Value>0.05</Value>
+    <Value>0.5</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
@@ -1480,17 +1480,17 @@
 </Parameters>
 <Parameters>
     <Name>LearningType</Name>
-    <Value>HillClimb</Value>
+    <Value>Ecoli</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningRateType</Name>
-    <Value>Additive</Value>
+    <Value>SmoothFixed</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.025^0.5</Value>
+    <Value>0.5^0</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
@@ -1552,7 +1552,7 @@
 <Type>Constant</Type>
 <Parameters>
     <Name>Constant</Name>
-    <Value>0.35</Value>
+    <Value>0.3</Value>
     <DataType>Double</DataType>
 </Parameters>
                             </NeuralFunction>
@@ -1589,7 +1589,7 @@
                             </Parameters>
                             <Parameters>
 <Name>InScale</Name>
-<Value>1000</Value>
+<Value>10</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -1824,7 +1824,7 @@
 <Type>Constant</Type>
 <Parameters>
     <Name>Constant</Name>
-    <Value>-0.02</Value>
+    <Value>-0.06</Value>
     <DataType>Double</DataType>
 </Parameters>
                             </NeuralFunction>

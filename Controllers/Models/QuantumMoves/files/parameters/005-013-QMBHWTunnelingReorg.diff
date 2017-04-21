@@ -1,16 +1,3 @@
 Parameter  diagram  saved
-SimTime_TimeLimit 0.25 0.6
-MoveReorg_RateParameters 0.025^0.5 0.5^0
 TargetOutput_OutScale 0.01 0.008
-ShiftRef_Constant 0.2 0.1
-MoveReorg_LearningRateType Additive SmoothFixed
-CollectRef_Constant -0.02 -0.06
-MoveReorg_AdaptiveFactor 0.05 0.5
-MoveRef_Constant 0.35 0.3
-LaserXVelocityOutput_Gain 0.75 1.0
 MoveOutput_OutScale 0.019 0.01
-AtomOffsetOutput_OutScale 0.02 0.1
-MoveOutput_InScale 1000.0 10.0
-LaserXAccelOutput_Gain 6000.0 4000.0
-MoveReorg_LearningType HillClimb Ecoli
-AtomOffsetRef_Constant -0.1 0.0
