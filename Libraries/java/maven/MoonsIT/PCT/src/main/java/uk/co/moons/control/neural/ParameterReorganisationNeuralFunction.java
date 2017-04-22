@@ -17,6 +17,7 @@ package uk.co.moons.control.neural;
 import java.lang.reflect.Constructor;
 import uk.co.moons.control.functions.BaseControlFunction;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.math.RMath;
@@ -116,7 +117,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public void init() throws Exception {
+    public void init() throws Exception  {
         List<BaseControlFunction> controls = links.getControlList();
         int errorIndex = 0;
         int parameterIndex = 1;
@@ -144,7 +145,12 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
         errorResponseNeuralFunction = controls.get(errorIndex).getNeural();
         if (correctionIndex == null) {
-            period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
+            try {
+                period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
+            } catch (Exception ex) {
+                Logger.getLogger(ParameterReorganisationNeuralFunction.class.getName()).log(Level.SEVERE, null, ex);
+                throw new Exception("Has the error link been set for "+this.getName());
+            }
         }
 
         setLearningType();
@@ -197,9 +203,9 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         String className = "uk.co.moonsit.learning.reorganisation." + learningtype + "Reorganisation";
         Class theClass = Class.forName(className);
 
-        Constructor constructor = theClass.getConstructor(String.class, Double.class, String.class, Double.class, Boolean.class);
+        Constructor constructor = theClass.getConstructor(String.class, String.class, Double.class, String.class, Double.class, Boolean.class);
 
-        reorganisation = (BaseReorganisation) constructor.newInstance(learningratetype, learningrate, rateparameters, adaptivefactor, continuous);
+        reorganisation = (BaseReorganisation) constructor.newInstance(this.getName(), learningratetype, learningrate, rateparameters, adaptivefactor, continuous);
         reorganisation.reset();
         reorganisation.setLearningRateMax(learningratemax);
 

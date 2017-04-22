@@ -156,5 +156,15 @@ public class SigmoidNeuralFunction extends NeuralFunction {
 
         return sb.toString();
     }
+    
+     @Override
+    public void setParameter(double par) {
+        outscale = par;
+    }
+
+    @Override
+    public double getParameter() {
+        return outscale;
+    }
 
 }

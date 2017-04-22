@@ -22,8 +22,8 @@ public class EcoliReorganisation extends BaseReorganisation {
 
     private double random = 0;
 
-    public EcoliReorganisation(String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
-        super(lrType, lr, parameters);
+    public EcoliReorganisation(String name, String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
+        super(name, lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
     }

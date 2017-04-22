@@ -22,8 +22,8 @@ public class HillClimbReorganisation extends BaseReorganisation {
 
 
 
-    public HillClimbReorganisation(String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
-        super(lrType, lr, parameters);
+    public HillClimbReorganisation(String name,String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
+        super(name, lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
     }

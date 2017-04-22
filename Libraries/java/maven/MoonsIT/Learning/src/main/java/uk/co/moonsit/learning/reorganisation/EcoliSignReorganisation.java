@@ -22,8 +22,8 @@ public class EcoliSignReorganisation extends BaseReorganisation {
 
     private double random = 0;
 
-    public EcoliSignReorganisation(String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
-        super(lrType, lr, parameters);
+    public EcoliSignReorganisation(String name, String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
+        super(name,lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
     }

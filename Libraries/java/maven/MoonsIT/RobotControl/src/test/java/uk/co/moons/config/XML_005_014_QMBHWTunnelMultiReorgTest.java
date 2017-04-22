@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ReStart
  */
-public class XML_005_013_QMBHWTunnellingReorgTest {
+public class XML_005_014_QMBHWTunnelMultiReorgTest {
 
-    public XML_005_013_QMBHWTunnellingReorgTest() {
+    public XML_005_014_QMBHWTunnelMultiReorgTest() {
     }
 
     /**
@@ -22,7 +22,7 @@ public class XML_005_013_QMBHWTunnellingReorgTest {
      */
     @Test
     public void testMain() {
-        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-013-QMBHWTunnelingReorg"};
+        String[] args = {"..\\..\\..\\..\\..\\Controllers\\Models\\QuantumMoves\\", "005-014-QMBHWTunnelMultiReorg"};
         System.out.println(args[0] + args[1]);
 
         try {
