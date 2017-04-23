@@ -17,6 +17,7 @@ package uk.co.moons.control.neural;
 import java.util.List;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
+import uk.co.moonsit.utils.MoonsString;
 
 /**
  *
@@ -73,5 +74,14 @@ public class MarkedNeuralFunction extends NeuralFunction {
         return output;
     }
 
+     @Override
+    public String getDataString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Value").append(":");
+        sb.append(MoonsString.formatStringPlaces(output, 6));
+
+        return sb.toString();
+    }
     
 }

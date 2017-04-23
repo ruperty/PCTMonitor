@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath uk.co.moons.run.RCmdControl -xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-014-QMBHWTunnelMultiReorg.odg 005-013-QMBHWTunnelingReorg.odg 005-011-QMBHWTunneling.odg 005-012-QMXAtomSurfAccSin.odg 005-010-QMBHWShovelling.odg   005-009-QMXAtomSurf.odg -xprint  true  -xrunTime 10000 -out true</exec.args>
+                <exec.args>-classpath %classpath uk.co.moons.run.RCmdControl -xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-014-QMBHWTunnelMultiReorg.odg -xprint  true  -xrunTime 10000 -xout true</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
@@ -24,7 +24,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath uk.co.moons.run.RCmdControl -xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-014-QMBHWTunnelMultiReorg.odg 005-013-QMBHWTunnelingReorg.odg 005-011-QMBHWTunneling.odg 005-012-QMXAtomSurfAccSin.odg 005-010-QMBHWShovelling.odg   005-009-QMXAtomSurf.odg -xprint  true  -xrunTime 10000 -out true</exec.args>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath uk.co.moons.run.RCmdControl -xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-014-QMBHWTunnelMultiReorg.odg -xprint  true  -xrunTime 10000 -xout true</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
             </properties>
@@ -39,7 +39,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath uk.co.moons.run.RCmdControl -xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-014-QMBHWTunnelMultiReorg.odg 005-013-QMBHWTunnelingReorg.odg 005-011-QMBHWTunneling.odg 005-012-QMXAtomSurfAccSin.odg 005-010-QMBHWShovelling.odg   005-009-QMXAtomSurf.odg -xprint  true  -xrunTime 10000 -out true</exec.args>
+                <exec.args>-classpath %classpath uk.co.moons.run.RCmdControl -xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-014-QMBHWTunnelMultiReorg.odg -xprint  true  -xrunTime 10000 -xout true</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>

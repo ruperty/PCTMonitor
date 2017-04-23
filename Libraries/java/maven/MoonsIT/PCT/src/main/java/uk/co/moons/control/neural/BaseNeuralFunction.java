@@ -99,16 +99,21 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
 
         for (String link : linkslist.split(",")) {
             String[] larr = link.split("\\^");
+            if (larr.length < 2) {
+                throw new Exception("Function " + larr[0] + " specification in " + getName() + " is missing value.");
+            }
 
             BaseControlFunction control = hmControlFunctions.get(larr[0]);
             if (control == null) {
                 throw new Exception("Function " + larr[0] + " indicated by link is missing. If function exists in ODG drawing ensure it is less than 3cm from linked function.");
             }
             links.addControl(control);
+
             links.addType(larr[1]);
         }
     }
 
+    
     protected Comparator linkAlphaComparator = new Comparator<BaseControlFunction>() {
 
         @Override

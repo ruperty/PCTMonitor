@@ -125,18 +125,23 @@ public class RecordQMNode extends NeuralFunction {
 
     private void constructParametersSql(List<BaseControlFunction> controls) {
         parametersSql.clear();
+        String insertPrefix = "insert into parameters(id,functionname,parameter,value)values(";
         for (int i = 0; i < controls.size(); i++) {
             String lname = controls.get(i).getName();
             String ltype = links.getType(i);
-            if (ltype.toLowerCase().startsWith("parameters")) {
+            if (ltype.toLowerCase().startsWith("parameters") || ltype.toLowerCase().startsWith("value")) {
                 //LOG.info("Parameters from " + lname + " recording");
-                String data = controls.get(i).getNeural().getParametersString();
+                String data ;
+                if (ltype.toLowerCase().startsWith("parameters")) {
+                    data = controls.get(i).getNeural().getParametersString();
+                } else {
+                    data = controls.get(i).getNeural().getDataString();
+                }
                 String[] arr = data.split("_");
                 for (String arr1 : arr) {
-
                     String[] vals = arr1.split(":");
                     StringBuilder sql = new StringBuilder();
-                    sql.append("insert into parameters(id,functionname,parameter,value)values(");
+                    sql.append(insertPrefix);
                     sql.append("'").append("<ID>").append("','").append(lname).append("','")
                             .append(vals[0]).append("',").append(MoonsString.formatStringPlaces(vals[1], 6)).append(")");
                     //LOG.info(sql.toString());

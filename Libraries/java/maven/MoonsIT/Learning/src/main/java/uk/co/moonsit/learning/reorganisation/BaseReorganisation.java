@@ -55,11 +55,11 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
         learningRate.reset();
     }
 
-    protected double computeCorrection(double lrate, double delta, double parameterMA, double error) {
+    protected double computeCorrection(double lrate, double delta, double parameter, double parameterMA, double error) {
         double correct = lrate * delta * parameterMA;
         int places = 4;
         System.out.println(name +": "+MoonsString.formatPlaces(error, places) + " " + MoonsString.formatPlaces(lrate, places) + " "
-                + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameterMA, places));
+                + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameter+correct, places));
         //  LOG.log(Level.INFO, "{0} {1} {2}", new Object[]{MoonsString.formatPlaces( lrate,4), MoonsString.formatPlaces( correct,4), MoonsString.formatPlaces( parameterMA,4)});
 
         return correct;//* error;

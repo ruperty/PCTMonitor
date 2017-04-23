@@ -20,21 +20,21 @@ import uk.co.moons.math.RMath;
  *
  * @author Rupert Young
  */
-public class SmoothFixedLearningRate extends BaseLearningRate {
+public class SmoothMaxLearningRate extends BaseLearningRate {
 
     protected Double smooth = 0.95;
     private double shortMA = 0;
-    private double offset = 0;
+    private double max = 0;
 
-    public SmoothFixedLearningRate(Double learningRate, String rateparameters) {
+    public SmoothMaxLearningRate(Double learningRate, String rateparameters) {
         this.learningRate = learningRate;
         setLearningRateParametersPrivate(rateparameters);
     }
 
     @Override
     public double update(double weight, double error) {
-        shortMA = RMath.smooth(error - offset, shortMA, smooth);
-        learningRate = Math.min(learningRateMax, /*10 * */ shortMA / (shortMA + 1));
+        shortMA = RMath.smooth(error, shortMA, smooth);
+        learningRate = Math.min(learningRateMax, shortMA / max);
         return learningRate;
     }
 
@@ -51,7 +51,7 @@ public class SmoothFixedLearningRate extends BaseLearningRate {
     private void setLearningRateParametersPrivate(String rateparameters) {
         String[] arr = rateparameters.split("\\^");
         smooth = Double.parseDouble(arr[0]);
-        offset = Double.parseDouble(arr[1]);
+        max = Double.parseDouble(arr[1]);
     }
 
     @Override
@@ -61,8 +61,8 @@ public class SmoothFixedLearningRate extends BaseLearningRate {
         sb.append("Smooth").append(":");
         sb.append(smooth).append("_");
 
-        sb.append("Offset").append(":");
-        sb.append(offset);
+        sb.append("Max").append(":");
+        sb.append(max);
 
         return sb.toString();
     }
