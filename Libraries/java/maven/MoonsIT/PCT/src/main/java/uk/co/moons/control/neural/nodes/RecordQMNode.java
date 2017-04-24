@@ -129,14 +129,10 @@ public class RecordQMNode extends NeuralFunction {
         for (int i = 0; i < controls.size(); i++) {
             String lname = controls.get(i).getName();
             String ltype = links.getType(i);
-            if (ltype.toLowerCase().startsWith("parameters") || ltype.toLowerCase().startsWith("value")) {
+            if (ltype.toLowerCase().startsWith("parameters")) {
                 //LOG.info("Parameters from " + lname + " recording");
-                String data ;
-                if (ltype.toLowerCase().startsWith("parameters")) {
-                    data = controls.get(i).getNeural().getParametersString();
-                } else {
-                    data = controls.get(i).getNeural().getDataString();
-                }
+                String data = controls.get(i).getNeural().getParametersString();
+
                 String[] arr = data.split("_");
                 for (String arr1 : arr) {
                     String[] vals = arr1.split(":");
@@ -148,15 +144,61 @@ public class RecordQMNode extends NeuralFunction {
                     parametersSql.add(sql.toString());
                 }
             }
+            if (ltype.toLowerCase().startsWith("value")) {
+                //LOG.info("Parameters from " + lname + " recording");
+                String data = controls.get(i).getNeural().getDataString();
+
+                String[] arr = data.split("_");
+                for (String arr1 : arr) {
+                    String[] vals = arr1.split(":");
+                    StringBuilder sql = new StringBuilder();
+                    sql.append(insertPrefix);
+                    sql.append("'").append("<ID>").append("','").append(lname).append("','")
+                            .append(vals[0]).append("',<").append(vals[0]).append(">)");
+                    if (debug) {
+                        LOG.info(sql.toString());
+                    }
+                    parametersSql.add(sql.toString());
+                }
+            }
         }
     }
 
     private void recordParameters(String id) throws SQLException {
         for (String sql : parametersSql) {
             String actualSql = sql.replace("<ID>", id);
+            int start = actualSql.indexOf("<");
+            int end = actualSql.indexOf(">");
+            if (start >= 0) {
+                String vname = actualSql.substring(start+1, end);
+                String value = getDataValue(vname);
+                actualSql = actualSql.replace("<" + vname + ">", value);
+            }
             //LOG.info(actualSql);
             db.executeUpdate(actualSql);
         }
+    }
+
+    private String getDataValue(String vname) {
+        List<BaseControlFunction> controls = links.getControlList();
+        String value = null;
+        for (int i = 0; i < controls.size(); i++) {
+            //String lname = controls.get(i).getName();
+            String ltype = links.getType(i);
+            if (ltype.toLowerCase().startsWith("value")) {
+                String data = controls.get(i).getNeural().getDataString();
+
+                String[] arr = data.split("_");
+                for (String arr1 : arr) {
+                    String[] vals = arr1.split(":");
+                    if (vname.equals(vals[0])) {
+                        return vals[1];
+                    }
+                }
+            }
+        }
+
+        return value;
     }
 
     /*

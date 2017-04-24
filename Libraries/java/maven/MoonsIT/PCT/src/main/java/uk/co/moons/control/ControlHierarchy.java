@@ -107,6 +107,28 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
+    private boolean isException(String s) {
+
+        if (s.contains("Reorg")) {
+            if (s.contains("Smooth")) {
+                return true;
+            }
+            if (s.contains("Offset")) {
+                return true;
+            }
+            if (s.contains("AdditiveFactor")) {
+                return true;
+            }
+            if (s.contains("MulitplicativeFactor")) {
+                return true;
+            }
+        }
+
+        
+
+        return false;
+    }
+
     private void loadPars(String config) throws Exception {//int xmlIndex = config.indexOf("xml")
 
         String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
@@ -123,9 +145,15 @@ public class ControlHierarchy extends BaseControlHierarchy {
                 int initSize = sb.length();
 
                 for (String key : props.stringPropertyNames()) {
+                    if (isException(key)) {
+                        continue;
+                    }
                     String[] arr = key.split("_");
                     String functionName = arr[0];
                     String parameter = arr[1];
+                    if (parameter.startsWith("Tolerances")) {
+                        continue;
+                    }
                     String override = props.getProperty(key);
                     BaseControlFunction function = hmControls.get(functionName);
                     if (function == null) {

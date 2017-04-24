@@ -39,27 +39,58 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
 
     private static final Logger LOG = Logger.getLogger(BaseReorganisation.class.getName());
 
+    public final static int HILLCLIMB = 1;
+    public final static int ECOLI = 2;
+    public final static int ECOLISIGN = 3;
+
     protected double correction = 0;
     protected double delta = 0.025;
     protected boolean continuous = false;
     protected BaseLearningRate learningRate;
     protected double previousErrorResponse;
-    private String name;
+    private final String name;
 
     public BaseReorganisation(String name, String type, double lr, String parameters) throws Exception {
         this.name = name;
         setLRT(type, lr, parameters);
     }
+    
+     public static int getLearningType(String lt) {
+        switch (lt) {
+            case "HillClimb":
+                return HILLCLIMB;
+            case "Ecoli":
+                return ECOLI;
+            case "EcoliSign":
+                return ECOLISIGN;
+
+        }
+        return 0;
+    }
+
+      public static String getLearningType(int lt) {
+        switch (lt) {
+            case HILLCLIMB:
+                return "HillClimb";
+            case ECOLI:
+                return "Ecoli";
+            case ECOLISIGN:
+                return "EcoliSign";
+
+        }
+        return null;
+    }
+   
 
     public void reset() {
         learningRate.reset();
     }
 
     protected double computeCorrection(double lrate, double delta, double parameter, double parameterMA, double error) {
-        double correct = lrate * delta * parameterMA;
+        double correct = lrate * delta;// * parameterMA;
         int places = 4;
-        System.out.println(name +": "+MoonsString.formatPlaces(error, places) + " " + MoonsString.formatPlaces(lrate, places) + " "
-                + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameter+correct, places));
+        System.out.println(name + ": " + MoonsString.formatPlaces(error, places) + " " + MoonsString.formatPlaces(lrate, places) + " "
+                + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameter + correct, places));
         //  LOG.log(Level.INFO, "{0} {1} {2}", new Object[]{MoonsString.formatPlaces( lrate,4), MoonsString.formatPlaces( correct,4), MoonsString.formatPlaces( parameterMA,4)});
 
         return correct;//* error;

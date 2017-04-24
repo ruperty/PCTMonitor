@@ -22,19 +22,14 @@ import java.util.logging.Logger;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.math.RMath;
 import uk.co.moonsit.learning.error.RMSErrorResponse;
+import uk.co.moonsit.learning.rate.BaseLearningRate;
 import uk.co.moonsit.learning.reorganisation.BaseReorganisation;
 
 public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
     private static final Logger LOG = Logger.getLogger(ParameterReorganisationNeuralFunction.class.getName());
 
-    private final int HILLCLIMB = 1;
-    private final int ECOLI = 2;
-    private final int ECOLISIGN = 3;
-
-    private final int SMOOTH = 1;
-    private final int SMOOTHFIXED = 2;
-    private final int ADDITIVE = 3;
+  
 
     public double learningrate;
     public double correction;
@@ -156,41 +151,17 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
         setLearningType();
     }
 
-    private int getLearningType(String lt) {
-        switch (lt) {
-            case "HillClimb":
-                return HILLCLIMB;
-            case "Ecoli":
-                return ECOLI;
-            case "EcoliSign":
-                return ECOLISIGN;
-
-        }
-        return 0;
-    }
-
-    private int getLearningRateType(String lt) {
-        switch (lt) {
-            case "Smooth":
-                return SMOOTH;
-            case "SmoothFixed":
-                return SMOOTHFIXED;
-            case "Additive":
-                return ADDITIVE;
-
-        }
-        return 0;
-    }
+   
 
     @Override
     public String getParametersString() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("LearningType").append(":");
-        sb.append(getLearningType(learningtype)).append("_");
+        sb.append(BaseReorganisation.getLearningType(learningtype)).append("_");
 
         sb.append("LearningRateType").append(":");
-        sb.append(getLearningRateType(learningratetype)).append("_");
+        sb.append(BaseLearningRate.getLearningRateType(learningratetype)).append("_");
         if (reorganisation != null) {
             sb.append(reorganisation.getLearningRateParametersString());
         }
