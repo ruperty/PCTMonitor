@@ -30,6 +30,11 @@ public class RobotControlHierarchy extends ControlHierarchy {
     private static final Logger logger = Logger.getLogger(RobotControlHierarchy.class.getName());
     private MotorHandler motorHandler;
 
+    public RobotControlHierarchy(String config, String parFile) throws Exception {
+        super(config, parFile);
+        motorHandler = new MotorHandler(true);
+    }
+
     public RobotControlHierarchy(String config) throws Exception {
         super(config);
         motorHandler = new MotorHandler(true);
@@ -60,7 +65,6 @@ public class RobotControlHierarchy extends ControlHierarchy {
     public void init() throws Exception {
         initRobot();
     }*/
-
     @Override
     public void close() throws Exception {
         long start = System.currentTimeMillis();
@@ -77,8 +81,6 @@ public class RobotControlHierarchy extends ControlHierarchy {
         logger.log(Level.INFO, "---> Close {0}", (System.currentTimeMillis() - start));
     }
 
-  
-    
     /*
     public void initRobot() throws Exception {
 
@@ -89,8 +91,8 @@ public class RobotControlHierarchy extends ControlHierarchy {
                 initNeuralFunction(name);
             }
         }
-*/
-        /*
+     */
+ /*
          initNeuralFunction("PhoneSensorRead");
          initNeuralFunction("AccSensorRead");
          initNeuralFunction("LinAccSensorRead");
@@ -151,7 +153,7 @@ public class RobotControlHierarchy extends ControlHierarchy {
          if (initNeuralFunction("MotorBCountReference")) {
          isUsingNXT = true;
          }
-         */
+     */
  /*
          if (hmControls.get("SequenceSwitchInput") != null) {
          hmControls.get("SequenceSwitchInput").setValue(1);
@@ -160,7 +162,6 @@ public class RobotControlHierarchy extends ControlHierarchy {
          if (hmControls.get("SpaceControlInput") != null) {
          hmControls.get("SpaceControlInput").setValue(1);
          }
-         */
+     */
     //}
-
 }

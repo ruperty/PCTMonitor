@@ -101,10 +101,9 @@ public class RCmdControl {
             String config = args[1];
             RobotControlHierarchy ch = null;
             try {
-                ch = new RobotControlHierarchy(config);
+                ch = new RobotControlHierarchy(config, parametersFileName);
                 ch.setPrint(print);
                 ch.setRunTime(runTime);
-                ch.setParametersFileName(parametersFileName);
                 if (out) {
                     ch.setOutputFile(System.getProperty("user.home") + File.separator + "tmp" + File.separator
                             + "PCT" + File.separator + "Controllers" + File.separator + ch.getFileNamePrefix() + ".csv");

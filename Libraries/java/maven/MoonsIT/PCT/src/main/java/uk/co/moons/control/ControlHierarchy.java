@@ -99,6 +99,29 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
+    public ControlHierarchy(String config, String parFile) throws Exception {
+        super();
+
+        this.parametersFileName=parFile;
+        configPath = processODG(config);
+        fileNamePrefix = configPath.substring(configPath.lastIndexOf(File.separator) + 1, configPath.lastIndexOf("."));
+        controlBuild = ControlBuildFactory.getControlBuildFunction(configPath);
+        this.layers = controlBuild.getLayers();
+        this.hmControllers = controlBuild.getHmControllers();
+        this.hmControls = controlBuild.getHmControls();
+        this.orderedControllers = controlBuild.getOrderedControllers();
+
+        checkOrderedControllers();
+        loadPars(config);
+
+        List<String> lof = Environment.getInstance().getListOutputFunctions();
+        if (lof == null) {
+            listOutputFunctions = new ArrayList<>();
+        } else {
+            listOutputFunctions = lof;
+        }
+    }
+
     public void setParametersFileName(String parametersFileName) {
         this.parametersFileName = parametersFileName;
     }
