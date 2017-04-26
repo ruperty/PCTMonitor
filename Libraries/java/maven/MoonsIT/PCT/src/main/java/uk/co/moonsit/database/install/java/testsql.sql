@@ -11,17 +11,17 @@ and model = '005-014-QMBHWTunnelMultiReorg'
 --and model = '005-011-QMBHWTunneling'
 order by level, score desc;
 
-SELECT * FROM QUANTUM.PARAMETERS where ID = '20170423-15-35-41.590' 
-order by functionname, parameter;
+--SELECT * FROM QUANTUM.PARAMETERS where ID = '20170423-15-35-41.590' 
+--order by functionname, parameter;
 
 SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'OffsetError'
 order by value,functionname, parameter;
 
-SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'ShiftRef' and value > 0.4197 and value < 0.4199
-order by value,functionname, parameter desc;
+--SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'ShiftRef' and value > 0.4197 and value < 0.4199
+--order by value,functionname, parameter desc;
 
-SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'MoveOutput' and value > 0.0030099 and value < 0.0032
-order by value,functionname, parameter desc;
+--SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'MoveOutput' and value > 0.0030099 and value < 0.0032
+--order by value,functionname, parameter desc;
 
 --and value != 0 order by functionname, parameter;
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>target\PCT-1.0.jar</jar>
+  <outfile>C:\Versioning\PCTMonitor\Libraries\java\maven\MoonsIT\PCT\QMData.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon></icon>
+  <classPath>
+    <mainClass>uk.co.moonsit.database.QMData</mainClass>
+    <cp>C:\Program Files\Java\jdk1.8.0_91\db\lib\derby.jar</cp>
+    <cp>C:\Program Files\Java\jdk1.8.0_91\db\lib\derbyclient.jar</cp>
+    <cp>C:\Program Files\Java\jdk1.8.0_91\db\lib\derbynet.jar</cp>
+    <cp>C:\Program Files\Java\jdk1.8.0_91\db\lib\derbytools.jar</cp>
+  </classPath>
+  <jre>
+    <path>C:\\Program Files\\Java\\jdk1.8.0_91</path>
+    <bundledJre64Bit>true</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+    <opt>-Dderby.drda.startNetworkServer=true -Dderby.drda.portNumber=1527 -Dderby.drda.host=0.0.0.0</opt>
+  </jre>
+</launch4jConfig>

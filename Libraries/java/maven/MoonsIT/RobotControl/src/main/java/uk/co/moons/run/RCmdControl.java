@@ -80,6 +80,7 @@ public class RCmdControl {
         boolean print = false;
         boolean out = false;
         long runTime = 0;
+        String parametersFileName=null;
 
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-print")) {
@@ -91,6 +92,9 @@ public class RCmdControl {
             if (args[i].equals("-runTime")) {
                 runTime = Long.parseLong(args[++i]);
             }
+            if (args[i].equals("-pars")) {
+                parametersFileName = args[++i];
+            }
         }
 
         if (args[0].equals("-xml")) {
@@ -100,6 +104,7 @@ public class RCmdControl {
                 ch = new RobotControlHierarchy(config);
                 ch.setPrint(print);
                 ch.setRunTime(runTime);
+                ch.setParametersFileName(parametersFileName);
                 if (out) {
                     ch.setOutputFile(System.getProperty("user.home") + File.separator + "tmp" + File.separator
                             + "PCT" + File.separator + "Controllers" + File.separator + ch.getFileNamePrefix() + ".csv");

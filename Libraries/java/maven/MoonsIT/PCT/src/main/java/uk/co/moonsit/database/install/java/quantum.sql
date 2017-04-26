@@ -1,6 +1,6 @@
 
 
-drop table Scores;
+--drop table Scores;
 
 
 CREATE TABLE Scores (
@@ -21,7 +21,7 @@ CREATE TABLE Scores (
 -- ALTER TABLE scores ALTER COLUMN ConstraintKey  SET DATA TYPE varchar(512);
 
 
-drop table Parameters;
+--drop table Parameters;
 
 CREATE TABLE Parameters (
 	ID varchar (21) NOT NULL ,

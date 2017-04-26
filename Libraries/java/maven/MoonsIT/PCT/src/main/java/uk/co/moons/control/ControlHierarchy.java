@@ -53,6 +53,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
     private long runTime = 0;
     private long runIter = 0;
     private final boolean debug = false;
+    private String parametersFileName = null;
 
     public ControlHierarchy() {
         super();
@@ -98,6 +99,10 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
+    public void setParametersFileName(String parametersFileName) {
+        this.parametersFileName = parametersFileName;
+    }
+
     private void checkOrderedControllers() throws Exception {
         for (String name : orderedControllers) {
             Controller cont = hmControllers.get(name);
@@ -124,17 +129,17 @@ public class ControlHierarchy extends BaseControlHierarchy {
             }
         }
 
-        
-
         return false;
     }
 
     private void loadPars(String config) throws Exception {//int xmlIndex = config.indexOf("xml")
 
-        String fname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
-        String dname = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".diff";
+        if (parametersFileName == null) {
+            parametersFileName = config.substring(0, config.lastIndexOf(File.separator)) + File.separator + "files" + File.separator + "parameters" + File.separator + fileNamePrefix + ".pars";
+        }
+        String dname = parametersFileName.replace(".pars", ".diff");
 
-        File file = new File(fname);
+        File file = new File(parametersFileName);
         if (file.exists()) {
             Properties props;
             try {

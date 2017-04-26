@@ -21,6 +21,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Properties;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -30,13 +31,14 @@ import org.apache.derby.drda.NetworkServerControl;
 public final class DatabaseAccess {
 
     private static final Logger LOG = Logger.getLogger(DatabaseAccess.class.getName());
-    Connection conn;
-    String driver;
-    String url;
-    String uname;
-    String pword;
-    Statement stmt;
-    String errorMsg;
+    private Connection conn;
+    private String driver;
+    private String url;
+    private String uname;
+    private String pword;
+    private Statement stmt;
+    private String errorMsg;
+    boolean startedServer = false;
 
     public DatabaseAccess() throws IOException, ClassNotFoundException, Exception {
         PropertyResourceBundle prb;
@@ -68,7 +70,18 @@ public final class DatabaseAccess {
 
         //while (!connect()){}
         if (!connect()) {
-            throw new Exception("Database connection failed");
+            LOG.info("Database connection failed, trying to start network server");
+            NetworkServerControl server = new NetworkServerControl();
+            server.start(null);
+            LOG.info("Database server started");
+            startedServer = true;
+            /*Properties props = server.getCurrentProperties();
+            for (Object key : props.keySet()) {
+                LOG.info(key + " " + props.get(key));
+            }*/
+            if (!connect()) {
+                throw new Exception("Database connection failed");
+            }
         }
     }
 
@@ -133,7 +146,7 @@ public final class DatabaseAccess {
         return errorMsg;
     }
 
-    public void close() {
+    public void close() throws Exception {
         try {
             if (conn != null) {
                 conn.close();
@@ -143,6 +156,11 @@ public final class DatabaseAccess {
             }
         } catch (java.sql.SQLException e) {
             System.out.println("error " + e.toString());
+        }
+        if (startedServer) {
+            NetworkServerControl server = new NetworkServerControl();
+            server.shutdown();
+            LOG.info("Database server shutdown");
         }
     }
 

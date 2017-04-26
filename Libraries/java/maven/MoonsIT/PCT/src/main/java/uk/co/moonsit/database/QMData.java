@@ -35,10 +35,11 @@ public class QMData {
 
     private final Connection conn;
     private PreparedStatement psParam;
+    private DatabaseAccess db;
 
     public QMData() throws IOException, ClassNotFoundException, Exception {
 
-        DatabaseAccess db = new DatabaseAccess();
+        db = new DatabaseAccess();
         conn = db.getConn();
 
     }
@@ -92,21 +93,26 @@ public class QMData {
         }
     }
 
-    public void saveParameters(String dir, String id) throws IOException, SQLException {
+    public void saveParameters(String dir, String id) throws IOException, SQLException, Exception {
         String parameters = getParameters(id);
         System.out.println(parameters);
 
         String model = getModel(id);
-
+        if (model == null) {
+            throw new Exception("No model found for ID " + id);
+        }
         File file = getParamtersFile(dir, model, id);
 
         save(file, parameters);
         System.out.println(file);
     }
 
-    public void close() throws SQLException {
+    public void close() throws SQLException, Exception {
         if (psParam != null) {
             psParam.close();
+        }
+        if (db != null) {
+            db.close();
         }
     }
 
@@ -134,6 +140,16 @@ public class QMData {
             Logger.getLogger(QMData.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
             Logger.getLogger(QMData.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(QMData.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(QMData.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
 
     }
