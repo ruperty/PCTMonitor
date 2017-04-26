@@ -3,6 +3,7 @@ ShiftReorg_RateParameters 0.5^0 0.1^0.8
 MoveReorg_LearningRateType SmoothFixed SmoothMax
 MoveVelocityReorg_LearningRateType SmoothFixed SmoothMax
 MoveReorg_RateParameters 0.5^0 0.1^0.8
+MoveRef_Constant 0.3 0.487
 CollectReorg_LearningRateType SmoothFixed SmoothMax
 ShiftReorg_AdaptiveFactor 0.5 0.05
 MoveVelocityReorg_RateParameters 0.5^0 0.1^0.8
@@ -13,4 +14,4 @@ MoveVelocityReorg_AdaptiveFactor 0.5 0.01
 CollectReorg_AdaptiveFactor 0.5 0.01
 LaserXVelocityOutput_Gain 1.0 1.01
 SimTime_TimeLimit 0.6 0.8
-TargetOutput_OutScale 0.01 0.008
+TargetOutput_OutScale 0.01 0.012
