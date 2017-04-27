@@ -58,8 +58,8 @@ ShiftReorg_AdaptiveFactor=0.05
 MoveReorg_AdaptiveFactor=0.05
 MoveVelocityReorg_AdaptiveFactor=0.01
 CollectReorg_AdaptiveFactor=0.01
-ShiftReorg_LearningRateMax=0.5
-MoveReorg_LearningRateMax=0.5
-MoveVelocityReorg_LearningRateMax=0.5
-CollectReorg_LearningRateMax=0.5
+ShiftReorg_LearningRateMax=0
+MoveReorg_LearningRateMax=0
+MoveVelocityReorg_LearningRateMax=0
+CollectReorg_LearningRateMax=0
 

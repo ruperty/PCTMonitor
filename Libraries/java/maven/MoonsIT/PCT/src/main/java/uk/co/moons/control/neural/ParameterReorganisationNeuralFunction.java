@@ -29,8 +29,6 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
     private static final Logger LOG = Logger.getLogger(ParameterReorganisationNeuralFunction.class.getName());
 
-  
-
     public double learningrate;
     public double correction;
 
@@ -44,7 +42,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     private double parameter;
     public String learningtype = null;
     public String learningratetype = "Smooth";
-    public String rateparameters = "0.9:0.95";
+    public String rateparameters = "0.9^0.95";
     private Integer period;
     private Integer counter;
 
@@ -112,7 +110,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     }
 
     @Override
-    public void init() throws Exception  {
+    public void init() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
         int errorIndex = 0;
         int parameterIndex = 1;
@@ -144,18 +142,22 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 period = errorResponseNeuralFunction.getParameterInt(RMSErrorResponse.PERIOD);
             } catch (Exception ex) {
                 Logger.getLogger(ParameterReorganisationNeuralFunction.class.getName()).log(Level.SEVERE, null, ex);
-                throw new Exception("Has the error link been set for "+this.getName());
+                throw new Exception("Has the error link been set for " + this.getName());
             }
         }
 
         setLearningType();
     }
 
-   
-
     @Override
     public String getParametersString() {
         StringBuilder sb = new StringBuilder();
+
+        sb.append("LearningRateMax").append(":");
+        sb.append(learningratemax).append("_");
+
+        sb.append("AdaptiveFactor").append(":");
+        sb.append(adaptivefactor).append("_");
 
         sb.append("LearningType").append(":");
         sb.append(BaseReorganisation.getLearningType(learningtype)).append("_");

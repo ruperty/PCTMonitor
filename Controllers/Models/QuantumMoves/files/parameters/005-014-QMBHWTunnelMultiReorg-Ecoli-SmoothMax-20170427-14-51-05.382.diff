@@ -1,0 +1,15 @@
+Parameter  diagram  saved
+MoveReorg_RateParameters 0.5^0 0.1^0.8
+ShiftReorg_RateParameters 0.5^0 0.1^0.8
+ShiftReorg_LearningRateType SmoothFixed SmoothMax
+CollectReorg_LearningRateType SmoothFixed SmoothMax
+ShiftRef_Constant 0.1 0.417695
+MoveReorg_LearningRateType SmoothFixed SmoothMax
+CollectRef_Constant -0.06 -0.003675
+AtomXOffsetSmooth_Smoothness 0.1 0.95
+MoveRef_Constant 0.3 0.230754
+LaserXVelocityOutput_Gain 1.0 1.01
+MoveOutput_OutScale 0.019 0.005937
+CollectReorg_RateParameters 0.5^0 0.1^0.8
+MoveVelocityReorg_LearningRateType SmoothFixed SmoothMax
+MoveVelocityReorg_RateParameters 0.5^0 0.1^0.8
