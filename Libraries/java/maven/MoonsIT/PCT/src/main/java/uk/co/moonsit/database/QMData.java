@@ -129,7 +129,9 @@ public class QMData {
             switch (type) {
 
                 case 0:
-                    String id = "20170422-18-35-16.827";
+                    //String id = "20170422-18-35-16.827";
+                    String id = "20170427-14-51-05.382";
+                    
                     ps.saveParameters(dir, id);
                     break;
 

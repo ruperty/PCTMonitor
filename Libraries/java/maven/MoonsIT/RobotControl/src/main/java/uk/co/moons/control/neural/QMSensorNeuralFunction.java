@@ -211,6 +211,7 @@ public class QMSensorNeuralFunction extends NeuralFunction {
             sensor.reset(level);
             first = true;
             qmreset = 0;
+            System.out.println("------------------------------------------------------------------------");
         }
 
         if (first) {

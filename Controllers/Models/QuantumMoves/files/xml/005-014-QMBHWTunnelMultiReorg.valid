@@ -34,7 +34,7 @@
                             </Parameters>
                             <Parameters>
 <Name>Pause</Name>
-<Value>50</Value>
+<Value>0</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>
@@ -264,6 +264,11 @@
 <Name>SimTime</Name>
 <Type>Score:0</Type>
                             </Links>
+                            <Links>
+<Index>5</Index>
+<Name>OffsetSum</Name>
+<Type>OffsetError</Type>
+                            </Links>
                         </NeuralFunction>
                     </Reference>
                     <Transfers>
@@ -309,6 +314,11 @@
 </Links>
 <Links>
     <Index>5</Index>
+    <Name>OffsetSum</Name>
+    <Type>OffsetError</Type>
+</Links>
+<Links>
+    <Index>6</Index>
     <Name>Reset</Name>
     <Type>Reset</Type>
 </Links>
@@ -373,7 +383,7 @@
 </Parameters>
 <Parameters>
     <Name>LinksList</Name>
-    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters</Value>
+    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetError^Value</Value>
     <DataType></DataType>
 </Parameters>
 <Links>
@@ -649,7 +659,7 @@
                             </Parameters>
                             <Parameters>
 <Name>TargetPercentage</Name>
-<Value>10</Value>
+<Value>1</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
@@ -1418,6 +1428,16 @@
     <Name>ShiftRef</Name>
     <Type>Parameter</Type>
 </Links>
+<Links>
+    <Index>1</Index>
+    <Name>OffsetError</Name>
+    <Type>Error</Type>
+</Links>
+<Links>
+    <Index>2</Index>
+    <Name>Update</Name>
+    <Type>Update</Type>
+</Links>
                             </NeuralFunction>
                         </Transfer>
                     </Transfers>
@@ -1798,8 +1818,8 @@
 </Parameters>
 <Parameters>
     <Name>ParameterSmoothFactor</Name>
-    <Value>0.99</Value>
-    <DataType></DataType>
+    <Value>0</Value>
+    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningType</Name>
@@ -1906,8 +1926,8 @@
                             <Type>Sequence</Type>
                             <Parameters>
 <Name>Tolerances</Name>
-<Value>0.01,0.01,0.01,0.001</Value>
-<DataType>Double</DataType>
+<Value>0.01,0.01,0.01,0</Value>
+<DataType></DataType>
                             </Parameters>
                             <Links>
 <Index>0</Index>
@@ -1942,7 +1962,7 @@
                             <Parameters>
 <Name>Constant</Name>
 <Value>4</Value>
-<DataType>Double</DataType>
+<DataType></DataType>
                             </Parameters>
                         </NeuralFunction>
                     </Reference>

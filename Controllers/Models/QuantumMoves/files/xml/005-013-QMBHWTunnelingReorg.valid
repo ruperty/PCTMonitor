@@ -1682,7 +1682,7 @@
                             <Type>Sequence</Type>
                             <Parameters>
 <Name>Tolerances</Name>
-<Value>0.01,0.01,0.01,0.001</Value>
+<Value>0.01,0.01,0.01,0.0001</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Links>

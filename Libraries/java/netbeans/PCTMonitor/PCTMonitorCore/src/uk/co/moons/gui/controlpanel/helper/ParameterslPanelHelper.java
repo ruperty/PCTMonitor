@@ -223,7 +223,7 @@ public class ParameterslPanelHelper implements Runnable {
             label.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseReleased(MouseEvent e) {
-                    LOG.log(Level.INFO, "mouse clicked {0}", layer.getName());
+                    //LOG.log(Level.INFO, "mouse clicked {0}", layer.getName());
 
                     try {
                         saveParameters(list);

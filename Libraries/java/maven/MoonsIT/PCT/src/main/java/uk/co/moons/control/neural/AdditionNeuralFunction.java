@@ -38,7 +38,6 @@ public class AdditionNeuralFunction extends NeuralFunction {
         }
     }
 
-    
     @Override
     public void verifyConfiguration() throws Exception {
         if (links.getControlList().size() != 2) {
@@ -50,6 +49,11 @@ public class AdditionNeuralFunction extends NeuralFunction {
     public double compute() {
         List<BaseControlFunction> controls = links.getControlList();
         output = sign * (controls.get(0).getValue() + controls.get(1).getValue());
+        return output;
+    }
+
+    @Override
+    public double getParameter() {
         return output;
     }
 }

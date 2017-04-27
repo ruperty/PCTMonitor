@@ -20,6 +20,7 @@ package uk.co.moonsit.learning.rate;
  */
 public abstract class BaseLearningRate implements LearningRateInterface {
 
+    public final static int SMOOTHMAX = 0;
     public final static int SMOOTH = 1;
     public final static int SMOOTHFIXED = 2;
     public final static int ADDITIVE = 3;
@@ -47,17 +48,21 @@ public abstract class BaseLearningRate implements LearningRateInterface {
         switch (lt) {
             case "Smooth":
                 return SMOOTH;
+            case "SmoothMax":
+                return SMOOTHMAX;
             case "SmoothFixed":
                 return SMOOTHFIXED;
             case "Additive":
                 return ADDITIVE;
 
         }
-        return 0;
+        return 10;
     }
      
       public static String getLearningRateType(int lt) {
         switch (lt) {
+            case SMOOTHMAX:
+                return "SmoothMax";
             case SMOOTH:
                 return "Smooth";
             case SMOOTHFIXED:

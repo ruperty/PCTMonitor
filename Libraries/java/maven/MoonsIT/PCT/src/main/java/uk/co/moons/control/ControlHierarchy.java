@@ -182,6 +182,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
                     if (parameter.startsWith("Tolerances")) {
                         continue;
                     }
+
                     String override = props.getProperty(key);
                     BaseControlFunction function = hmControls.get(functionName);
                     if (function == null) {

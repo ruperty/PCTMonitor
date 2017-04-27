@@ -14,6 +14,8 @@
  */
 package uk.co.moons.control.neural;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -43,9 +45,9 @@ import uk.co.moons.control.gui.ValuesJFrame;
  * @version 1.0
  */
 public class DisplayNeuralFunction extends NeuralFunction {
-    
+
     private static final Logger LOG = Logger.getLogger(DisplayNeuralFunction.class.getName());
-    
+
     private String alignment = null;
     private Integer x = 0;
     private Integer y = 0;
@@ -54,7 +56,7 @@ public class DisplayNeuralFunction extends NeuralFunction {
     private Integer font = null;
     private Integer places = 3;
     private ValuesJFrame vf;
-    
+
     public DisplayNeuralFunction(List<Parameters> ps) throws Exception {
         super(ps);
         for (Parameters param : ps) {
@@ -81,7 +83,7 @@ public class DisplayNeuralFunction extends NeuralFunction {
             }
         }
     }
-    
+
     private String extractName(String name) {
         if (name.contains(":")) {
             String[] arr = name.split(":");
@@ -89,12 +91,12 @@ public class DisplayNeuralFunction extends NeuralFunction {
         }
         return name;
     }
-    
+
     @Override
     public void init() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
         //controls.sort(linkAlphaComparator);
-        
+
         List<DisplayValue> list = new ArrayList<>();
         int size = controls.size();
         for (int i = 0; i < controls.size(); i++) {
@@ -122,6 +124,14 @@ public class DisplayNeuralFunction extends NeuralFunction {
                 vf.setVisible(true);
             }
         });
+
+        vf.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                LOG.info("Closing program via display window");
+                System.exit(0);
+            }
+        });
     }
 
     /*
@@ -136,10 +146,10 @@ public class DisplayNeuralFunction extends NeuralFunction {
     @Override
     public double compute() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
-        
+
         for (int i = 0; i < controls.size(); i++) {
             String linkType = links.getType(i);
-            
+
             if (linkType != null && linkType.equalsIgnoreCase("Indexed")) {
                 int size = controls.get(i).getNeural().getParametersSize();
                 for (int j = 0; j < size; j++) {
@@ -149,16 +159,16 @@ public class DisplayNeuralFunction extends NeuralFunction {
             }
             if (linkType == null) {
                 vf.changeValue(i, controls.get(i).getValue());
-                
+
             } else {
                 vf.changeValue(i, controls.get(i).getNeural().getParameter(extractName(linkType).toLowerCase()));
             }
-            
+
         }
-        
+
         return output;
     }
-    
+
     @Override
     public void close() throws Exception {
         if (vf != null) {
@@ -166,5 +176,5 @@ public class DisplayNeuralFunction extends NeuralFunction {
             vf.dispose();
         }
     }
-    
+
 }

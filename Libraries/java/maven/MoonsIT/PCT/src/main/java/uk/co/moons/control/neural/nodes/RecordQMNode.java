@@ -41,6 +41,7 @@ public class RecordQMNode extends NeuralFunction {
     private List<String> parametersSql;
     private String constraintKey;
     private String level;
+    
     private String oldLevel;
     private String id;
     private final boolean debug = false;
@@ -245,6 +246,8 @@ public class RecordQMNode extends NeuralFunction {
         String[] arr = data.split("_");
         for (String arr1 : arr) {
             String[] vals = arr1.split(":");
+            if(vals[0].equals("OffsetError"))
+                continue;
             String value;
             if (vals[0].equalsIgnoreCase("model")) {
                 model = vals[1];

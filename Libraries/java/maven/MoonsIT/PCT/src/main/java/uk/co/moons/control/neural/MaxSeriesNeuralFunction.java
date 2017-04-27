@@ -28,10 +28,14 @@ public class MaxSeriesNeuralFunction extends NeuralFunction {
     private int keyIndex = -1;
     private int resetIndex = -1;
     private int[] places;
+    private int[] types;
     private double[] array;
     private double[] lastValues;
     private String[] names;
     private DateAndTime dt;
+
+    private final int PARAMETER = 0;
+    private final int VALUE = 1;
 
     public MaxSeriesNeuralFunction() throws Exception {
         super();
@@ -79,6 +83,7 @@ public class MaxSeriesNeuralFunction extends NeuralFunction {
         names = new String[controls.size() - 1];
         lastValues = new double[controls.size() - 1];
         places = new int[controls.size() - 1];
+        types = new int[controls.size() - 1];
 
         for (int i = 0; i < controls.size(); i++) {
             String lname = extractName(links.getType(i));
@@ -94,8 +99,14 @@ public class MaxSeriesNeuralFunction extends NeuralFunction {
                 }
 
             } else {
-                array[i] = controls.get(i).getValue();//.put(controls.get(i).getName(), controls.get(i).getValue());
                 names[i] = lname;
+                try {
+                    array[i] = controls.get(i).getNeural().getParameter(extractName(links.getType(i)).toLowerCase());
+                    types[i] = PARAMETER;
+                } catch (java.lang.NoSuchFieldException e) {
+                    array[i] = controls.get(i).getValue();
+                    types[i] = VALUE;
+                }
                 places[i] = place;
             }
         }
@@ -112,7 +123,11 @@ public class MaxSeriesNeuralFunction extends NeuralFunction {
         } else if (value > output) {
             output = value;
             for (int i = 0; i < array.length; i++) {
-                array[i] = controls.get(i).getNeural().getParameter(extractName(links.getType(i)).toLowerCase());
+                if (types[i] == PARAMETER) {
+                    array[i] = controls.get(i).getNeural().getParameter(extractName(links.getType(i)).toLowerCase());
+                } else {
+                    array[i] = controls.get(i).getValue();
+                }
             }
         }
 

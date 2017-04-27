@@ -11,6 +11,9 @@ and model = '005-014-QMBHWTunnelMultiReorg'
 --and model = '005-011-QMBHWTunneling'
 order by level, score desc;
 
+SELECT * FROM QUANTUM.PARAMETERS where ID = '20170427-14-51-05.382' 
+order by functionname, parameter;
+
 --SELECT * FROM QUANTUM.PARAMETERS where ID = '20170423-15-35-41.590' 
 --order by functionname, parameter;
 
