@@ -226,7 +226,7 @@
                             </Parameters>
                             <Parameters>
 <Name>Height</Name>
-<Value>150</Value>
+<Value>100</Value>
 <DataType></DataType>
                             </Parameters>
                             <Parameters>
@@ -266,8 +266,7 @@
                             </Links>
                             <Links>
 <Index>5</Index>
-<Name>OffsetSum</Name>
-<Type>OffsetError</Type>
+<Name>OffsetError</Name>
                             </Links>
                         </NeuralFunction>
                     </Reference>
@@ -314,8 +313,8 @@
 </Links>
 <Links>
     <Index>5</Index>
-    <Name>OffsetSum</Name>
-    <Type>OffsetError</Type>
+    <Name>OffsetError</Name>
+    <Type>OffsetError:4</Type>
 </Links>
 <Links>
     <Index>6</Index>
@@ -346,7 +345,7 @@
 </Parameters>
 <Parameters>
     <Name>Height</Name>
-    <Value>150</Value>
+    <Value>100</Value>
     <DataType></DataType>
 </Parameters>
 <Parameters>
@@ -383,7 +382,7 @@
 </Parameters>
 <Parameters>
     <Name>LinksList</Name>
-    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetError^Value</Value>
+    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetErrorMarked^Value,AtomXOffsetSmooth^Parameters</Value>
     <DataType></DataType>
 </Parameters>
 <Links>
@@ -609,7 +608,7 @@
                             </NeuralFunction>
                         </Transfer>
                         <Transfer>
-                            <Name>OffsetSum</Name>
+                            <Name>OffsetError</Name>
                             <Description>...</Description>
                             <NeuralFunction>
 <Type>Addition</Type>
@@ -624,7 +623,7 @@
                             </NeuralFunction>
                         </Transfer>
                         <Transfer>
-                            <Name>OffsetError</Name>
+                            <Name>OffsetErrorMarked</Name>
                             <Description>...</Description>
                             <NeuralFunction>
 <Type>Marked</Type>
@@ -635,7 +634,28 @@
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>OffsetSum</Name>
+    <Name>OffsetError</Name>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
+                            <Name>OffsetErrorLimited</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>Limit</Type>
+<Parameters>
+    <Name>Max</Name>
+    <Value>0.1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>Min</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>OffsetError</Name>
 </Links>
                             </NeuralFunction>
                         </Transfer>
@@ -1430,7 +1450,7 @@
 </Links>
 <Links>
     <Index>1</Index>
-    <Name>OffsetError</Name>
+    <Name>OffsetErrorMarked</Name>
     <Type>Error</Type>
 </Links>
 <Links>
@@ -1522,7 +1542,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>LearningRate</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1538,7 +1558,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>Correction</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1554,7 +1574,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>ParameterMA</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1644,7 +1664,7 @@
 </Links>
 <Links>
     <Index>2</Index>
-    <Name>OffsetError</Name>
+    <Name>OffsetErrorMarked</Name>
     <Type>Error</Type>
 </Links>
                             </NeuralFunction>
@@ -1756,7 +1776,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>LearningRate</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1772,7 +1792,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>Correction</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1788,7 +1808,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>ParameterMA</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1858,7 +1878,7 @@
 </Links>
 <Links>
     <Index>2</Index>
-    <Name>OffsetError</Name>
+    <Name>OffsetErrorMarked</Name>
     <Type>Error</Type>
 </Links>
                             </NeuralFunction>
@@ -1871,7 +1891,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>LearningRate</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1887,7 +1907,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>Correction</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -1903,7 +1923,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>ParameterMA</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -2067,7 +2087,7 @@
 </Parameters>
 <Links>
     <Index>0</Index>
-    <Name>OffsetError</Name>
+    <Name>OffsetErrorMarked</Name>
     <Type>Error</Type>
 </Links>
 <Links>
@@ -2180,7 +2200,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>LearningRate</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -2196,7 +2216,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>Correction</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
@@ -2212,7 +2232,7 @@
 <Parameters>
     <Name>Parameter</Name>
     <Value>ParameterMA</Value>
-    <DataType>String</DataType>
+    <DataType></DataType>
 </Parameters>
 <Links>
     <Index>0</Index>
