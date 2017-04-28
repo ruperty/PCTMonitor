@@ -4,21 +4,33 @@
 
 SELECT	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Model FROM QUANTUM.SCORES 
 --SELECT	* FROM QUANTUM.SCORES 
-where level=13  and id > '20170423-16-00-56.170'
+where level=13  
+--and id = '20170426-21-07-16.754'
+and id > '20170428-10-00-56.170'
 --and model = '005-013-QMBHWTunnelingReorg'
 and model = '005-014-QMBHWTunnelMultiReorg'
 --and model = '005-002-QMPositionSingleIntegrator'
 --and model = '005-011-QMBHWTunneling'
 order by level, score desc;
 
-SELECT * FROM QUANTUM.PARAMETERS where ID = '20170427-14-51-05.382' 
-order by functionname, parameter;
+
+SELECT PARAMETERS.ID,  SCORES.Score,  SCORES.Model, PARAMETERS.functionname, PARAMETERS.Value
+FROM PARAMETERS INNER JOIN SCORES
+ON PARAMETERS.ID = SCORES.ID
+WHERE PARAMETERS.functionname = 'ShiftRef' and PARAMETERS.Value > 0.8
+order by SCORES.score desc;
+
+--SELECT * FROM QUANTUM.PARAMETERS where functionname = 'MoveRef' and value = 0.35  --ID > '2017042-14-51-05.382' 
+--order by functionname, parameter;
+
+--SELECT * FROM QUANTUM.PARAMETERS where ID = '20170424-01-00-17.025' 
+--order by functionname, parameter;
 
 --SELECT * FROM QUANTUM.PARAMETERS where ID = '20170423-15-35-41.590' 
 --order by functionname, parameter;
 
-SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'OffsetError'
-order by value,functionname, parameter;
+--SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'OffsetError'
+--order by value,functionname, parameter;
 
 --SELECT * FROM QUANTUM.PARAMETERS where  functionname = 'ShiftRef' and value > 0.4197 and value < 0.4199
 --order by value,functionname, parameter desc;

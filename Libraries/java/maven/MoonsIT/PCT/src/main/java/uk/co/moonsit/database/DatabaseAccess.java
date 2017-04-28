@@ -85,6 +85,18 @@ public final class DatabaseAccess {
         }
     }
 
+    public DatabaseAccess(String driver, String url, String uname, String pword) throws IOException, ClassNotFoundException, Exception {
+        this.driver = driver;
+        this.url = url;
+        this.uname = uname;
+        this.pword = pword;
+
+        //while (!connect()){}
+        if (!connect()) {
+            throw new Exception("Database connection failed");
+        }
+    }
+
     public void executeQuery(String sql) {// throws java.sql.SQLException {
 
         try {

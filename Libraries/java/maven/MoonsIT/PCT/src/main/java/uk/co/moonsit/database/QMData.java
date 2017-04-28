@@ -44,6 +44,13 @@ public class QMData {
 
     }
 
+    public QMData(String driver, String url, String uname, String pword) throws IOException, ClassNotFoundException, Exception {
+
+        db = new DatabaseAccess(driver, url, uname, pword);
+        conn = db.getConn();
+
+    }
+
     public String getModel(String id) throws SQLException {
         String model = null;
         psParam = conn.prepareStatement("SELECT	 Model FROM QUANTUM.SCORES where ID = ? ");
@@ -121,18 +128,26 @@ public class QMData {
      */
     public static void main(String[] args) {
         String dir = "C:\\Versioning\\PCTMonitor\\Controllers\\Models\\QuantumMoves\\files\\parameters";
+
+        String driver = "org.apache.derby.jdbc.ClientDriver";
+        String user = "quantum";
+        String password = "moves";
+        String url = "jdbc:derby://localhost/QuantumMoves";
         int type = 0;
         QMData ps = null;
         try {
             ps = new QMData();
+            //ps = new QMData(driver, url, user, password);
 
             switch (type) {
 
                 case 0:
                     //String id = "20170422-18-35-16.827";
                     //String id = "20170427-14-51-05.382";
-                    String id = "20170427-19-38-56.295";
-                    
+                    //String id = "20170427-19-38-56.295";
+                    //String id = "20170424-01-00-17.025"; // embedded
+                    String id = "20170428-16-13-17.756";
+
                     ps.saveParameters(dir, id);
                     break;
 
