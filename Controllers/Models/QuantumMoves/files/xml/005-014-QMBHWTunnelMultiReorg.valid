@@ -684,12 +684,12 @@
                             </Parameters>
                             <Parameters>
 <Name>Width</Name>
-<Value>640</Value>
+<Value>800</Value>
 <DataType></DataType>
                             </Parameters>
                             <Parameters>
 <Name>Height</Name>
-<Value>480</Value>
+<Value>640</Value>
 <DataType></DataType>
                             </Parameters>
                             <Links>
