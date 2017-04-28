@@ -1,0 +1,13 @@
+Parameter  diagram  saved
+MoveReorg_RateParameters 0.5^0 0.95^0
+ShiftReorg_RateParameters 0.5^0 0.95^0
+ShiftRef_Constant 0.1 0.417695
+CollectRef_Constant -0.06 -0.003675
+CollectReorg_AdaptiveFactor 0.5 0.1
+AtomXOffsetSmooth_Smoothness 0.1 0.95
+MoveVelocityReorg_AdaptiveFactor 0.5 0.1
+MoveRef_Constant 0.3 0.230754
+LaserXVelocityOutput_Gain 1.0 1.01
+MoveOutput_OutScale 0.019 0.005937
+CollectReorg_RateParameters 0.5^0 0.95^0
+MoveVelocityReorg_RateParameters 0.5^0 0.95^0
