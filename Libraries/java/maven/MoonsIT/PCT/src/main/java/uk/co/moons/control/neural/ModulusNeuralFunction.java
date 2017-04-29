@@ -43,12 +43,13 @@ public class ModulusNeuralFunction extends NeuralFunction {
 
     }
 
+    /*
     @Override
     public void init() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
         for (BaseControlFunction control : controls) {
         }
-    }
+    }*/
 
     @Override
     public double compute() throws Exception {

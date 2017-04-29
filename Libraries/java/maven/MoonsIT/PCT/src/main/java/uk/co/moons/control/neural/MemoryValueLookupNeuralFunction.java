@@ -43,7 +43,7 @@ public class MemoryValueLookupNeuralFunction extends NeuralFunction {
     //private int limit;
     //private int counter;
     private List<Double> list;
-    private ListIterator<Double> iter;
+    //private ListIterator<Double> iter;
 
     public MemoryValueLookupNeuralFunction(List<Parameters> ps) throws Exception {
         super(ps);
