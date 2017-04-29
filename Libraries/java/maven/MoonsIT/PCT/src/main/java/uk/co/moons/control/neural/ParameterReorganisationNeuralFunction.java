@@ -230,8 +230,8 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             return parametermax;
         }
 
-        if (parametermin != null && par < -parametermin) {
-            return -parametermin;
+        if (parametermin != null && par < parametermin) {
+            return parametermin;
         }
         return par;
     }
