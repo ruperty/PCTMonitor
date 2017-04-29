@@ -5,13 +5,11 @@ MoveVelocityReorg_LearningRateType SmoothFixed SmoothMax
 MoveReorg_RateParameters 0.5^0 0.1^0.8
 MoveRef_Constant 0.3 0.35
 CollectReorg_LearningRateType SmoothFixed SmoothMax
-AtomXOffsetSmooth_Smoothness 0.1 0.95
 ShiftReorg_AdaptiveFactor 0.5 0.05
 MoveVelocityReorg_RateParameters 0.5^0 0.1^0.8
 MoveReorg_AdaptiveFactor 0.5 0.05
 CollectReorg_RateParameters 0.5^0 0.1^0.8
 ShiftReorg_LearningRateType SmoothFixed SmoothMax
-MoveVelocityReorg_AdaptiveFactor 0.5 0.01
-CollectReorg_AdaptiveFactor 0.5 0.01
-LaserXVelocityOutput_Gain 1.0 1.01
-TargetOutput_OutScale 0.01 0.008
+MoveVelocityReorg_AdaptiveFactor 0.5 0.05
+CollectReorg_AdaptiveFactor 0.5 0.05
+SimTime_TimeLimit 0.6 0.8

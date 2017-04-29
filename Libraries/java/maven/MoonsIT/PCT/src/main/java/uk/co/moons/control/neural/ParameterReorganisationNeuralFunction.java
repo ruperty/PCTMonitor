@@ -38,6 +38,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     public double parametersmoothfactor = 0;
     public double parameterma;
     public Double parametermax = null;
+    public Double parametermin = null;
 
     private double parameter;
     public String learningtype = null;
@@ -95,6 +96,9 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
             }
             if (pname.equals("ParameterMax")) {
                 parametermax = Double.parseDouble(param.getValue());
+            }
+            if (pname.equals("ParameterMin")) {
+                parametermin = Double.parseDouble(param.getValue());
             }
             if (pname.equals("LearningType")) {
                 learningtype = param.getValue();
@@ -222,12 +226,12 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
     private double applyLimits(double par) {
 
-        if (par > parametermax) {
+        if (parametermax != null && par > parametermax) {
             return parametermax;
         }
 
-        if (par < -parametermax) {
-            return -parametermax;
+        if (parametermin != null && par < -parametermin) {
+            return -parametermin;
         }
         return par;
     }

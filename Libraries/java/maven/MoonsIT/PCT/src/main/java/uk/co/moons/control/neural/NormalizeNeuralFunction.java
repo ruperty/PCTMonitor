@@ -14,32 +14,28 @@
  */
 package uk.co.moons.control.neural;
 
-//import uk.co.moons.math.RMath;
 import java.util.List;
 import pct.moons.co.uk.schema.layers.Parameters;
 import uk.co.moons.control.functions.BaseControlFunction;
 
-public class RoundNeuralFunction extends NeuralFunction {
+public class NormalizeNeuralFunction extends NeuralFunction {
 
-    public int itype = 0;
-    public String type = null;
-    
-    public RoundNeuralFunction() throws Exception {
+    public Double factor = null;
+
+    public NormalizeNeuralFunction() throws Exception {
         super();
     }
 
-    public RoundNeuralFunction(List<Parameters> ps) throws Exception {
+    public NormalizeNeuralFunction(List<Parameters> ps) throws Exception {
         super(ps);
         for (Parameters param : ps) {
             String pname = param.getName();
-            if (pname.equals("Type")) {
-                type = param.getValue();
-                if(type.equalsIgnoreCase("floor"))
-                    itype=1;
-                if(type.equalsIgnoreCase("ceil"))
-                    itype=2;
+            if (pname.equals("Factor")) {
+                factor = Double.parseDouble(param.getValue());
             }
-
+        }
+        if (factor == null) {
+            throw new Exception("NormalizeNeuralFunction requires non-null factor");
         }
     }
 
@@ -48,17 +44,7 @@ public class RoundNeuralFunction extends NeuralFunction {
         List<BaseControlFunction> controls = links.getControlList();
         double value = controls.get(0).getValue();
 
-        switch(itype){
-            case 0:
-                output = Math.round(value);
-                break;
-            case 1:
-                output = Math.floor(value);
-                break;
-            case 2:
-                output = Math.ceil(value);
-                break;
-        }
+        output = (factor-value) / factor;
 
         return output;
     }

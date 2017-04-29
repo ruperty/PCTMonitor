@@ -88,9 +88,12 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
 
     protected double computeCorrection(double lrate, double delta, double parameter, double parameterMA, double error) {
         double correct = lrate * delta;// * parameterMA;
-        int places = 4;
-        System.out.println(name + ": " + MoonsString.formatPlaces(error, places) + " " + MoonsString.formatPlaces(lrate, places) + " "
-                + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameter + correct, places));
+        //int places = 4;
+        
+        System.out.println(String.format("%21s: %7.4f %7.4f %+7.6f %+7.4f", name, error, lrate, correct, parameter + correct));
+        
+        //System.out.println(name + ": " + MoonsString.formatPlaces(error, places) + " " + MoonsString.formatPlaces(lrate, places) + " "
+          //      + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameter + correct, places));
         //  LOG.log(Level.INFO, "{0} {1} {2}", new Object[]{MoonsString.formatPlaces( lrate,4), MoonsString.formatPlaces( correct,4), MoonsString.formatPlaces( parameterMA,4)});
 
         return correct;//* error;
