@@ -6,19 +6,21 @@ SELECT	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Mod
 --SELECT	* FROM QUANTUM.SCORES 
 where level=13  
 --and id = '20170426-21-07-16.754'
-and id > '20170428-10-00-56.170'
+and id > '20170429-10-00-56.170'
 --and model = '005-013-QMBHWTunnelingReorg'
-and model = '005-014-QMBHWTunnelMultiReorg'
+and model = '005-015-QMBHWTunnelScoreReorg'
 --and model = '005-002-QMPositionSingleIntegrator'
 --and model = '005-011-QMBHWTunneling'
 order by level, score desc;
 
 
+/*
 SELECT PARAMETERS.ID,  SCORES.Score,  SCORES.Model, PARAMETERS.functionname, PARAMETERS.Value
 FROM PARAMETERS INNER JOIN SCORES
 ON PARAMETERS.ID = SCORES.ID
 WHERE PARAMETERS.functionname = 'ShiftRef' and PARAMETERS.Value > 0.8
 order by SCORES.score desc;
+*/
 
 --SELECT * FROM QUANTUM.PARAMETERS where functionname = 'MoveRef' and value = 0.35  --ID > '2017042-14-51-05.382' 
 --order by functionname, parameter;
