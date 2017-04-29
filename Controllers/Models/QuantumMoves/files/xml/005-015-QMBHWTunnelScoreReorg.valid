@@ -1100,6 +1100,75 @@
                             </Links>
                         </NeuralFunction>
                     </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>VelocityGainReorg</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ParameterReorganisation</Type>
+<Parameters>
+    <Name>LearningRate</Name>
+    <Value>0.2</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>Continuous</Name>
+    <Value>false</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveFactor</Name>
+    <Value>0.01</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterSmoothFactor</Name>
+    <Value>0</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningType</Name>
+    <Value>Ecoli</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateType</Name>
+    <Value>SmoothMax</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>RateParameters</Name>
+    <Value>0.1^0.8</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMin</Name>
+    <Value>0.001</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>1</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>ScoreError</Name>
+    <Type>Error</Type>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Update</Name>
+    <Type>Update</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </OutputFunctions>
             </Functions>
         </Controller>
@@ -1196,6 +1265,75 @@
                             </Links>
                         </NeuralFunction>
                     </Output>
+                    <Transfers>
+                        <Transfer>
+                            <Name>AccelGainReorg</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ParameterReorganisation</Type>
+<Parameters>
+    <Name>LearningRate</Name>
+    <Value>0.2</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>Continuous</Name>
+    <Value>false</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveFactor</Name>
+    <Value>0.01</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterSmoothFactor</Name>
+    <Value>0</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningType</Name>
+    <Value>Ecoli</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateType</Name>
+    <Value>SmoothMax</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>RateParameters</Name>
+    <Value>0.1^0.8</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMin</Name>
+    <Value>500</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>20000</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>ScoreError</Name>
+    <Type>Error</Type>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Update</Name>
+    <Type>Update</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                    </Transfers>
                 </OutputFunctions>
             </Functions>
         </Controller>
@@ -1433,21 +1571,21 @@
 <Parameters>
     <Name>LearningRate</Name>
     <Value>0.2</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
     <Value>false</Value>
-    <DataType>Boolean</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
-    <Value>0.5</Value>
+    <Value>0.01</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterSmoothFactor</Name>
-    <Value>0.99</Value>
+    <Value>0.9</Value>
     <DataType></DataType>
 </Parameters>
 <Parameters>
@@ -1457,22 +1595,27 @@
 </Parameters>
 <Parameters>
     <Name>LearningRateType</Name>
-    <Value>SmoothFixed</Value>
+    <Value>SmoothMax</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.5^0</Value>
+    <Value>0.1^0.8</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
-    <Name>ParameterMax</Name>
-    <Value>10</Value>
-    <DataType></DataType>
+    <Name>ParameterMin</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningRateMax</Name>
     <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>1.2</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -1642,21 +1785,21 @@
 <Parameters>
     <Name>LearningRate</Name>
     <Value>0.2</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
     <Value>false</Value>
-    <DataType>Boolean</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
-    <Value>0.5</Value>
+    <Value>0.01</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterSmoothFactor</Name>
-    <Value>0.99</Value>
+    <Value>0.9</Value>
     <DataType></DataType>
 </Parameters>
 <Parameters>
@@ -1666,22 +1809,27 @@
 </Parameters>
 <Parameters>
     <Name>LearningRateType</Name>
-    <Value>SmoothFixed</Value>
+    <Value>SmoothMax</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.5^0</Value>
+    <Value>0.1^0.8</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
-    <Name>ParameterMax</Name>
-    <Value>10</Value>
-    <DataType></DataType>
+    <Name>ParameterMin</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningRateMax</Name>
     <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>1.2</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -1856,22 +2004,22 @@
 <Parameters>
     <Name>LearningRate</Name>
     <Value>0.2</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
     <Value>false</Value>
-    <DataType>Boolean</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
-    <Value>0.5</Value>
+    <Value>0.01</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterSmoothFactor</Name>
-    <Value>0</Value>
-    <DataType>Double</DataType>
+    <Value>0.9</Value>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>LearningType</Name>
@@ -1880,22 +2028,27 @@
 </Parameters>
 <Parameters>
     <Name>LearningRateType</Name>
-    <Value>SmoothFixed</Value>
+    <Value>SmoothMax</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.5^0</Value>
+    <Value>0.1^0.8</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
-    <Name>ParameterMax</Name>
-    <Value>10</Value>
-    <DataType></DataType>
+    <Name>ParameterMin</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningRateMax</Name>
     <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>0.05</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -2075,21 +2228,21 @@
 <Parameters>
     <Name>LearningRate</Name>
     <Value>0.2</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
     <Value>false</Value>
-    <DataType>Boolean</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
-    <Value>0.5</Value>
+    <Value>0.01</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterSmoothFactor</Name>
-    <Value>0.99</Value>
+    <Value>0.9</Value>
     <DataType></DataType>
 </Parameters>
 <Parameters>
@@ -2099,22 +2252,27 @@
 </Parameters>
 <Parameters>
     <Name>LearningRateType</Name>
-    <Value>SmoothFixed</Value>
+    <Value>SmoothMax</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
     <Name>RateParameters</Name>
-    <Value>0.5^0</Value>
+    <Value>0.1^0.8</Value>
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
-    <Name>ParameterMax</Name>
-    <Value>10</Value>
-    <DataType></DataType>
+    <Name>ParameterMin</Name>
+    <Value>-0.2</Value>
+    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningRateMax</Name>
     <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>0.2</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -2383,22 +2541,22 @@
 <Parameters>
     <Name>LearningRate</Name>
     <Value>0.2</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>Continuous</Name>
     <Value>false</Value>
-    <DataType>Boolean</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>AdaptiveFactor</Name>
-    <Value>0.5</Value>
+    <Value>0.01</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>ParameterSmoothFactor</Name>
     <Value>0</Value>
-    <DataType>Double</DataType>
+    <DataType></DataType>
 </Parameters>
 <Parameters>
     <Name>LearningType</Name>
@@ -2416,13 +2574,18 @@
     <DataType>String</DataType>
 </Parameters>
 <Parameters>
-    <Name>ParameterMax</Name>
-    <Value>10</Value>
-    <DataType></DataType>
+    <Name>ParameterMin</Name>
+    <Value>0.001</Value>
+    <DataType>Double</DataType>
 </Parameters>
 <Parameters>
     <Name>LearningRateMax</Name>
     <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>0.1</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>

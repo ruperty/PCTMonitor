@@ -23,7 +23,7 @@ public class EcoliSignReorganisation extends BaseReorganisation {
     private double random = 0;
 
     public EcoliSignReorganisation(String name, String lrType, Double lr, String parameters, Double delta, Boolean continuous) throws Exception {
-        super(name,lrType, lr, parameters);
+        super(name, lrType, lr, parameters);
         this.delta = delta;
         this.continuous = continuous;
     }
@@ -33,10 +33,10 @@ public class EcoliSignReorganisation extends BaseReorganisation {
 
         if (applyCorrection) {
             double lrate = learningRate.update(parameter, errorResponse);
-            if (errorResponse >= previousErrorResponse) {
+            if (update(errorResponse, previousErrorResponse)) {
                 random = Math.signum(Math.random() - 0.5);
             }
-            correction = computeCorrection(lrate, delta * random, parameter,parameterMA, Math.abs(errorResponse));
+            correction = computeCorrection(lrate, delta * random, parameter, parameterMA, Math.abs(errorResponse));
             //correction = lrate * delta * parameterMA * Math.abs(errorResponse) * random;
             if (!continuous) {
                 parameter += correction;

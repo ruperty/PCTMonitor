@@ -116,8 +116,8 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     @Override
     public void init() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
-        int errorIndex = 0;
-        int parameterIndex = 1;
+        Integer errorIndex = null;
+        Integer parameterIndex = null;
 
         for (int i = 0; i < controls.size(); i++) {
             String linkType = links.getType(i);
@@ -135,7 +135,12 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
                 correctionIndex = i;
             }
         }
-
+        
+        if(parameterIndex==null)
+             throw new Exception("Parameter link has not been set for " + this.getName());
+        if(errorIndex==null)
+             throw new Exception("Error link has not been set for " + this.getName());
+   
         parameterNeuralFunction = controls.get(parameterIndex).getNeural();
         parameter = parameterNeuralFunction.getParameter();
         parameterma = parameter;

@@ -207,37 +207,37 @@ public abstract class BaseNeuralFunction implements NeuralFunctionInterface {
 
     @Override
     public void setParameter(double par) {
-        throw new UnsupportedOperationException("Not supported yet  - BaseNeuralFunction.setParameter()"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet  - BaseNeuralFunction.setParameter() " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public double getParameter() {
-        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter()"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter() " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int getParameterInt(int i) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int)"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int) " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int getParametersSize() {
-        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int)"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int) " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public double getParameter(int i) {
-        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int)"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int) " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public String getParameterName(int i) {
-        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int)"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getParameter(int) " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public String getDataString() {
-        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getDataString()"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet - BaseNeuralFunction.getDataString() " + getName() + " " + getClass().getName()); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
