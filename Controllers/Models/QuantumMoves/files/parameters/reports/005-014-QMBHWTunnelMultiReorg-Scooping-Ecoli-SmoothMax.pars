@@ -34,6 +34,7 @@ MoveOutput_XShift=0.0
 MoveOutput_YShift=0.0
 MoveOutput_InputTolerance=0.001
 SimTime_TargetPercentage=2.5
+SimTime_TimeLimit=0.8
 CollectReferenceActive_Key=3.0
 ShiftReferenceActive_Key=1.0
 MoveReferenceActive_Key=2.0
@@ -65,6 +66,6 @@ MoveVelocityReorg_RateParameters=0.1^0.8
 ShiftReorg_RateParameters=0.1^0.8
 MoveReorg_RateParameters=0.1^0.8
 CollectReorg_RateParameters=0.1^0.8
-EnvInput_Pause=500
+EnvInput_Pause=0
 
 
