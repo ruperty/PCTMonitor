@@ -91,7 +91,7 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
         double correct = lrate * delta;// * parameterMA;
         //int places = 4;
 
-        System.out.println(String.format("%21s: %7.4f %7.4f %+11.6f %+10.4f", name, error, lrate, correct, parameter + correct));
+        System.out.println(String.format("%21s: %7.4f %7.4f %+11.6f %+11.4f", name, error, lrate, correct, parameter + correct));
 
         //System.out.println(name + ": " + MoonsString.formatPlaces(error, places) + " " + MoonsString.formatPlaces(lrate, places) + " "
         //      + MoonsString.formatPlaces(correct, places) + " " + MoonsString.formatPlaces(parameter + correct, places));
@@ -101,7 +101,7 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
 
     protected boolean update(double errorResponse, double previousErrorResponse) {
 
-        if (errorResponse >= previousErrorResponse) {
+        if (errorResponse > previousErrorResponse) {
             return true;
         }
 

@@ -32,9 +32,7 @@ public class HillClimbReorganisation extends BaseReorganisation {
         if (applyCorrection) {
             double lrate = learningRate.update(parameter, errorResponse);
 
-            double errorResponseChange = errorResponse - previousErrorResponse;
-
-            if (errorResponseChange > 0) {
+            if (update(errorResponse, previousErrorResponse)) {
                 delta = -delta;
             }
             correction = computeCorrection(lrate, delta, parameter, parameterMA, Math.abs(errorResponse));
