@@ -1,12 +1,13 @@
 Parameter  diagram  saved
 TargetVelocityReorg_ParameterMax 0.1 0.02
-AccelGainReorg_AdaptiveFactor 0.01 100.0
+AccelGainReorg_AdaptiveFactor 0.01 500.0
 CollectRef_Constant -0.06 -0.0038
 MoveRef_Constant 0.3 0.22
 MoveOutput_OutScale 0.019 0.0056
-VelocityGainReorg_AdaptiveFactor 0.01 0.05
+VelocityGainReorg_AdaptiveFactor 0.01 0.1
 ShiftReorg_AdaptiveFactor 0.01 0.05
 MoveReorg_AdaptiveFactor 0.01 0.05
+MoveVelocityReorg_ParameterMin 0.0 0.01
 TargetVelocityReorg_AdaptiveFactor 0.01 0.005
 ShiftRef_Constant 0.1 0.416
 SimTime_TimeLimit 0.6 0.8
