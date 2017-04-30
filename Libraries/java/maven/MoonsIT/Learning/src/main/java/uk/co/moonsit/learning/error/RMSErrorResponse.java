@@ -24,8 +24,10 @@ public class RMSErrorResponse {
     public final static int COUNTER = 1;
     private double errorSum;
     private Double limit = null;
+    private Double scale = 1.0;
 
-    public RMSErrorResponse() {
+    public RMSErrorResponse(Double scale) {
+        this.scale=scale;
         init();
     }
 
@@ -49,7 +51,9 @@ public class RMSErrorResponse {
     }
 
     public void update(double error) {
-        errorSum += error * error;
+        if (Math.abs(error) != Double.POSITIVE_INFINITY) {
+            errorSum += error * error;
+        }
         if (limit != null) {
             if (errorSum > limit) {
                 errorSum = limit;
@@ -60,7 +64,7 @@ public class RMSErrorResponse {
     public double getErrorResponse(int period) {
         double response;
 
-        response = Math.sqrt(errorSum / period);
+        response = scale* Math.sqrt(errorSum / period);
 
         reset();
         return response;

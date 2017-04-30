@@ -243,8 +243,7 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
     private boolean applyCorrection() throws Exception {
         if (correctionIndex != null) {
-            List<BaseControlFunction> controls = links.getControlList();
-            if (controls.get(correctionIndex).getValue() == 1) {
+            if (links.getControlList().get(correctionIndex).getValue() == 1) {
                 return true;
             }
 

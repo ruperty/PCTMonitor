@@ -187,6 +187,16 @@ public class QMSensorNeuralFunction extends NeuralFunction {
         return tx;
     }
 
+    @Override
+    public double getParameter() {
+        return targetpercentage;
+    }
+
+    @Override
+    public void setParameter(double par) {
+        targetpercentage = par;
+    }
+    
     private void setDynamicSubscribedValues() throws Exception {
         // parameters subscribed from elsewhere
         simulatedtime = sensor.getValue(QMState.TIME);

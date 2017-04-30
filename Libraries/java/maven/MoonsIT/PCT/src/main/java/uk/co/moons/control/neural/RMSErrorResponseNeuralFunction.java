@@ -23,10 +23,12 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
 
     public Integer period = null;
     public Double limit = 0.0;
+    public Double scale = 1.0;
 
     private int counter = 1;
+    private Integer updateIndex = null;
+    private Integer errorIndex = null;
 
-    
     private RMSErrorResponse response;
 
     public RMSErrorResponseNeuralFunction() {
@@ -44,16 +46,32 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
             if (pname.equals("Limit")) {
                 limit = Double.parseDouble(param.getValue());
             }
-        }
-        if (period == null) {
-            throw new Exception("Period null for RMSErrorResponseNeuralFunction");
+            if (pname.equals("Scale")) {
+                scale = Double.parseDouble(param.getValue());
+            }
         }
     }
 
     @Override
     public void init() throws Exception {
+        List<BaseControlFunction> controls = links.getControlList();
 
-        response = new RMSErrorResponse(limit, period);
+        for (int i = 0; i < controls.size(); i++) {
+            String linkType = links.getType(i);
+            if (linkType == null) {
+                errorIndex = i;
+                continue;
+            }
+            if (linkType.equals("Update")) {
+                updateIndex = i;
+            }
+        }
+
+        if (updateIndex != null) {
+            response = new RMSErrorResponse(scale);
+        } else {
+            response = new RMSErrorResponse(limit, period);
+        }
         /*if (reset == null) {
             reset = 0.0;
         }*/
@@ -62,16 +80,36 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
     @Override
     public double compute() throws Exception {
         List<BaseControlFunction> controls = links.getControlList();
-        double error = controls.get(0).getValue();
+        double error = controls.get(errorIndex).getValue();
 
         response.update(error);
-        if (counter % period == 0) {
-            output = response.getErrorResponse(period);
+        if (applyCorrection()) {
+            if (updateIndex != null) {
+                output = response.getErrorResponse(counter);
+                counter = 1;
+            } else {
+                output = response.getErrorResponse(period);
+            }
+
             //response.reset();
         }
 
         counter++;
         return output;
+    }
+
+    private boolean applyCorrection() throws Exception {
+        if (updateIndex != null) {
+            if (links.getControlList().get(updateIndex).getValue() == 1) {
+                return true;
+            }
+
+        } else {
+            if (counter % period == 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -84,7 +122,7 @@ public class RMSErrorResponseNeuralFunction extends NeuralFunction {
         if (arr[0].equals("Limit")) {
             limit = Double.parseDouble(arr[1]);
         }
-        if (period != null && response!=null) {
+        if (period != null && response != null) {
             response.setLimit(limit, period);
         }
     }
