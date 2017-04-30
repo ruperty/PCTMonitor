@@ -64,6 +64,34 @@ public class QMData {
         return model;
     }
 
+    public String getScores(int level, String model, int top) throws SQLException {
+        StringBuilder sb = new StringBuilder();
+        psParam = conn.prepareStatement("SELECT ID, Level, Score, TimeScore, Fidelity, SimulatedTime, ConstraintKey, Model "
+                + "FROM QUANTUM.SCORES "
+                + "where level = ?   and model = ? "
+                + "order by level, score desc "
+                + "FETCH FIRST ? ROWS ONLY");
+
+        psParam.setInt(1, level);
+        psParam.setString(2, model);
+        psParam.setInt(3, top);
+        ResultSet rs = psParam.executeQuery();
+        while (rs.next()) {
+
+            String id = rs.getString("id");
+            String score = rs.getString("score");
+            String timescore = rs.getString("timescore");
+            String fidelity = rs.getString("fidelity");
+            float simulatedTime = rs.getFloat("SimulatedTime");
+
+            sb.append(String.format("%21s %6s %6s %6s %5.3f \n", id, score, timescore, fidelity, simulatedTime));
+
+        }
+
+        return sb.toString();
+
+    }
+
     public File getParamtersFile(String dir, String model, String id) {
         return new File(dir + File.separator + model + "-" + id + ".pars");
     }
@@ -134,6 +162,27 @@ public class QMData {
         String password = "moves";
         String url = "jdbc:derby://localhost/QuantumMoves";
         int type = 0;
+
+        String model = null;
+        Integer level = null;
+        Integer top = null;
+
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("-model")) {
+                model = args[++i];
+            }
+            if (args[i].equals("-level")) {
+                level = Integer.parseInt(args[++i]);
+            }
+            if (args[i].equals("-top")) {
+                top = Integer.parseInt(args[++i]);
+            }
+        }
+
+        if (model != null && level != null) {
+            type = 1;
+        }
+
         QMData ps = null;
         try {
             ps = new QMData();
@@ -145,10 +194,15 @@ public class QMData {
                     //String id = "20170422-18-35-16.827";
                     //String id = "20170427-14-51-05.382";
                     //String id = "20170427-19-38-56.295";
-                    //String id = "20170424-01-00-17.025"; // embedded
-                    String id = "20170428-16-13-17.756";
-
+                    //String id = "20170424-01-00-17.025"; // embedded                    
+                    //String id = "20170428-16-13-17.756";
+                    String id = "20170429-20-56-34.827";
                     ps.saveParameters(dir, id);
+                    break;
+                case 1:
+
+                    String scores = ps.getScores(level, model, top);
+                    System.out.println(scores);
                     break;
 
             }

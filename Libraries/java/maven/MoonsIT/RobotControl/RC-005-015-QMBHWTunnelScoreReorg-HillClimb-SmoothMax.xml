@@ -3,14 +3,14 @@
   <dontWrapJar>true</dontWrapJar>
   <headerType>gui</headerType>
   <jar>target\RobotControl-1.0.jar</jar>
-  <outfile>C:\Versioning\PCTMonitor\Libraries\java\maven\MoonsIT\RobotControl\RC-005-015-QMBHWTunnelScoreReorg.exe</outfile>
+  <outfile>C:\Versioning\PCTMonitor\Libraries\java\maven\MoonsIT\RobotControl\RC-005-015-QMBHWTunnelScoreReorg-HillClimb-SmoothMax.exe</outfile>
   <errTitle></errTitle>
-  <cmdLine>-xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-015-QMBHWTunnelScoreReorg.odg -pars C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\files\parameters\005-015-QMBHWTunnelScoreReorg.pars </cmdLine>
+  <cmdLine>-xml  C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\005-015-QMBHWTunnelScoreReorg.odg -pars C:\Versioning\PCTMonitor\Controllers\Models\QuantumMoves\files\parameters\005-015-QMBHWTunnelScoreReorg-HillClimb-SmoothMax.pars </cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
   <downloadUrl>http://java.com/download</downloadUrl>
   <supportUrl></supportUrl>
-  <stayAlive>true</stayAlive>
+  <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
   <icon></icon>

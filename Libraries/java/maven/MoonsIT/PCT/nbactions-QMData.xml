@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Dderby.system.home=C:\Users\ReStart\.derby -classpath %classpath uk.co.moonsit.database.QMData</exec.args>
+                <exec.args>-Dderby.system.home=C:\Users\ReStart\.derby -classpath %classpath uk.co.moonsit.database.QMData -xlevel 13 -model 005-015-QMBHWTunnelScoreReorg -top 10</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
@@ -24,7 +24,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Dderby.system.home=C:\Users\ReStart\.derby -classpath %classpath uk.co.moonsit.database.QMData</exec.args>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Dderby.system.home=C:\Users\ReStart\.derby -classpath %classpath uk.co.moonsit.database.QMData -xlevel 13 -model 005-015-QMBHWTunnelScoreReorg -top 10</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
             </properties>
@@ -39,7 +39,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-Dderby.system.home=C:\Users\ReStart\.derby -classpath %classpath uk.co.moonsit.database.QMData</exec.args>
+                <exec.args>-Dderby.system.home=C:\Users\ReStart\.derby -classpath %classpath uk.co.moonsit.database.QMData -xlevel 13 -model 005-015-QMBHWTunnelScoreReorg -top 10</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>

@@ -2,16 +2,18 @@
 
 --SELECT	* FROM QUANTUM.SCORES ;
 
-SELECT	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Model FROM QUANTUM.SCORES 
+SELECT 	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Model FROM QUANTUM.SCORES 
 --SELECT	* FROM QUANTUM.SCORES 
 where level=13  
 --and id = '20170426-21-07-16.754'
-and id > '20170429-10-00-56.170'
+--and id > '20170429-10-00-56.170'
 --and model = '005-013-QMBHWTunnelingReorg'
-and model = '005-015-QMBHWTunnelScoreReorg'
+and model ='005-014-QMBHWTunnelMultiReorg'
+--and model = '005-015-QMBHWTunnelScoreReorg'
 --and model = '005-002-QMPositionSingleIntegrator'
 --and model = '005-011-QMBHWTunneling'
-order by level, score desc;
+order by level, score desc
+-- FETCH FIRST 100 ROWS ONLY;
 
 
 /*
