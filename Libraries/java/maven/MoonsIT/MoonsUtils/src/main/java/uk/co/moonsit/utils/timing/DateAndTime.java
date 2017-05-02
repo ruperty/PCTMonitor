@@ -32,34 +32,39 @@ public class DateAndTime implements DateAndTimeInterface {
 
     public DateAndTime() {
         tzone = TimeZone.getDefault();
-        Now();
+        pNow();
     }
 
     public DateAndTime(String zoneId) {
         tzone = TimeZone.getTimeZone(zoneId);
         System.out.println(tzone);
-        Now();
+        pNow();
     }
 
     public DateAndTime(int td) {
         timeDiff = td;
         tzone = TimeZone.getTimeZone("GMT");
         //System.out.println(tzone);
-        Now();
+        pNow();
     }
 
     public DateAndTime(TimeZone tz) {
         //System.out.println("c 1");
         tzone = tz;
 
-        Now();
+        pNow();
     }
 
     public void SetMinutesOffset(int off) {
         minutesOffset = off;
     }
 
+    @Override
     public void Now() {
+        pNow();
+    }
+
+    private void pNow() {
         rightNow = Calendar.getInstance();
         rightNow.setTimeZone(tzone);
         int mins = Minutes() + minutesOffset;
@@ -69,29 +74,26 @@ public class DateAndTime implements DateAndTimeInterface {
             hour -= 1;
         }
         time = new Time(hour, mins, Seconds() + MilliSeconds() / 1000.0);
-
-        //for(int i=0;i<25;i++)
-        //  System.out.println(tzone.getAvailableIDs()[i]);
-        //System.out.println("tz "+tzone);
-        //System.out.println("rn "+rightNow);
     }
 
+    @Override
     public File DateFileName(String name) {
         File file = new File(YMD() + name + ".dat");
 
         return file;
     }
 
+    @Override
     public String YMD() {
         //System.out.println("YMD");
-        Integer year = new Integer(rightNow.get(Calendar.YEAR));
-        Integer month = new Integer(rightNow.get(Calendar.MONTH) + 1);
-        Integer day = new Integer(rightNow.get(Calendar.DAY_OF_MONTH));
+        Integer year = rightNow.get(Calendar.YEAR);
+        Integer month = rightNow.get(Calendar.MONTH) + 1;
+        Integer day = rightNow.get(Calendar.DAY_OF_MONTH);
 
         //System.out.println(month);
         String mspace = "";
         String dspace = "";
-        if (month.intValue() < 10) {
+        if (month < 10) {
             mspace = "0";
         }
 
@@ -104,6 +106,7 @@ public class DateAndTime implements DateAndTimeInterface {
         return date;
     }
 
+    @Override
     public String HMS() {
         return time.HMS();//.toString();
     }

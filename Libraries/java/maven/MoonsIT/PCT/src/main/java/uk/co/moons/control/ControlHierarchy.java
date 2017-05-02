@@ -135,6 +135,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
     }
 
+    /*
     private boolean isException(String s) {
 
         if (s.contains("Reorg")) {
@@ -153,7 +154,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
 
         return false;
-    }
+    }*/
 
     private void loadPars(String config) throws Exception {//int xmlIndex = config.indexOf("xml")
 
@@ -173,9 +174,9 @@ public class ControlHierarchy extends BaseControlHierarchy {
                 int initSize = sb.length();
 
                 for (String key : props.stringPropertyNames()) {
-                    if (isException(key)) {
-                        continue;
-                    }
+                    //if (isException(key)) {
+                      //  continue;
+                    //}
                     String[] arr = key.split("_");
                     String functionName = arr[0];
                     String parameter = arr[1];

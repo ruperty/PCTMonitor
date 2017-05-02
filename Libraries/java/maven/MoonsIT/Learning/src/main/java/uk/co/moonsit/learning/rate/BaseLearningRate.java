@@ -44,6 +44,26 @@ public abstract class BaseLearningRate implements LearningRateInterface {
         this.learningRateMax = learningRateMax;
     }
     
+     public static int getLearningRateParameterIndex(String par) {
+        switch (par) {
+            case "Smooth":
+                return 0;
+            case "Max":
+                return 1;
+            case "Offset":
+                return 1;
+            case "AdditiveFactor":
+                return 0;
+            case "MulitplicativeFactor":
+                return 1;
+            case "SmoothUpper":
+                return 0;
+            case "SmoothLower":
+                return 0;
+
+        }
+        return -1;
+    }
      public static int getLearningRateType(String lt) {
         switch (lt) {
             case "Smooth":
