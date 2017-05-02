@@ -116,6 +116,28 @@ public class QMData {
         return sb.toString();
     }
 
+    public String getModelMaxScore(String model) throws SQLException {
+        StringBuilder sb = new StringBuilder();
+        psParam = conn.prepareStatement("SELECT ID, Level, Score, TimeScore, Fidelity, SimulatedTime, ConstraintKey, Model "
+                + "FROM QUANTUM.SCORES "
+                + " where model = ? "
+                + "order by level, score desc ");
+
+        psParam.setString(1, model);
+        ResultSet rs = psParam.executeQuery();
+        if (rs.next()) {
+            String id = rs.getString("id");
+            String score = rs.getString("score");
+            String timescore = rs.getString("timescore");
+            String fidelity = rs.getString("fidelity");
+            float simulatedTime = rs.getFloat("SimulatedTime");
+
+            sb.append(String.format("%21s %6s %6s %6s %5.3f \n", id, score, timescore, fidelity, simulatedTime));
+        }
+
+        return sb.toString();
+    }
+
     public String getTodaysScores(int top) throws SQLException {
         StringBuilder sb = new StringBuilder();
 
@@ -215,7 +237,7 @@ public class QMData {
 
     public void saveParameters(String dir, String id) throws IOException, SQLException, Exception {
         String parameters = getParameters(id);
-        System.out.println(parameters);
+        //System.out.println(parameters);
 
         String model = getModel(id);
         if (model == null) {
@@ -229,6 +251,57 @@ public class QMData {
         file = getParamtersLatestFile(dir, model);
         save(file, parameters);
         System.out.println(file);
+
+    }
+
+    public String getLearningType(String s) {
+
+        for (int i = 1; i < 4; i++) {
+            String type = BaseReorganisation.getLearningType(i);
+            if (s.contains(type)) {
+                return type;
+            }
+        }
+
+        return null;
+    }
+
+    public String getLearningRateType(String s) {
+
+        for (int i = 1; i < 5; i++) {
+            String type = BaseLearningRate.getLearningRateType(i);
+            if (s.contains(type)) {
+                return type;
+            }
+        }
+
+        return null;
+    }
+
+    public void saveParametersMulti(String dir, String id, String model) throws IOException, SQLException, Exception {
+        String parameters = getParameters(id);
+        //System.out.println(parameters);
+
+        String learningType = getLearningType(parameters);
+        String learningRateType = getLearningRateType(parameters);
+        String rateParameters = BaseLearningRate.getRateParameters(learningRateType);
+
+        for (int i = 1; i < 4; i++) {
+            String ltype = BaseReorganisation.getLearningType(i);
+            parameters = parameters.replaceAll(learningType, ltype);
+            for (int j = 0; j < 4; j++) {
+                String lrtype = BaseLearningRate.getLearningRateType(j);
+                String rpars = BaseLearningRate.getRateParameters(lrtype);
+                parameters = parameters.replaceAll(learningRateType, lrtype);
+                parameters = parameters.replaceAll(rateParameters, rpars);
+
+                File file = getParamtersFile(dir, model, ltype + "-" + lrtype);
+                save(file, parameters);
+                System.out.println(file);
+
+            }
+
+        }
 
     }
 
@@ -259,6 +332,10 @@ public class QMData {
         Integer level = null;
         Integer top = null;
 
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < args.length; i++) {
+            sb.append(args[i]).append(" ");
+        }
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-id")) {
                 id = args[++i];
@@ -284,9 +361,16 @@ public class QMData {
             type = 1;
         }
 
+        if (model != null && type == 3) {
+            type = 4;
+        }
+
         if (id != null) {
             type = 0;
         }
+
+        System.out.println("Running: QMData " + sb.toString());
+        System.out.println("Type " + type);
 
         QMData ps = null;
         try {
@@ -321,6 +405,16 @@ public class QMData {
                     System.out.println(scores);
                     String id1 = scores.split(" ")[0];
                     ps.saveParameters(dir, id1);
+
+                    break;
+                }
+
+                case 4: {
+                    String scores = ps.getModelMaxScore(model);
+                    System.out.println(scores);
+                    String id1 = scores.split(" ")[0];
+
+                    ps.saveParametersMulti(dir, id1, model);
 
                     break;
                 }

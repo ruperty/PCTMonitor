@@ -43,8 +43,8 @@ public abstract class BaseLearningRate implements LearningRateInterface {
     public void setLearningRateMax(double learningRateMax) {
         this.learningRateMax = learningRateMax;
     }
-    
-     public static int getLearningRateParameterIndex(String par) {
+
+    public static int getLearningRateParameterIndex(String par) {
         switch (par) {
             case "Smooth":
                 return 0;
@@ -64,7 +64,8 @@ public abstract class BaseLearningRate implements LearningRateInterface {
         }
         return -1;
     }
-     public static int getLearningRateType(String lt) {
+
+    public static int getLearningRateType(String lt) {
         switch (lt) {
             case "Smooth":
                 return SMOOTH;
@@ -78,8 +79,8 @@ public abstract class BaseLearningRate implements LearningRateInterface {
         }
         return 10;
     }
-     
-      public static String getLearningRateType(int lt) {
+
+    public static String getLearningRateType(int lt) {
         switch (lt) {
             case SMOOTHMAX:
                 return "SmoothMax";
@@ -89,6 +90,21 @@ public abstract class BaseLearningRate implements LearningRateInterface {
                 return "SmoothFixed";
             case ADDITIVE:
                 return "Additive";
+
+        }
+        return null;
+    }
+
+    public static String getRateParameters(String lrt) {
+        switch (lrt) {
+            case "Smooth":
+                return "0.9^0.95";
+            case "SmoothMax":
+                return "0.1^0.8";
+            case "SmoothFixed":
+                return "0.5^0";
+            case "Additive":
+                return "0.025^0.5";
 
         }
         return null;
