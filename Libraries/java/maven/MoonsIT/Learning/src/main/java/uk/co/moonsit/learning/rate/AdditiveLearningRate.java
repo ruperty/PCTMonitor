@@ -41,7 +41,7 @@ public class AdditiveLearningRate extends BaseLearningRate {
         if (Math.signum(gradient) == Math.signum(previousGradient)) {
             learningRate = Math.min(learningRateMax, learningRate + additiveFactor);
         } else {
-            learningRate *= mulitplicativeFactor;
+            learningRate = Math.min(learningRateMax, learningRate * mulitplicativeFactor);
         }
         previousWeight = weight;
         previousGradient = gradient;
