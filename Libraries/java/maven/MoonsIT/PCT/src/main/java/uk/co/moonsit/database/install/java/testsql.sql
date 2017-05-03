@@ -6,13 +6,13 @@ SELECT 	ID, Level, 	Score, TimeScore,	Fidelity, SimulatedTime,	ConstraintKey, Mo
 --SELECT	* FROM QUANTUM.SCORES 
 where level=13  
 --and id = '20170426-21-07-16.754'
---and id > '20170429-10-00-56.170'
+--and id > '20170503-16-10-00.170'
 --and model = '005-013-QMBHWTunnelingReorg'
-and model ='005-014-QMBHWTunnelMultiReorg'
---and model = '005-015-QMBHWTunnelScoreReorg'
+--and model ='005-014-QMBHWTunnelMultiReorg'
+and model = '005-016-QMBHWTunnelScoreReorg'
 --and model = '005-002-QMPositionSingleIntegrator'
 --and model = '005-011-QMBHWTunneling'
-order by level, score desc
+order by level, score desc;
 -- FETCH FIRST 100 ROWS ONLY;
 
 
@@ -27,8 +27,8 @@ order by SCORES.score desc;
 --SELECT * FROM QUANTUM.PARAMETERS where functionname = 'MoveRef' and value = 0.35  --ID > '2017042-14-51-05.382' 
 --order by functionname, parameter;
 
---SELECT * FROM QUANTUM.PARAMETERS where ID = '20170424-01-00-17.025' 
---order by functionname, parameter;
+SELECT * FROM QUANTUM.PARAMETERS where ID = '20170503-16-11-27.973' 
+order by functionname, parameter;
 
 --SELECT * FROM QUANTUM.PARAMETERS where ID = '20170423-15-35-41.590' 
 --order by functionname, parameter;
@@ -47,8 +47,8 @@ order by SCORES.score desc;
 --call removeScores('20170412-14-49-49.434');
 
 
---DELETE FROM PARAMETERS  WHERE id='20170412-17-04-33.654';
---DELETE FROM Scores  WHERE id='20170412-17-04-33.654';
+--DELETE FROM PARAMETERS  WHERE id='20170503-16-11-27.973';
+--DELETE FROM Scores  WHERE id='20170503-16-11-27.973';
 
 
 -- 20170222-15-06-27.070

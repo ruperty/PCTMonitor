@@ -16,10 +16,26 @@ public class NewMain {
      */
     public static void main(String[] args) {
 
-        String s = "0^1";
-        String[] arr = s.split("\\^");
+        String str = "--0.1^0.8--";
+        String[] arr = str.split("\\^");
         System.out.println(arr[0]);
         System.out.println(arr[1]);
+
+        String rpExists = escapeCaret("0.1^0.8");
+        String rpReplace = escapeCaret("0.9^0.95");
+        System.out.println(rpExists);
+        System.out.println(rpReplace);
+
+        int ind = str.indexOf('^');
+        System.out.println(ind);
+        str = str.replaceAll(rpExists, rpReplace);
+        System.out.println(str);
+
     }
 
+    private static String escapeCaret(String s) {
+        int ind = s.indexOf('^');
+
+        return s.substring(0, ind) + "\\^" + s.substring(ind+1);
+    }
 }

@@ -129,6 +129,16 @@ public class SmoothNeuralFunction extends NeuralFunction {
         return sb.toString();
     }
 
+     @Override
+    public double getParameter() {
+        return smoothness;
+    }
+
+    @Override
+    public void setParameter(double par) {
+        smoothness = par;
+    }
+    
     @Override
     public void pause() throws Exception {
         old = null;

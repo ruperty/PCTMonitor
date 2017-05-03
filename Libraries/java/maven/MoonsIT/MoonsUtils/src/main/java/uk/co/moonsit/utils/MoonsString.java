@@ -92,6 +92,12 @@ public class MoonsString {
 
     }
 
+    public static String escapeCaret(String s) {
+        int ind = s.indexOf('^');
+
+        return s.substring(0, ind) + "\\^" + s.substring(ind + 1);
+    }
+
     public static void main(String[] args) {
         /*
         String[] s = MoonsString.split("&", "&NegativeTransitionControlOutput^0^null~PositiveTransitionControlOutput^1^null~");

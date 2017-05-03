@@ -28,6 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import uk.co.moonsit.learning.rate.BaseLearningRate;
 import uk.co.moonsit.learning.reorganisation.BaseReorganisation;
+import uk.co.moonsit.utils.MoonsString;
 import uk.co.moonsit.utils.timing.DateAndTime;
 //import utils.db.*;
 
@@ -268,10 +269,23 @@ public class QMData {
 
     public String getLearningRateType(String s) {
 
-        for (int i = 1; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             String type = BaseLearningRate.getLearningRateType(i);
-            if (s.contains(type)) {
+            if (s.contains("=" + type + "\n")) {
                 return type;
+            }
+        }
+
+        return null;
+    }
+
+    public String getRateParameters(String s) {
+
+        for (int i = 0; i < 4; i++) {
+            String type = BaseLearningRate.getLearningRateType(i);
+            String rps = BaseLearningRate.getRateParameters(type);
+            if (s.contains("=" + rps + "\n")) {
+                return rps;
             }
         }
 
@@ -284,19 +298,22 @@ public class QMData {
 
         String learningType = getLearningType(parameters);
         String learningRateType = getLearningRateType(parameters);
-        String rateParameters = BaseLearningRate.getRateParameters(learningRateType);
+        String rateParameters = getRateParameters(parameters);
 
         for (int i = 1; i < 4; i++) {
             String ltype = BaseReorganisation.getLearningType(i);
-            parameters = parameters.replaceAll("="+learningType+"\n", "="+ltype+"\n");
+            String ltparameters = parameters.replaceAll("=" + learningType + "\n", "=" + ltype + "\n");
             for (int j = 0; j < 4; j++) {
                 String lrtype = BaseLearningRate.getLearningRateType(j);
                 String rpars = BaseLearningRate.getRateParameters(lrtype);
-                parameters = parameters.replaceAll("="+learningRateType+"\n", "="+lrtype+"\n");
-                parameters = parameters.replaceAll("="+rateParameters+"\n", "="+rpars+"\n");
+                String ltrparameters = ltparameters.replaceAll("=" + learningRateType + "\n", "=" + lrtype + "\n");
+                String rpExists = MoonsString.escapeCaret("=" + rateParameters + "\n");
+                String rpReplace = MoonsString.escapeCaret("=" + rpars + "\n");
+
+                ltrparameters = ltrparameters.replaceAll(rpExists, rpReplace);
 
                 File file = getParamtersFile(dir, model, ltype + "-" + lrtype);
-                save(file, parameters);
+                save(file, ltrparameters);
                 System.out.println(file);
 
             }
