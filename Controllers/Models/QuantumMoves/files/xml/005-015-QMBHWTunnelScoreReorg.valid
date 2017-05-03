@@ -382,7 +382,7 @@
 </Parameters>
 <Parameters>
     <Name>LinksList</Name>
-    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetErrorMarked^Value,TargetVelocityReorg^Parameters,AtomXOffsetSmooth^Parameters</Value>
+    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetErrorMarked^Value,TargetVelocityReorg^Parameters,AtomXOffsetSmooth^Parameters,VelocityGainReorg^Parameters,AccelGainReorg^Parameters,TargetReorg^Parameters,VelocitySmoothReorg^Parameters</Value>
     <DataType></DataType>
 </Parameters>
 <Links>
@@ -521,7 +521,7 @@
 <Type>Smooth</Type>
 <Parameters>
     <Name>Smoothness</Name>
-    <Value>0</Value>
+    <Value>0.1</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
@@ -671,6 +671,73 @@
                             </NeuralFunction>
                         </Transfer>
                         <Transfer>
+                            <Name>VelocitySmoothReorg</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ParameterReorganisation</Type>
+<Parameters>
+    <Name>LearningRate</Name>
+    <Value>0.2</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>Continuous</Name>
+    <Value>false</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveFactor</Name>
+    <Value>0.01</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterSmoothFactor</Name>
+    <Value>0</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningType</Name>
+    <Value>Ecoli</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateType</Name>
+    <Value>SmoothMax</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>RateParameters</Name>
+    <Value>0.1^0.8</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMin</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>100</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>ScoreError</Name>
+    <Type>Error</Type>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Update</Name>
+    <Type>Update</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
+                        <Transfer>
                             <Name>OffsetErrorLimited</Name>
                             <Description>...</Description>
                             <NeuralFunction>
@@ -737,6 +804,78 @@
                         </NeuralFunction>
                     </Input>
                     <Transfers>
+                        <Transfer>
+                            <Name>TargetReorg</Name>
+                            <Description>...</Description>
+                            <NeuralFunction>
+<Type>ParameterReorganisation</Type>
+<Parameters>
+    <Name>LearningRate</Name>
+    <Value>0.2</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>Continuous</Name>
+    <Value>false</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>AdaptiveFactor</Name>
+    <Value>0.01</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterSmoothFactor</Name>
+    <Value>0</Value>
+    <DataType></DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningType</Name>
+    <Value>Ecoli</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateType</Name>
+    <Value>SmoothMax</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>RateParameters</Name>
+    <Value>0.1^0.8</Value>
+    <DataType>String</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMin</Name>
+    <Value>0</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>LearningRateMax</Name>
+    <Value>0.5</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Parameters>
+    <Name>ParameterMax</Name>
+    <Value>100</Value>
+    <DataType>Double</DataType>
+</Parameters>
+<Links>
+    <Index>0</Index>
+    <Name>SimTime</Name>
+    <Type>Parameter</Type>
+</Links>
+<Links>
+    <Index>1</Index>
+    <Name>Update</Name>
+    <Type>Update</Type>
+</Links>
+<Links>
+    <Index>2</Index>
+    <Name>ScoreError</Name>
+    <Type>Error</Type>
+</Links>
+                            </NeuralFunction>
+                        </Transfer>
                         <Transfer>
                             <Name>Level</Name>
                             <Description>...</Description>
@@ -1158,11 +1297,16 @@
 </Parameters>
 <Links>
     <Index>0</Index>
+    <Name>LaserXVelocityOutput</Name>
+    <Type>Parameter</Type>
+</Links>
+<Links>
+    <Index>1</Index>
     <Name>ScoreError</Name>
     <Type>Error</Type>
 </Links>
 <Links>
-    <Index>1</Index>
+    <Index>2</Index>
     <Name>Update</Name>
     <Type>Update</Type>
 </Links>
@@ -1323,11 +1467,16 @@
 </Parameters>
 <Links>
     <Index>0</Index>
+    <Name>LaserXAccelOutput</Name>
+    <Type>Parameter</Type>
+</Links>
+<Links>
+    <Index>1</Index>
     <Name>ScoreError</Name>
     <Type>Error</Type>
 </Links>
 <Links>
-    <Index>1</Index>
+    <Index>2</Index>
     <Name>Update</Name>
     <Type>Update</Type>
 </Links>

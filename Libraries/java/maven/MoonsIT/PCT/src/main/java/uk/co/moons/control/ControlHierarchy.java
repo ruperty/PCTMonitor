@@ -163,7 +163,7 @@ public class ControlHierarchy extends BaseControlHierarchy {
         }
         String dname = parametersFileName.replace(".pars", ".diff");
 
-        LOG.info("Loading parameters file "+parametersFileName);
+        LOG.log(Level.INFO, "Loading parameters file {0}", parametersFileName);
         File file = new File(parametersFileName);
         if (file.exists()) {
             Properties props;

@@ -288,12 +288,12 @@ public class QMData {
 
         for (int i = 1; i < 4; i++) {
             String ltype = BaseReorganisation.getLearningType(i);
-            parameters = parameters.replaceAll(learningType, ltype);
+            parameters = parameters.replaceAll("="+learningType+"\n", "="+ltype+"\n");
             for (int j = 0; j < 4; j++) {
                 String lrtype = BaseLearningRate.getLearningRateType(j);
                 String rpars = BaseLearningRate.getRateParameters(lrtype);
-                parameters = parameters.replaceAll(learningRateType, lrtype);
-                parameters = parameters.replaceAll(rateParameters, rpars);
+                parameters = parameters.replaceAll("="+learningRateType+"\n", "="+lrtype+"\n");
+                parameters = parameters.replaceAll("="+rateParameters+"\n", "="+rpars+"\n");
 
                 File file = getParamtersFile(dir, model, ltype + "-" + lrtype);
                 save(file, parameters);

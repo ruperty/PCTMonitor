@@ -382,7 +382,7 @@
 </Parameters>
 <Parameters>
     <Name>LinksList</Name>
-    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetErrorMarked^Value,TargetVelocityReorg^Parameters,AtomXOffsetSmooth^Parameters</Value>
+    <Value>Level^Data:0,SimTime^Data,ShiftOutput^Parameters,AmplitudeReference^Parameters,AmplitudeOutput^Parameters,CollectRef^Parameters,AtomOffsetRef^Parameters,ShiftRef^Parameters,MoveRef^Parameters,AtomOffsetOutput^Parameters,TargetOutput^Parameters,LaserXVelocitySmooth^Parameters,LaserXVelocityOutput^Parameters,LaserXAccelInput^Parameters,LaserXAccelOutput^Parameters,SequenceInput^Parameters,MoveOutput^Parameters,SimTime^Parameters,Reset^Reset,CollectReferenceActive^Parameters,ShiftReferenceActive^Parameters,MoveReferenceActive^Parameters,TargetReferenceActive^Parameters,AtomOffsetActive^Parameters,SequenceReference^Parameters,MoveReorg^Parameters,ShiftReorg^Parameters,CollectReorg^Parameters,MoveVelocityReorg^Parameters,OffsetErrorMarked^Value,TargetVelocityReorg^Parameters,AtomXOffsetSmooth^Parameters,VelocityGainReorg^Parameters,AccelGainReorg^Parameters,TargetReorg^Parameters</Value>
     <DataType></DataType>
 </Parameters>
 <Links>
@@ -706,7 +706,7 @@
                             <Type>QMSensor</Type>
                             <Parameters>
 <Name>TimeLimit</Name>
-<Value>0.6</Value>
+<Value>0.8</Value>
 <DataType>Double</DataType>
                             </Parameters>
                             <Parameters>
