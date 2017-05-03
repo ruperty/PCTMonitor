@@ -44,7 +44,7 @@ public class RecordQMNode extends NeuralFunction {
     
     private String oldLevel;
     private String id;
-    private final boolean debug = true;
+    private final boolean debug = false;
 
     public RecordQMNode() {
         super();
