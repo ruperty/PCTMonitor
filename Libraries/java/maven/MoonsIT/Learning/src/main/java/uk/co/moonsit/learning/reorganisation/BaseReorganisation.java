@@ -19,7 +19,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import uk.co.moonsit.learning.rate.BaseLearningRate;
-import uk.co.moonsit.utils.MoonsString;
 
 /**
  * <b>....</b>
@@ -43,7 +42,7 @@ public abstract class BaseReorganisation implements ReorganisationInterface {
     public final static int ECOLI = 2;
     public final static int ECOLISIGN = 3;
 
-    private final double TOLERANCE = 0.0001;
+    private final double TOLERANCE = 0.000001;
 
     protected double correction = 0;
     protected double delta = 0.025;
