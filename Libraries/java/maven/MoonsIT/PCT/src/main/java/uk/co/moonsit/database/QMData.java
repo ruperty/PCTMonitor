@@ -39,7 +39,7 @@ public class QMData {
 
     private final Connection conn;
     private PreparedStatement psParam;
-    private DatabaseAccess db;
+    private final DatabaseAccess db;
 
     public QMData() throws IOException, ClassNotFoundException, Exception {
 

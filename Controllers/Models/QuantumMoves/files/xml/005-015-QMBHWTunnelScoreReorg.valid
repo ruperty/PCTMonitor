@@ -722,7 +722,7 @@
 </Parameters>
 <Parameters>
     <Name>ParameterMax</Name>
-    <Value>100</Value>
+    <Value>1</Value>
     <DataType>Double</DataType>
 </Parameters>
 <Links>
