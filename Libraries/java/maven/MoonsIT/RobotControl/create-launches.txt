@@ -12,3 +12,16 @@ cp RC-005-015-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-015-QMBHWTunnelSc
 cp RC-005-015-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-015-QMBHWTunnelScoreReorg-HillClimb-SmoothFixed.xml
 cp RC-005-015-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-015-QMBHWTunnelScoreReorg-EcoliSign-SmoothMax.xml    
 cp RC-005-015-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-015-QMBHWTunnelScoreReorg-HillClimb-SmoothMax.xml
+
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-Ecoli-Smooth.xml
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothFixed.xml
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-Ecoli-Additive.xml         
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-EcoliSign-Additive.xml     
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-HillClimb-Additive.xml
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-EcoliSign-Smooth.xml       
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-HillClimb-Smooth.xml
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-EcoliSign-SmoothFixed.xml 
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-HillClimb-SmoothFixed.xml
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-EcoliSign-SmoothMax.xml    
+cp RC-005-016-QMBHWTunnelScoreReorg-Ecoli-SmoothMax.xml RC-005-016-QMBHWTunnelScoreReorg-HillClimb-SmoothMax.xml

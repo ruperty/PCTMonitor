@@ -122,7 +122,7 @@ public class QMData {
         psParam = conn.prepareStatement("SELECT ID, Level, Score, TimeScore, Fidelity, SimulatedTime, ConstraintKey, Model "
                 + "FROM QUANTUM.SCORES "
                 + " where model = ? "
-                + "order by level, score desc ");
+                + "order by level, score desc, id desc ");
 
         psParam.setString(1, model);
         ResultSet rs = psParam.executeQuery();

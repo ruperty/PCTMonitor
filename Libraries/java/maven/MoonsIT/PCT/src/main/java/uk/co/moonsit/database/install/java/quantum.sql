@@ -18,7 +18,7 @@ CREATE TABLE Scores (
         PRIMARY KEY  (Model, ConstraintKey)
 );
 
--- ALTER TABLE scores ALTER COLUMN ConstraintKey  SET DATA TYPE varchar(512);
+-- ALTER TABLE scores ALTER COLUMN ConstraintKey  SET DATA TYPE varchar(1024);
 
 
 --drop table Parameters;

@@ -162,6 +162,12 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
     public String getParametersString() {
         StringBuilder sb = new StringBuilder();
 
+        sb.append("ParameterMin").append(":");
+        sb.append(parametermin).append("_");
+
+        sb.append("ParameterMax").append(":");
+        sb.append(parametermax).append("_");
+
         sb.append("LearningRateMax").append(":");
         sb.append(learningratemax).append("_");
 
@@ -173,6 +179,9 @@ public class ParameterReorganisationNeuralFunction extends NeuralFunction {
 
         sb.append("LearningRateType").append(":");
         sb.append(BaseLearningRate.getLearningRateType(learningratetype)).append("_");
+        
+        
+        
         if (reorganisation != null) {
             sb.append(reorganisation.getLearningRateParametersString());
         }

@@ -9,11 +9,12 @@ where level=13
 --and id > '20170503-16-10-00.170'
 --and model = '005-013-QMBHWTunnelingReorg'
 --and model ='005-014-QMBHWTunnelMultiReorg'
-and model = '005-016-QMBHWTunnelScoreReorg'
+and model = '005-015-QMBHWTunnelScoreReorg'
 --and model = '005-002-QMPositionSingleIntegrator'
 --and model = '005-011-QMBHWTunneling'
-order by level, score desc;
+order by level, score desc, id desc;
 -- FETCH FIRST 100 ROWS ONLY;
+
 
 
 /*
@@ -27,8 +28,8 @@ order by SCORES.score desc;
 --SELECT * FROM QUANTUM.PARAMETERS where functionname = 'MoveRef' and value = 0.35  --ID > '2017042-14-51-05.382' 
 --order by functionname, parameter;
 
-SELECT * FROM QUANTUM.PARAMETERS where ID = '20170503-16-11-27.973' 
-order by functionname, parameter;
+--SELECT * FROM QUANTUM.PARAMETERS where ID = '20170503-16-11-27.973' 
+--order by functionname, parameter;
 
 --SELECT * FROM QUANTUM.PARAMETERS where ID = '20170423-15-35-41.590' 
 --order by functionname, parameter;
@@ -67,7 +68,7 @@ order by functionname, parameter;
 --insert into scores (ID,Model,Fidelity,SimulatedTime,FidelityScore,TimeScore,Score,Level,TargetX,TargetY,ConstraintKey) values ( '20170206-17-27-29.377','005-006-PVA-DampenControl',0.9974,0.058,795845,185500,981345,1.0,0.0750,0,'1.0,0.0750,0,2.4,0.022,0.0,0.0,0.0,0.1,0.5,0.1,5000.0,10000.0,2.0,0.1,0.0,0.0,0.0,0.1,1000.0,10000.0,10.0,');
 
 
--- ALTER TABLE scores ALTER COLUMN ConstraintKey  SET DATA TYPE varchar(512);
+ --ALTER TABLE scores ALTER COLUMN ConstraintKey  SET DATA TYPE varchar(1024);
 
 --DELETE FROM PARAMETERS  WHERE 1=1;
 --DELETE FROM SCORES  WHERE 1=1;

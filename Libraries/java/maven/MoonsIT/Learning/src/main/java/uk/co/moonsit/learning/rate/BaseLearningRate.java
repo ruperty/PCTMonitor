@@ -102,7 +102,7 @@ public abstract class BaseLearningRate implements LearningRateInterface {
             case "SmoothMax":
                 return "0.1^0.8";
             case "SmoothFixed":
-                return "0.5^0";
+                return "0.5^0.0";
             case "Additive":
                 return "0.025^0.5";
 
