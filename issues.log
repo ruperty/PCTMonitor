@@ -1,0 +1,25 @@
+
+Current issues looking for a resolution
+
+1. Packaging the installer (for windows) takes about 15-20 mins to build. Can this be optimised? Is it because there are a lot of unnecessary modules packaged?
+
+2. When running after a clean and build I get a message "Disable modules and continue". Why is this? Can it be avoided?
+ 
+3. In the title bar of the app I get "201510222201". Where does this number comes from and can it be removed?
+
+4. In the project properties -> Application -> Branding Name if I enter an uppercase letter I get an error, "Application name is not valid". Is there a way around that?
+
+5. How do I get rid of the toolbars?
+
+6. How do I get rid of the standard menus?
+
+7. Where do Java logging messages appear in the installed application? When I run the application from the Netbeans IDE I have a logging.properties file which sets a location of the log file and what log classes to ignore. I don't see an equivalent for the installed application.
+
+8. What is the correct way to include code from my other java projects? Currently I have a directive in the build for the those projects to copt the jar file into PCTMonitor\Libraries\java\netbeans\PCTMonitor\PCTMonitorCore\release\modules\ext. But these are not updated automatically when PCTMonitor is rebuilt.
+
+9. What is the correct way to include external dependencies? For some they can be added through Properties -> Libraries -> Module Dependencies but some don't appear in the list, e.g. odfdom.  And the JNA has different package names than the one I'd been using.
+
+
+
+
+
