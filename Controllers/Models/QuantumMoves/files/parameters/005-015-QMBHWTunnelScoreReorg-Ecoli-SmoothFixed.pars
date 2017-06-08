@@ -1,5 +1,5 @@
 AccelGainReorg_AdaptiveFactor=100.0
-AccelGainReorg_LearningRateMax=0.0
+AccelGainReorg_LearningRateMax=0.5
 AccelGainReorg_LearningRateType=SmoothFixed
 AccelGainReorg_LearningType=Ecoli
 AccelGainReorg_RateParameters=0.5^0.0
@@ -72,7 +72,7 @@ TargetReorg_LearningRateType=SmoothFixed
 TargetReorg_LearningType=Ecoli
 TargetReorg_RateParameters=0.5^0.0
 TargetVelocityReorg_AdaptiveFactor=0.005
-TargetVelocityReorg_LearningRateMax=0.0
+TargetVelocityReorg_LearningRateMax=0.5
 TargetVelocityReorg_LearningRateType=SmoothFixed
 TargetVelocityReorg_LearningType=Ecoli
 TargetVelocityReorg_RateParameters=0.5^0.0
