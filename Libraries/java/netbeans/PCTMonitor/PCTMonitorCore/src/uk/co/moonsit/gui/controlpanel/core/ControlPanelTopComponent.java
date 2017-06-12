@@ -72,18 +72,24 @@ public final class ControlPanelTopComponent extends TopComponent {
         {
             env = System.getenv("CPA_CONTROLLERS");
             if (env == null) {
-                jTextFieldControllersDir.setText("CPA_CONTROLLERS environmental variable not set");
-            } else {
-                jTextFieldControllersDir.setText(env);
+                env = System.getProperty("user.home")  + File.separator + "PCTSoftware" + File.separator + "Controllers";
+                File f = new File(env);
+                if (!f.exists()) {
+                    f.mkdirs();
+                    //jTextFieldControllersDir.setText("CPA_CONTROLLERS environmental variable not set");F
+                }
             }
+            jTextFieldControllersDir.setText(env);
+
         }
         {
-            String env = System.getenv("EV3_IP");
-            if (env == null) {
-                jTextFieldHost.setText("EV3_IP environmental variable not set");
-            } else {
-                jTextFieldHost.setText(env);
+            String ip = System.getenv("EV3_IP");
+            if (ip == null) {
+                ip = "192.168.1.1";
+                //jTextFieldHost.setText("EV3_IP environmental variable not set");
             }
+
+            jTextFieldHost.setText(ip);
         }
         jFileChooser.setCurrentDirectory(new File(jTextFieldControllersDir.getText()));
         Environment.getInstance().setShortNames(jCheckBoxShortNames.isSelected());
