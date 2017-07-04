@@ -226,7 +226,7 @@ public class ParameterslPanelHelper implements Runnable {
                     //LOG.log(Level.INFO, "mouse clicked {0}", layer.getName());
 
                     try {
-                        saveParameters(list);
+                        ch.saveParameters();
                     } catch (IOException ex) {
                         Exceptions.printStackTrace(ex);
                     }
@@ -239,126 +239,8 @@ public class ParameterslPanelHelper implements Runnable {
         return size;
     }
 
-    private void saveParameters(List<Layer> list) throws IOException {
-        String filePath = ch.getConfigPath();
-        int index = filePath.lastIndexOf(File.separator);
-        int xmlindex = filePath.lastIndexOf(File.separator + "xml");
-        //String path = filePath.substring(0, index);
-        String xmlpath = filePath.substring(0, xmlindex);
-
-        File dir = new File(xmlpath + File.separator + "parameters");
-        if (!dir.exists()) {
-            dir.mkdir();
-        }
-
-        File fileNamePath = new File(dir.getAbsolutePath() + File.separator + filePath.substring(index, filePath.length() - 3) + "pars");
-
-        StringBuilder sb = new StringBuilder();
-
-        for (final Layer layer : list) {
-            for (pct.moons.co.uk.schema.layers.Layers.Layer.Controller cont : layer.getController()) {
-
-                Functions functions = cont.getFunctions();
-                if (functions.getInputFunctions() != null) {
-                    pct.moons.co.uk.schema.layers.ControlFunction func = functions.getInputFunctions().getInput();
-                    List<Parameters> inputPars = functions.getInputFunctions().getInput().getNeuralFunction().getParameters();
-                    if (inputPars.size() > 0 && dataTypesNotEmpty(inputPars)) {
-                        for (Parameters par : inputPars) {
-                            if (!par.getDataType().isEmpty()) {
-                                sb.append(func.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                            }
-                        }
-                    }
-                    if (functions.getInputFunctions().getTransfers() != null) {
-                        for (pct.moons.co.uk.schema.layers.ControlFunction transfer : functions.getInputFunctions().getTransfers().getTransfer()) {
-                            List<Parameters> transferPars = transfer.getNeuralFunction().getParameters();
-                            if (transferPars.size() > 0 && dataTypesNotEmpty(transferPars)) {
-                                for (Parameters par : transferPars) {
-                                    if (!par.getDataType().isEmpty()) {
-                                        sb.append(transfer.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if (functions.getReferenceFunctions() != null) {
-                    pct.moons.co.uk.schema.layers.ControlFunction func = functions.getReferenceFunctions().getReference();
-                    List<Parameters> refPars = func.getNeuralFunction().getParameters();
-                    if (refPars.size() > 0 && dataTypesNotEmpty(refPars)) {
-                        for (Parameters par : refPars) {
-                            if (!par.getDataType().isEmpty()) {
-                                sb.append(func.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-
-                            }
-                        }
-                    }
-                    if (functions.getReferenceFunctions().getTransfers() != null) {
-                        for (pct.moons.co.uk.schema.layers.ControlFunction transfer : functions.getReferenceFunctions().getTransfers().getTransfer()) {
-                            List<Parameters> transferPars = transfer.getNeuralFunction().getParameters();
-                            if (transferPars.size() > 0 && dataTypesNotEmpty(transferPars)) {
-                                for (Parameters par : transferPars) {
-                                    if (!par.getDataType().isEmpty()) {
-                                        sb.append(transfer.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if (functions.getErrorFunctions() != null) {
-                    pct.moons.co.uk.schema.layers.ControlFunction func = functions.getErrorFunctions().getError();
-                    List<Parameters> errPars = functions.getErrorFunctions().getError().getNeuralFunction().getParameters();
-                    if (errPars.size() > 0 && dataTypesNotEmpty(errPars)) {
-                        for (Parameters par : errPars) {
-                            if (!par.getDataType().isEmpty()) {
-                                sb.append(func.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                            }
-                        }
-                    }
-                    if (functions.getErrorFunctions().getTransfers() != null) {
-                        for (pct.moons.co.uk.schema.layers.ControlFunction transfer : functions.getErrorFunctions().getTransfers().getTransfer()) {
-                            List<Parameters> transferPars = transfer.getNeuralFunction().getParameters();
-                            if (transferPars.size() > 0 && dataTypesNotEmpty(transferPars)) {
-                                for (Parameters par : transferPars) {
-                                    if (!par.getDataType().isEmpty()) {
-                                        sb.append(transfer.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                }
-                if (functions.getOutputFunctions() != null) {
-                    pct.moons.co.uk.schema.layers.ControlFunction func = functions.getOutputFunctions().getOutput();
-                    List<Parameters> outputPars = functions.getOutputFunctions().getOutput().getNeuralFunction().getParameters();
-                    if (outputPars.size() > 0 && dataTypesNotEmpty(outputPars)) {
-                        for (Parameters par : outputPars) {
-                            if (!par.getDataType().isEmpty()) {
-                                sb.append(func.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                            }
-                        }
-                    }
-                    if (functions.getOutputFunctions().getTransfers() != null) {
-                        for (pct.moons.co.uk.schema.layers.ControlFunction transfer : functions.getOutputFunctions().getTransfers().getTransfer()) {
-                            List<Parameters> transferPars = transfer.getNeuralFunction().getParameters();
-                            if (transferPars.size() > 0 && dataTypesNotEmpty(transferPars)) {
-                                for (Parameters par : transferPars) {
-                                    if (!par.getDataType().isEmpty()) {
-                                        sb.append(transfer.getName()).append("_").append(par.getName()).append("=").append(par.getValue()).append("\n");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        FileWriter fw = new FileWriter(fileNamePath);
-        fw.write(sb.toString());
-        fw.close();
-        LOG.log(Level.INFO, "Saved parameters to {0}", fileNamePath);
+    private void saveParameters() throws IOException {
+        ch.saveParameters();
     }
 
     private int addControllersPanels(Layer layer, ControlLayer controlLayer, JPanel panel) {
