@@ -15,14 +15,41 @@
 -->
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
-    <folder name="Menu_hidden">
+    <folder name="Menu">
         <file name="BuildProject_hidden"/>
         <file name="GoTo_hidden"/>
         <file name="Refactoring_hidden"/>
         <file name="RunProject_hidden"/>
         <file name="Source_hidden"/>
         <file name="Tools_hidden"/>
+        <file name="Edit_hidden"/>
+        <file name="File_hidden"/>
+
         <file name="Versioning_hidden"/>
+        <folder name="Window">
+            <file name="org-netbeans-modules-project-ui-logical-tab-action.shadow_hidden"/>
+            <file name="org-netbeans-modules-project-ui-physical-tab-action.shadow_hidden"/>
+          <file name="org-netbeans-modules-favorites-View.shadow_hidden"/>
+                     <file name="org-netbeans-core-ide-ServicesTabAction.shadow_hidden"/>
+            <file name="org-netbeans-modules-navigator-ShowNavigatorAction.shadow_hidden"/>
+            <file name="org-netbeans-modules-tasklist-ui-TaskListAction.shadow_hidden"/>
+            <file name="org-netbeans-modules-tasks-ui-DashboardTopComponent.shadow_hidden"/>
+            <file name="org-netbeans-core-io-ui-IOWindowAction.shadow_hidden"/>
+            <file name="SwitchToRecentDocumentAction.shadow_hidden"/>
+            <folder name="Debug_hidden"/>
+            <folder name="Web_hidden"/>
+            <folder name="Tools_hidden"/>
+            <file name="Separator3.instance_hidden"/>
+            <folder name="ConfigureWindow_hidden"/>
+            <file name="org-netbeans-core-windows-actions-ResetWindowsAction.shadow_hidden"/>
+            <file name="Separator4.instance_hidden"/>
+            <file name="CloseWindowAction.shadow_hidden"/>
+            <file name="CloseAllDocumentsAction.shadow_hidden"/>
+            <file name="CloseAllButThisAction.shadow_hidden"/>
+            <file name="GroupsMenuAction.shadow_hidden"/>
+            <file name="DocumentsAction.shadow_hidden"/>
+
+        </folder>
         <folder name="View">
             <file name="Separator3.instance_hidden"/>
             <file name="ShowEditorOnlyAction.shadow_hidden"/>
@@ -52,5 +79,5 @@
             <file name="topSlidingSide.wsmode" url="topSlidingSideWsmode.xml"/>
         </folder>
     </folder>
-      <file name="Toolbars_hidden"/>
+    <file name="Toolbars_hidden"/>
 </filesystem>

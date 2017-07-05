@@ -68,11 +68,11 @@ public final class ControlPanelTopComponent extends TopComponent {
 
     public ControlPanelTopComponent() {
         initComponents();
-
+        System.setProperty("netbeans.buildnumber", "1.0.00");
         {
             env = System.getenv("CPA_CONTROLLERS");
             if (env == null) {
-                env = System.getProperty("user.home")  + File.separator + "PCTSoftware" + File.separator + "Controllers";
+                env = System.getProperty("user.home") + File.separator + "PCTSoftware" + File.separator + "Controllers";
                 File f = new File(env);
                 if (!f.exists()) {
                     f.mkdirs();
