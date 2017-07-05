@@ -239,9 +239,7 @@ public class ParameterslPanelHelper implements Runnable {
         return size;
     }
 
-    private void saveParameters() throws IOException {
-        ch.saveParameters();
-    }
+   
 
     private int addControllersPanels(Layer layer, ControlLayer controlLayer, JPanel panel) {
 
