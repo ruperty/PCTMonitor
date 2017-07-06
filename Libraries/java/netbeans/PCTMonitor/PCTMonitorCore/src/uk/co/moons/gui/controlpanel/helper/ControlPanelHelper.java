@@ -637,7 +637,7 @@ public class ControlPanelHelper implements Runnable {
         try {
             File file = new File(displayFile.substring(0, displayFile.lastIndexOf(File.separator, displayFile.length())));
             if (!file.exists()) {
-                file.mkdir();
+                file.mkdirs();
             }
 
             props.store(new FileOutputStream(displayFile), null);
