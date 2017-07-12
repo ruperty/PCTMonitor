@@ -98,6 +98,10 @@
                 <binary-origin>release/modules/ext/javax.json-1.0.4.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/RobotControlImpl-1.0.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/RobotControlImpl-1.0.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/jmathplot-1.0.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/jmathplot-1.0.jar</binary-origin>
             </class-path-extension>
