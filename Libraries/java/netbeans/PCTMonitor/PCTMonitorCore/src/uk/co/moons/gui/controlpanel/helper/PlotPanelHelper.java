@@ -58,7 +58,6 @@ public class PlotPanelHelper {
         return configMap;
     }
 
-    
     public boolean isClearConfig() {
         return clearConfig;
     }
@@ -160,19 +159,26 @@ public class PlotPanelHelper {
     }
 
     private String getFilesDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "files";
+        String dir = Environment.getInstance().getFilePath();
+        int index = dir.indexOf(File.separator + "files" + File.separator);
+        String path;
+        if (index >= 0) {
+            path = dir.substring(0, index+6);
+        } else {
+            path = dir + File.separator + "files";
+        }
 
         return path;
     }
 
     private String getPropertiesDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "files" + File.separator + "properties";
+        String path = getFilesDir() + File.separator + "properties";
 
         return path;
     }
 
     private String getPropertiesSubDir() {
-        String path = Environment.getInstance().getFilePath() + File.separator + "files" + File.separator + "properties" + File.separator
+        String path = getPropertiesDir() + File.separator
                 + (Environment.getInstance().getFileRoot().charAt(0) < 63 ? Environment.getInstance().getFileRoot().substring(0, 7) : Environment.getInstance().getFileRoot())
                 + File.separator;
 
