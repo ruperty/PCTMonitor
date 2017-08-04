@@ -55,18 +55,18 @@ import uk.co.moons.gui.controlpanel.helper.PlotPanelHelper;
     "HINT_PlotPanelTopComponent=This is a PlotPanel window"
 })
 public final class PlotPanelTopComponent extends TopComponent {
-
+    
     static final Logger logger = Logger.getLogger(PlotPanelTopComponent.class.getName());
     private PlotPanelHelper plotPanelHelper = null;
-
+    
     public PlotPanelTopComponent() {
-
+        
         initComponents();
         setName(Bundle.CTL_PlotPanelTopComponent());
         setToolTipText(Bundle.HINT_PlotPanelTopComponent());
-
+        
     }
-
+    
     public PlotPanelTopComponent(ControlPanelHelper cph) {
         this.cph = cph;
         plotPanelHelper = new PlotPanelHelper();
@@ -75,22 +75,22 @@ public final class PlotPanelTopComponent extends TopComponent {
         setName(Bundle.CTL_PlotPanelTopComponent());
         setToolTipText(Bundle.HINT_PlotPanelTopComponent());
     }
-
+    
     public PlotPanelHelper getPlotPanelHelper() {
         if (plotPanelHelper == null) {
             plotPanelHelper = new PlotPanelHelper();
         }
         return plotPanelHelper;
     }
-
+    
     public void setCph(ControlPanelHelper cph) {
         this.cph = cph;
     }
-
+    
     public ControlPanelHelper getCph() {
         return cph;
     }
-
+    
     public void addGraphButton(String index) {
         String ind = String.valueOf(index);
         JRadioButton button = new JRadioButton(ind);
@@ -215,9 +215,7 @@ public final class PlotPanelTopComponent extends TopComponent {
     private void jListControllersValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListControllersValueChanged
         functionsListModel = new DefaultListModel<>();
         hmFunctions = new HashMap<>();
-
-       
-
+        
         Object[] selectedController = jListControllers.getSelectedValuesList().toArray();
         for (int i = 0; i < selectedController.length; i++) {
             String cont = (String) selectedController[i];
@@ -228,15 +226,15 @@ public final class PlotPanelTopComponent extends TopComponent {
                 hmFunctions.put(func, cont);
             }
         }
-
+        
         jListFunctions.setModel(functionsListModel);
     }//GEN-LAST:event_jListControllersValueChanged
-
+    
 
     private void jListFunctionsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListFunctionsValueChanged
-
+        
         logger.info("jListFunctionsValueChanged ");
-
+        
         if (evt.getValueIsAdjusting() == false) {
             selectedFunctions = new ArrayList<>();
             Object[] values = jListFunctions.getSelectedValuesList().toArray();
@@ -250,13 +248,13 @@ public final class PlotPanelTopComponent extends TopComponent {
             }
         }
     }//GEN-LAST:event_jListFunctionsValueChanged
-
+    
     private void addToConfig(String num, String function) {
         plotPanelHelper.addToConfig(num, function);
     }
 
     private void jButtonRemoveGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveGraphActionPerformed
-
+        
         plotPanelHelper.removeGraph();
         int index = buttonGroupPlotNumber.getButtonCount() - 1;
         int ctr = 0;
@@ -267,15 +265,15 @@ public final class PlotPanelTopComponent extends TopComponent {
                 buttonGroupPlotNumber.remove(b);
             }
         }
-
+        plotPanelHelper.removeConfig( String.valueOf( index+1));
         jPanelRadio.remove(index);
-
+        
         revalidate();
         repaint();
     }//GEN-LAST:event_jButtonRemoveGraphActionPerformed
 
     private void jButtonClearDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearDataActionPerformed
-
+        
         plotPanelHelper.clear();
     }//GEN-LAST:event_jButtonClearDataActionPerformed
 
@@ -284,7 +282,7 @@ public final class PlotPanelTopComponent extends TopComponent {
         //String bm = buttonGroupPlotNumber.getSelection().getActionCommand();
         //int index = Integer.parseInt(bm) + 1;
         int index = buttonGroupPlotNumber.getButtonCount() + 1;
-
+        
         String ind = String.valueOf(index);
         JRadioButton button = new JRadioButton(ind);
         button.setActionCommand(ind);
@@ -332,19 +330,19 @@ public final class PlotPanelTopComponent extends TopComponent {
     public void componentOpened() {
         // TODO add custom code on component opening
     }
-
+    
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
     }
-
+    
     void writeProperties(java.util.Properties p) {
         // better to version settings since initial version as advocated at
         // http://wiki.apidesign.org/wiki/PropertyFiles
         p.setProperty("version", "1.0");
         // TODO store your settings
     }
-
+    
     void readProperties(java.util.Properties p) {
         String version = p.getProperty("version");
         // TODO read your settings according to their version

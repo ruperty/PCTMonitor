@@ -84,6 +84,11 @@ public class PlotPanelHelper {
         }
         list.add(function);
     }
+    
+     public void removeConfig(String num) {        
+        configMap.remove(num);
+        LOG.info("Removed config "+num);
+    }
 
     public void loadPlotsResource() {
 
