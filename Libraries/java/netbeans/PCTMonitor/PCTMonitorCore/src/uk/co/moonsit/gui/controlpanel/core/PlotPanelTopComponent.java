@@ -43,7 +43,7 @@ import uk.co.moons.gui.controlpanel.helper.PlotPanelHelper;
         preferredID = "PlotPanelTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_ALWAYS)
-@TopComponent.Registration(mode = "output", openAtStartup = false)
+@TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "uk.co.moonsit.gui.controlpanel.core.PlotPanelTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
