@@ -14,6 +14,7 @@
  */
 package uk.co.moonsit.gui.controlpanel.core;
 
+import java.awt.Font;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -72,7 +73,7 @@ public final class ControlPanelTopComponent extends TopComponent {
         {
             env = System.getenv("CPA_CONTROLLERS");
             if (env == null) {
-                env = System.getProperty("user.home") + File.separator + "PCTSoftware" + File.separator + "Controllers";
+                env = System.getProperty("user.home") + File.separator + "PCTMonitor" + File.separator + "Controllers";
                 File f = new File(env);
                 if (!f.exists()) {
                     f.mkdirs();
@@ -277,9 +278,9 @@ public final class ControlPanelTopComponent extends TopComponent {
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxPlot, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxPlot.text")); // NOI18N
 
         jTextFieldPlotItems.setText(org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jTextFieldPlotItems.text")); // NOI18N
-        jTextFieldPlotItems.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                plotLimitChange(evt);
+        jTextFieldPlotItems.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                focusPlotLimit(evt);
             }
         });
 
@@ -294,11 +295,6 @@ public final class ControlPanelTopComponent extends TopComponent {
         jTextFieldFontSize.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 focusFontSize(evt);
-            }
-        });
-        jTextFieldFontSize.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                fontSizeChange(evt);
             }
         });
 
@@ -575,95 +571,112 @@ public final class ControlPanelTopComponent extends TopComponent {
 
     @SuppressWarnings("SleepWhileInLoop")
     private void jButtonOpenFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpenFileActionPerformed
-
-        LOG.info("+++ openFileAction");
-        monitor.clear();
-        if (plotPanelHelper != null) {
-            plotPanelHelper.setClearConfig(true);
-        }
-
-        jButtonStart.setText("Start");
-        if (cph != null) {
-            try {
-                cph.close();
-            } catch (Exception ex) {
-                Exceptions.printStackTrace(ex);
+        try {
+            LOG.info("+++ openFileAction");
+            monitor.clear();
+            if (plotPanelHelper != null) {
+                plotPanelHelper.setClearConfig(true);
             }
 
-            if (!jButtonStart.getText().equals("Start")) {
-                while (!cph.isFinished()) {
-                    LOG.log(Level.INFO, "+++ Waiting for closedown");
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException ex) {
-                        Exceptions.printStackTrace(ex);
-                    }
+            jButtonStart.setText("Start");
+            if (cph != null) {
+                try {
+                    cph.close();
+                } catch (Exception ex) {
+                    Exceptions.printStackTrace(ex);
                 }
-            }
-        }
-        jButtonStart.setText("Start");
 
-        int returnVal = jFileChooser.showOpenDialog(super.getComponent(0));
-
-        String currentDir = jFileChooser.getCurrentDirectory().getName();
-        LOG.log(Level.INFO, "+++ {0}", currentDir);
-        if (!currentDir.equalsIgnoreCase(env)) {
-            jFileChooser.setCurrentDirectory(new File(currentDir));
-        }
-
-        int pdil = Integer.parseInt(jTextFieldPlotItems.getText());
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File file = jFileChooser.getSelectedFile();
-
-            LOG.log(Level.INFO, "Opening: {0}.", file.getAbsolutePath());
-            try {
-                jLabelFilename.setText(file.getName());
-                Environment.getInstance().setFilePath(file.getAbsolutePath());
-                Environment.getInstance().setFileRoot(file.getName());
-                cph = new ControlPanelHelper(file, jCheckBoxPrint.isSelected(), jCheckBoxOutput.isSelected(), monitor, pdil);
-                if (jCheckBoxOutput.isSelected()) {
-                    jTextFieldFileRoot.setText(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length()));
-                    cph.setOutputFile(getOutputFileName(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length())));
-                }
-                cph.setTimeLabel(jLabelTime);
-                cph.constructGUI(jPanelLayers);
-                //jPanelPlot.add(cph.getPlotPanel());
-                if (jCheckBoxPlot.isSelected()) {
-
-                    Set<TopComponent> setTc = WindowManager.getDefault().getRegistry().getOpened();
-                    for (TopComponent tc : setTc) {
-                        LOG.info("+++ TC " + tc.getName());
-                    }
-                    pjp = (PlotPanelTopComponent) WindowManager.getDefault().findTopComponent("PlotPanelTopComponent");
-                    if (plotPanelHelper == null) {
-                        if (pjp == null) {
-                            pjp = new PlotPanelTopComponent(cph);
+                if (!jButtonStart.getText().equals("Start")) {
+                    while (!cph.isFinished()) {
+                        LOG.log(Level.INFO, "+++ Waiting for closedown");
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException ex) {
+                            Exceptions.printStackTrace(ex);
                         }
-                        plotPanelHelper = pjp.getPlotPanelHelper();
-                        if (pjp.getCph() == null) {
+                    }
+                }
+            }
+            jButtonStart.setText("Start");
+
+            int returnVal = jFileChooser.showOpenDialog(super.getComponent(0));
+
+            String currentDir = jFileChooser.getCurrentDirectory().getName();
+            LOG.log(Level.INFO, "+++ {0}", currentDir);
+            if (!currentDir.equalsIgnoreCase(env)) {
+                jFileChooser.setCurrentDirectory(new File(currentDir));
+            }
+
+            int pdil = Integer.parseInt(jTextFieldPlotItems.getText());
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = jFileChooser.getSelectedFile();
+
+                LOG.log(Level.INFO, "Opening: {0}.", file.getAbsolutePath());
+                try {
+                    jLabelFilename.setText(file.getName());
+                    Environment.getInstance().setFilePath(file.getAbsolutePath());
+                    Environment.getInstance().setFileRoot(file.getName());
+                    cph = new ControlPanelHelper(file, jCheckBoxPrint.isSelected(), jCheckBoxOutput.isSelected(), monitor, pdil);
+                    if (jCheckBoxOutput.isSelected()) {
+                        jTextFieldFileRoot.setText(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length()));
+                        cph.setOutputFile(getOutputFileName(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length())));
+                    }
+                    cph.setTimeLabel(jLabelTime);
+                    cph.constructGUI(jPanelLayers);
+                    //jPanelPlot.add(cph.getPlotPanel());
+                    if (jCheckBoxPlot.isSelected()) {
+
+                        Set<TopComponent> setTc = WindowManager.getDefault().getRegistry().getOpened();
+                        for (TopComponent tc : setTc) {
+                            LOG.info("+++ TC " + tc.getName());
+                        }
+                        pjp = (PlotPanelTopComponent) WindowManager.getDefault().findTopComponent("PlotPanelTopComponent");
+                        if (plotPanelHelper == null) {
+                            if (pjp == null) {
+                                pjp = new PlotPanelTopComponent(cph);
+                            }
+                            plotPanelHelper = pjp.getPlotPanelHelper();
+                            if (pjp.getCph() == null) {
+                                pjp.setCph(cph);
+                            }
+                            plotPanelHelper.addPlotPanel(pjp, cph);
+                        } else {
+                            plotPanelHelper.clear();
                             pjp.setCph(cph);
+                            plotPanelHelper.updateControllersListModel(cph);
+                            plotPanelHelper.loadPlotsResource();
                         }
-                        plotPanelHelper.addPlotPanel(pjp, cph);
-                    } else {
-                        plotPanelHelper.clear();
-                        pjp.setCph(cph);
-                        plotPanelHelper.updateControllersListModel(cph);
-                        plotPanelHelper.loadPlotsResource();
+                        cph.setPlotPanelHelper(plotPanelHelper);
                     }
-                    cph.setPlotPanelHelper(plotPanelHelper);
+                    this.getComponent(0).revalidate();
+                    this.getComponent(0).repaint();
+                    //cph.setLayerPanel(jPanelLayers);
+                } catch (Exception ex) {
+                    throw ex;
+                    //  System.exit(0);
                 }
-                this.getComponent(0).revalidate();
-                this.getComponent(0).repaint();
-                //cph.setLayerPanel(jPanelLayers);
-            } catch (Exception ex) {
-                Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
-                //  System.exit(0);
+            } else {
+                LOG.info("Open command cancelled by user.");
             }
-        } else {
-            LOG.info("Open command cancelled by user.");
+        } catch (Exception ex) {
+            Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
+            displayException(ex.getMessage());
         }
-
     }//GEN-LAST:event_jButtonOpenFileActionPerformed
+
+    private void displayException(String error) {
+        JTextArea jTextAreaError = new JTextArea();
+        JFrame errorFrame = new JFrame("Error");
+
+        errorFrame.add(jTextAreaError);
+        Font font = new Font("Arial", Font.PLAIN, 24);
+        jTextAreaError.setFont(font);
+        jTextAreaError.setText(error);
+
+        errorFrame.pack();
+        errorFrame.setVisible(true);
+        errorFrame.setSize(600, 150);
+    }
 
     private void jButtonDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDescriptionActionPerformed
         JTextArea jTextAreaDescription1 = new JTextArea();
@@ -829,19 +842,18 @@ public final class ControlPanelTopComponent extends TopComponent {
         disconnect();
     }//GEN-LAST:event_jButtonShutdownActionPerformed
 
-    private void plotLimitChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_plotLimitChange
-        if (cph != null) {
-            cph.setPlotDataItemsLimit(Integer.parseInt(jTextFieldPlotItems.getText()));
-        }
-    }//GEN-LAST:event_plotLimitChange
-
-    private void fontSizeChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_fontSizeChange
-        //Environment.getInstance().setFontSize(Integer.parseInt(jTextFieldFontSize.getText()));
-    }//GEN-LAST:event_fontSizeChange
-
     private void focusFontSize(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_focusFontSize
         Environment.getInstance().setFontSize(Integer.parseInt(jTextFieldFontSize.getText()));
     }//GEN-LAST:event_focusFontSize
+
+    private void focusPlotLimit(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_focusPlotLimit
+        if (cph != null) {
+            cph.setPlotDataItemsLimit(Integer.parseInt(jTextFieldPlotItems.getText()));
+            LOG.info("Plots size = " + Integer.parseInt(jTextFieldPlotItems.getText()));
+        } else {
+            LOG.info("CPH NULL");
+        }
+    }//GEN-LAST:event_focusPlotLimit
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDescription;

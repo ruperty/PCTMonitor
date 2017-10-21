@@ -244,6 +244,7 @@ public class GridPlot2d {
 
     }
 
+    /*
     public void displayPlot() {
         Set<String> set = gpd.keySet();
         for (String title : set) {
@@ -254,5 +255,5 @@ public class GridPlot2d {
             }
         }
     }
-
+*/
 }

@@ -33,14 +33,14 @@ public class GridPlot2dDataSet {
         this.controller = controller;
         this.function = function;
         this.title = function;//controller.substring(0, 4) + function.substring(0, 4);
-        xList = new ArrayList<Double>();
-        yList = new ArrayList<Double>();
+        xList = new ArrayList<>();
+        yList = new ArrayList<>();
     }
 
     public GridPlot2dDataSet(String title) {
         this.title = title;
-        xList = new ArrayList<Double>();
-        yList = new ArrayList<Double>();
+        xList = new ArrayList<>();
+        yList = new ArrayList<>();
     }
 
     public String getController() {
