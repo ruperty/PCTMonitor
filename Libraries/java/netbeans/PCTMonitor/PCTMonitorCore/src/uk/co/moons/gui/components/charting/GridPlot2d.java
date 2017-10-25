@@ -15,6 +15,7 @@
 package uk.co.moons.gui.components.charting;
 
 import java.awt.geom.Rectangle2D;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -77,8 +78,8 @@ public class GridPlot2d {
         Double maxx = null;
         Double maxy = null;
         //logger.info("updatePlot");
-        Set<String> set = gpd.keySet();
-        for (String title : set) {
+        List<String> keys = gpd.getKeys();
+        for (String title : keys) {
             GridPlot2dDataSet gpds = gpd.get(title);
             BaseControlFunction function = ch.getControllerFunction(/* gpds.getController(), */gpds.getFunction().trim());
             if (function == null) {
@@ -150,8 +151,9 @@ public class GridPlot2d {
     }
 
     public void empty() {
-        Set<String> set = gpd.keySet();
-        for (String title : set) {
+        List<String> keys = gpd.getKeys();
+
+        for (String title : keys) {
             GridPlot2dDataSet gpds = gpd.get(title);
             gpds.empty();
         }
@@ -159,8 +161,9 @@ public class GridPlot2d {
 
     private void redisplay() {
         plot.removeAllPlots();
-        Set<String> set = gpd.keySet();
-        for (String title : set) {
+        List<String> keys = gpd.getKeys();
+
+        for (String title : keys) {
             GridPlot2dDataSet gpds = gpd.get(title);
             double[] x = gpds.getX();
             if (x.length > 0) {
@@ -204,8 +207,9 @@ public class GridPlot2d {
                 });
             }
 
-            Set<String> set = gpd.keySet();
-            for (final String title : set) {
+            List<String> keys = gpd.getKeys();
+
+            for (final String title : keys) {
                 final GridPlot2dDataSet gpds = gpd.get(title);
                 final double[] x = gpds.getX();
                 if (x.length > 0) {
@@ -216,8 +220,9 @@ public class GridPlot2d {
             }
         } else {
             //logger.info("Add data");
-            Set<String> set = gpd.keySet();
-            for (String title : set) {
+            List<String> keys = gpd.getKeys();
+
+            for (String title : keys) {
                 GridPlot2dDataSet gpds = gpd.get(title);
                 double x = gpds.getLastX();
                 double y = gpds.getLastY();
@@ -255,5 +260,5 @@ public class GridPlot2d {
             }
         }
     }
-*/
+     */
 }

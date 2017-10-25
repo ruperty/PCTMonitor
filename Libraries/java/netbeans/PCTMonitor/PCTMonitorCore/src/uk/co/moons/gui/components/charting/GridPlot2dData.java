@@ -14,18 +14,51 @@
  */
 package uk.co.moons.gui.components.charting;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  *
- * @author Rupert Young
- * Moon's Information Technology
+ * @author Rupert Young Moon's Information Technology
  *
  */
+public class GridPlot2dData extends ArrayList<GridPlot2dDataSet> {
 
-public class GridPlot2dData extends HashMap<String, GridPlot2dDataSet> {
-    
-    
-    
-    
+    private final HashMap<String, Integer> titleIndex;
+
+    public GridPlot2dData() {
+        titleIndex = new HashMap<>();
+    }
+
+    public void put(String title, GridPlot2dDataSet gpds) {
+        Integer index = size();
+        add(gpds);
+        titleIndex.put(title, index);
+    }
+
+    public GridPlot2dDataSet get(String title) {
+
+        return get(titleIndex.get(title));
+
+    }
+
+    public List<String> getKeys() {
+        List<String> keys =  new ArrayList<>();
+
+        for (GridPlot2dDataSet gpds : this) {
+            keys.add(gpds.getTitle());
+        }
+
+        return keys;
+    }
+
+    @Override
+    public void clear() {
+        super.clear();
+        titleIndex.clear();
+    }
+
 }

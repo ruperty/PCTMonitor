@@ -94,6 +94,10 @@
                 <binary-origin>release/modules/ext/PCT-1.0.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/gicentreUtils.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/gicentreUtils.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/javax.json-1.0.4.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/javax.json-1.0.4.jar</binary-origin>
             </class-path-extension>
@@ -112,6 +116,10 @@
             <class-path-extension>
                 <runtime-relative-path>ext/derbyclient.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/derbyclient.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/core-3.0.2.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/core-3.0.2.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
                 <runtime-relative-path>ext/RobotControl-1.0.jar</runtime-relative-path>
