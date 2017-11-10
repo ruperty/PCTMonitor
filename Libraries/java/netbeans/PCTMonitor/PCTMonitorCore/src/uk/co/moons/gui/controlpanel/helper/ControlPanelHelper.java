@@ -564,7 +564,7 @@ public class ControlPanelHelper implements Runnable {
                     ch.print("+++ " + iter + " " + ch.getTime() + " " + Environment.getInstance().getRate() + " ");
                 }
                 if (output) {
-                    ch.write(outputFile);
+                    ch.write();
                 }
                 monitor.update();
                 /*if (timeLabel != null) {

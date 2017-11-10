@@ -223,14 +223,17 @@ public class GridPlot2d {
             List<String> keys = gpd.getKeys();
 
             for (String title : keys) {
-                GridPlot2dDataSet gpds = gpd.get(title);
-                double x = gpds.getLastX();
-                double y = gpds.getLastY();
-                LinePlot lp = plot.getLinePlot(title);
-                if (lp != null) {
-                    lp.addData(x, y);
+                try {
+                    GridPlot2dDataSet gpds = gpd.get(title);
+                    double x = gpds.getLastX();
+                    double y = gpds.getLastY();
+                    LinePlot lp = plot.getLinePlot(title);
+                    if (lp != null) {
+                        lp.addData(x, y);
+                    }
+                } catch (Exception e) {
+                    LOG.warning(e.toString());
                 }
-
             }
 
             if (invokeOneLater) {

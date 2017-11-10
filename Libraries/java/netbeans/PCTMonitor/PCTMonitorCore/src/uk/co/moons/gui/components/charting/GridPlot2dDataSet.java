@@ -16,6 +16,7 @@ package uk.co.moons.gui.components.charting;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,6 +24,8 @@ import java.util.List;
  *
  */
 public class GridPlot2dDataSet {
+
+    private static final Logger LOG = Logger.getLogger(GridPlot2dDataSet.class.getName());
 
     private List<Double> xList = null;
     private List<Double> yList = null;
@@ -67,7 +70,7 @@ public class GridPlot2dDataSet {
         this.title = title;
     }
 
-    public  void updateData(double x, double y, Integer size) {
+    public void updateData(double x, double y, Integer size) {
         xList.add(x);
         yList.add(y);
         if (size != null) {
@@ -78,37 +81,54 @@ public class GridPlot2dDataSet {
         }
     }
 
-    public  void empty() {
+    public void empty() {
         xList.clear();
         yList.clear();
     }
 
-    public  double getXSize() {
+    public double getXSize() {
         return xList.size();
     }
 
-    public  double getLastX() {
-        return xList.get(xList.size() - 1);
+    public double getLastX() {
+        Double rtn = null;
+        try {
+            rtn = xList.get(xList.size() - 1);
+        } catch (Exception e) {
+            LOG.warning(e.toString());
+        }
+        return rtn;
     }
 
-    public  double getLastY() {
+    public double getLastY() {
         return yList.get(yList.size() - 1);
     }
 
-    public  double[] getX() {
+    public double[] getX() {
         double[] d = new double[xList.size()];
         int ctr = 0;
+        try{
         for (double val : xList) {
             d[ctr++] = val;
+        }}catch(Exception e){
+            LOG.warning(e.toString());
         }
         return d;
     }
 
-    public  double[] getY() {
+    public double[] getY() {
         double[] d = new double[yList.size()];
-        int ctr = 0;
-        for (double val : yList) {
-            d[ctr++] = val;
+        try {
+            try {
+                int ctr = 0;
+                for (double val : yList) {
+                    d[ctr++] = val;
+                }
+            } catch (Exception e) {
+                LOG.info(e.toString());
+            }
+        } catch (Exception e) {
+            LOG.info(e.toString());
         }
         return d;
     }

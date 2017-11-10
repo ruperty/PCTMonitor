@@ -660,7 +660,10 @@ public final class ControlPanelTopComponent extends TopComponent {
             }
         } catch (Exception ex) {
             Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
-            displayException(ex.getMessage());
+            String error = ex.getMessage();
+            if (error==null)
+                error=ex.toString();
+            displayException(error);
         }
     }//GEN-LAST:event_jButtonOpenFileActionPerformed
 
