@@ -65,7 +65,7 @@ import uk.co.moonsit.utils.MoonsString;
  */
 public class ControlPanelHelper implements Runnable {
 
-    private static final Logger logger = Logger.getLogger(ControlPanelHelper.class.getName());
+    private static final Logger LOG = Logger.getLogger(ControlPanelHelper.class.getName());
     private ControlHierarchy ch;
     //private JPanel layersPanel;
     //private JPanel plotPanel;
@@ -127,12 +127,11 @@ public class ControlPanelHelper implements Runnable {
                 if (ch.getControllerFunction("TimeRate") != null) {
                     ((ModelControlHierarchy) ch).setTimeRate(ch.getControllerFunction("TimeRate").getNeural().getOutput());
                 }
-                //int beginIndex = config.lastIndexOf("/");
-                //String fileName = config.substring(beginIndex + 1);
-                //configureOutputFile(fileName);
+                configureOutputFilePrivate(Environment.getInstance().getFileRoot());
                 break;
             default:
                 ch = new ControlHierarchy(config);
+                configureOutputFilePrivate(Environment.getInstance().getFileRoot());
                 break;
         }
 
@@ -173,12 +172,13 @@ public class ControlPanelHelper implements Runnable {
         Environment.getInstance().setFilePath(dir);
         Environment.getInstance().setFileRoot((new File(fileName)).getName());
         //String config = configAndFile.substring(endIndex);
-        logger.log(Level.INFO, "+++ file {0}", file);
+        LOG.log(Level.INFO, "+++ file {0}", file);
         displayFile = getDisplayFile(new File(file));
         cdts = getDisplayTypes();
 
-        configureOutputFile(fileName);
+        configureOutputFilePrivate(fileName);
 
+        ch.setUpOutputQueue();
         monitor = m;
         monitor.setControlHierarchy(ch);
     }
@@ -222,7 +222,7 @@ public class ControlPanelHelper implements Runnable {
         return fileName;
     }
 
-    private void configureOutputFile(String fileName) {
+    private void configureOutputFilePrivate(String fileName) {
         if (output) {
             setOutputFields();
             ch.setListOutputFunctions(Environment.getInstance().getListOutputFunctions());
@@ -231,23 +231,24 @@ public class ControlPanelHelper implements Runnable {
             File dir;
             if (System.getProperty("os.name").equalsIgnoreCase("linux")) {
                 dir = new File(home + "/tmp/PCT/");
-                if (!dir.exists()) {
+                /*if (!dir.exists()) {
                     dir.mkdir();
-                }
+                }*/
             } else {
                 dir = new File(home + "\\tmp\\PCT\\Controllers\\");
-                if (!dir.exists()) {
+                /*if (!dir.exists()) {
                     dir.mkdir();
-                }
+                }*/
 
             }
             outputFile = dir + File.separator + fileName + ".csv";
-            logger.log(Level.INFO, "Output file path {0}", outputFile);
+            ch.setOutputFile(outputFile);
+            LOG.log(Level.INFO, "Output file path {0}", outputFile);
 
-            File f = new File(outputFile);
+            /*File f = new File(outputFile);
             if (f.exists()) {
                 f.delete();
-            }
+            }*/
         }
     }
 
@@ -281,7 +282,7 @@ public class ControlPanelHelper implements Runnable {
             props = new Properties();
             props.load(new FileInputStream(new File(fname)));
         } catch (IOException ex) {
-            logger.warning(ex.toString());
+            LOG.warning(ex.toString());
             //Logger.getLogger(PlotPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -498,7 +499,7 @@ public class ControlPanelHelper implements Runnable {
             label.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseReleased(MouseEvent e) {
-                    logger.log(Level.INFO, "mouse clicked {0}", cont.getName());
+                    LOG.log(Level.INFO, "mouse clicked {0}", cont.getName());
 
                     if (csPanel.isVisible()) {
                         csPanel.setVisible(false);
@@ -580,7 +581,7 @@ public class ControlPanelHelper implements Runnable {
             if (ch != null) {
                 ch.stop();
                 if (!step) {
-                    logger.info("Run stopped");
+                    LOG.info("Run stopped");
                     ch.post();
                 }
             }
@@ -591,7 +592,7 @@ public class ControlPanelHelper implements Runnable {
             Logger.getLogger(ControlPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
             //System.exit(1);
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, "+++ {0}", ex.toString());
+            LOG.log(Level.SEVERE, "+++ {0}", ex.toString());
             ex.printStackTrace();
             ch.setRunningFlag(false);
             //System.exit(1);

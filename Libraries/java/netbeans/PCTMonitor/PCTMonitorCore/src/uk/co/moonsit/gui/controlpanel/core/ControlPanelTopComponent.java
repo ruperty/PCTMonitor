@@ -271,6 +271,11 @@ public final class ControlPanelTopComponent extends TopComponent {
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxPrint, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxPrint.text")); // NOI18N
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxOutput, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxOutput.text")); // NOI18N
+        jCheckBoxOutput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxOutputActionPerformed(evt);
+            }
+        });
 
         jTextFieldFileRoot.setText(org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jTextFieldFileRoot.text")); // NOI18N
 
@@ -542,6 +547,7 @@ public final class ControlPanelTopComponent extends TopComponent {
 
     }//GEN-LAST:event_jButtonStartActionPerformed
 
+    /*
     private String getOutputFileName(String file) {
 
         String home = System.getProperty("user.home");
@@ -568,7 +574,7 @@ public final class ControlPanelTopComponent extends TopComponent {
         }
         return outputFile;
     }
-
+     */
     @SuppressWarnings("SleepWhileInLoop")
     private void jButtonOpenFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpenFileActionPerformed
         try {
@@ -618,8 +624,10 @@ public final class ControlPanelTopComponent extends TopComponent {
                     Environment.getInstance().setFileRoot(file.getName());
                     cph = new ControlPanelHelper(file, jCheckBoxPrint.isSelected(), jCheckBoxOutput.isSelected(), monitor, pdil);
                     if (jCheckBoxOutput.isSelected()) {
-                        jTextFieldFileRoot.setText(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length()));
-                        cph.setOutputFile(getOutputFileName(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length())));
+                        jTextFieldFileRoot.setText(cph.getOutputFile());
+                        //jTextFieldFileRoot.setText(Environment.getInstance().getFileRoot());
+                        //cph.configureOutputFile(Environment.getInstance().getFileRoot());
+                        //cph.setOutputFile(   getOutputFileName(Environment.getInstance().getFileRoot().substring(0, Environment.getInstance().getFileRoot().length())));
                     }
                     cph.setTimeLabel(jLabelTime);
                     cph.constructGUI(jPanelLayers);
@@ -661,8 +669,9 @@ public final class ControlPanelTopComponent extends TopComponent {
         } catch (Exception ex) {
             Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
             String error = ex.getMessage();
-            if (error==null)
-                error=ex.toString();
+            if (error == null) {
+                error = ex.toString();
+            }
             displayException(error);
         }
     }//GEN-LAST:event_jButtonOpenFileActionPerformed
@@ -764,7 +773,9 @@ public final class ControlPanelTopComponent extends TopComponent {
                             jCheckBoxOutput.isSelected(),
                             monitor, pdil, jTextFieldControllersDir.getText(), 20000);
 
-                    jTextFieldFileRoot.setText(cph.getOutputFile());
+                    if (jCheckBoxOutput.isSelected()) {
+                        jTextFieldFileRoot.setText(cph.getOutputFile());
+                    }
                     cph.setTimeLabel(jLabelTime);
                     cph.constructGUI(jPanelLayers);
 
@@ -857,6 +868,10 @@ public final class ControlPanelTopComponent extends TopComponent {
             LOG.info("CPH NULL");
         }
     }//GEN-LAST:event_focusPlotLimit
+
+    private void jCheckBoxOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxOutputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxOutputActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDescription;
