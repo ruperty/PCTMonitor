@@ -65,9 +65,9 @@ import uk.co.moonsit.sockets.ControlDataClient;
     "HINT_ControlPanelTopComponent=This is a ControlPanel window"
 })
 public final class ControlPanelTopComponent extends TopComponent {
-    
+
     static final Logger LOG = Logger.getLogger(ControlPanelTopComponent.class.getName());
-    
+
     public ControlPanelTopComponent() {
         initComponents();
         System.setProperty("netbeans.buildnumber", "1.0.00");
@@ -82,7 +82,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                 }
             }
             jTextFieldControllersDir.setText(env);
-            
+
         }
         {
             String ip = System.getenv("EV3_IP");
@@ -90,15 +90,15 @@ public final class ControlPanelTopComponent extends TopComponent {
                 ip = "192.168.1.1";
                 //jTextFieldHost.setText("EV3_IP environmental variable not set");
             }
-            
+
             jTextFieldHost.setText(ip);
         }
         jFileChooser.setCurrentDirectory(new File(jTextFieldControllersDir.getText()));
         Environment.getInstance().setShortNames(jCheckBoxShortNames.isSelected());
-        
+
         setName(Bundle.CTL_ControlPanelTopComponent());
         setToolTipText(Bundle.HINT_ControlPanelTopComponent());
-        
+
     }
 
     /**
@@ -120,6 +120,7 @@ public final class ControlPanelTopComponent extends TopComponent {
         jButtonOpenFile = new javax.swing.JButton();
         jButtonStart = new javax.swing.JButton();
         jButtonStep = new javax.swing.JButton();
+        jTextFieldStepSize = new javax.swing.JTextField();
         jPanelCommon = new javax.swing.JPanel();
         jPanelOutput = new javax.swing.JPanel();
         jButtonDescription = new javax.swing.JButton();
@@ -205,22 +206,31 @@ public final class ControlPanelTopComponent extends TopComponent {
             }
         });
 
+        jTextFieldStepSize.setText(org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jTextFieldStepSize.text")); // NOI18N
+        jTextFieldStepSize.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextFieldStepSizeFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelLocalLayout = new javax.swing.GroupLayout(jPanelLocal);
         jPanelLocal.setLayout(jPanelLocalLayout);
         jPanelLocalLayout.setHorizontalGroup(
             jPanelLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLocalLayout.createSequentialGroup()
+            .addGroup(jPanelLocalLayout.createSequentialGroup()
                 .addGroup(jPanelLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLocalLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLocalLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jButtonOpenFile))
+                    .addGroup(jPanelLocalLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
                         .addComponent(jButtonStart)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanelLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonOpenFile)
-                    .addComponent(jButtonStep))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonStep)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldStepSize, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanelLocalLayout.setVerticalGroup(
             jPanelLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,9 +239,10 @@ public final class ControlPanelTopComponent extends TopComponent {
                     .addComponent(jLabel1)
                     .addComponent(jButtonOpenFile))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonStart)
                     .addComponent(jButtonStep)
-                    .addComponent(jButtonStart))
+                    .addComponent(jTextFieldStepSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -270,13 +281,13 @@ public final class ControlPanelTopComponent extends TopComponent {
         );
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxPrint, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxPrint.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxOutput, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxOutput.text")); // NOI18N
-        jCheckBoxOutput.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxOutputActionPerformed(evt);
+                jCheckBoxPrintActionPerformed(evt);
             }
         });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxOutput, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxOutput.text")); // NOI18N
 
         jTextFieldFileRoot.setText(org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jTextFieldFileRoot.text")); // NOI18N
 
@@ -363,11 +374,6 @@ public final class ControlPanelTopComponent extends TopComponent {
 
         jTextFieldPort.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldPort.setText(org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jTextFieldPort.text")); // NOI18N
-        jTextFieldPort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPortActionPerformed(evt);
-            }
-        });
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabelHost, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jLabelHost.text")); // NOI18N
 
@@ -476,7 +482,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                         .addComponent(jPanelRemote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanelFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 30, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelControlsLayout.setVerticalGroup(
@@ -500,7 +506,7 @@ public final class ControlPanelTopComponent extends TopComponent {
     }// </editor-fold>//GEN-END:initComponents
 
     private class TimeLabelListener implements PropertyChangeListener {
-        
+
         @Override
         public void propertyChange(PropertyChangeEvent evt) {
             if (ControlHierarchyEventMonitor.TIME.equals(evt.getPropertyName())) {
@@ -544,7 +550,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                 }
             }
         }
-        
+
 
     }//GEN-LAST:event_jButtonStartActionPerformed
 
@@ -584,7 +590,7 @@ public final class ControlPanelTopComponent extends TopComponent {
             if (plotPanelHelper != null) {
                 plotPanelHelper.setClearConfig(true);
             }
-            
+
             jButtonStart.setText("Start");
             if (cph != null) {
                 try {
@@ -592,7 +598,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                 } catch (Exception ex) {
                     Exceptions.printStackTrace(ex);
                 }
-                
+
                 if (!jButtonStart.getText().equals("Start")) {
                     while (!cph.isFinished()) {
                         LOG.log(Level.INFO, "+++ Waiting for closedown");
@@ -605,19 +611,19 @@ public final class ControlPanelTopComponent extends TopComponent {
                 }
             }
             jButtonStart.setText("Start");
-            
+
             int returnVal = jFileChooser.showOpenDialog(super.getComponent(0));
-            
+
             String currentDir = jFileChooser.getCurrentDirectory().getName();
             LOG.log(Level.INFO, "+++ {0}", currentDir);
             if (!currentDir.equalsIgnoreCase(env)) {
                 jFileChooser.setCurrentDirectory(new File(currentDir));
             }
-            
+
             int pdil = Integer.parseInt(jTextFieldPlotItems.getText());
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = jFileChooser.getSelectedFile();
-                
+
                 LOG.log(Level.INFO, "Opening: {0}.", file.getAbsolutePath());
                 try {
                     jLabelFilename.setText(file.getName());
@@ -632,9 +638,10 @@ public final class ControlPanelTopComponent extends TopComponent {
                     }
                     cph.setTimeLabel(jLabelTime);
                     cph.constructGUI(jPanelLayers);
+                    cph.setStepSize(Integer.parseInt(jTextFieldStepSize.getText()));
                     //jPanelPlot.add(cph.getPlotPanel());
                     if (jCheckBoxPlot.isSelected()) {
-                        
+
                         Set<TopComponent> setTc = WindowManager.getDefault().getRegistry().getOpened();
                         for (TopComponent tc : setTc) {
                             LOG.info("+++ TC " + tc.getName());
@@ -667,12 +674,12 @@ public final class ControlPanelTopComponent extends TopComponent {
             } else {
                 LOG.info("Open command cancelled by user.");
             }
-            
+
         } catch (InvocationTargetException ex) {
             Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
             Throwable throwable = ex.getTargetException();
             Throwable cause = throwable.getCause();
-            
+
             String error = cause.toString();
             if (error == null) {
                 error = cause.getMessage();
@@ -687,11 +694,11 @@ public final class ControlPanelTopComponent extends TopComponent {
             displayException(error);
         }
     }//GEN-LAST:event_jButtonOpenFileActionPerformed
-    
+
     private void displayException(String error) {
         JTextArea jTextAreaError = new JTextArea();
         JFrame errorFrame = new JFrame("Error");
-        
+
         errorFrame.add(jTextAreaError);
         Font font = new Font("Arial", Font.PLAIN, 16);
         jTextAreaError.setFont(font);
@@ -716,9 +723,9 @@ public final class ControlPanelTopComponent extends TopComponent {
             }
         }
         descriptionFrame.add(jTextAreaDescription1);
-        
+
         jTextAreaDescription1.setText(description);
-        
+
         descriptionFrame.pack();
         descriptionFrame.setVisible(true);
         descriptionFrame.setSize(600, 300);
@@ -740,14 +747,14 @@ public final class ControlPanelTopComponent extends TopComponent {
             pph.setControlHierarchy(cph.getControlHierarchy());
             pph.constructGUI(jPanel);
         }
-        
+
         parametersFrame.pack();
         parametersFrame.setVisible(true);
     }//GEN-LAST:event_jButtonParametersActionPerformed
 
     private void jButtonStepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStepActionPerformed
         cph.setStep(true);
-        //logger.info("+++ step");
+
         if (cph != null) {
             if (jButtonStart.getText().equalsIgnoreCase("start")) {
                 try {
@@ -764,10 +771,10 @@ public final class ControlPanelTopComponent extends TopComponent {
             }
             Thread tt = new Thread(cph);
             tt.start();
-            //logger.info("+++ started step thread ");
+
         }
     }//GEN-LAST:event_jButtonStepActionPerformed
-    
+
     @SuppressWarnings("SleepWhileInLoop")
     private void jButtonRemoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoteActionPerformed
         monitor.clear();
@@ -776,7 +783,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                 LOG.info("+++ connecting ...");
                 try {
                     int pdil = Integer.parseInt(jTextFieldPlotItems.getText());
-                    
+
                     cph = new ControlPanelHelper(jTextFieldHost.getText(),
                             Integer.parseInt(jTextFieldPort.getText()),
                             Integer.parseInt(jTextFieldPort.getText()) + 1,
@@ -784,15 +791,15 @@ public final class ControlPanelTopComponent extends TopComponent {
                             jCheckBoxPrint.isSelected(),
                             jCheckBoxOutput.isSelected(),
                             monitor, pdil, jTextFieldControllersDir.getText(), 20000);
-                    
+
                     if (jCheckBoxOutput.isSelected()) {
                         jTextFieldFileRoot.setText(cph.getOutputFile());
                     }
                     cph.setTimeLabel(jLabelTime);
                     cph.constructGUI(jPanelLayers);
-                    
+
                     jLabelFilename.setText(Environment.getInstance().getFileRoot());
-                    
+
                     if (jCheckBoxPlot.isSelected()) {
                         Set<TopComponent> setTc = WindowManager.getDefault().getRegistry().getOpened();
                         for (TopComponent tc : setTc) {
@@ -821,13 +828,13 @@ public final class ControlPanelTopComponent extends TopComponent {
                     Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
                     //  System.exit(0);
                 }
-                
+
                 if (cph != null) {
                     Thread tt = new Thread(cph);
                     tt.start();
                     LOG.info("+++ started cph thread ");
                 }
-                
+
             } catch (NumberFormatException ex) {
                 Exceptions.printStackTrace(ex);
             }
@@ -836,7 +843,7 @@ public final class ControlPanelTopComponent extends TopComponent {
         }
 
     }//GEN-LAST:event_jButtonRemoteActionPerformed
-    
+
     private void disconnect() {
         LOG.info("+++ disconnecting ...");
         try {
@@ -847,24 +854,20 @@ public final class ControlPanelTopComponent extends TopComponent {
         } catch (Exception ex) {
             Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         jButtonRemote.setText("Connect");
     }
-
-    private void jTextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPortActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPortActionPerformed
 
     private void jCheckBoxShortNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxShortNamesActionPerformed
         Environment.getInstance().setShortNames(jCheckBoxShortNames.isSelected());
     }//GEN-LAST:event_jCheckBoxShortNamesActionPerformed
 
     private void jButtonShutdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShutdownActionPerformed
-        
+
         if (cph != null) {
             cph.shutdown();
         }
-        
+
         disconnect();
     }//GEN-LAST:event_jButtonShutdownActionPerformed
 
@@ -875,15 +878,23 @@ public final class ControlPanelTopComponent extends TopComponent {
     private void focusPlotLimit(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_focusPlotLimit
         if (cph != null) {
             cph.setPlotDataItemsLimit(Integer.parseInt(jTextFieldPlotItems.getText()));
-            LOG.info("Plots size = " + Integer.parseInt(jTextFieldPlotItems.getText()));
+            LOG.log(Level.INFO, "Plots size = {0}", Integer.parseInt(jTextFieldPlotItems.getText()));
         } else {
             LOG.info("CPH NULL");
         }
     }//GEN-LAST:event_focusPlotLimit
 
-    private void jCheckBoxOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxOutputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxOutputActionPerformed
+    private void jTextFieldStepSizeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextFieldStepSizeFocusLost
+        if (cph != null) {
+            cph.setStepSize(Integer.parseInt(jTextFieldStepSize.getText()));
+        }
+    }//GEN-LAST:event_jTextFieldStepSizeFocusLost
+
+    private void jCheckBoxPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPrintActionPerformed
+        if (cph != null) {
+            cph.setPrint(jCheckBoxPrint.isSelected());
+        }
+    }//GEN-LAST:event_jCheckBoxPrintActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDescription;
@@ -922,6 +933,7 @@ public final class ControlPanelTopComponent extends TopComponent {
     private javax.swing.JTextField jTextFieldHost;
     private javax.swing.JTextField jTextFieldPlotItems;
     private javax.swing.JTextField jTextFieldPort;
+    private javax.swing.JTextField jTextFieldStepSize;
     private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
     private ControlPanelHelper cph;
@@ -934,24 +946,24 @@ public final class ControlPanelTopComponent extends TopComponent {
     private ControlHierarchyEventMonitor monitor;
     private ControlDataClient mc = null;
     private String env = null;
-    
+
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
     }
-    
+
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
     }
-    
+
     void writeProperties(java.util.Properties p) {
         // better to version settings since initial version as advocated at
         // http://wiki.apidesign.org/wiki/PropertyFiles
         p.setProperty("version", "1.0");
         // TODO store your settings
     }
-    
+
     void readProperties(java.util.Properties p) {
         String version = p.getProperty("version");
         // TODO read your settings according to their version

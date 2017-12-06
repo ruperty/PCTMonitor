@@ -79,6 +79,7 @@ public class ControlPanelHelper implements Runnable {
     private static final int MODEL = 2;
     private int type;
     private int iter = 1;
+    private int stepSize = 1;
     private Long speed;
     private boolean step = false;
     private boolean print = false;
@@ -98,7 +99,7 @@ public class ControlPanelHelper implements Runnable {
         //remote = false;
         //logger.info("bools " + print + " " + output);
 
-        cdts = getDisplayTypes(); 
+        cdts = getDisplayTypes();
         String config = file.getAbsolutePath();
         String xmlconfig = ControlHierarchy.processODG(config);
         BaseControlBuild controlBuild = ControlBuildFactory.getControlBuildFunction(xmlconfig);
@@ -154,7 +155,6 @@ public class ControlPanelHelper implements Runnable {
 
         return config;
     }*/
-
     public void setOutputFile(String outputFile) {
         this.outputFile = outputFile;
     }
@@ -187,6 +187,14 @@ public class ControlPanelHelper implements Runnable {
         if (ch instanceof RemoteControlHierarchy) {
             ((RemoteControlHierarchy) ch).shutdown();
         }
+    }
+
+    public int getStepSize() {
+        return stepSize;
+    }
+
+    public void setStepSize(int stepSize) {
+        this.stepSize = stepSize;
     }
 
     private String getSubDir() {
@@ -544,13 +552,13 @@ public class ControlPanelHelper implements Runnable {
     @Override
     @SuppressWarnings({"SleepWhileInLoop", "CallToPrintStackTrace"})
     public void run() {
+        int stepCtr = 1;
 
         try {
             //if (type == ROBOT && !remote) {                ch.init();            }
             ch.setRunningFlag(true);
             Environment.getInstance().setMark(System.currentTimeMillis());
             while (ch.isRunning()) {
-                iter++;
                 //if (ch.getControllerFunction("TimeRate") != null) {
                 //  ch.setTimeRate(ch.getControllerFunction("TimeRate").getNeural().getOutput());
                 //}
@@ -575,8 +583,12 @@ public class ControlPanelHelper implements Runnable {
                     Thread.sleep(speed);
                 }
                 if (step) {
-                    ch.setRunningFlag(false);
+                    if (stepCtr++ >= stepSize) {
+                        ch.setRunningFlag(false);
+                        stepCtr = 1;
+                    }
                 }
+                iter++;
             }
             if (ch != null) {
                 ch.stop();
@@ -585,19 +597,22 @@ public class ControlPanelHelper implements Runnable {
                     ch.post();
                 }
             }
-        } catch (IOException ex) {
+        } catch (IOException | InterruptedException ex) {
             Logger.getLogger(ControlPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
             //System.exit(1);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(ControlPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
-            //System.exit(1);
-        } catch (Exception ex) {
+        }
+        //System.exit(1);
+         catch (Exception ex) {
             LOG.log(Level.SEVERE, "+++ {0}", ex.toString());
             ex.printStackTrace();
             ch.setRunningFlag(false);
             //System.exit(1);
         }
         saveDisplayTypes();
+    }
+
+    public void setPrint(boolean print) {
+        this.print = print;
     }
 
     public void rate() {
