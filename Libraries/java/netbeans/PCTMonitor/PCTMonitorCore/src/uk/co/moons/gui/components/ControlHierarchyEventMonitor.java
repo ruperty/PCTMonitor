@@ -40,7 +40,7 @@ public class ControlHierarchyEventMonitor {
     private String oldTime = null;
 
     public ControlHierarchyEventMonitor() {
-        hmOldValues = new HashMap<String, Double>();
+        hmOldValues = new HashMap<>();
     }
 
     public ControlHierarchy getControlHierarchy() {

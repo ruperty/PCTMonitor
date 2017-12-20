@@ -125,6 +125,7 @@ public final class ControlPanelTopComponent extends TopComponent {
         jPanelOutput = new javax.swing.JPanel();
         jButtonDescription = new javax.swing.JButton();
         jButtonParameters = new javax.swing.JButton();
+        jCheckBoxIterations = new javax.swing.JCheckBox();
         jCheckBoxPrint = new javax.swing.JCheckBox();
         jCheckBoxOutput = new javax.swing.JCheckBox();
         jTextFieldFileRoot = new javax.swing.JTextField();
@@ -263,6 +264,13 @@ public final class ControlPanelTopComponent extends TopComponent {
             }
         });
 
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxIterations, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxIterations.text")); // NOI18N
+        jCheckBoxIterations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxIterationsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelOutputLayout = new javax.swing.GroupLayout(jPanelOutput);
         jPanelOutput.setLayout(jPanelOutputLayout);
         jPanelOutputLayout.setHorizontalGroup(
@@ -271,13 +279,16 @@ public final class ControlPanelTopComponent extends TopComponent {
                 .addComponent(jButtonParameters)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonDescription)
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBoxIterations)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelOutputLayout.setVerticalGroup(
             jPanelOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelOutputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jButtonParameters)
-                .addComponent(jButtonDescription))
+                .addComponent(jButtonDescription)
+                .addComponent(jCheckBoxIterations))
         );
 
         org.openide.awt.Mnemonics.setLocalizedText(jCheckBoxPrint, org.openide.util.NbBundle.getMessage(ControlPanelTopComponent.class, "ControlPanelTopComponent.jCheckBoxPrint.text")); // NOI18N
@@ -343,7 +354,6 @@ public final class ControlPanelTopComponent extends TopComponent {
         );
         jPanelCommonLayout.setVerticalGroup(
             jPanelCommonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelOutput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCommonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jCheckBoxPrint)
                 .addComponent(jCheckBoxOutput)
@@ -353,6 +363,9 @@ public final class ControlPanelTopComponent extends TopComponent {
                 .addComponent(jCheckBoxShortNames)
                 .addComponent(jTextFieldFontSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabelFont, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCommonLayout.createSequentialGroup()
+                .addComponent(jPanelOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1))
         );
 
         jPanelRemote.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -630,6 +643,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                     Environment.getInstance().setFilePath(file.getAbsolutePath());
                     Environment.getInstance().setFileRoot(file.getName());
                     cph = new ControlPanelHelper(file, jCheckBoxPrint.isSelected(), jCheckBoxOutput.isSelected(), monitor, pdil);
+                    cph.setIterations(jCheckBoxIterations.isSelected());
                     if (jCheckBoxOutput.isSelected()) {
                         jTextFieldFileRoot.setText(cph.getOutputFile());
                         //jTextFieldFileRoot.setText(Environment.getInstance().getFileRoot());
@@ -896,6 +910,12 @@ public final class ControlPanelTopComponent extends TopComponent {
         }
     }//GEN-LAST:event_jCheckBoxPrintActionPerformed
 
+    private void jCheckBoxIterationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxIterationsActionPerformed
+if (cph != null) {
+            cph.setIterations(jCheckBoxIterations.isSelected());
+        }
+    }//GEN-LAST:event_jCheckBoxIterationsActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDescription;
     private javax.swing.JButton jButtonOpenFile;
@@ -904,6 +924,7 @@ public final class ControlPanelTopComponent extends TopComponent {
     private javax.swing.JButton jButtonShutdown;
     private javax.swing.JButton jButtonStart;
     private javax.swing.JButton jButtonStep;
+    private javax.swing.JCheckBox jCheckBoxIterations;
     private javax.swing.JCheckBox jCheckBoxOutput;
     private javax.swing.JCheckBox jCheckBoxPlot;
     private javax.swing.JCheckBox jCheckBoxPrint;

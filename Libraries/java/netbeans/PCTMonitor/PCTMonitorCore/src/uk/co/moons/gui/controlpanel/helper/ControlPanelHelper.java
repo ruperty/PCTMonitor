@@ -46,6 +46,7 @@ import pct.moons.co.uk.schema.layers.Layers.Layer;
 import pct.moons.co.uk.schema.layers.Layers.Layer.Controller.Functions;
 import uk.co.moons.config.BaseControlBuild;
 import uk.co.moons.config.ControlBuildFactory;
+import uk.co.moons.control.BaseControlHierarchy;
 import uk.co.moons.control.ControlHierarchy;
 import uk.co.moons.control.ControlLayer;
 import uk.co.moons.control.ModelControlHierarchy;
@@ -75,8 +76,7 @@ public class ControlPanelHelper implements Runnable {
     private String displayFile;
     private String outputFile;
     //private String pricesFile;
-    private static final int ROBOT = 1;
-    private static final int MODEL = 2;
+
     private int type;
     private int iter = 1;
     private int stepSize = 1;
@@ -111,7 +111,7 @@ public class ControlPanelHelper implements Runnable {
             setOutputFields();
         }
         switch (type) {
-            case ROBOT:
+            case BaseControlHierarchy.ROBOT:
                 if (output) {
                     outputFile = "C:\\tmp\\PCT\\Controllers\\Robot\\output\\out.csv";
                     File f = new File(outputFile);
@@ -122,9 +122,9 @@ public class ControlPanelHelper implements Runnable {
                 ch = new RobotControlHierarchy(config);
                 //speed = (long) 1000;
                 break;
-            case MODEL:
+            case BaseControlHierarchy.MODEL:
                 ch = new ModelControlHierarchy(config);
-                ch.setType(MODEL);
+                ch.setType(BaseControlHierarchy.MODEL);
                 if (ch.getControllerFunction("TimeRate") != null) {
                     ((ModelControlHierarchy) ch).setTimeRate(ch.getControllerFunction("TimeRate").getNeural().getOutput());
                 }
@@ -155,6 +155,10 @@ public class ControlPanelHelper implements Runnable {
 
         return config;
     }*/
+    public void setIterations(Boolean iterations) {
+        ch.setIterations(iterations);
+    }
+
     public void setOutputFile(String outputFile) {
         this.outputFile = outputFile;
     }
@@ -280,7 +284,7 @@ public class ControlPanelHelper implements Runnable {
 
     public static Properties getProperties() {
 
-        String path = Environment.getInstance().getFilePath() + File.separator + "properties"
+        String path = Environment.getInstance().getFilePath() + File.separator + "files" + File.separator + "properties"
                 + File.separator
                 + (Environment.getInstance().getFileRoot().charAt(0) < 63 ? Environment.getInstance().getFileRoot().substring(0, 7) : Environment.getInstance().getFileRoot())
                 + File.separator;
@@ -365,9 +369,9 @@ public class ControlPanelHelper implements Runnable {
         }
 
         if (stype.equals("Robot")) {
-            return ROBOT;
+            return BaseControlHierarchy.ROBOT;
         } else if (stype.equals("Model")) {
-            return MODEL;
+            return BaseControlHierarchy.MODEL;
         }
 
         return 0;
@@ -562,7 +566,7 @@ public class ControlPanelHelper implements Runnable {
                 //if (ch.getControllerFunction("TimeRate") != null) {
                 //  ch.setTimeRate(ch.getControllerFunction("TimeRate").getNeural().getOutput());
                 //}
-
+                ch.setIteration(iter);
                 ch.iterate();
                 ch.specificProcessing();
                 rate();
@@ -600,9 +604,8 @@ public class ControlPanelHelper implements Runnable {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(ControlPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
             //System.exit(1);
-        }
-        //System.exit(1);
-         catch (Exception ex) {
+        } //System.exit(1);
+        catch (Exception ex) {
             LOG.log(Level.SEVERE, "+++ {0}", ex.toString());
             ex.printStackTrace();
             ch.setRunningFlag(false);
@@ -636,7 +639,7 @@ public class ControlPanelHelper implements Runnable {
     public void stop() throws Exception {
         ch.stop();
         Thread.sleep(1000);
-        if (type == ROBOT) {
+        if (type == BaseControlHierarchy.ROBOT) {
             ch.pause();
         }
     }

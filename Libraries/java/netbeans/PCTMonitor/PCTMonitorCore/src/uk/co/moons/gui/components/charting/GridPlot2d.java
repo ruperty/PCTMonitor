@@ -16,15 +16,13 @@ package uk.co.moons.gui.components.charting;
 
 import java.awt.geom.Rectangle2D;
 import java.util.List;
-import java.util.Set;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import org.math.plot.Plot2DPanel;
 import org.math.plot.plots.LinePlot;
+import uk.co.moons.control.BaseControlHierarchy;
 import uk.co.moons.control.ControlHierarchy;
 import uk.co.moons.control.functions.BaseControlFunction;
-import uk.co.moonsit.utils.timing.Time;
 
 /**
  *
@@ -90,9 +88,10 @@ public class GridPlot2d {
                 y = 0;
             }
             Double x;
-            if (ch.getType() == 2) {
-                Time t = new Time(ch.getTime());
-                x = t.getTime();
+            if (ch.getType() == BaseControlHierarchy.MODEL) {
+                //Time t = new Time(ch.getTime());
+                //x = t.getTime();
+                x = ch.getDoubleTime();
             } else {
                 x = function.getX();
             }
