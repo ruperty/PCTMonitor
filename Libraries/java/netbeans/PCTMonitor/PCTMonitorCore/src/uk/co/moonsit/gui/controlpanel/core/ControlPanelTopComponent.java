@@ -15,6 +15,7 @@
 package uk.co.moonsit.gui.controlpanel.core;
 
 import java.awt.Font;
+import java.beans.ExceptionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -528,6 +529,19 @@ public final class ControlPanelTopComponent extends TopComponent {
         }
     }
 
+    private class ExceptionEventListener implements ExceptionListener {
+
+        @Override
+        public void exceptionThrown(Exception e) {
+
+            String error = e.toString();
+
+            displayException(error);
+        }
+
+    }
+
+
     private void jButtonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartActionPerformed
         cph.setStep(false);
         if ("Start".equals(jButtonStart.getText()) || "Resume".equals(jButtonStart.getText())) {
@@ -643,6 +657,8 @@ public final class ControlPanelTopComponent extends TopComponent {
                     Environment.getInstance().setFilePath(file.getAbsolutePath());
                     Environment.getInstance().setFileRoot(file.getName());
                     cph = new ControlPanelHelper(file, jCheckBoxPrint.isSelected(), jCheckBoxOutput.isSelected(), monitor, pdil);
+                    ExceptionListener eeListener = new ExceptionEventListener();
+                    cph.registerExceptionListener(eeListener);
                     cph.setIterations(jCheckBoxIterations.isSelected());
                     if (jCheckBoxOutput.isSelected()) {
                         jTextFieldFileRoot.setText(cph.getOutputFile());
@@ -911,7 +927,7 @@ public final class ControlPanelTopComponent extends TopComponent {
     }//GEN-LAST:event_jCheckBoxPrintActionPerformed
 
     private void jCheckBoxIterationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxIterationsActionPerformed
-if (cph != null) {
+        if (cph != null) {
             cph.setIterations(jCheckBoxIterations.isSelected());
         }
     }//GEN-LAST:event_jCheckBoxIterationsActionPerformed

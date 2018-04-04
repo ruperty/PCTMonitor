@@ -18,6 +18,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.ExceptionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -88,9 +89,11 @@ public class ControlPanelHelper implements Runnable {
 
     private Integer plotDataItemsLimit = null;
     private final ControlHierarchyEventMonitor monitor;
+
+    private ExceptionListener eeListener; // listener field
+
     //private boolean remoteData=false;
 //private MessageClient messageClient = null;
-
     public ControlPanelHelper(File file, boolean p, boolean o, ControlHierarchyEventMonitor m, int pdil) throws Exception {
         plotDataItemsLimit = pdil;
         print = p;
@@ -603,15 +606,28 @@ public class ControlPanelHelper implements Runnable {
             }
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(ControlPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
-            //System.exit(1);
-        } //System.exit(1);
-        catch (Exception ex) {
+            if (eeListener != null) {
+                eeListener.exceptionThrown(ex);
+            } else {
+                LOG.warning("eeListener not registered - 1");
+            }
+        } catch (Exception ex) {
             LOG.log(Level.SEVERE, "+++ {0}", ex.toString());
-            ex.printStackTrace();
             ch.setRunningFlag(false);
-            //System.exit(1);
+            if (eeListener != null) {
+                eeListener.exceptionThrown(ex);
+            } else {
+                LOG.warning("eeListener not registered - 2");
+            }
         }
         saveDisplayTypes();
+    }
+ 
+   
+
+    // setting the listener
+    public void registerExceptionListener(ExceptionListener eeListener) {
+        this.eeListener = eeListener;
     }
 
     public void setPrint(boolean print) {
