@@ -110,12 +110,13 @@ public class ControlPanelHelper implements Runnable {
         type = getType(controlBuild);
 
         //gp2d = new GridPlot2d();
-        if (output) {
-            setOutputFields();
-        }
+        //if (output) {
+        //  setOutputFields();
+        //}
         switch (type) {
             case BaseControlHierarchy.ROBOT:
                 if (output) {
+                    setOutputFields();
                     outputFile = "C:\\tmp\\PCT\\Controllers\\Robot\\output\\out.csv";
                     File f = new File(outputFile);
                     if (f.exists()) {
@@ -173,17 +174,19 @@ public class ControlPanelHelper implements Runnable {
         //remote = true;
         ch = new RemoteControlHierarchy(host, dport, pport, freq, true, timeout);
 
-        String dir = d + File.separator + getSubDir() + File.separator;
-        String fileName = getRemoteFilename();
-        String file = dir + File.separator + fileName;
+        String dir = d + File.separator + ((RemoteControlHierarchy) ch).getSubDir();
+        String fileName = ((RemoteControlHierarchy) ch).getRemoteFilename();
         Environment.getInstance().setFilePath(dir);
+        LOG.log(Level.INFO, "+++ filepath {0}", dir);
         Environment.getInstance().setFileRoot((new File(fileName)).getName());
+        LOG.log(Level.INFO, "+++ fileroot {0}", fileName);
         //String config = configAndFile.substring(endIndex);
+        String file = d + File.separator + ((RemoteControlHierarchy) ch).getXmlSubDir() + File.separator + fileName;
         LOG.log(Level.INFO, "+++ file {0}", file);
         displayFile = getDisplayFile(new File(file));
         cdts = getDisplayTypes();
 
-        configureOutputFilePrivate(fileName);
+        configureOutputFilePrivate(fileName.replaceAll(".xml", ""));
 
         ch.setUpOutputQueue();
         monitor = m;
@@ -204,40 +207,8 @@ public class ControlPanelHelper implements Runnable {
         this.stepSize = stepSize;
     }
 
-    private String getSubDir() {
-        String filePath = ((RemoteControlHierarchy) ch).getPath();
-
-        int lastIndex = 0;
-        int beginIndex = 0;
-        if (filePath.contains("/")) {
-            lastIndex = filePath.lastIndexOf("/");
-            beginIndex = filePath.indexOf("Controllers") + 12;
-        }
-        if (filePath.contains("\\")) {
-            lastIndex = filePath.lastIndexOf("\\");
-            beginIndex = filePath.indexOf("Controllers") + 12;
-        }
-        String fileName = filePath.substring(beginIndex, lastIndex);
-
-        return fileName;
-    }
-
-    private String getRemoteFilename() {
-        String filePath = ((RemoteControlHierarchy) ch).getPath();
-
-        int beginIndex = 0;
-        if (filePath.contains("/")) {
-            beginIndex = filePath.lastIndexOf("/");
-        }
-        if (filePath.contains("\\")) {
-            beginIndex = filePath.lastIndexOf("\\");
-        }
-        String fileName = filePath.substring(beginIndex + 1);
-
-        return fileName;
-    }
-
-    private void configureOutputFilePrivate(String fileName) {
+    // has exception
+    private void configureOutputFilePrivate(String fileName) throws Exception {
         if (output) {
             setOutputFields();
             ch.setListOutputFunctions(Environment.getInstance().getListOutputFunctions());
@@ -622,8 +593,6 @@ public class ControlPanelHelper implements Runnable {
         }
         saveDisplayTypes();
     }
- 
-   
 
     // setting the listener
     public void registerExceptionListener(ExceptionListener eeListener) {
