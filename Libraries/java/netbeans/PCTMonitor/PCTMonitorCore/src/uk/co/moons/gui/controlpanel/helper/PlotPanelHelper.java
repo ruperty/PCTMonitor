@@ -48,6 +48,7 @@ public class PlotPanelHelper {
     private PlotPanelTopComponent plotJPanel = null;
     private boolean clearConfig = true;
     private HashMap<String, List<String>> configMap = null;
+    private String plotPropertiesFilename;
 
     public PlotPanelHelper() {
         gp2ds = new ArrayList<>();
@@ -84,8 +85,8 @@ public class PlotPanelHelper {
         }
         list.add(function);
     }
-    
-     public void removeConfig(String num) {        
+
+    public void removeConfig(String num) {
         configMap.remove(num);
         LOG.log(Level.INFO, "Removed config {0}", num);
     }
@@ -168,7 +169,7 @@ public class PlotPanelHelper {
         int index = dir.indexOf(File.separator + "files" + File.separator);
         String path;
         if (index >= 0) {
-            path = dir.substring(0, index+6);
+            path = dir.substring(0, index + 6);
         } else {
             path = dir + File.separator + "files";
         }
@@ -199,12 +200,12 @@ public class PlotPanelHelper {
 
     public Properties getProperties() {
 
-        String fname = getPropertiesFileName();
-        LOG.log(Level.INFO, "Reading properties file {0}", fname);
+        plotPropertiesFilename = getPropertiesFileName();
+        LOG.log(Level.INFO, "Reading properties file {0}", plotPropertiesFilename);
         Properties props = null;
         try {
             props = new Properties();
-            props.load(new FileInputStream(new File(fname)));
+            props.load(new FileInputStream(new File(plotPropertiesFilename)));
         } catch (IOException ex) {
             LOG.warning(ex.toString());
             //Logger.getLogger(PlotPanelHelper.class.getName()).log(Level.SEVERE, null, ex);
@@ -247,8 +248,12 @@ public class PlotPanelHelper {
     synchronized public void updatePlots(ControlHierarchy ch, Integer size) throws Exception {
         //logger.info("updatePlots");
 
-        for (GridPlot2d gpd : gp2ds) {
-            gpd.updatePlot(ch, size);
+        try {
+            for (GridPlot2d gpd : gp2ds) {
+                gpd.updatePlot(ch, size);
+            }
+        } catch (Exception e) {
+            throw new Exception(e.toString() + " \n\nModify the plots properties file " + plotPropertiesFilename + ".");
         }
     }
 

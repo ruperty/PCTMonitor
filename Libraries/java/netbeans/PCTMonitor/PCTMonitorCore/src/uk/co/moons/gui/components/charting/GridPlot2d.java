@@ -81,7 +81,7 @@ public class GridPlot2d {
             GridPlot2dDataSet gpds = gpd.get(title);
             BaseControlFunction function = ch.getControllerFunction(/* gpds.getController(), */gpds.getFunction().trim());
             if (function == null) {
-                throw new Exception("Function " + title + " not present in controller " + gpds.getController());
+                throw new Exception("Function " + title + " not present in controller " + gpds.getController()+".");
             }
             double y = function.getValue();
             if (Math.abs(y) == Double.POSITIVE_INFINITY) {

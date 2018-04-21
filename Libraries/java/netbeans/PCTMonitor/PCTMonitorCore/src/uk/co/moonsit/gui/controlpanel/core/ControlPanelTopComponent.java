@@ -698,8 +698,15 @@ public final class ControlPanelTopComponent extends TopComponent {
                     this.getComponent(0).repaint();
                     //cph.setLayerPanel(jPanelLayers);
                 } catch (Exception ex) {
-                    throw ex;
-                    //  System.exit(0);
+
+                    String msg;
+                    if (ex.getCause() == null) {
+                        msg = "Error: " + ex.getMessage();
+                    } else {
+                        msg = "Error: " + ex.getCause().getMessage();
+                    }
+                   
+                    throw new Exception(msg);
                 }
             } else {
                 LOG.info("Open command cancelled by user.");
