@@ -705,7 +705,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                     } else {
                         msg = "Error: " + ex.getCause().getMessage();
                     }
-                   
+
                     throw new Exception(msg);
                 }
             } else {
@@ -863,6 +863,7 @@ public final class ControlPanelTopComponent extends TopComponent {
                     jButtonRemote.setText("Disconnect");
                 } catch (Exception ex) {
                     Logger.getLogger(ControlPanelTopComponent.class.getName()).log(Level.SEVERE, null, ex);
+                    displayException(ex.toString());
                     //  System.exit(0);
                 }
 
@@ -874,6 +875,7 @@ public final class ControlPanelTopComponent extends TopComponent {
 
             } catch (NumberFormatException ex) {
                 Exceptions.printStackTrace(ex);
+                    displayException(ex.toString());
             }
         } else {
             disconnect();
