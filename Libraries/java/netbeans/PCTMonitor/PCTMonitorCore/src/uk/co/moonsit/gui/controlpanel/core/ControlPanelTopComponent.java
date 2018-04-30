@@ -71,7 +71,7 @@ public final class ControlPanelTopComponent extends TopComponent {
 
     public ControlPanelTopComponent() {
         initComponents();
-        System.setProperty("netbeans.buildnumber", "1.0.00");
+        System.setProperty("netbeans.buildnumber", "1.0.01");
         {
             env = System.getenv("CPA_CONTROLLERS");
             if (env == null) {
