@@ -75,7 +75,7 @@ public final class ControlPanelTopComponent extends TopComponent {
         {
             env = System.getenv("CPA_CONTROLLERS");
             if (env == null) {
-                env = System.getProperty("user.home") + File.separator + "PCTSoftware" + File.separator + "Controllers";
+                env = System.getProperty("user.home") + File.separator + "Versioning" + File.separator + "PCTSoftware" + File.separator + "Controllers";
                 File f = new File(env);
                 if (!f.exists()) {
                     f.mkdirs();
@@ -875,7 +875,7 @@ public final class ControlPanelTopComponent extends TopComponent {
 
             } catch (NumberFormatException ex) {
                 Exceptions.printStackTrace(ex);
-                    displayException(ex.toString());
+                displayException(ex.toString());
             }
         } else {
             disconnect();
