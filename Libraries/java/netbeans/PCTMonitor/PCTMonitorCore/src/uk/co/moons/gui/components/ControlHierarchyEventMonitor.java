@@ -63,7 +63,7 @@ public class ControlHierarchyEventMonitor {
             int systems = layers[layer].size();
             for (int system = 0; system < systems; system++) {
 
-                ControlFunctionCollection input = controlHierarchy.getController(layer, system).getInputFunction1();
+                ControlFunctionCollection input = controlHierarchy.getController(layer, system).getInputFunction();
                 if (input != null) {
                     fireEvent(input.getMainFunction());
                     List<BaseControlFunction> transfers = input.getTransferFunctions();
@@ -74,7 +74,7 @@ public class ControlHierarchyEventMonitor {
                     }
                 }
 
-                ControlFunctionCollection reference = controlHierarchy.getController(layer, system).getReferenceFunction1();
+                ControlFunctionCollection reference = controlHierarchy.getController(layer, system).getReferenceFunction();
                 if (reference != null) {
                     fireEvent(reference.getMainFunction());
                     List<BaseControlFunction> transfers = reference.getTransferFunctions();
@@ -84,12 +84,12 @@ public class ControlHierarchyEventMonitor {
                         }
                     }
                 }
-                if (controlHierarchy.getController(layer, system).getErrorFunction1() != null) {
-                    fireEvent(controlHierarchy.getController(layer, system).getErrorFunction1().getMainFunction());
+                if (controlHierarchy.getController(layer, system).getErrorFunction() != null) {
+                    fireEvent(controlHierarchy.getController(layer, system).getErrorFunction().getMainFunction());
                 }
 
 
-                ControlFunctionCollection output = controlHierarchy.getController(layer, system).getOutputFunction1();
+                ControlFunctionCollection output = controlHierarchy.getController(layer, system).getOutputFunction();
                 if (output != null) {
                     fireEvent(output.getMainFunction());
                     List<BaseControlFunction> transfers = output.getTransferFunctions();

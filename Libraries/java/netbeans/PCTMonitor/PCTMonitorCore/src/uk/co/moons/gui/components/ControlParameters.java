@@ -88,7 +88,7 @@ public class ControlParameters extends javax.swing.JPanel {
                     if (par.getName().equals("MotorIndex") || par.getName().equals("SensorPort")) {
                         //      i--;
                     } else if (!par.getDataType().isEmpty()) {
-                        funcPanel.add(getParameterPanel(par, controller.getInputFunction1().getMainFunction().getNeural()));
+                        funcPanel.add(getParameterPanel(par, controller.getInputFunction().getMainFunction().getNeural()));
                     }
                 }
                 i++;
@@ -102,7 +102,7 @@ public class ControlParameters extends javax.swing.JPanel {
                         JPanel transPanel = getFunctionPanel(transfer);
                         for (Parameters par : transferPars) {
                             if (!par.getDataType().isEmpty()) {
-                                transPanel.add(getParameterPanel(par, controller.getInputFunction1().getTransferFunctions().get(j).getNeural()));
+                                transPanel.add(getParameterPanel(par, controller.getInputFunction().getTransferFunctions().get(j).getNeural()));
                             }
                         }
 
@@ -120,7 +120,7 @@ public class ControlParameters extends javax.swing.JPanel {
                 JPanel funcPanel = getFunctionPanel(func);
                 for (Parameters par : refPars) {
                     if (!par.getDataType().isEmpty()) {
-                        funcPanel.add(getParameterPanel(par, controller.getReferenceFunction1().getMainFunction().getNeural()));
+                        funcPanel.add(getParameterPanel(par, controller.getReferenceFunction().getMainFunction().getNeural()));
                     }
                 }
                 //i = i + refPars.size();
@@ -135,7 +135,7 @@ public class ControlParameters extends javax.swing.JPanel {
                         JPanel transPanel = getFunctionPanel(transfer);
                         for (Parameters par : transferPars) {
                             if (!par.getDataType().isEmpty()) {
-                                transPanel.add(getParameterPanel(par, controller.getReferenceFunction1().getTransferFunctions().get(j).getNeural()));
+                                transPanel.add(getParameterPanel(par, controller.getReferenceFunction().getTransferFunctions().get(j).getNeural()));
                             }
                         }
                         i++;
@@ -152,7 +152,7 @@ public class ControlParameters extends javax.swing.JPanel {
                 JPanel funcPanel = getFunctionPanel(func);
                 for (Parameters par : errPars) {
                     if (!par.getDataType().isEmpty()) {
-                        funcPanel.add(getParameterPanel(par, controller.getErrorFunction1().getMainFunction().getNeural()));
+                        funcPanel.add(getParameterPanel(par, controller.getErrorFunction().getMainFunction().getNeural()));
                     }
                 }
                 //i = i + errPars.size();
@@ -167,7 +167,7 @@ public class ControlParameters extends javax.swing.JPanel {
                         JPanel transPanel = getFunctionPanel(transfer);
                         for (Parameters par : transferPars) {
                             if (!par.getDataType().isEmpty()) {
-                                transPanel.add(getParameterPanel(par, controller.getErrorFunction1().getTransferFunctions().get(j).getNeural()));
+                                transPanel.add(getParameterPanel(par, controller.getErrorFunction().getTransferFunctions().get(j).getNeural()));
                             }
                         }
                         i++;
@@ -187,7 +187,7 @@ public class ControlParameters extends javax.swing.JPanel {
                     if (par.getName().equals("MotorIndex")) {
                         //i--;
                     } else if (!par.getDataType().isEmpty()) {
-                        funcPanel.add(getParameterPanel(par, controller.getOutputFunction1().getMainFunction().getNeural()));
+                        funcPanel.add(getParameterPanel(par, controller.getOutputFunction().getMainFunction().getNeural()));
                     }
                 }
                 //i = i + outputPars.size();
@@ -202,7 +202,7 @@ public class ControlParameters extends javax.swing.JPanel {
                         JPanel transPanel = getFunctionPanel(transfer);
                         for (Parameters par : transferPars) {
                             if (!par.getDataType().isEmpty()) {
-                                transPanel.add(getParameterPanel(par, controller.getOutputFunction1().getTransferFunctions().get(j).getNeural()));
+                                transPanel.add(getParameterPanel(par, controller.getOutputFunction().getTransferFunctions().get(j).getNeural()));
                             }
                         }
                         i++;

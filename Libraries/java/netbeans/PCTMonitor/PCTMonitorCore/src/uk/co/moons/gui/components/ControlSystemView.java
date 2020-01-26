@@ -54,13 +54,13 @@ public class ControlSystemView extends javax.swing.JPanel {
         try {
             //HashMap<String, ControlDisplayTypes> cdts=null;
             this.controller = con;
-            if (controller.getReferenceFunction1() != null) {
-                int index = controller.getReferenceFunction1().getMainFunction() == null ? -1 : controller.getReferenceFunction1().getMainFunction().getNeural().getPosindex();
-                String name = controller.getReferenceFunction1().getMainFunction() == null ? null : controller.getReferenceFunction1().getMainFunction().getNeural().getName();
+            if (controller.getReferenceFunction() != null) {
+                int index = controller.getReferenceFunction().getMainFunction() == null ? -1 : controller.getReferenceFunction().getMainFunction().getNeural().getPosindex();
+                String name = controller.getReferenceFunction().getMainFunction() == null ? null : controller.getReferenceFunction().getMainFunction().getNeural().getName();
                 referenceFunctionView.setControlFunction(monitor, index, name, false, display);
 
-                setControlDisplayTypes(referenceFunctionView, controller.getReferenceFunction1().getMainFunction(), cdts);
-                List<BaseControlFunction> transfers = controller.getReferenceFunction1().getTransferFunctions();
+                setControlDisplayTypes(referenceFunctionView, controller.getReferenceFunction().getMainFunction(), cdts);
+                List<BaseControlFunction> transfers = controller.getReferenceFunction().getTransferFunctions();
                 if (transfers != null) {
                     for (BaseControlFunction transfer : transfers) {
                         ControlFunctionView transferFunctionView = new ControlFunctionView();
@@ -72,16 +72,16 @@ public class ControlSystemView extends javax.swing.JPanel {
                     }
                 }
             }
-            if (controller.getErrorFunction1() != null) {
-                int index = controller.getErrorFunction1().getMainFunction() == null ? -1 : controller.getErrorFunction1().getMainFunction().getNeural().getPosindex();
-                String name = controller.getErrorFunction1().getMainFunction() == null ? null : controller.getErrorFunction1().getMainFunction().getNeural().getName();
+            if (controller.getErrorFunction() != null) {
+                int index = controller.getErrorFunction().getMainFunction() == null ? -1 : controller.getErrorFunction().getMainFunction().getNeural().getPosindex();
+                String name = controller.getErrorFunction().getMainFunction() == null ? null : controller.getErrorFunction().getMainFunction().getNeural().getName();
                 errorFunctionView.setControlFunction(monitor, index, name, false, display);
 
-                setControlDisplayTypes(errorFunctionView, controller.getErrorFunction1().getMainFunction(), cdts);
+                setControlDisplayTypes(errorFunctionView, controller.getErrorFunction().getMainFunction(), cdts);
 
             }
             {
-                ControlFunctionCollection inColl = controller.getInputFunction1();
+                ControlFunctionCollection inColl = controller.getInputFunction();
                 if (inColl != null) {
                     BaseControlFunction main = inColl.getMainFunction();
                     String name = main == null ? null : main.getNeural().getName();
@@ -101,13 +101,13 @@ public class ControlSystemView extends javax.swing.JPanel {
                     }
                 }
             }
-            if (controller.getOutputFunction1() != null) {
-                int index = controller.getOutputFunction1().getMainFunction() == null ? -1 : controller.getOutputFunction1().getMainFunction().getNeural().getPosindex();
-                String name = controller.getOutputFunction1().getMainFunction() == null ? null : controller.getOutputFunction1().getMainFunction().getNeural().getName();
+            if (controller.getOutputFunction() != null) {
+                int index = controller.getOutputFunction().getMainFunction() == null ? -1 : controller.getOutputFunction().getMainFunction().getNeural().getPosindex();
+                String name = controller.getOutputFunction().getMainFunction() == null ? null : controller.getOutputFunction().getMainFunction().getNeural().getName();
                 outputFunctionView.setControlFunction(monitor, index, name, false, display);
 
-                setControlDisplayTypes(outputFunctionView, controller.getOutputFunction1().getMainFunction(), cdts);
-                List<BaseControlFunction> transfers = controller.getOutputFunction1().getTransferFunctions();
+                setControlDisplayTypes(outputFunctionView, controller.getOutputFunction().getMainFunction(), cdts);
+                List<BaseControlFunction> transfers = controller.getOutputFunction().getTransferFunctions();
                 if (transfers != null) {
                     for (BaseControlFunction transfer : transfers) {
                         ControlFunctionView transferFunctionView = new ControlFunctionView();
