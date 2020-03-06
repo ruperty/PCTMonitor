@@ -66,6 +66,10 @@
                 <binary-origin>release/modules/ext/Learning-1.0.jar</binary-origin>
             </class-path-extension>
             <class-path-extension>
+                <runtime-relative-path>ext/opencv-320.jar</runtime-relative-path>
+                <binary-origin>C:\Users\ryoung\Versioning\PCTMonitor\Libraries\java\netbeans\PCTMonitor\PCTMonitorCore\release\modules\ext\opencv-320.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
                 <runtime-relative-path>ext/RXTXcomm.jar</runtime-relative-path>
                 <binary-origin>release/modules/ext/RXTXcomm.jar</binary-origin>
             </class-path-extension>
