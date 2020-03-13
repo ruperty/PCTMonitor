@@ -31,6 +31,7 @@ public class GridPlot2dDataSet {
     private List<Double> yList = null;
     private String title = null;
     private String controller = null, function = null;
+    private final boolean debug = false;
 
     public GridPlot2dDataSet(String controller, String function) {
         this.controller = controller;
@@ -95,7 +96,9 @@ public class GridPlot2dDataSet {
         try {
             rtn = xList.get(xList.size() - 1);
         } catch (Exception e) {
-            LOG.warning(e.toString());
+            if (debug) {
+                LOG.warning(e.toString());
+            }
         }
         return rtn;
     }
@@ -107,11 +110,14 @@ public class GridPlot2dDataSet {
     public double[] getX() {
         double[] d = new double[xList.size()];
         int ctr = 0;
-        try{
-        for (double val : xList) {
-            d[ctr++] = val;
-        }}catch(Exception e){
-            LOG.warning(e.toString());
+        try {
+            for (double val : xList) {
+                d[ctr++] = val;
+            }
+        } catch (Exception e) {
+            if (debug) {
+                LOG.warning(e.toString());
+            }
         }
         return d;
     }
@@ -125,10 +131,10 @@ public class GridPlot2dDataSet {
                     d[ctr++] = val;
                 }
             } catch (Exception e) {
-                LOG.info(e.toString());
+               if(debug) LOG.info(e.toString());
             }
         } catch (Exception e) {
-            LOG.info(e.toString());
+           if(debug) LOG.info(e.toString());
         }
         return d;
     }
